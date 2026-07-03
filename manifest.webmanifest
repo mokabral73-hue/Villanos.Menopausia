@@ -1,0 +1,10 @@
+{
+  "name": "Menopausia Dichosa",
+  "short_name": "Dichosa",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff8ef",
+  "theme_color": "#e91e63",
+  "description": "Centro de Bienestar Menopausia Dichosa",
+  "icons": []
+}
