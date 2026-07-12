@@ -1,346 +1,155 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Los Villanos de la Menopausia – Menopausia Dichosa</title>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Nunito', sans-serif; background: #fff9f9; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 1rem; }
-.app { width: 100%; max-width: 600px; padding: 1.5rem 1.2rem 3rem; }
-.logo-wrap { text-align: center; margin-bottom: 1rem; }
-.logo-wrap img { height: 90px; object-fit: contain; }
-.app-title { font-family: 'Bangers', cursive; font-size: 2.4rem; letter-spacing: 2px; color: #1a1a1a; text-align: center; line-height: 1.1; }
-.app-sub { font-size: 0.92rem; color: #666; text-align: center; margin-top: 0.3rem; margin-bottom: 1.4rem; }
-.prog-bar { background: #f0e8e8; border-radius: 20px; height: 8px; margin-bottom: 0.4rem; overflow: hidden; }
-.prog-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg,#C0112B,#D85A30); transition: width 0.4s; }
-.step-lbl { font-size: 0.75rem; color: #999; text-align: right; margin-bottom: 1rem; }
-.q-card { background: #fff; border: 1px solid #f0d8d8; border-radius: 16px; padding: 1.2rem; margin-bottom: 1rem; box-shadow: 0 2px 12px rgba(192,17,43,0.07); }
-.q-icon { font-size: 1.5rem; margin-bottom: 0.2rem; }
-.q-text { font-size: 1.02rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem; line-height: 1.4; }
-.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.opt { background: #fdf5f5; border: 1.5px solid #e8c8c8; border-radius: 10px; padding: 10px 11px; font-family: 'Nunito',sans-serif; font-size: 0.85rem; font-weight: 600; color: #333; cursor: pointer; text-align: left; transition: all 0.15s; line-height: 1.3; }
-.opt:hover { border-color: #C0112B; background: #fff0f0; }
-.opt.sel { border-color: #C0112B; background: #fff; color: #C0112B; box-shadow: 0 0 0 2px rgba(192,17,43,0.15); }
-.opt-e { display: block; font-size: 1.1rem; margin-bottom: 3px; }
-.navs { display: flex; gap: 9px; margin-top: 0.5rem; }
-.btn-nxt { flex: 1; background: #C0112B; color: #fff; border: none; border-radius: 10px; padding: 12px; font-family: 'Nunito',sans-serif; font-size: 1rem; font-weight: 800; cursor: pointer; transition: opacity 0.15s, transform 0.1s; }
-.btn-nxt:hover { opacity: 0.88; }
-.btn-nxt:active { transform: scale(0.98); }
-.btn-nxt:disabled { opacity: 0.35; cursor: not-allowed; }
-.btn-bk { background: #f5f5f5; color: #888; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 16px; font-family: 'Nunito',sans-serif; font-size: 0.88rem; font-weight: 600; cursor: pointer; }
-.btn-bk:hover { background: #eee; }
-.res { display: none; }
-.vil-reveal { text-align: center; padding: 1.5rem 1rem 1.2rem; border: 1px solid #f0d8d8; border-radius: 16px; background: #fff; margin-bottom: 1rem; box-shadow: 0 2px 12px rgba(192,17,43,0.07); }
-.vil-big-e { font-size: 4rem; display: block; margin-bottom: 0.4rem; animation: pop 0.5s ease; }
-@keyframes pop { 0%{transform:scale(0.4);opacity:0} 70%{transform:scale(1.15)} 100%{transform:scale(1);opacity:1} }
-.vil-big-n { font-family: 'Bangers',cursive; font-size: 2rem; letter-spacing: 2px; color: #1a1a1a; }
-.vil-tag { font-size: 0.87rem; color: #888; margin-top: 0.3rem; font-style: italic; }
-.bars { display: flex; flex-direction: column; gap: 8px; margin: 1.2rem 0 0.4rem; text-align: left; }
-.bar-row { display: flex; align-items: center; gap: 10px; }
-.bar-lbl { width: 110px; flex-shrink: 0; color: #666; font-weight: 600; font-size: 0.79rem; }
-.bar-track { flex: 1; height: 7px; background: #f0e8e8; border-radius: 10px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; }
-.bp { border: 1px solid #f0d8d8; border-radius: 16px; overflow: hidden; margin-bottom: 1rem; background: #fff; }
-.bp-sec { padding: 1rem 1.2rem; border-bottom: 1px solid #f0e8e8; }
-.bp-sec:last-child { border-bottom: none; }
-.bp-ttl { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.7rem; }
-.wp-list { display: flex; flex-direction: column; gap: 8px; }
-.wp { display: flex; align-items: flex-start; gap: 10px; font-size: 0.87rem; line-height: 1.4; }
-.wp-ic { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
-.wp-n { font-weight: 700; color: #1a1a1a; }
-.wp-d { color: #777; font-size: 0.81rem; margin-top: 1px; }
-.tag-base { display: inline-block; background: #fff0f2; color: #C0112B; border: 1px solid #f0c0c8; border-radius: 5px; font-size: 0.65rem; font-weight: 800; padding: 1px 6px; margin-left: 5px; vertical-align: middle; letter-spacing: 0.5px; text-transform: uppercase; }
-.chip { display: inline-block; background: #e8f4ff; color: #1a6db0; border-radius: 20px; padding: 4px 12px; font-size: 0.79rem; font-weight: 600; margin: 3px 3px 0 0; }
-.btn-wa { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: #25D366; color: #fff; border: none; border-radius: 12px; padding: 14px; font-family: 'Nunito',sans-serif; font-size: 1.02rem; font-weight: 800; cursor: pointer; margin-bottom: 0.7rem; transition: opacity 0.15s, transform 0.1s; }
-.btn-wa:hover { opacity: 0.9; }
-.btn-wa:active { transform: scale(0.98); }
-.wa-icon { width: 24px; height: 24px; flex-shrink: 0; }
-.btn-rst { width: 100%; background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px; font-family: 'Nunito',sans-serif; font-size: 0.9rem; font-weight: 700; color: #888; cursor: pointer; }
-.btn-rst:hover { background: #eee; }
-.sc-coral{background:#D85A30}.sc-purple{background:#7F77DD}.sc-pink{background:#C0112B}
-.sc-amber{background:#BA7517}.sc-teal{background:#1D9E75}.sc-blue{background:#378ADD}.sc-green{background:#639922}
-.sc-brown{background:#8B5E3C}.sc-gold{background:#D4A017}
-@media(max-width:480px){ .opts{grid-template-columns:1fr;} .app-title{font-size:2rem;} }
-</style>
+<!-- saved from url=(0038)https://villanos-menopausia.pages.dev/ -->
+<html lang="es-MX"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menopausia Dichosa | Descubre tu Villano</title>
+  <meta name="description" content="Descubre cuál villano de la menopausia está saboteando tu bienestar. Test gratuito, diagnóstico y Método DICHOSA.">
+  <meta property="og:title" content="¿Quién está saboteando tu menopausia?">
+  <meta property="og:description" content="Haz el test gratis y descubre tu villano principal.">
+  <style>
+    :root {
+      --rosa:#ef4f8f; --rosa2:#ff7bad; --vino:#7b1e52; --crema:#fff8ee; --verde:#34a853; --texto:#311b2e; --muted:#77566e; --card:rgba(255,255,255,.82); --shadow:0 18px 45px rgba(123,30,82,.18);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--texto);background:linear-gradient(160deg,#fff7ed 0%,#ffe4ef 45%,#fff 100%);}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 10%, rgba(239,79,143,.18), transparent 28%), radial-gradient(circle at 95% 5%, rgba(52,168,83,.12), transparent 20%), radial-gradient(circle at 45% 90%, rgba(255,123,173,.15), transparent 25%);z-index:-1}
+    .wrap{max-width:940px;margin:0 auto;padding:18px 16px 90px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin:8px 0 18px}
+    .brand{font-weight:900;letter-spacing:.3px;display:flex;gap:8px;align-items:center;color:var(--vino)}
+    .pill{background:white;border:1px solid rgba(239,79,143,.18);border-radius:999px;padding:8px 12px;font-size:12px;color:var(--muted);box-shadow:0 8px 20px rgba(0,0,0,.04)}
+    .hero{border-radius:34px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,#fff,#ffe1ec);border:1px solid rgba(255,255,255,.7);position:relative}
+    .videoBox{position:relative;background:#111;aspect-ratio:16/9;max-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    @media(min-width:760px){.videoBox{aspect-ratio:16/9;max-height:520px}}
+    video{width:100%;height:100%;object-fit:contain;display:block}
+    .overlay{position:absolute;inset:auto 0 0 0;padding:26px 22px 24px;background:linear-gradient(transparent,rgba(49,27,46,.86));color:#fff}
+    h1{font-size:clamp(31px,6vw,56px);line-height:.96;margin:10px 0 8px;letter-spacing:-1.6px}
+    .sub{font-size:clamp(16px,2.3vw,21px);opacity:.95;max-width:680px;margin:0 0 16px}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border:none;border-radius:18px;padding:15px 20px;font-weight:900;letter-spacing:.2px;box-shadow:0 15px 28px rgba(239,79,143,.32);background:linear-gradient(135deg,var(--rosa),var(--rosa2));color:white;min-height:52px}
+    .cta.green{background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 15px 28px rgba(22,163,74,.23)}
+    .cta.dark{background:linear-gradient(135deg,#7b1e52,#a8276a)}
+    .grid{display:grid;gap:16px;margin:20px 0}
+    @media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr} .grid.three{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.78);border-radius:28px;padding:22px;box-shadow:0 12px 34px rgba(123,30,82,.11)}
+    h2{font-size:clamp(25px,3.5vw,38px);line-height:1.05;margin:0 0 10px;letter-spacing:-.7px;color:var(--vino)}
+    h3{margin:0 0 8px;color:var(--vino);font-size:22px}
+    p{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 14px}
+    .links{display:grid;gap:14px}
+    .linkCard{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--texto);padding:18px;border-radius:24px;background:white;border:1px solid rgba(239,79,143,.16);box-shadow:0 10px 25px rgba(123,30,82,.08);transition:.2s transform,.2s box-shadow}
+    .linkCard:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(123,30,82,.14)}
+    .icon{width:48px;height:48px;border-radius:17px;display:grid;place-items:center;font-size:25px;background:#fff0f6;flex:0 0 auto}
+    .linkCard b{display:block;font-size:18px;margin-bottom:4px}
+    .linkCard span{display:block;color:var(--muted);font-size:14px;line-height:1.35}
+    .process{display:grid;gap:10px}
+    .step{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:18px;background:rgba(255,255,255,.62)}
+    .num{width:30px;height:30px;border-radius:50%;background:var(--rosa);color:white;display:grid;place-items:center;font-weight:900;flex:0 0 auto}
+    .profile{display:flex;gap:16px;align-items:center}
+    .profile img{width:94px;height:94px;border-radius:28px;object-fit:contain;box-shadow:0 12px 22px rgba(123,30,82,.16)}
+    .villanos{width:100%;border-radius:25px;display:block;box-shadow:0 12px 24px rgba(0,0,0,.08);border:1px solid rgba(255,255,255,.8)}
+    .mini{font-size:13px;color:var(--muted)}
+    .float{position:fixed;left:14px;right:14px;bottom:14px;z-index:10;max-width:540px;margin:auto;display:flex;gap:10px;align-items:center;justify-content:center;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);box-shadow:0 12px 40px rgba(49,27,46,.18);border-radius:24px;padding:10px}
+    .float .cta{flex:1;padding:13px 14px;border-radius:16px;font-size:14px}
+    footer{text-align:center;margin:32px 0 0;color:var(--muted);font-size:13px}
+  
+    @media(max-width:759px){
+      .hero{overflow:hidden}
+      .videoBox{
+        display:block;
+        aspect-ratio:auto;
+        max-height:none;
+        background:#111;
+        overflow:hidden;
+      }
+      .videoBox video{
+        width:100%;
+        height:auto;
+        aspect-ratio:16/9;
+        object-fit:contain;
+        background:#111;
+      }
+      .overlay{
+        position:static;
+        padding:22px 20px 24px;
+        background:linear-gradient(135deg,#7b1e52,#4f243f);
+        color:#fff;
+      }
+      .overlay h1{
+        margin-top:10px;
+        font-size:clamp(30px,9vw,42px);
+        line-height:1.02;
+      }
+      .overlay .sub{
+        font-size:16px;
+        line-height:1.45;
+      }
+      .overlay .cta{width:100%}
+      .float{left:10px;right:10px;bottom:10px}
+    }
+
+  </style>
 </head>
 <body>
-<div class="app">
-  <div class="logo-wrap">
-    <img src="../logo.jpeg" alt="Menopausia Dichosa" onerror="this.style.display='none'">
-  </div>
-  <div class="app-title">Los Villanos de la Menopausia</div>
-  <div class="app-sub">Descubre cuál te está atacando y arma tu plan de batalla</div>
+  <div class="wrap">
+    <div class="topbar"><div class="brand">🌷 MENOPAUSIA DICHOSA</div><div class="pill">Test gratuito · 2 minutos</div></div>
 
-  <div id="quiz-screen">
-    <div class="prog-bar"><div class="prog-fill" id="prog" style="width:0%"></div></div>
-    <div class="step-lbl" id="step-lbl">Pregunta 1 de 10</div>
-    <div class="q-card">
-      <div class="q-icon" id="q-icon"></div>
-      <div class="q-text" id="q-text"></div>
-      <div class="opts" id="opts"></div>
-    </div>
-    <div class="navs">
-      <button class="btn-bk" id="btn-bk" onclick="goBack()">← Atrás</button>
-      <button class="btn-nxt" id="btn-nxt" onclick="goNext()" disabled>Siguiente →</button>
-    </div>
-  </div>
-
-  <div class="res" id="res">
-    <div class="vil-reveal">
-      <span class="vil-big-e" id="res-e"></span>
-      <div class="vil-big-n" id="res-n"></div>
-      <div class="vil-tag" id="res-tag"></div>
-      <div class="bars" id="bars"></div>
-    </div>
-    <div class="bp" id="bp"></div>
-    <button class="btn-wa" onclick="openWA()">
-      <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.524 5.854L.058 23.75a.5.5 0 0 0 .609.61l5.988-1.493A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.93a9.915 9.915 0 0 1-5.056-1.382l-.36-.214-3.733.931.972-3.644-.236-.374A9.915 9.915 0 0 1 2.07 12C2.07 6.508 6.508 2.07 12 2.07S21.93 6.508 21.93 12 17.492 21.93 12 21.93z"/></svg>
-      Habla con Mony en WhatsApp
-    </button>
-    <button class="btn-rst" onclick="restart()">↺ Hacer el quiz de nuevo</button>
-  </div>
-</div>
-
-<script>
-const WA = '529982990230';
-let waMsg = '';
-
-// Suplemento base universal — aparece en todos los villanos
-const COHOSH = {i:"🌿", n:"Cimicifuga (Black Cohosh)", d:"Suplemento base universal en la menopausia: regula el equilibrio hormonal desde la raíz.", base:true};
-
-const VIL = {
-  calor: {
-    name:"El Incendiario", emoji:"🔥", tag:"Maestro de los bochornos y el calor a medianoche", hex:"#D85A30",
-    armas:[
-      COHOSH,
-      {i:"🍊", n:"C Plus Nutrilite", d:"Vitamina C de alta absorción: antioxidante esencial en la transición hormonal.", base:true},
-      {i:"💊", n:"CalMag D Nutrilite", d:"Calcio, Magnesio y Vitamina D: trío esencial para el equilibrio nervioso y óseo."}
-    ],
-    hab:["Ropa en capas","Cuarto fresco 18-20°C","Evitar picante y alcohol","Respiración 4-7-8"],
-    sup:"Cimicifuga (Black Cohosh) + C Plus + CalMag D"
-  },
-  insomnio: {
-    name:"El Insomniaco", emoji:"🌙", tag:"Experto en robarte el sueño justo cuando más lo necesitas", hex:"#7F77DD",
-    armas:[
-      COHOSH,
-      {i:"💊", n:"CalMag D Nutrilite", d:"Magnesio y Calcio relajan el sistema nervioso — el dúo anti-insomnio hormonal.", base:true},
-      {i:"🌱", n:"Rhodiola Nutrilite", d:"Adaptógeno que regula el cortisol nocturno y mejora la calidad del descanso."}
-    ],
-    hab:["Sin pantallas 1h antes","Baño tibio a las 9pm","Hora fija para dormir","Diario de gratitud"],
-    sup:"Cimicifuga (Black Cohosh) + CalMag D"
-  },
-  humor: {
-    name:"El Montaña Rusa", emoji:"🎢", tag:"De la risa al llanto en 3 segundos — sin aviso previo", hex:"#C0112B",
-    armas:[
-      COHOSH,
-      {i:"🐟", n:"Omega 3 Nutrilite", d:"Ácidos grasos esenciales para la salud cerebral y la estabilidad emocional.", base:true},
-      {i:"💊", n:"B Plus Nutrilite", d:"Complejo B completo: combustible del sistema nervioso y producción de serotonina.", base:true}
-    ],
-    hab:["Meditación 10 min/día","Diario emocional","Ejercicio aeróbico 3x/semana","Conexión social activa"],
-    sup:"Cimicifuga (Black Cohosh) + Omega 3 + B Plus"
-  },
-  energia: {
-    name:"El Vampiro de Energía", emoji:"🧛", tag:"Te chupa las fuerzas desde el amanecer, sin pedir permiso", hex:"#BA7517",
-    armas:[
-      COHOSH,
-      {i:"🥛", n:"Proteína Nutrilite", d:"Base para mantener masa muscular y energía estable durante el día.", base:true},
-      {i:"🌱", n:"Rhodiola Nutrilite", d:"Adaptógeno que combate la fatiga crónica y mejora la resistencia al estrés.", base:true}
-    ],
-    hab:["Descanso activo","Siestas de 20 min","Proteína en cada comida","Luz solar por la mañana"],
-    sup:"Cimicifuga (Black Cohosh) + Proteína + Rhodiola"
-  },
-  piel: {
-    name:"El Ladrón de Colágeno", emoji:"🕷️", tag:"Roba tu hidratación y firmeza mientras duermes tranquila", hex:"#1D9E75",
-    armas:[
-      COHOSH,
-      {i:"💊", n:"HSN Colágeno + C Plus", d:"C Plus potencia la absorción del colágeno — juntos son el escudo anti-envejecimiento.", base:true},
-      {i:"🧴", n:"Sistema Anticaída Satinique", d:"Shampoo + acondicionador + tratamiento: protocolo completo contra la caída hormonal.", base:true}
-    ],
-    hab:["FPS 50 diario","Colágeno en ayunas","C Plus oral diario","Satinique 3 veces/semana"],
-    sup:"Cimicifuga (Black Cohosh) + HSN Colágeno + C Plus + Satinique"
-  },
-  libido: {
-    name:"El Apagafuegos", emoji:"🧯", tag:"Se encarga de que el romance se sienta como tarea del hogar", hex:"#378ADD",
-    armas:[
-      COHOSH,
-      {i:"🌱", n:"Rhodiola Nutrilite", d:"Adaptógeno que restaura la vitalidad y el bienestar emocional — base del deseo.", base:true},
-      {i:"💊", n:"CalMag D + Omega 3", d:"Magnesio para relajación + Omega 3 para función hormonal y sensibilidad."}
-    ],
-    hab:["Comunicación abierta","Rituales de conexión diaria","Ejercicio pélvico","Gestión del estrés"],
-    sup:"Cimicifuga (Black Cohosh) + Rhodiola + CalMag D"
-  },
-  peso: {
-    name:"El Acumulador", emoji:"🐘", tag:"Convierte cada antojo en grasa abdominal con eficiencia brutal", hex:"#639922",
-    armas:[
-      COHOSH,
-      {i:"🥛", n:"Proteína Nutrilite", d:"Aumenta la saciedad, preserva músculo y activa el metabolismo hormonal.", base:true},
-      {i:"🍊", n:"C Plus + B Plus", d:"C Plus apoya la síntesis de carnitina (quema grasa); B Plus activa el metabolismo energético.", base:true}
-    ],
-    hab:["Ayuno intermitente adaptado","Fuerza muscular 3x/semana","Sin azúcar procesada","Proteína en cada comida"],
-    sup:"Cimicifuga (Black Cohosh) + Proteína + C Plus + B Plus"
-  },
-  memoria: {
-    name:"La Niebla Mental", emoji:"🌫️", tag:"Hace que olvides palabras, citas, llaves y qué querías hacer", hex:"#BA7517",
-    armas:[
-      COHOSH,
-      {i:"🐟", n:"Omega 3 Nutrilite", d:"DHA esencial para la función cognitiva — el suplemento base del cerebro femenino.", base:true},
-      {i:"💊", n:"B Plus + Rhodiola", d:"B Plus activa neurotransmisores; Rhodiola reduce el cortisol que nubla la mente.", base:true}
-    ],
-    hab:["Aprender algo nuevo cada día","Meditación mindfulness","Dormir 7-8h sin falta","Agenda y notas sin culpa"],
-    sup:"Cimicifuga (Black Cohosh) + Omega 3 + B Plus + Rhodiola"
-  },
-  oxidada: {
-    name:"La Oxidada", emoji:"🦴", tag:"Te levanta con las articulaciones rígidas y las rodillas truenan al subir escaleras", hex:"#8B5E3C",
-    armas:[
-      COHOSH,
-      {i:"💊", n:"CalMag D Nutrilite", d:"Calcio, Magnesio y Vitamina D: fortalecen el cartílago y ayudan a controlar la inflamación articular.", base:true},
-      {i:"🐟", n:"Omega 3 Nutrilite", d:"Ácidos grasos que reducen la inflamación articular y protegen el cartílago.", base:true}
-    ],
-    hab:["Movimiento suave diario (caminar, estirar)","Evitar sedentarismo prolongado","Cuidar tu peso","Calor local en las mañanas","Yoga matutino 10-15 min"],
-    sup:"Cimicifuga (Black Cohosh) + CalMag D + Omega 3"
-  },
-  histaminica: {
-    name:"La Histamínica", emoji:"🐝", tag:"La menos conocida y la que más confusión genera — se ve como alergia, pero es hormonal", hex:"#D4A017",
-    armas:[
-      COHOSH,
-      {i:"🍊", n:"C Plus Nutrilite", d:"Antioxidante que apoya la regulación natural de la histamina en el cuerpo.", base:true},
-      {i:"🌱", n:"Rhodiola Nutrilite", d:"Adaptógeno que baja el estrés real, uno de los detonantes que empeora la reactividad a histamina."}
-    ],
-    hab:["Reducir alimentos altos en histamina (vino, quesos añejos, embutidos)","Antioxidantes diarios","Bajar el estrés real","Dormir bien"],
-    sup:"Cimicifuga (Black Cohosh) + C Plus + Rhodiola"
-  }
-};
-
-const Qs = [
-  { icon:"🔥", text:"¿Con qué frecuencia tienes bochornos o calor repentino?",
-    opts:[{e:"😰",t:"Todo el tiempo, varias veces al día",v:{calor:3}},{e:"🌡️",t:"Seguido, especialmente de noche",v:{calor:2}},{e:"😅",t:"A veces, de vez en cuando",v:{calor:1}},{e:"😌",t:"Rara vez o casi nunca",v:{}}] },
-  { icon:"🌙", text:"¿Cómo es tu sueño últimamente?",
-    opts:[{e:"😵",t:"Fatal, me desvelo cada noche",v:{insomnio:3}},{e:"😴",t:"Me cuesta dormirme o me despierto seguido",v:{insomnio:2}},{e:"🛌",t:"Regular, no siempre descanso bien",v:{insomnio:1}},{e:"💤",t:"Duermo bastante bien",v:{}}] },
-  { icon:"🎢", text:"¿Cómo están tus cambios de humor?",
-    opts:[{e:"😭",t:"Lloro, me enojo o angustio sin razón",v:{humor:3}},{e:"😤",t:"Me irrito más fácil de lo normal",v:{humor:2}},{e:"😶",t:"Algo diferente pero no tanto",v:{humor:1}},{e:"😊",t:"Estoy emocionalmente estable",v:{}}] },
-  { icon:"🧛", text:"¿Cómo es tu nivel de energía durante el día?",
-    opts:[{e:"🪫",t:"Agotada todo el tiempo, no me repongo",v:{energia:3}},{e:"😩",t:"Llego cansada a media tarde",v:{energia:2}},{e:"🔋",t:"Altibajos, a veces bien a veces no",v:{energia:1}},{e:"⚡",t:"Tengo buena energía en general",v:{}}] },
-  { icon:"🕷️", text:"¿Notas cambios en tu piel o cabello?",
-    opts:[{e:"😟",t:"Piel seca, flácida y cabello con caída notable",v:{piel:3}},{e:"🪞",t:"Menos brillo y firmeza que antes",v:{piel:2}},{e:"💅",t:"Algunos cambios leves",v:{piel:1}},{e:"✨",t:"Mi piel y cabello se ven bien",v:{}}] },
-  { icon:"🧯", text:"¿Cómo está tu libido o interés en la intimidad?",
-    opts:[{e:"❄️",t:"Casi nulo, me siento desconectada",v:{libido:3}},{e:"😐",t:"Muy disminuido respecto a antes",v:{libido:2}},{e:"🙂",t:"Un poco menos que antes",v:{libido:1}},{e:"💕",t:"Bien, sin cambios notables",v:{}}] },
-  { icon:"🐘", text:"¿Has notado cambios en tu peso o grasa abdominal?",
-    opts:[{e:"😩",t:"Subo de peso aunque como igual o menos",v:{peso:3}},{e:"🤔",t:"La grasa se acumula más en la barriga",v:{peso:2}},{e:"🙂",t:"Algo de cambio pero no mucho",v:{peso:1}},{e:"👍",t:"Mi peso está estable",v:{}}] },
-  { icon:"🌫️", text:"¿Cómo está tu memoria y concentración?",
-    opts:[{e:"😵",t:"Olvido palabras, citas y dónde dejé las cosas",v:{memoria:3}},{e:"🤯",t:"Me cuesta concentrarme como antes",v:{memoria:2}},{e:"🙁",t:"Algunos olvidos pero no tan seguido",v:{memoria:1}},{e:"🧠",t:"Estoy aguda y concentrada",v:{}}] },
-  { icon:"🦴", text:"¿Cómo sientes tus articulaciones al levantarte o subir escaleras?",
-    opts:[{e:"😖",t:"Rígidas y adoloridas, me truenan las rodillas",v:{oxidada:3}},{e:"🥴",t:"Tiesas al inicio, mejoran al moverme",v:{oxidada:2}},{e:"🙂",t:"Algo de rigidez ocasional",v:{oxidada:1}},{e:"💪",t:"Se sienten bien, sin molestias",v:{}}] },
-  { icon:"🐝", text:"¿Te da dolor de cabeza, ronchas o congestión después de vino, quesos añejos o embutidos?",
-    opts:[{e:"😣",t:"Sí, seguido y de forma notoria",v:{histaminica:3}},{e:"🤨",t:"A veces, con ciertos alimentos",v:{histaminica:2}},{e:"🙂",t:"Rara vez",v:{histaminica:1}},{e:"😌",t:"Nunca me pasa",v:{}}] },
-  { icon:"💊", text:"¿Actualmente tomas suplementos Nutrilite?",
-    opts:[{e:"✅",t:"Sí, con constancia",v:{calor:-1,insomnio:-1}},{e:"🤔",t:"Algo, pero no soy constante",v:{}},{e:"🌿",t:"Solo naturales o caseros",v:{energia:1}},{e:"❌",t:"No tomo nada actualmente",v:{energia:1,piel:1,memoria:1}}] },
-  { icon:"💪", text:"¿Qué es lo que más quieres recuperar ahora mismo?",
-    opts:[{e:"😴",t:"Dormir bien y descansar de verdad",v:{insomnio:2}},{e:"🔥",t:"Eliminar los bochornos",v:{calor:2}},{e:"😊",t:"Estar tranquila, feliz y de buen humor",v:{humor:2}},{e:"⚡",t:"Energía, peso y verme bien",v:{energia:1,peso:1,piel:1}},{e:"🦴",t:"Moverme sin dolor articular",v:{oxidada:2}},{e:"🐝",t:"Dejar de reaccionar a ciertos alimentos",v:{histaminica:2}}] }
-];
-
-let cur=0, ans=[], scores={calor:0,insomnio:0,humor:0,energia:0,piel:0,libido:0,peso:0,memoria:0,oxidada:0,histaminica:0};
-
-function render(){
-  const q=Qs[cur];
-  document.getElementById('prog').style.width=Math.round((cur/Qs.length)*100)+'%';
-  document.getElementById('step-lbl').textContent=`Pregunta ${cur+1} de ${Qs.length}`;
-  document.getElementById('q-icon').textContent=q.icon;
-  document.getElementById('q-text').textContent=q.text;
-  const g=document.getElementById('opts'); g.innerHTML='';
-  q.opts.forEach((o,i)=>{
-    const b=document.createElement('button');
-    b.className='opt'+(ans[cur]===i?' sel':'');
-    b.innerHTML=`<span class="opt-e">${o.e}</span>${o.t}`;
-    b.onclick=()=>pick(i);
-    g.appendChild(b);
-  });
-  document.getElementById('btn-bk').style.display=cur===0?'none':'block';
-  document.getElementById('btn-nxt').disabled=ans[cur]===undefined;
-  document.getElementById('btn-nxt').textContent=cur===Qs.length-1?'Ver mi villano →':'Siguiente →';
-}
-
-function pick(i){
-  ans[cur]=i;
-  document.querySelectorAll('.opt').forEach((b,idx)=>b.classList.toggle('sel',idx===i));
-  document.getElementById('btn-nxt').disabled=false;
-}
-
-function goNext(){ if(ans[cur]===undefined)return; cur++; cur>=Qs.length?showRes():render(); }
-function goBack(){ if(cur>0){cur--;render();} }
-
-function showRes(){
-  scores={calor:0,insomnio:0,humor:0,energia:0,piel:0,libido:0,peso:0,memoria:0,oxidada:0,histaminica:0};
-  ans.forEach((a,qi)=>{
-    Object.entries(Qs[qi].opts[a].v).forEach(([k,val])=>{ if(scores[k]!==undefined) scores[k]=Math.max(0,scores[k]+val); });
-  });
-  const top=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
-  const vil=VIL[top];
-  const maxS=Math.max(...Object.values(scores))||1;
-
-  document.getElementById('quiz-screen').style.display='none';
-  document.getElementById('res').style.display='block';
-  document.getElementById('res-e').textContent=vil.emoji;
-  document.getElementById('res-n').textContent=vil.name;
-  document.getElementById('res-tag').textContent=vil.tag;
-
-  const ord=[
-    {k:'calor',l:'Bochornos',c:'coral'},{k:'insomnio',l:'Sueño',c:'purple'},
-    {k:'humor',l:'Humor',c:'pink'},{k:'energia',l:'Energía',c:'amber'},
-    {k:'piel',l:'Piel',c:'teal'},{k:'libido',l:'Libido',c:'blue'},
-    {k:'peso',l:'Peso',c:'green'},{k:'memoria',l:'Memoria',c:'amber'},
-    {k:'oxidada',l:'Articulaciones',c:'brown'},{k:'histaminica',l:'Histamina',c:'gold'}
-  ];
-  const bEl=document.getElementById('bars'); bEl.innerHTML='';
-  ord.forEach(v=>{
-    const pct=Math.round((scores[v.k]/(maxS+1))*100);
-    const r=document.createElement('div'); r.className='bar-row';
-    r.innerHTML=`<span class="bar-lbl">${VIL[v.k].emoji} ${v.l}</span><div class="bar-track"><div class="bar-fill sc-${v.c}" style="width:0%" id="bf-${v.k}"></div></div>`;
-    bEl.appendChild(r);
-    setTimeout(()=>{ document.getElementById('bf-'+v.k).style.width=pct+'%'; },250);
-  });
-
-  const armasHTML = vil.armas.map(a=>`
-    <div class="wp">
-      <span class="wp-ic">${a.i}</span>
-      <div>
-        <div class="wp-n">${a.n}${a.base?' <span class="tag-base">base</span>':''}</div>
-        <div class="wp-d">${a.d}</div>
+    <section class="hero">
+      <div class="videoBox">
+        <video src="video.mp4" autoplay="" muted="" loop="" playsinline="" controls="" preload="auto"></video>
+        <div class="overlay">
+          <div class="pill" style="display:inline-block;background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.28)">Cuartel de los Villanos</div>
+          <h1>¿Quién está saboteando tu bienestar?</h1>
+          <p class="sub">Descubre cuál villano de la menopausia está afectando más tu sueño, energía, peso, ánimo o claridad mental.</p>
+          <a class="cta" href="/test/" target="_blank" rel="noopener">🦹‍♀️ Descubrir mi villano</a>
+        </div>
       </div>
-    </div>`).join('');
+    </section>
 
-  document.getElementById('bp').innerHTML=`
-    <div class="bp-sec">
-      <div class="bp-ttl" style="color:${vil.hex}">⚔️ Tus armas secretas</div>
-      <div class="wp-list">${armasHTML}</div>
-    </div>
-    <div class="bp-sec">
-      <div class="bp-ttl" style="color:${vil.hex}">🏆 Hábitos que lo derrotan</div>
-      <div>${vil.hab.map(h=>`<span class="chip">${h}</span>`).join('')}</div>
-    </div>
-    <div class="bp-sec">
-      <div class="bp-ttl" style="color:${vil.hex}">🌟 Tu protocolo prioritario</div>
-      <div class="wp"><span class="wp-ic">💊</span><div>
-        <div class="wp-n">${vil.sup}</div>
-        <div class="wp-d">🌷 Envíame tu resultado por WhatsApp y recibirás una orientación personalizada sin costo.</div>
-      </div></div>
-    </div>`;
+    <section class="grid three">
+      <div class="card"><h3>🔥 Curiosidad</h3><p>Identifica el síntoma que más está dominando tu etapa.</p></div>
+      <div class="card"><h3>🌷 Claridad</h3><p>Comprende qué puede estar detrás de lo que sientes.</p></div>
+      <div class="card"><h3>💬 Acción</h3><p>Da el siguiente paso con una orientación personalizada.</p></div>
+    </section>
 
-  waMsg=encodeURIComponent(`¡Hola Mony! Hice el quiz de Los Villanos de la Menopausia y mi villano principal es "${vil.name}" ${vil.emoji}. Mi protocolo recomendado es: ${vil.sup}. ¿Me ayudas a empezar? 🌹`);
-}
+    <section class="grid two">
+      <div class="card">
+        <h2>Empieza aquí</h2>
+        <p>Este recorrido está diseñado para que no abras mil links como cajón de tía organizada “a medias”. Primero identifica tu villano y luego profundiza.</p>
+        <div class="process">
+          <div class="step"><div class="num">1</div><div><b>Haz el test</b><br><span class="mini">Resultado inmediato.</span></div></div>
+          <div class="step"><div class="num">2</div><div><b>Realiza el diagnóstico</b><br><span class="mini">Conoce mejor tu situación actual.</span></div></div>
+          <div class="step"><div class="num">3</div><div><b>Conoce el Método DICHOSA</b><br><span class="mini">Tu ruta para recuperar bienestar.</span></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <img class="villanos" src="villanos.jpeg" alt="Villanos de la Menopausia">
+      </div>
+    </section>
 
-function openWA(){ window.open(`https://wa.me/${WA}?text=${waMsg}`,'_blank'); }
+    <section class="card">
+      <h2>Tus accesos</h2>
+      <p>Un solo lugar para todo el material de Menopausia Dichosa.</p>
+      <div class="links">
+        <a class="linkCard" href="/test/" target="_blank" rel="noopener"><div class="icon">🦹</div><div><b>Test de los Villanos</b><span>Descubre tu villano principal en 2 minutos.</span></div></a>
+        <a class="linkCard" href="https://tally.so/r/Ekb6BL" target="_blank" rel="noopener"><div class="icon">📋</div><div><b>Diagnóstico Integral</b><span>Profundiza en lo que está pasando con tu cuerpo.</span></div></a>
+        <a class="linkCard" href="https://claude.ai/public/artifacts/b00bb0b4-e5c6-48b9-af11-943552a9baf3" target="_blank" rel="noopener"><div class="icon">🌷</div><div><b>Método DICHOSA</b><span>Conoce la ruta completa para acompañar tu proceso.</span></div></a>
+        <a class="linkCard" href="https://www.instagram.com/monycabralmx?igsh=MTBrNnA5YzVsaGNsbQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener"><div class="icon">📸</div><div><b>Instagram @monycabralmx</b><span>Tips, lives y contenido diario de Menopausia Dichosa.</span></div></a>
+        <a class="linkCard" href="https://wa.me/529982990230?text=Hola%20Mony%20%F0%9F%8C%B7%20vi%20la%20p%C3%A1gina%20de%20Menopausia%20Dichosa%20y%20quiero%20descubrir%20mi%20villano." target="_blank" rel="noopener"><div class="icon">💬</div><div><b>Hablar por WhatsApp</b><span>Escríbeme para interpretar tu resultado.</span></div></a>
+      </div>
+    </section>
 
-function restart(){
-  cur=0; ans=[];
-  scores={calor:0,insomnio:0,humor:0,energia:0,piel:0,libido:0,peso:0,memoria:0,oxidada:0,histaminica:0};
-  document.getElementById('res').style.display='none';
-  document.getElementById('quiz-screen').style.display='block';
-  render();
-}
+    <section class="grid two">
+      <div class="card profile">
+        <img src="mony.jpeg" alt="Mónica Cabral">
+        <div><h3>Mónica Cabral</h3><p>Fundadora de Menopausia Dichosa. Acompaño a mujeres a comprender su etapa con educación, hábitos y bienestar integral.</p></div>
+      </div>
+      <div class="card">
+        <h2>No estás sola.</h2>
+        <p>La menopausia no es tu enemiga. Lo que necesitas es identificar qué está saboteando tu bienestar y comenzar con pasos claros.</p>
+        <a class="cta green" href="https://wa.me/529982990230?text=Hola%20Mony%20%F0%9F%8C%B7%20vi%20la%20p%C3%A1gina%20de%20Menopausia%20Dichosa%20y%20quiero%20descubrir%20mi%20villano." target="_blank" rel="noopener">💬 Quiero orientación</a>
+      </div>
+    </section>
+    <footer>Menopausia Dichosa 🌷 · Información educativa. No sustituye atención médica profesional.</footer>
+  </div>
+  <div class="float"><a class="cta" href="/test/" target="_blank" rel="noopener">Hacer test</a><a class="cta green" href="https://wa.me/529982990230?text=Hola%20Mony%20%F0%9F%8C%B7%20vi%20la%20p%C3%A1gina%20de%20Menopausia%20Dichosa%20y%20quiero%20descubrir%20mi%20villano." target="_blank" rel="noopener">WhatsApp</a></div>
 
-render();
-</script>
-</body>
-</html>
+
+</body></html>
