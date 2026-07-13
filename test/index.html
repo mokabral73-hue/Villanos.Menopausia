@@ -71,7 +71,7 @@ body { font-family: 'Nunito', sans-serif; background: #fff9f9; min-height: 100vh
     <img src="../logo.jpeg" alt="Menopausia Dichosa" onerror="this.style.display='none'">
   </div>
   <div class="app-title">Los Villanos de la Menopausia</div>
-  <div class="app-sub">Descubre cuál te está atacando y arma tu plan de batalla</div>
+  <div class="app-sub">Descubre cuál es el villano que más está afectando tu bienestar y da el primer paso para sentirte mejor.</div>
 
   <div id="quiz-screen">
     <div class="prog-bar"><div class="prog-fill" id="prog" style="width:0%"></div></div>
@@ -97,7 +97,7 @@ body { font-family: 'Nunito', sans-serif; background: #fff9f9; min-height: 100vh
     <div class="bp" id="bp"></div>
     <button class="btn-wa" onclick="openWA()">
       <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.524 5.854L.058 23.75a.5.5 0 0 0 .609.61l5.988-1.493A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.93a9.915 9.915 0 0 1-5.056-1.382l-.36-.214-3.733.931.972-3.644-.236-.374A9.915 9.915 0 0 1 2.07 12C2.07 6.508 6.508 2.07 12 2.07S21.93 6.508 21.93 12 17.492 21.93 12 21.93z"/></svg>
-      Agenda conmigo, Mony 🌹 – Menopausia Dichosa
+      🌷 Quiero saber más sobre mi resultado
     </button>
     <button class="btn-rst" onclick="restart()">↺ Hacer el quiz de nuevo</button>
   </div>
@@ -285,7 +285,9 @@ function showRes(){
   ans.forEach((a,qi)=>{
     Object.entries(Qs[qi].opts[a].v).forEach(([k,val])=>{ if(scores[k]!==undefined) scores[k]=Math.max(0,scores[k]+val); });
   });
-  const top=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
+  const maxScore=Math.max(...Object.values(scores));
+  const tied=Object.keys(scores).filter(k=>scores[k]===maxScore);
+  const top=tied[Math.floor(Math.random()*tied.length)];
   const vil=VIL[top];
   const maxS=Math.max(...Object.values(scores))||1;
 
@@ -326,9 +328,19 @@ function showRes(){
         <div class="wp-n">Personalizado según tu caso</div>
         <div class="wp-d">🌷 Este es tu primer paso. Los otros dos dependen de tu caso específico — agenda tu sesión de diagnóstico de 20 min conmigo, sin costo.</div>
       </div></div>
-    </div>`;
+    
+    <div class="bp-sec">
+      <div class="bp-ttl" style="color:${vil.hex}">✨ Siguiente paso</div>
+      <div class="wp">
+        <span class="wp-ic">🌷</span>
+        <div>
+          <div class="wp-d">Este test es una guía inicial. Cada mujer vive la menopausia de manera diferente. En tu sesión revisaremos tu historia, tus síntomas y construiremos un plan personalizado para ti.</div>
+        </div>
+      </div>
+    </div>
+</div>`;
 
-  waMsg=encodeURIComponent(`¡Hola Mony! Hice el quiz de Los Villanos de la Menopausia y mi villano principal es "${vil.name}" ${vil.emoji}. Quiero saber cómo revertirlo — ¿me ayudas a agendar mi sesión de diagnóstico? 🌹`);
+  waMsg=encodeURIComponent(`Hola Mony 🌷 Acabo de terminar el Test de los Villanos de la Menopausia. Mi villano principal fue "${vil.name}" ${vil.emoji}. Quiero agendar mi sesión personalizada para entender mejor mi resultado y conocer los siguientes pasos.`);
 }
 
 function openWA(){ window.open(`https://wa.me/${WA}?text=${waMsg}`,'_blank'); }
