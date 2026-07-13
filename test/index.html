@@ -97,7 +97,7 @@ body { font-family: 'Nunito', sans-serif; background: #fff9f9; min-height: 100vh
     <div class="bp" id="bp"></div>
     <button class="btn-wa" onclick="openWA()">
       <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.524 5.854L.058 23.75a.5.5 0 0 0 .609.61l5.988-1.493A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.93a9.915 9.915 0 0 1-5.056-1.382l-.36-.214-3.733.931.972-3.644-.236-.374A9.915 9.915 0 0 1 2.07 12C2.07 6.508 6.508 2.07 12 2.07S21.93 6.508 21.93 12 17.492 21.93 12 21.93z"/></svg>
-      Habla con Mony en WhatsApp
+      Agenda conmigo, Mony 🌹 – Menopausia Dichosa
     </button>
     <button class="btn-rst" onclick="restart()">↺ Hacer el quiz de nuevo</button>
   </div>
@@ -113,6 +113,7 @@ const COHOSH = {i:"🌿", n:"Cimicifuga (Black Cohosh)", d:"Suplemento base univ
 const VIL = {
   calor: {
     name:"El Incendiario", emoji:"🔥", tag:"Maestro de los bochornos y el calor a medianoche", hex:"#D85A30",
+    causa:"Tu termostato interno se desregula por la caída de estrógeno, disparando los bochornos y el calor súbito.",
     armas:[
       COHOSH,
       {i:"🍊", n:"C Plus Nutrilite", d:"Vitamina C de alta absorción: antioxidante esencial en la transición hormonal.", base:true},
@@ -123,6 +124,7 @@ const VIL = {
   },
   insomnio: {
     name:"El Insomniaco", emoji:"🌙", tag:"Experto en robarte el sueño justo cuando más lo necesitas", hex:"#7F77DD",
+    causa:"El descenso hormonal afecta la producción de melatonina y el sistema nervioso, robándote el sueño profundo.",
     armas:[
       COHOSH,
       {i:"💊", n:"CalMag D Nutrilite", d:"Magnesio y Calcio relajan el sistema nervioso — el dúo anti-insomnio hormonal.", base:true},
@@ -133,6 +135,7 @@ const VIL = {
   },
   humor: {
     name:"El Montaña Rusa", emoji:"🎢", tag:"De la risa al llanto en 3 segundos — sin aviso previo", hex:"#C0112B",
+    causa:"Los cambios hormonales alteran la serotonina, provocando estos vaivenes emocionales repentinos.",
     armas:[
       COHOSH,
       {i:"🐟", n:"Omega 3 Nutrilite", d:"Ácidos grasos esenciales para la salud cerebral y la estabilidad emocional.", base:true},
@@ -143,6 +146,7 @@ const VIL = {
   },
   energia: {
     name:"El Vampiro de Energía", emoji:"🧛", tag:"Te chupa las fuerzas desde el amanecer, sin pedir permiso", hex:"#BA7517",
+    causa:"Tu cuerpo gasta más energía regulando el desajuste hormonal, dejándote agotada desde temprano.",
     armas:[
       COHOSH,
       {i:"🥛", n:"Proteína Nutrilite", d:"Base para mantener masa muscular y energía estable durante el día.", base:true},
@@ -153,6 +157,7 @@ const VIL = {
   },
   piel: {
     name:"El Ladrón de Colágeno", emoji:"🕷️", tag:"Roba tu hidratación y firmeza mientras duermes tranquila", hex:"#1D9E75",
+    causa:"La caída de colágeno natural por el descenso de estrógeno afecta la firmeza de tu piel y la fuerza de tu cabello.",
     armas:[
       COHOSH,
       {i:"💊", n:"HSN Colágeno + C Plus", d:"C Plus potencia la absorción del colágeno — juntos son el escudo anti-envejecimiento.", base:true},
@@ -163,6 +168,7 @@ const VIL = {
   },
   libido: {
     name:"El Apagafuegos", emoji:"🧯", tag:"Se encarga de que el romance se sienta como tarea del hogar", hex:"#378ADD",
+    causa:"El desequilibrio hormonal reduce la sensibilidad y el deseo — no es psicológico, es fisiológico.",
     armas:[
       COHOSH,
       {i:"🌱", n:"Rhodiola Nutrilite", d:"Adaptógeno que restaura la vitalidad y el bienestar emocional — base del deseo.", base:true},
@@ -173,6 +179,7 @@ const VIL = {
   },
   peso: {
     name:"El Acumulador", emoji:"🐘", tag:"Convierte cada antojo en grasa abdominal con eficiencia brutal", hex:"#639922",
+    causa:"El metabolismo se hace más lento y el cuerpo tiende a almacenar grasa abdominal por el cambio hormonal.",
     armas:[
       COHOSH,
       {i:"🥛", n:"Proteína Nutrilite", d:"Aumenta la saciedad, preserva músculo y activa el metabolismo hormonal.", base:true},
@@ -183,6 +190,7 @@ const VIL = {
   },
   memoria: {
     name:"La Niebla Mental", emoji:"🌫️", tag:"Hace que olvides palabras, citas, llaves y qué querías hacer", hex:"#BA7517",
+    causa:"La fluctuación de estrógeno afecta directamente la claridad mental y la memoria a corto plazo.",
     armas:[
       COHOSH,
       {i:"🐟", n:"Omega 3 Nutrilite", d:"DHA esencial para la función cognitiva — el suplemento base del cerebro femenino.", base:true},
@@ -193,6 +201,7 @@ const VIL = {
   },
   oxidada: {
     name:"La Oxidada", emoji:"🦴", tag:"Te levanta con las articulaciones rígidas y las rodillas truenan al subir escaleras", hex:"#8B5E3C",
+    causa:"La pérdida de estrógeno acelera el desgaste articular y baja la capacidad de tu cuerpo para repararse.",
     armas:[
       COHOSH,
       {i:"💊", n:"CalMag D Nutrilite", d:"Calcio, Magnesio y Vitamina D: fortalecen el cartílago y ayudan a controlar la inflamación articular.", base:true},
@@ -203,6 +212,7 @@ const VIL = {
   },
   histaminica: {
     name:"La Histamínica", emoji:"🐝", tag:"La menos conocida y la que más confusión genera — se ve como alergia, pero es hormonal", hex:"#D4A017",
+    causa:"Tus hormonas alteran la forma en que tu cuerpo procesa la histamina, generando reacciones que parecen alergia pero no lo son.",
     armas:[
       COHOSH,
       {i:"🍊", n:"C Plus Nutrilite", d:"Antioxidante que apoya la regulación natural de la histamina en el cuerpo.", base:true},
@@ -301,19 +311,10 @@ function showRes(){
     setTimeout(()=>{ document.getElementById('bf-'+v.k).style.width=pct+'%'; },250);
   });
 
-  const armasHTML = vil.armas.map(a=>`
-    <div class="wp">
-      <span class="wp-ic">${a.i}</span>
-      <div>
-        <div class="wp-n">${a.n}${a.base?' <span class="tag-base">base</span>':''}</div>
-        <div class="wp-d">${a.d}</div>
-      </div>
-    </div>`).join('');
-
   document.getElementById('bp').innerHTML=`
     <div class="bp-sec">
-      <div class="bp-ttl" style="color:${vil.hex}">⚔️ Tus armas secretas</div>
-      <div class="wp-list">${armasHTML}</div>
+      <div class="bp-ttl" style="color:${vil.hex}">🔍 Qué está pasando en tu cuerpo</div>
+      <div class="wp"><span class="wp-ic">💡</span><div><div class="wp-d">${vil.causa}</div></div></div>
     </div>
     <div class="bp-sec">
       <div class="bp-ttl" style="color:${vil.hex}">🏆 Hábitos que lo derrotan</div>
@@ -321,13 +322,13 @@ function showRes(){
     </div>
     <div class="bp-sec">
       <div class="bp-ttl" style="color:${vil.hex}">🌟 Tu protocolo prioritario</div>
-      <div class="wp"><span class="wp-ic">💊</span><div>
-        <div class="wp-n">${vil.sup}</div>
-        <div class="wp-d">🌷 Envíame tu resultado por WhatsApp y recibirás una orientación personalizada sin costo.</div>
+      <div class="wp"><span class="wp-ic">🔒</span><div>
+        <div class="wp-n">Personalizado según tu caso</div>
+        <div class="wp-d">🌷 Este es tu primer paso. Los otros dos dependen de tu caso específico — agenda tu sesión de diagnóstico de 20 min conmigo, sin costo.</div>
       </div></div>
     </div>`;
 
-  waMsg=encodeURIComponent(`¡Hola Mony! Hice el quiz de Los Villanos de la Menopausia y mi villano principal es "${vil.name}" ${vil.emoji}. Mi protocolo recomendado es: ${vil.sup}. ¿Me ayudas a empezar? 🌹`);
+  waMsg=encodeURIComponent(`¡Hola Mony! Hice el quiz de Los Villanos de la Menopausia y mi villano principal es "${vil.name}" ${vil.emoji}. Quiero saber cómo revertirlo — ¿me ayudas a agendar mi sesión de diagnóstico? 🌹`);
 }
 
 function openWA(){ window.open(`https://wa.me/${WA}?text=${waMsg}`,'_blank'); }
