@@ -16,7 +16,6 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CM44LN7BDB"></script>
   <script>
@@ -45,6 +44,9 @@
     .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border:none;border-radius:18px;padding:15px 20px;font-weight:900;letter-spacing:.2px;box-shadow:0 15px 28px rgba(239,79,143,.32);background:linear-gradient(135deg,var(--rosa),var(--rosa2));color:white;min-height:52px}
     .cta.green{background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 15px 28px rgba(22,163,74,.23)}
     .cta.dark{background:linear-gradient(135deg,#7b1e52,#a8276a)}
+    .hero-primary{font-size:21px;padding:19px 34px;min-width:330px;border:3px solid rgba(255,255,255,.95);border-radius:22px;box-shadow:0 18px 38px rgba(239,79,143,.48),0 0 0 6px rgba(255,255,255,.12);text-transform:uppercase;letter-spacing:.5px;animation:heroPulse 2.2s ease-in-out infinite}
+    .hero-primary:hover{transform:translateY(-2px) scale(1.02)}
+    @keyframes heroPulse{0%,100%{box-shadow:0 18px 38px rgba(239,79,143,.42),0 0 0 6px rgba(255,255,255,.10)}50%{box-shadow:0 22px 46px rgba(239,79,143,.62),0 0 0 10px rgba(255,255,255,.16)}}
     .grid{display:grid;gap:16px;margin:20px 0}
     @media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr} .grid.three{grid-template-columns:repeat(3,1fr)}}
     .card{background:var(--card);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.78);border-radius:28px;padding:22px;box-shadow:0 12px 34px rgba(123,30,82,.11)}
@@ -70,39 +72,15 @@
   
     @media(max-width:759px){
       .hero{overflow:hidden}
-      .videoBox{
-        display:block;
-        aspect-ratio:auto;
-        max-height:none;
-        background:#111;
-        overflow:hidden;
-      }
-      .videoBox video{
-        width:100%;
-        height:auto;
-        aspect-ratio:16/9;
-        object-fit:contain;
-        background:#111;
-      }
-      .overlay{
-        position:static;
-        padding:22px 20px 24px;
-        background:linear-gradient(135deg,#7b1e52,#4f243f);
-        color:#fff;
-      }
-      .overlay h1{
-        margin-top:10px;
-        font-size:clamp(30px,9vw,42px);
-        line-height:1.02;
-      }
-      .overlay .sub{
-        font-size:16px;
-        line-height:1.45;
-      }
+      .videoBox{display:block;aspect-ratio:auto;max-height:none;background:#111;overflow:hidden}
+      .videoBox video{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#111}
+      .overlay{position:static;padding:22px 20px 24px;background:linear-gradient(135deg,#7b1e52,#4f243f);color:#fff}
+      .overlay h1{margin-top:10px;font-size:clamp(30px,9vw,42px);line-height:1.02}
+      .overlay .sub{font-size:16px;line-height:1.45}
       .overlay .cta{width:100%}
+      .hero-primary{min-width:0;font-size:19px;padding:18px 18px}
       .float{left:10px;right:10px;bottom:10px}
     }
-
   </style>
 </head>
 <body>
@@ -116,7 +94,7 @@
           <div class="pill" style="display:inline-block;background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.28)">Cuartel de los Villanos</div>
           <h1>¿Quién está saboteando tu bienestar?</h1>
           <p class="sub">Descubre cuál de los 12 Villanos de la Menopausia está afectando más tu sueño, energía, peso, ánimo, claridad mental, articulaciones, digestión o presión.</p>
-          <a class="cta" href="/test/" onclick="trackEvent('landing_test_click')">🦹‍♀️ Descubrir mi villano</a>
+          <a class="cta hero-primary" href="/test/" onclick="trackEvent('landing_test_click')">🦹‍♀️ DESCUBRE TUS VILLANOS</a>
         </div>
       </div>
     </section>
@@ -165,8 +143,6 @@
     <footer>Menopausia Dichosa 🌷 · Información educativa. No sustituye atención médica profesional.</footer>
   </div>
   <div class="float"><a class="cta" href="/test/" onclick="trackEvent('landing_test_click')">Hacer test</a><a class="cta green" href="https://wa.me/529982990230?text=Hola%20Mony%20%F0%9F%8C%B7%20hice%20el%20test%20de%20Los%20Villanos%20y%20quiero%20agendar%20mi%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20personalizada." target="_blank" rel="noopener">Agenda conmigo</a></div>
-
-
 
 <script>
 function trackEvent(name){
