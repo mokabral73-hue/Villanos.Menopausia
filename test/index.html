@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Los Villanos de la Menopausia – Menopausia Dichosa</title>
   <meta name="description" content="Haz el test gratuito y descubre cuál de los 12 Villanos de la Menopausia está afectando más tu bienestar en solo 2 minutos.">
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://villanos-menopausia.pages.dev/test/">
   <meta property="og:title" content="¿Cuál es tu Villano de la Menopausia?">
@@ -18,7 +17,6 @@
   <meta name="twitter:title" content="¿Cuál es tu Villano de la Menopausia?">
   <meta name="twitter:description" content="Descúbrelo en solo 2 minutos. Test gratuito y confidencial.">
   <meta name="twitter:image" content="https://villanos-menopausia.pages.dev/villanos.jpeg?v=20260825test">
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CM44LN7BDB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,81 +24,42 @@
     gtag('js', new Date());
     gtag('config', 'G-CM44LN7BDB');
   </script>
-
-  <style>
-    html,body{margin:0;padding:0;background:#fff9f9;min-height:100%;}
-    #testFrame{display:block;width:100%;border:0;min-height:100vh;background:#fff9f9;}
-  </style>
+  <style>html,body{margin:0;padding:0;background:#fff9f9;min-height:100%;}#testFrame{display:block;width:100%;border:0;min-height:100vh;background:#fff9f9;}</style>
 </head>
 <body>
-  <iframe id="testFrame" src="./test:index.html?v=20260825" title="Test de los Villanos de la Menopausia" scrolling="no"></iframe>
-
+  <iframe id="testFrame" src="./test:index.html?v=20260825b" title="Test de los Villanos de la Menopausia" scrolling="no"></iframe>
   <script>
-    const frame = document.getElementById('testFrame');
-
-    function resizeFrame(){
-      try{
-        const d = frame.contentDocument;
-        if(!d) return;
-        const h = Math.max(
-          d.documentElement ? d.documentElement.scrollHeight : 0,
-          d.body ? d.body.scrollHeight : 0,
-          window.innerHeight
-        );
-        frame.style.height = h + 'px';
-      }catch(e){}
-    }
-
+    const frame=document.getElementById('testFrame');
+    function resizeFrame(){try{const d=frame.contentDocument;if(!d)return;const h=Math.max(d.documentElement?d.documentElement.scrollHeight:0,d.body?d.body.scrollHeight:0,window.innerHeight);frame.style.height=h+'px';}catch(e){}}
     function installTracking(){
       try{
-        const w = frame.contentWindow;
-        const d = frame.contentDocument;
-        if(!w || !d || w.__gaHooksInstalled) return;
-        w.__gaHooksInstalled = true;
-
-        let started = false;
-        d.addEventListener('click', function(e){
-          if(!started && e.target.closest && e.target.closest('.opt')){
-            started = true;
-            gtag('event','test_start',{page_section:'test'});
+        const w=frame.contentWindow,d=frame.contentDocument;if(!w||!d||w.__gaHooksInstalled)return;w.__gaHooksInstalled=true;
+        let started=false,completed=false;
+        d.addEventListener('click',function(e){
+          const target=e.target;
+          if(!started&&target.closest&&target.closest('.opt')){started=true;gtag('event','test_start',{page_section:'test'});}
+          const waButton=target.closest&&target.closest('.btn-wa');
+          if(waButton){
+            let villain='';try{villain=d.getElementById('res-n')?.textContent?.trim()||'';}catch(err){}
+            gtag('event','whatsapp_result_click',{villain:villain,page_section:'test',transport_type:'beacon'});
           }
-        }, true);
-
-        if(typeof w.showRes === 'function'){
-          const originalShowRes = w.showRes;
-          w.showRes = function(){
-            const out = originalShowRes.apply(this, arguments);
-            let villain = '';
-            try{ villain = d.getElementById('res-n')?.textContent?.trim() || ''; }catch(e){}
-            gtag('event','test_complete',{villain:villain,page_section:'test'});
-            setTimeout(resizeFrame,100);
-            return out;
-          };
+        },true);
+        const resultEl=d.getElementById('res');
+        if(resultEl){
+          const resultObserver=new MutationObserver(function(){
+            if(!completed&&resultEl.style.display==='block'){
+              completed=true;let villain='';try{villain=d.getElementById('res-n')?.textContent?.trim()||'';}catch(err){}
+              gtag('event','test_complete',{villain:villain,page_section:'test'});
+            }
+            resizeFrame();
+          });
+          resultObserver.observe(resultEl,{attributes:true,attributeFilter:['style']});
         }
-
-        if(typeof w.openWA === 'function'){
-          const originalOpenWA = w.openWA;
-          w.openWA = function(){
-            let villain = '';
-            try{ villain = d.getElementById('res-n')?.textContent?.trim() || ''; }catch(e){}
-            gtag('event','whatsapp_result_click',{villain:villain,page_section:'test'});
-            return originalOpenWA.apply(this, arguments);
-          };
-        }
-
-        const observer = new MutationObserver(resizeFrame);
-        observer.observe(d.documentElement,{subtree:true,childList:true,attributes:true});
-        resizeFrame();
+        const observer=new MutationObserver(resizeFrame);observer.observe(d.documentElement,{subtree:true,childList:true,attributes:true});resizeFrame();
       }catch(e){}
     }
-
-    frame.addEventListener('load', function(){
-      installTracking();
-      resizeFrame();
-      setTimeout(resizeFrame,300);
-      setTimeout(resizeFrame,1000);
-    });
-    window.addEventListener('resize', resizeFrame);
+    frame.addEventListener('load',function(){installTracking();resizeFrame();setTimeout(resizeFrame,300);setTimeout(resizeFrame,1000);});
+    window.addEventListener('resize',resizeFrame);
   </script>
 </body>
 </html>
