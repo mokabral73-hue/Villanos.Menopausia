@@ -1,3 +1,5 @@
 # Villanos Menopausia
 
-Landing de Menopausia Dichosa.
+Sitio oficial del ecosistema Menopausia Dichosa®.
+
+Dominio: https://menopausiadichosa.com
