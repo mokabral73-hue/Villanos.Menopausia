@@ -11,7 +11,7 @@ Este repositorio es la fuente principal del dominio `menopausiadichosa.com`.
 | `/ficha/` | Acceso estable a la ficha | Puente temporal |
 | `/metodo/` | Acceso estable al Método D.I.C.H.O.S.A.® | Puente temporal |
 | `/embajadoras/` | Acceso estable a Embajadoras | Puente temporal |
-| `/guia/` | Guía para vencer a tus Villanos | Pendiente de integrar |
+| `/guia/` | Guía para vencer a tus Villanos | Activa |
 | `/recursos/` | Nutrientes y enlaces de compra | Pendiente |
 | `/agenda/` | Agenda y orientación | Pendiente |
 
@@ -22,4 +22,3 @@ Este repositorio es la fuente principal del dominio `menopausiadichosa.com`.
 3. Los archivos `index(2).html`, `index_corregido.html`, `index_movil_corregido.html` y `landing-v2.html` se conservan temporalmente como archivo histórico; no deben configurarse como entrada de Cloudflare.
 4. Las nuevas páginas deben vivir en carpetas con un `index.html`.
 5. Toda página compartible debe usar URLs de `menopausiadichosa.com` en sus etiquetas Open Graph.
-
