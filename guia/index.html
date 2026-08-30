@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía para vencer a tus Villanos | Menopausia Dichosa</title>
+<meta name="description" content="Guía educativa Menopausia Dichosa para conocer y enfrentar a tus Villanos.">
+<style>
+:root{--rosa:#d10b49;--verde:#245a2b;--crema:#fff9f3;--rosa2:#fff1f3;--texto:#263126}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--crema);color:var(--texto)}
+.top{background:#fffaf4;padding:18px 6vw;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid #f1e6dc;position:sticky;top:0;z-index:5}
+.brand{font-size:22px;font-weight:800;color:var(--rosa)} .brand small{display:block;font-size:12px;font-weight:700}
+.shareTop,.btn{border:0;border-radius:28px;background:var(--rosa);color:white;font-weight:800;padding:14px 22px;cursor:pointer;text-decoration:none;display:inline-block}
+.selectorbar{background:var(--verde);color:#fff;padding:20px 6vw;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;font-weight:800;position:sticky;top:72px;z-index:4}
+.selectorbar select{min-width:310px;max-width:90vw;padding:14px 18px;border-radius:14px;border:0;font-size:18px;font-weight:700}
+.hero{min-height:560px;background:linear-gradient(90deg,#fff0f2,#fffaf4);padding:68px 7vw;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:55px}
+.kicker{color:var(--rosa);font-weight:900;letter-spacing:1px} h1{font-size:clamp(52px,7vw,92px);line-height:.98;color:var(--rosa);margin:20px 0} h2{color:var(--verde);font-size:34px;margin:10px 0}
+.lead{font-size:21px;line-height:1.6;max-width:760px} .heroimg{width:min(390px,92%);max-height:430px;object-fit:contain;justify-self:center;align-self:center;filter:drop-shadow(0 10px 14px #00000012)}
+.fallback{display:none;font-size:160px;text-align:center}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px} .outline{background:white;color:var(--rosa);border:2px solid var(--rosa)}
+.wrap{max-width:1320px;margin:auto;padding:48px 5vw} .card{background:white;border:1px solid #f2dfe4;border-radius:22px;padding:34px;margin:22px 0;box-shadow:0 8px 25px #00000008}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .eyebrow{color:var(--rosa);font-size:12px;font-weight:900;letter-spacing:1px}
+ul,ol{line-height:1.8;font-size:17px} .notice{font-size:14px;background:#fff7f8;border-left:5px solid var(--rosa);padding:14px 16px;border-radius:10px}
+.villainGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px} .vbtn{background:#fff;border:1px solid #ead7dc;border-radius:14px;padding:13px;cursor:pointer;font-weight:800} .vbtn.active{background:var(--verde);color:white}
+footer{text-align:center;padding:36px 20px;background:#fffaf4;margin-top:40px} 
+@media(max-width:760px){.top{padding:12px 16px}.shareTop{padding:10px 14px;font-size:13px}.selectorbar{top:62px;padding:14px 12px}.selectorbar select{min-width:0;width:100%}.hero{grid-template-columns:1fr;padding:42px 22px}.heroimg{max-height:300px}.grid{grid-template-columns:1fr} h1{font-size:52px}}
+
+.black-section{padding:54px 5vw;background:#fffaf4}
+.black-card{max-width:1060px;margin:auto;background:#fff7f9;border:1px solid #f0dce2;border-radius:24px;padding:34px;display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center;box-shadow:0 10px 30px #00000008}
+.black-copy h2{font-size:38px;line-height:1.05;margin:12px 0 18px;color:var(--verde)}
+.black-copy p{font-size:17px;line-height:1.6}
+.black-copy .safety{font-size:12px;color:#555;margin:18px 0}
+.black-image-wrap{background:#fff;border-radius:18px;padding:12px;text-align:center}
+.black-image-wrap img{display:block;width:100%;max-height:680px;object-fit:contain;border-radius:12px}
+.black-reminder{border:1px solid #efcbd5;border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:13px;font-weight:800;color:var(--verde)}
+
+.support-section{padding:46px 5vw;background:#fffaf4}
+.support-wrap{max-width:1060px;margin:auto}
+.support-wrap h2{font-size:38px;color:var(--verde);margin:10px 0}
+.support-intro{font-size:17px;line-height:1.55;max-width:850px}
+.support-image-card{background:#fff;border:1px solid #f0dce2;border-radius:24px;padding:18px;box-shadow:0 10px 30px #00000008;margin-top:22px}
+.support-image-card img{display:block;width:100%;height:auto;border-radius:14px}
+.support-notice{margin-top:18px}
+
+@media(max-width:760px){
+  .black-section,.support-section{padding:30px 16px}
+  .black-card{grid-template-columns:1fr;padding:20px}
+  .black-copy h2,.support-wrap h2{font-size:31px}
+  .black-image-wrap img{max-height:none}
+}
+
+
+/* Orden visual v6 */
+.black-section{padding-bottom:64px}
+.support-section{
+  padding:0 5vw 58px;
+  background:linear-gradient(180deg,#f7eee9 0,#fffaf4 150px);
+}
+.section-divider{
+  max-width:1060px;margin:0 auto 30px;
+  transform:translateY(-1px);
+  text-align:center;
+  padding:38px 24px 26px;
+  border-top:5px solid var(--verde);
+}
+.section-divider span{
+  display:inline-block;font-size:12px;font-weight:900;letter-spacing:1.5px;
+  color:#cf0b48;margin-bottom:8px
+}
+.section-divider h2{
+  margin:0 0 8px!important;font-size:34px!important;color:var(--verde)
+}
+.section-divider p{margin:0 auto;max-width:650px;font-size:16px;color:#555}
+.villain-plan-head{
+  display:flex;justify-content:space-between;gap:24px;align-items:end;
+  margin-bottom:18px
+}
+.villain-plan-head .support-intro{margin-bottom:0}
+.top-link{
+  flex:0 0 auto;background:#fff;border:1px solid #d91050;color:#d91050;
+  border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer
+}
+.support-image-card{
+  max-width:900px;margin:22px auto 0!important;padding:14px!important
+}
+.support-image-card img{max-height:none}
+.support-notice{
+  max-width:900px;margin:16px auto 0!important;font-size:12px
+}
+.extra-details{
+  max-width:900px;margin:0 auto 55px;background:#fff;border:1px solid #eadde0;
+  border-radius:16px;overflow:hidden
+}
+.extra-details summary{
+  cursor:pointer;padding:17px 20px;font-weight:800;color:var(--verde);
+  text-align:center;list-style:none
+}
+.extra-details summary::-webkit-details-marker{display:none}
+.extra-details summary:after{content:"  +";color:#d91050}
+.extra-details[open] summary:after{content:"  −"}
+.extra-inner{border-top:1px solid #eee}
+.extra-inner .wrap{padding-top:25px;padding-bottom:25px}
+
+@media(max-width:760px){
+ .section-divider{padding:30px 10px 20px}
+ .section-divider h2{font-size:28px!important}
+ .villain-plan-head{display:block}
+ .top-link{margin-top:15px}
+ .support-image-card{padding:7px!important;border-radius:14px}
+}
+
+
+/* v7 orientación adicional */
+.extra-details{
+  max-width:1060px;margin:18px auto 70px;background:#fff;border:1px solid #eadde0;
+  border-radius:22px;overflow:hidden;box-shadow:0 10px 30px #00000008
+}
+.extra-details summary{
+  cursor:pointer;padding:22px 24px;font-weight:900;color:var(--verde);
+  text-align:center;list-style:none;font-size:18px;background:linear-gradient(90deg,#fff7f9,#fffaf4)
+}
+.extra-details summary::-webkit-details-marker{display:none}
+.extra-details summary:after{content:"  +";color:#d91050;font-size:24px}
+.extra-details[open] summary:after{content:"  −"}
+.extra-inner{border-top:1px solid #eee}
+.deep-section{padding:34px}
+.deep-head{display:grid;grid-template-columns:1fr 170px;gap:24px;align-items:center;margin-bottom:26px}
+.deep-head h2{font-size:34px;color:var(--verde);margin:8px 0}
+.deep-head p{font-size:16px;color:#555;max-width:720px}
+.deep-villain{background:#fff7f9;border:1px solid #f1d9df;border-radius:20px;padding:10px;text-align:center}
+.deep-villain img{width:100%;height:150px;object-fit:contain}
+.deep-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.deep-card{background:#fffaf4;border:1px solid #eee0e3;border-radius:18px;padding:22px}
+.deep-card h3{margin:8px 0 12px;color:var(--verde);font-size:21px}
+.deep-card ul{margin:0;padding-left:20px;font-size:15px;line-height:1.7}
+.deep-icon{font-size:28px}
+.deep-card.warning{background:#fff8f3}
+.deep-card.next{background:linear-gradient(135deg,#fff3f6,#fff)}
+.deep-card.next p{font-size:16px;line-height:1.6}
+.deep-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.deep-actions .btn{padding:12px 16px;font-size:14px}
+.deep-note{margin-top:18px;padding:12px 14px;border-radius:12px;background:#f7f3f1;color:#666;font-size:12px;text-align:center}
+@media(max-width:760px){
+  .extra-details{margin:15px 16px 45px}
+  .deep-section{padding:20px}
+  .deep-head{grid-template-columns:1fr}
+  .deep-villain{max-width:180px;margin:auto}
+  .deep-grid{grid-template-columns:1fr}
+  .deep-actions{display:grid}
+  .deep-actions .btn{text-align:center}
+}
+
+
+/* v8: villanos locales y visibles */
+.hero{grid-template-columns:1.05fr .95fr}
+.heroimg{
+  width:min(420px,95%)!important;
+  max-height:440px!important;
+  object-fit:contain!important;
+  display:block!important;
+  justify-self:center!important;
+}
+.deep-villain img{
+  display:block!important;
+  width:100%!important;
+  height:160px!important;
+  object-fit:contain!important;
+}
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .heroimg{max-height:320px!important}
+}
+
+
+/* v11 · Villanos oficiales sin fondo */
+.heroimg{
+  background:transparent!important;
+  filter:none!important;
+  width:min(400px,92%)!important;
+  max-height:445px!important;
+  object-fit:contain!important;
+}
+.deep-villain{
+  background:transparent!important;
+  border:0!important;
+}
+.deep-villain img{
+  background:transparent!important;
+  object-fit:contain!important;
+}
+
+
+/* v12 · Lectura más cómoda + nutrientes en Profundiza */
+body{font-size:18px!important;line-height:1.65!important;}
+p,li{font-size:18px!important;line-height:1.65!important;}
+.eyebrow{font-size:15px!important;letter-spacing:.07em!important;}
+h1{font-size:clamp(36px,6vw,58px)!important;line-height:1.08!important;}
+h2{font-size:clamp(28px,4.5vw,38px)!important;line-height:1.18!important;}
+h3{font-size:23px!important;line-height:1.25!important;}
+select,button,.btn,summary{font-size:18px!important;}
+summary{padding:21px 22px!important;}
+#deepIntro{font-size:19px!important;line-height:1.6!important;}
+.deep-grid{gap:18px!important;}
+.deep-card{padding:26px!important;}
+.deep-card h3{font-size:24px!important;margin:8px 0 14px!important;}
+.deep-card p,.deep-card li{font-size:19px!important;line-height:1.62!important;}
+.deep-card ul{padding-left:24px!important;}
+.deep-card li{margin-bottom:9px!important;}
+.deep-icon{font-size:31px!important;}
+.nutrient-intro{margin:0 0 12px!important;}
+.nutrient-note{margin-top:16px!important;padding-top:14px!important;border-top:1px solid #eadfe1;font-size:16px!important;line-height:1.5!important;}
+.deep-note,footer small{font-size:15px!important;line-height:1.5!important;}
+@media (max-width:700px){
+  body{font-size:18px!important;}
+  p,li{font-size:18px!important;}
+  .deep-card{padding:22px!important;}
+  .deep-card p,.deep-card li{font-size:18px!important;}
+  .btn{font-size:18px!important;padding:15px 18px!important;}
+  select{font-size:18px!important;min-height:52px!important;}
+}
+
+
+/* v13 · Selector neutro + Black Cohosh más cerca del bloque superior */
+.hero{
+  padding-bottom:34px!important;
+  margin-bottom:0!important;
+}
+.hero-actions{
+  margin-bottom:0!important;
+}
+#plan, .plan, .black-cohosh-section, .blackcohosh, .start-section{
+  margin-top:24px!important;
+}
+section:first-of-type + section{
+  margin-top:24px!important;
+}
+main > section{
+  scroll-margin-top:120px;
+}
+@media (max-width:700px){
+  .hero{padding-bottom:26px!important;}
+  #plan, .plan, .black-cohosh-section, .blackcohosh, .start-section{
+    margin-top:18px!important;
+  }
+}
+
+
+/* v14 · Ajuste REAL del espacio entre botones y Black Cohosh */
+.hero{
+  min-height:auto!important;
+  padding:38px 7vw 24px!important;
+  margin:0!important;
+  gap:34px!important;
+}
+.actions{
+  margin-top:22px!important;
+  margin-bottom:0!important;
+}
+.black-section{
+  padding:14px 5vw 44px!important;
+  margin:0!important;
+}
+.black-card{
+  margin-top:0!important;
+}
+@media (max-width:700px){
+  .hero{
+    min-height:auto!important;
+    padding:28px 18px 18px!important;
+    gap:18px!important;
+  }
+  .black-section{
+    padding:10px 16px 30px!important;
+  }
+}
+
+
+/* v15 · Secciones más juntas + CTA Profundiza más visible */
+
+/* Acercar todavía más el bloque del Villano a Black Cohosh */
+.hero{
+  min-height:auto!important;
+  padding-bottom:8px!important;
+  margin-bottom:0!important;
+}
+.actions{
+  margin-top:18px!important;
+  margin-bottom:0!important;
+}
+.black-section{
+  padding-top:0!important;
+  margin-top:0!important;
+}
+.black-card{
+  margin-top:0!important;
+}
+
+/* Quitar aire extra entre bloques consecutivos */
+.hero + .black-section,
+.hero + section{
+  margin-top:0!important;
+}
+
+/* Hacer "Profundiza en tu estrategia" mucho más llamativo */
+details{
+  margin-top:28px!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+details > summary{
+  position:relative;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:12px!important;
+  min-height:76px!important;
+  padding:20px 28px!important;
+  border:2px solid #e30046!important;
+  border-radius:20px!important;
+  background:linear-gradient(135deg,#fff7fa 0%,#ffe8f0 100%)!important;
+  color:#1f5f32!important;
+  font-size:25px!important;
+  font-weight:900!important;
+  line-height:1.2!important;
+  text-align:center!important;
+  cursor:pointer!important;
+  box-shadow:0 10px 26px rgba(179,32,82,.14)!important;
+  list-style:none!important;
+}
+details > summary::-webkit-details-marker{display:none!important;}
+details > summary::before{
+  content:"✨";
+  font-size:25px;
+}
+details > summary::after{
+  content:"+";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#e30046;
+  color:#fff;
+  font-size:27px;
+  font-weight:800;
+  line-height:1;
+  flex:0 0 auto;
+}
+details[open] > summary::after{
+  content:"−";
+}
+details > summary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 13px 30px rgba(179,32,82,.19)!important;
+}
+details[open] > summary{
+  margin-bottom:22px!important;
+}
+
+@media (max-width:700px){
+  .hero{
+    padding-bottom:4px!important;
+  }
+  .black-section{
+    padding-top:0!important;
+  }
+  details{
+    margin-top:22px!important;
+  }
+  details > summary{
+    min-height:70px!important;
+    padding:18px 16px!important;
+    font-size:21px!important;
+    border-radius:17px!important;
+    gap:9px!important;
+  }
+  details > summary::before{
+    font-size:21px;
+  }
+  details > summary::after{
+    width:31px;
+    height:31px;
+    font-size:24px;
+  }
+}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">🌷 <span>Menopausia<br>Dichosa</span></div>
+  <button class="shareTop" onclick="shareGuide()">Compartir esta guía</button>
+</header>
+
+<div class="selectorbar">
+  <span>Elige el villano que vas a enviar</span>
+  <select id="selector" onchange="selectVillain(this.value)"></select>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="kicker" id="kicker">TU RESULTADO · VILLANO 1 DE 12</div>
+    <h1 id="name">El Incendiario</h1>
+    <h2 id="tag">Maestro de los bochornos y el calor a medianoche</h2>
+    <p class="lead">No llegó para quedarse con el control. Conocerlo te ayuda a dar pasos concretos, observar tu cuerpo y pedir apoyo cuando lo necesites.</p>
+    <div class="actions">
+      <button class="btn" onclick="shareGuide()">Enviar esta guía</button>
+      <a class="btn outline" href="#plan">Ver mi plan</a>
+    </div>
+  </div>
+  <div>
+    <img id="heroimg" class="heroimg" src="/guia/assets/villanos/incendiario.png" alt="El Incendiario">
+    <div id="fallback" class="fallback">🦹</div>
+  </div>
+</section>
+
+<section class="black-section">
+  <div class="black-card">
+    <div class="black-copy">
+      <div class="eyebrow">PASO 1 · EMPIEZA AQUÍ</div>
+      <h2>Tu punto de partida: Black Cohosh</h2>
+      <p><strong>Black Cohosh Nutrilite</strong>, con cimicífuga y soya, forma parte del enfoque educativo de esta guía para acompañar esta etapa.</p>
+      <p>Después, el apoyo se personaliza según el Villano que seleccionaste, tomando como base las fichas aprobadas de Menopausia Dichosa.</p>
+      <p class="safety">Este producto no es un medicamento. Revisa la etiqueta y, si tomas medicamentos o tienes una condición de salud, consulta con un profesional de salud antes de usar suplementos.</p>
+      <a class="btn" href="https://mx.ashare.me/3MNWRJ2T" target="_blank" rel="noopener">Inicia aquí con Black Cohosh →</a>
+    </div>
+    <div class="black-image-wrap">
+      <div class="black-reminder">🌷 Tu aliada natural para vencer a tus Villanos</div>
+      <img src="assets/black-cohosh-villanos.png" alt="Infografía Black Cohosh y los Villanos de la Menopausia">
+    </div>
+  </div>
+</section>
+
+<section class="support-section" id="plan">
+  <div class="section-divider">
+    <span>AHORA SÍ: TU PLAN PERSONALIZADO</span>
+    <h2>Vence al Villano que seleccionaste</h2>
+    <p>Primero conociste la base. Ahora revisa únicamente el apoyo correspondiente a tu Villano.</p>
+  </div>
+  <div class="support-wrap">
+    <div class="villain-plan-head">
+      <div>
+        <div class="eyebrow">TU VILLANO · TU PLAN</div>
+        <h2 id="supportTitle">Apoyo para tu Villano</h2>
+        <p class="support-intro">Aquí tienes en una sola ficha qué pasa en tu cuerpo, la suplementación sugerida y los hábitos que te ayudan.</p>
+      </div>
+      <button class="top-link" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">Cambiar Villano ↑</button>
+    </div>
+    <div class="support-image-card">
+      <img id="supportImage" src="" alt="Ficha de apoyo del Villano seleccionado">
+    </div>
+    <div class="notice support-notice">
+      Orientación educativa. No sustituye valoración, diagnóstico ni tratamiento médico. Los suplementos no son medicamentos.
+    </div>
+  </div>
+</section>
+
+
+<details class="extra-details" id="orientacion">
+  <summary>Profundiza en tu estrategia</summary>
+  <div class="extra-inner">
+    <section class="deep-section">
+      <div class="deep-head">
+        <div>
+          <div class="eyebrow">ORIENTACIÓN ADICIONAL</div>
+          <h2 id="deepTitle">Profundiza en tu estrategia</h2>
+          <p id="deepIntro">Una segunda capa de orientación para observar mejor tus señales y decidir tu siguiente paso.</p>
+        </div>
+        <div class="deep-villain">
+          <img id="deepVillainImg" src="" alt="">
+        </div>
+      </div>
+
+      <div class="deep-grid">
+        <article class="deep-card">
+          <div class="deep-icon">🔎</div>
+          <h3>Observa tus señales</h3>
+          <ul id="deepObserve"></ul>
+        </article>
+        <article class="deep-card">
+          <div class="deep-icon">📊</div>
+          <h3>Mide tu avance 7 días</h3>
+          <ul id="deepMeasure"></ul>
+        </article>
+        <article class="deep-card nutrients">
+          <div class="deep-icon">🌿</div>
+          <h3>Nutrientes y apoyos recomendados</h3>
+          <p class="nutrient-intro">Opciones incluidas en la guía de este Villano para valorar de acuerdo con tus necesidades.</p>
+          <ul id="deepNutrients"></ul>
+          <p class="nutrient-note">Los suplementos no son medicamentos. Si usas medicamentos, tienes un diagnóstico o dudas sobre compatibilidad, consulta con un profesional de salud.</p>
+        </article>
+        <article class="deep-card warning">
+          <div class="deep-icon">🚩</div>
+          <h3>Cuándo pedir valoración</h3>
+          <ul id="deepAlerts"></ul>
+        </article>
+        <article class="deep-card next">
+          <div class="deep-icon">🌷</div>
+          <h3>Tu siguiente paso</h3>
+          <p id="deepNext"></p>
+          <div class="deep-actions">
+            <a class="btn" href="/alianzas/">Descubrir mi Alianza</a>
+            <a class="btn outline" id="whatsOrientacion" href="#">Quiero orientación personalizada</a>
+          </div>
+        </article>
+      </div>
+      <div class="deep-note">Contenido educativo. No sustituye valoración, diagnóstico ni tratamiento médico.</div>
+    </section>
+  </div>
+</details>
+
+
+<footer>🌷 <strong>Menopausia Dichosa®</strong><br>Conocerlos es el primer paso para vencerlos.<br><small>Contenido educativo. No sustituye valoración, diagnóstico ni tratamiento médico. Los suplementos no son medicamentos.</small></footer>
+
+<script>
+const V=[{"slug": "incendiario", "n": 1, "name": "El Incendiario", "symptom": "Bochornos y calor", "tag": "Maestro de los bochornos y el calor a medianoche", "habits": ["Usa ropa ligera y en capas", "Mantén fresco el dormitorio", "Identifica picante, alcohol y otros disparadores", "Practica respiración lenta cuando comience el calor"], "supp": ["Cimicífuga (Black Cohosh)", "C Plus Nutrilite", "Cal Mag D Nutrilite"], "img": "/guia/assets/villanos/incendiario.png"}, {"slug": "insomniaco", "n": 2, "name": "El Insomniaco", "symptom": "Sueño interrumpido", "tag": "Experto en robarte el sueño justo cuando más lo necesitas", "habits": ["Mantén una hora regular para dormir", "Reduce pantallas antes de acostarte", "Mantén la habitación fresca y oscura", "Registra qué interrumpe tu sueño"], "supp": ["Cimicífuga (Black Cohosh)", "Cal Mag D Nutrilite"], "img": "/guia/assets/villanos/insomniaco.png"}, {"slug": "montana-rusa", "n": 3, "name": "La Montaña Rusa", "symptom": "Cambios de ánimo", "tag": "De la risa al llanto sin pedir permiso", "habits": ["Haz pausas breves durante el día", "Prioriza sueño y comidas regulares", "Muévete al menos unos minutos cada día", "Registra cambios de ánimo y posibles disparadores"], "supp": ["Cimicífuga (Black Cohosh)", "Omega 3", "B Plus"], "img": "/guia/assets/villanos/montana-rusa.png"}, {"slug": "vampiro-energia", "n": 4, "name": "El Vampiro de Energía", "symptom": "Cansancio persistente", "tag": "Te chupa las fuerzas desde el amanecer", "habits": ["Revisa la calidad de tu sueño", "Incluye proteína suficiente en tus comidas", "Hidrátate durante el día", "Alterna actividad con pausas de recuperación"], "supp": ["Cimicífuga (Black Cohosh)", "Proteína", "Rhodiola"], "img": "/guia/assets/villanos/vampiro-energia.png"}, {"slug": "ladron-colageno", "n": 5, "name": "El Ladrón de Colágeno", "symptom": "Piel, cabello y firmeza", "tag": "Roba hidratación y firmeza mientras duermes tranquila", "habits": ["Prioriza proteína y vitamina C en la alimentación", "Protege tu piel del sol", "Mantén hidratación suficiente", "Incluye fuerza o resistencia de forma progresiva"], "supp": ["Cimicífuga (Black Cohosh)", "HSN Colágeno", "C Plus", "Satinique"], "img": "/guia/assets/villanos/ladron-colageno.png"}, {"slug": "apagafuegos", "n": 6, "name": "El Apagafuegos", "symptom": "Deseo y conexión íntima", "tag": "Cuando el deseo y la conexión parecen apagarse", "habits": ["Habla de los cambios sin culpa", "Cuida descanso y manejo de estrés", "Prioriza comodidad e hidratación íntima cuando sea necesario", "Consulta si hay dolor, sangrado o molestias persistentes"], "supp": ["Cimicífuga (Black Cohosh)", "Rhodiola", "Cal Mag D"], "img": "/guia/assets/villanos/apagafuegos.png"}, {"slug": "acumulador", "n": 7, "name": "El Acumulador", "symptom": "Grasa abdominal", "tag": "El villano que se instala alrededor de la cintura", "habits": ["Incluye proteína y fibra en tus comidas", "Reduce picoteo automático y bebidas azucaradas", "Añade caminata y fuerza progresiva", "Observa sueño, estrés y hambre"], "supp": ["Cimicífuga (Black Cohosh)", "Proteína", "C Plus", "B Plus"], "img": "/guia/assets/villanos/acumulador.png"}, {"slug": "niebla-mental", "n": 8, "name": "La Niebla Mental", "symptom": "Memoria y concentración", "tag": "Hace que olvides palabras, citas, llaves y qué ibas a hacer", "habits": ["Haz una tarea a la vez", "Usa listas y recordatorios", "Prioriza sueño y movimiento", "Mantén hidratación y comidas regulares"], "supp": ["Cimicífuga (Black Cohosh)", "Omega 3", "Rhodiola"], "img": "/guia/assets/villanos/niebla-mental.png"}, {"slug": "oxidada", "n": 9, "name": "La Oxidada", "symptom": "Rigidez y articulaciones", "tag": "Rigidez y articulaciones que reclaman atención", "habits": ["Muévete de forma suave todos los días", "Incluye fuerza progresiva", "Haz pausas si pasas mucho tiempo sentada", "Consulta dolor intenso, inflamación marcada o persistente"], "supp": ["Cimicífuga (Black Cohosh)", "Omega 3", "Cal Mag D"], "img": "/guia/assets/villanos/oxidada.png"}, {"slug": "histaminica", "n": 10, "name": "La Histamínica", "symptom": "Reactividad tipo alergia", "tag": "Alergias, inflamación, retención y más", "habits": ["Lleva un registro de alimentos y síntomas", "Evita eliminar grupos completos sin orientación", "Cuida sueño y estrés", "Consulta si hay urticaria intensa, dificultad respiratoria o reacciones importantes"], "supp": ["Cimicífuga (Black Cohosh)", "Omega 3", "All Plant Protein"], "img": "/guia/assets/villanos/histaminica.png"}, {"slug": "silencioso", "n": 11, "name": "El Silencioso", "symptom": "Presión arterial", "tag": "El que puede avanzar sin hacer mucho ruido", "habits": ["Mide tu presión con técnica correcta", "Reduce exceso de sodio", "Muévete de forma regular", "Sigue cualquier tratamiento indicado por tu médico"], "supp": ["Cimicífuga (Black Cohosh)", "CalMag D Nutrilite", "Zinc Nutrilite", "Ajo Concentrado Nutrilite", "Concentrado de Frutas y Vegetales Nutrilite", "Omega 3 Nutrilite"], "img": "/guia/assets/villanos/silencioso.png"}, {"slug": "inflado", "n": 12, "name": "El Inflado", "symptom": "Digestión e hinchazón", "tag": "Cuando la digestión y la hinchazón se vuelven protagonistas", "habits": ["Come más despacio", "Observa qué alimentos te inflaman", "Mantén hidratación y fibra de forma gradual", "Consulta cambios persistentes, dolor o pérdida de peso no buscada"], "supp": ["Lecitina E", "Probiótico", "Fibra en polvo con prebiótico", "Concentrado de Frutas y Vegetales", "Omega 3"], "img": "/guia/assets/villanos/inflado.png"}];
+const SUPPORT={"incendiario": "assets/incendiario-apoyo.png", "insomniaco": "assets/insomniaco-apoyo.png", "inflado": "assets/inflado-apoyo.png", "montana-rusa": "assets/montana-rusa-apoyo.png", "vampiro-energia": "assets/vampiro-energia-apoyo.png", "ladron-colageno": "assets/ladron-colageno-apoyo.png", "apagafuegos": "assets/apagafuegos-apoyo.png", "histaminica": "assets/histaminica-apoyo.png", "silencioso": "assets/silencioso-apoyo.png", "oxidada": "assets/oxidada-apoyo.png", "acumulador": "assets/acumulador-apoyo.png", "niebla-mental": "assets/niebla-mental-apoyo.png"};
+const EXTRA={"incendiario": {"observe": ["Frecuencia e intensidad de los bochornos", "Si aparecen de día, de noche o ambos", "Qué los dispara: calor, estrés, picante, alcohol", "Cómo afectan tu sueño"], "measure": ["Bochornos al día", "Intensidad 1–10", "Despertares nocturnos", "Calidad de sueño 1–10"], "alerts": ["Bochornos con desmayo, dolor de pecho o falta de aire", "Sangrado vaginal inesperado", "Síntomas nuevos intensos o persistentes"], "next": "Si el calor y el sueño están apareciendo juntos, revisa si hay una Alianza de Villanos actuando."}, "insomniaco": {"observe": ["Hora en que te duermes y despiertas", "Número de despertares", "Uso de pantallas, cafeína y cenas tardías", "Si despiertas por bochornos, ansiedad o ganas de orinar"], "measure": ["Horas totales de sueño", "Despertares por noche", "Energía al despertar 1–10", "Somnolencia durante el día"], "alerts": ["Insomnio severo por varias semanas", "Ronquidos fuertes o pausas al respirar", "Somnolencia que afecta conducción o trabajo"], "next": "Si el sueño se rompe por calor, estrés o cambios de ánimo, puede haber más de un Villano involucrado."}, "montana-rusa": {"observe": ["Cambios de ánimo durante el día", "Irritabilidad, ansiedad o tristeza", "Relación con sueño, hambre y estrés", "Momentos en que te sientes fuera de control"], "measure": ["Ánimo 1–10", "Irritabilidad 1–10", "Horas de sueño", "Número de episodios emocionales intensos"], "alerts": ["Ansiedad o tristeza intensas y persistentes", "Pensamientos de hacerte daño", "Cambios de conducta muy bruscos"], "next": "Si ánimo, sueño y energía están cambiando juntos, conviene revisar tu Alianza de Villanos."}, "vampiro-energia": {"observe": ["En qué momento del día cae tu energía", "Calidad de sueño", "Cantidad de proteína y agua", "Si el cansancio mejora con descanso"], "measure": ["Energía mañana/tarde/noche 1–10", "Horas de sueño", "Actividad física diaria", "Comidas saltadas"], "alerts": ["Cansancio extremo sin explicación", "Palpitaciones, falta de aire o mareo", "Pérdida de peso no buscada"], "next": "Cuando cansancio, sueño y niebla mental aparecen juntos, suele ser útil revisar el panorama completo."}, "ladron-colageno": {"observe": ["Resequedad de piel", "Cambios de cabello y uñas", "Dolor o rigidez articular", "Exposición solar y consumo de proteína"], "measure": ["Hidratación percibida de piel 1–10", "Dolor articular 1–10", "Días de ejercicio de fuerza", "Proteína diaria"], "alerts": ["Caída de cabello marcada y súbita", "Dolor articular intenso o inflamación", "Cambios de piel que no cicatrizan"], "next": "Si piel, articulaciones y fuerza están cambiando al mismo tiempo, revisa si hay más Villanos presentes."}, "apagafuegos": {"observe": ["Deseo sexual", "Dolor o resequedad", "Nivel de estrés", "Calidad de sueño y conexión de pareja"], "measure": ["Deseo 1–10", "Molestia o dolor 1–10", "Estrés 1–10", "Sueño 1–10"], "alerts": ["Dolor intenso o sangrado", "Dolor persistente durante relaciones", "Cambios genitales nuevos o lesiones"], "next": "Si el deseo cae junto con cansancio, estrés o mal sueño, conviene revisar la combinación completa."}, "acumulador": {"observe": ["Hambre y antojos", "Horario de comidas", "Sueño y estrés", "Movimiento diario y entrenamiento de fuerza"], "measure": ["Circunferencia de cintura", "Peso semanal, no diario", "Pasos o minutos de actividad", "Proteína y fibra por día"], "alerts": ["Aumento de peso muy rápido", "Hinchazón importante", "Sed excesiva o cambios urinarios persistentes"], "next": "Si el peso abdominal aparece con sueño pobre, estrés o cansancio, revisa tu Alianza."}, "niebla-mental": {"observe": ["Olvidos frecuentes", "Dificultad para concentrarte", "Relación con sueño y estrés", "Momentos del día de mayor claridad"], "measure": ["Claridad mental 1–10", "Horas de sueño", "Tareas olvidadas por día", "Estrés 1–10"], "alerts": ["Confusión súbita", "Problemas para hablar o mover una parte del cuerpo", "Pérdida de memoria rápidamente progresiva"], "next": "Si claridad mental, sueño y energía están cayendo juntas, puede haber una Alianza de Villanos."}, "oxidada": {"observe": ["Rigidez matutina", "Dolor de huesos o articulaciones", "Actividad física", "Exposición al sol y alimentación"], "measure": ["Dolor 1–10", "Minutos de fuerza por semana", "Días con movimiento", "Caídas o tropiezos"], "alerts": ["Dolor intenso tras una caída", "Fractura o pérdida de estatura", "Dolor óseo persistente"], "next": "Si rigidez, pérdida de fuerza y cansancio aparecen juntos, conviene revisar el contexto completo."}, "histaminica": {"observe": ["Picazón, congestión o urticaria", "Alimentos que anteceden síntomas", "Dolor de cabeza", "Relación con ciclo, estrés y sueño"], "measure": ["Reactividad 1–10", "Número de episodios", "Alimentos sospechosos", "Sueño y estrés 1–10"], "alerts": ["Dificultad para respirar", "Hinchazón de labios o lengua", "Reacción intensa o rápidamente progresiva"], "next": "Si inflamación, digestión y reactividad aparecen juntas, revisa si hay más Villanos actuando."}, "silencioso": {"observe": ["Presión arterial en reposo", "Estrés, sueño y sodio", "Actividad física", "Consistencia con tratamiento indicado"], "measure": ["Presión arterial mañana y noche", "Frecuencia cardiaca", "Minutos de actividad", "Horas de sueño"], "alerts": ["Presión muy elevada con dolor de pecho, falta de aire, debilidad o visión alterada", "Dolor de cabeza súbito e intenso"], "next": "Este Villano merece seguimiento objetivo: registra tu presión y comparte los datos con tu profesional de salud."}, "inflado": {"observe": ["Momento del día con más hinchazón", "Alimentos relacionados", "Evacuaciones", "Dolor, gases y saciedad"], "measure": ["Hinchazón 1–10", "Evacuaciones por semana", "Agua diaria", "Fibra y alimentos frescos"], "alerts": ["Dolor abdominal intenso", "Sangre en heces", "Pérdida de peso no buscada", "Hinchazón persistente y progresiva"], "next": "Si digestión, inflamación y reactividad aparecen juntas, revisa tu posible Alianza de Villanos."}};
+const $=s=>document.querySelector(s);
+const selector=$('#selector');
+V.forEach(v=>{const o=document.createElement('option');o.value=v.slug;o.textContent=`${v.n}. ${v.name}`;selector.appendChild(o)});
+
+function currentSlug(){
+  const p=new URLSearchParams(location.search);
+  const s=p.get('villano');
+  return V.some(v=>v.slug===s)?s:'incendiario';
+}
+function updateURL(slug){
+  const u=new URL(location.href); u.searchParams.set('villano',slug);
+  history.replaceState({},'',u.pathname+u.search+u.hash);
+}
+function render(slug){
+  const v=V.find(x=>x.slug===slug)||V[0];
+  selector.value=v.slug;
+  $('#kicker').textContent=`TU RESULTADO · VILLANO ${v.n} DE 12`;
+  $('#name').textContent=v.name;
+  $('#tag').textContent=v.tag;
+  const img=$('#heroimg'), fb=$('#fallback');
+  if(img){
+    img.style.display='block';
+    img.alt='Personaje oficial de '+v.name;
+    img.src=v.img;
+    img.onerror=()=>{ if(fb) fb.style.display='block'; };
+  }
+  if(fb) fb.style.display='none';
+  updateURL(v.slug);
+  const supportImg=document.querySelector('#supportImage');
+  const supportTitle=document.querySelector('#supportTitle');
+  if(supportImg){ supportImg.src=SUPPORT[v.slug]||SUPPORT['incendiario']; supportImg.alt='Ficha de apoyo de '+v.name; }
+  if(supportTitle){ supportTitle.textContent='Apoyo para '+v.name; }
+  const ex=EXTRA[v.slug]||EXTRA['incendiario'];
+  const deepTitle=document.querySelector('#deepTitle');
+  const deepImg=document.querySelector('#deepVillainImg');
+  const deepObserve=document.querySelector('#deepObserve');
+  const deepMeasure=document.querySelector('#deepMeasure');
+  const deepNutrients=document.querySelector('#deepNutrients');
+  const deepAlerts=document.querySelector('#deepAlerts');
+  const deepNext=document.querySelector('#deepNext');
+  const whatsOrientacion=document.querySelector('#whatsOrientacion');
+  if(deepTitle) deepTitle.textContent='Profundiza en tu estrategia: '+v.name;
+  if(deepImg){ deepImg.src=v.img; deepImg.alt=v.name; }
+  if(deepObserve) deepObserve.innerHTML=ex.observe.map(x=>`<li>${x}</li>`).join('');
+  if(deepMeasure) deepMeasure.innerHTML=ex.measure.map(x=>`<li>${x}</li>`).join('');
+  if(deepNutrients) deepNutrients.innerHTML=(v.supp||[]).map(x=>`<li>${x}</li>`).join('');
+  if(deepAlerts) deepAlerts.innerHTML=ex.alerts.map(x=>`<li>${x}</li>`).join('');
+  if(deepNext) deepNext.textContent=ex.next;
+  if(whatsOrientacion){
+    const msg=`Hola Mony, quiero orientación sobre ${v.name}. Ya revisé mi guía de Menopausia Dichosa.`;
+    whatsOrientacion.href='https://wa.me/529982990230?text='+encodeURIComponent(msg);
+  }
+
+  const symptomText=$('#symptomText');
+  const habits=$('#habits');
+  const supps=$('#supps');
+  if(symptomText) symptomText.textContent=`Este Villano se relaciona en esta guía con: ${v.symptom}.`;
+  if(habits) habits.innerHTML=v.habits.map(x=>`<li>${x}</li>`).join('');
+  if(supps) supps.innerHTML=v.supp.length?v.supp.map(x=>`<li>✓ ${x}</li>`).join(''):'<li>Valora tus necesidades de forma individual antes de elegir suplementos.</li>';
+
+  document.querySelectorAll('.vbtn').forEach(b=>b.classList.toggle('active',b.dataset.slug===v.slug));
+}
+function selectVillain(slug){
+  render(slug);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function shareGuide(){
+  const v=V.find(x=>x.slug===selector.value)||V[0];
+  const url=new URL(location.href);
+  url.searchParams.delete('utm_source');
+  url.searchParams.set('villano',v.slug);
+  url.hash='';
+  const text=`🌷 Te comparto la guía de ${v.name} de Menopausia Dichosa.\n${url.toString()}`;
+  window.location.href='https://wa.me/?text='+encodeURIComponent(text);
+}
+const grid=$('#villainGrid');
+if(grid){
+  V.forEach(v=>{
+    const b=document.createElement('button');
+    b.className='vbtn';
+    b.dataset.slug=v.slug;
+    b.textContent=`${v.n}. ${v.name}`;
+    b.onclick=()=>selectVillain(v.slug);
+    grid.appendChild(b);
+  });
+}
+render(currentSlug());
+window.addEventListener('popstate',()=>render(currentSlug()));
+</script>
+</body></html>

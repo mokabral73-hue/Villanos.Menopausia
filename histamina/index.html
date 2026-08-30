@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test de La Histamínica | Menopausia Dichosa®</title>
+<meta name="description" content="Test orientativo de señales relacionadas con histamina y diario de 7 días.">
+<style>
+:root{
+  --rosa:#C43A63;--vino:#5A0028;--verde:#2E5E3E;--oliva:#8AA36B;
+  --rosa-suave:#F8E5EB;--crema:#FDF8F6;--card:#FFFFFF;--texto:#3A2430;--line:#E8D9DE;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--texto);font-family:Arial,Helvetica,sans-serif;font-size:19px;line-height:1.6}
+header{background:#fff;padding:20px 6vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;z-index:30}
+.brand{font-weight:900;font-size:24px;color:var(--rosa)}
+header a{color:var(--vino);font-weight:800;text-decoration:none}
+.hero{max-width:1080px;margin:auto;padding:44px 6vw 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:center}
+.hero-img{width:100%;height:340px;object-fit:contain}
+.eyebrow{font-weight:900;letter-spacing:.09em;color:var(--verde);font-size:15px}
+h1{font-size:clamp(40px,6vw,64px);line-height:1.04;color:var(--vino);margin:8px 0 16px}
+.hero p{font-size:21px;margin:0 0 20px}
+.hero-note{background:var(--rosa-suave);border-left:5px solid var(--rosa);border-radius:12px;padding:15px 17px;font-size:17px}
+.wrap{max-width:980px;margin:auto;padding:16px 5vw 70px}
+.test-shell{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 12px 36px rgba(90,0,40,.08)}
+.test-title{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}
+.test-title h2{font-size:33px;color:var(--vino);margin:0}
+.test-title p{margin:0;font-size:17px}
+.progress-track{height:10px;background:var(--rosa-suave);border-radius:999px;overflow:hidden;margin-bottom:26px}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--rosa),var(--vino));transition:width .25s}
+.category-card{border:1px solid var(--line);border-radius:22px;padding:20px;margin:18px 0;background:#fff}
+.category-head{display:flex;gap:16px;align-items:center;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.category-head img{width:78px;height:78px;object-fit:contain}
+.category-kicker{font-size:13px;font-weight:900;letter-spacing:.08em;color:var(--oliva)}
+.category-head h3{font-size:27px;color:var(--vino);margin:2px 0 0}
+.symptoms{padding-top:8px}
+.symptom-row{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;padding:13px 8px;border-radius:12px;cursor:pointer}
+.symptom-row:hover{background:#fff5f8}
+.symptom-row input{position:absolute;opacity:0}
+.checkmark{width:24px;height:24px;border:2px solid var(--rosa);border-radius:7px;position:relative;margin-top:1px}
+.symptom-row input:checked + .checkmark{background:var(--rosa)}
+.symptom-row input:checked + .checkmark:after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;border:solid white;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.symptom-text{font-size:19px}
+.error{display:none;color:var(--vino);font-weight:800;margin-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:999px;padding:16px 24px;font-size:19px;font-weight:900;cursor:pointer}
+.btn.primary{background:var(--rosa);color:#fff;width:100%;margin-top:22px}
+.btn.secondary{background:#fff;color:var(--rosa);border:2px solid var(--rosa)}
+#result{display:none;margin-top:28px;border-radius:24px;padding:28px;border:2px solid var(--rosa);background:linear-gradient(180deg,#fff,#fff6f9)}
+.result-grid{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:center}
+.result-grid img{width:100%;height:230px;object-fit:contain}
+.tag{display:inline-block;padding:7px 14px;border-radius:999px;font-weight:900;font-size:14px;letter-spacing:.06em;background:var(--rosa-suave);color:var(--vino)}
+#result h2{font-size:34px;line-height:1.15;color:var(--vino);margin:10px 0}
+.score{font-size:18px;font-weight:800;color:var(--verde)}
+.tip{margin-top:18px;background:var(--rosa-suave);border-left:5px solid var(--rosa);border-radius:12px;padding:17px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.actions .btn{flex:1;min-width:240px}
+.diary{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}
+.diary h2{font-size:31px;color:var(--vino);margin:0 0 10px}
+.diary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.diary-card{background:#faf4ee;border-radius:18px;padding:20px}
+.diary-card h3{font-size:22px;color:var(--verde);margin:0 0 8px}
+.warning{margin-top:30px;background:#fff0f1;border-left:6px solid #b32131;border-radius:12px;padding:20px;font-size:17px;font-weight:700}
+.disclaimer{margin-top:26px;text-align:center;font-size:15px;color:#6d5961}
+footer{text-align:center;background:#fff;padding:35px 20px 50px}
+@media(max-width:720px){
+ body{font-size:18px}
+ header{padding:17px 18px} .brand{font-size:20px} header a{font-size:15px}
+ .hero{grid-template-columns:1fr;text-align:center;padding:28px 18px 16px}
+ .hero-img{grid-row:1;height:220px}
+ .hero p{font-size:19px}
+ .wrap{padding:10px 14px 55px}
+ .test-shell{padding:20px 14px;border-radius:22px}
+ .test-title{display:block} .test-title h2{font-size:29px} .test-title p{margin-top:7px}
+ .category-card{padding:16px 12px}
+ .category-head img{width:68px;height:68px}
+ .category-head h3{font-size:24px}
+ .symptom-text{font-size:18px}
+ .result-grid{grid-template-columns:1fr;text-align:center}
+ .result-grid img{height:190px}
+ #result h2{font-size:30px}
+ .diary-grid{grid-template-columns:1fr}
+ .actions .btn{min-width:100%;width:100%}
+}
+
+/* v4 · Recomendaciones generales + Nutrilite */
+.reco-launch{
+  margin-top:22px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.reco-launch .btn{
+  flex:1;
+  min-width:260px;
+}
+.recommendations{
+  margin-top:34px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(90,0,40,.06);
+}
+.recommendations h2{
+  font-size:34px;
+  line-height:1.15;
+  color:var(--vino);
+  margin:4px 0 10px;
+}
+.recommendations .lead{
+  font-size:20px;
+  margin-bottom:22px;
+}
+.protocol-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.protocol-card{
+  background:#fffaf8;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px;
+}
+.protocol-card.full{grid-column:1/-1}
+.protocol-card h3{
+  font-size:24px;
+  color:var(--verde);
+  margin:0 0 10px;
+}
+.protocol-card p,
+.protocol-card li{
+  font-size:18px;
+  line-height:1.6;
+}
+.protocol-card ul{
+  margin:10px 0 0;
+  padding-left:22px;
+}
+.nutrilite-list{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+.nutrilite-item{
+  background:#fff;
+  border-left:5px solid var(--rosa);
+  border-radius:12px;
+  padding:14px 16px;
+}
+.nutrilite-item strong{
+  color:var(--vino);
+}
+.caution{
+  margin-top:20px;
+  background:#fff4e8;
+  border-left:6px solid #c27b22;
+  border-radius:12px;
+  padding:18px;
+  font-size:17px;
+}
+.welcome-box{
+  margin-top:22px;
+  background:var(--rosa-suave);
+  border-radius:18px;
+  padding:22px;
+}
+.welcome-box h3{
+  color:var(--vino);
+  font-size:24px;
+  margin:0 0 10px;
+}
+@media(max-width:720px){
+  .recommendations{padding:22px 16px}
+  .recommendations h2{font-size:30px}
+  .protocol-grid{grid-template-columns:1fr}
+  .protocol-card.full{grid-column:auto}
+  .protocol-card p,.protocol-card li{font-size:18px}
+  .reco-launch .btn{min-width:100%;width:100%}
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🌷 Menopausia Dichosa®</div>
+  <a href="/guia/?villano=histaminica">← Volver a La Histamínica</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">VILLANO ESPECIAL · LA HISTAMÍNICA</div>
+    <h1>¿La Histamínica está apareciendo en tus síntomas?</h1>
+    <p>Marca las señales que reconoces en ti. Este test busca ayudarte a identificar un <strong>patrón que conviene observar</strong>; no confirma por sí solo una intolerancia a la histamina.</p>
+    <div class="hero-note">Piensa en lo que has sentido de forma repetida durante las últimas semanas, no únicamente en un día aislado.</div>
+  </div>
+  <img class="hero-img" src="assets/histaminica.png" alt="La Histamínica">
+</section>
+
+<main class="wrap">
+  <section class="test-shell" id="test">
+    <div id="quiz">
+      <div class="test-title">
+        <div><div class="eyebrow">TEST ORIENTATIVO</div><h2>17 señales para observar</h2></div>
+        <p><strong id="count">0</strong> de 17 marcadas</p>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+      
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Piel</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="1">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Enrojecimiento o rubor facial repentino</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="2">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Ronchas, urticaria o piel que pica sin causa clara</span>
+        </label></div>
+    </section>
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Digestión</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="3">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Hinchazón o distensión abdominal después de comer</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="4">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Reflujo, acidez o gastritis frecuente</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="5">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Diarrea o cambios frecuentes en el tránsito intestinal</span>
+        </label></div>
+    </section>
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Cabeza y estado de ánimo</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="6">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Migrañas o dolores de cabeza recurrentes</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="7">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Mareos o sensación de inestabilidad</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="8">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Ansiedad o irritabilidad que aparece sin motivo aparente</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="9">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Dificultad para conciliar o mantener el sueño</span>
+        </label></div>
+    </section>
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Nariz y respiración</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="10">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Congestión nasal crónica sin estar resfriada</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="11">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Estornudos frecuentes o picazón en ojos y nariz</span>
+        </label></div>
+    </section>
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Corazón y circulación</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="12">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Palpitaciones o taquicardia sin esfuerzo físico</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="13">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Presión arterial que sube y baja sin explicación</span>
+        </label></div>
+    </section>
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Ciclo y hormonas</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="14">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Síntomas que empeoran antes o durante la menstruación</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="15">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Malestares que aparecieron o se intensificaron en la perimenopausia</span>
+        </label></div>
+    </section>
+    <section class="category-card">
+      <div class="category-head">
+        <img src="assets/histaminica.png" alt="" aria-hidden="true">
+        <div>
+          <span class="category-kicker">SEÑALES A OBSERVAR</span>
+          <h3>Reacción a alimentos</h3>
+        </div>
+      </div>
+      <div class="symptoms">
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="16">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Malestar después de vino, quesos añejos o embutidos</span>
+        </label>
+        <label class="symptom-row">
+          <input type="checkbox" value="1" data-num="17">
+          <span class="checkmark"></span>
+          <span class="symptom-text">Molestias tras comer fermentados, tomate, chocolate o sobras recalentadas</span>
+        </label></div>
+    </section>
+      <div class="error" id="error">Marca al menos una señal para ver tu resultado.</div>
+      <button class="btn primary" onclick="calculate()">Ver mi resultado</button>
+    </div>
+
+    <div id="result">
+      <div class="result-grid">
+        <img src="assets/histaminica.png" alt="La Histamínica">
+        <div>
+          <span class="tag" id="tag"></span>
+          <h2 id="title"></h2>
+          <div class="score" id="score"></div>
+          <p id="desc"></p>
+          <div class="tip"><strong>Un primer paso:</strong> <span id="tip"></span></div>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" id="wa" href="#" target="_blank" rel="noopener">Quiero orientación por WhatsApp</a>
+        <button class="btn secondary" onclick="restart()">Volver a hacer el test</button>
+      </div>
+      <div class="reco-launch">
+        <a class="btn secondary" href="#recomendaciones">🌿 Ver recomendaciones generales y apoyo Nutrilite</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="diary" id="diario">
+    <div class="eyebrow">NO TE QUEDES SOLO CON EL RESULTADO</div>
+    <h2>Comprueba si existe un patrón con tu Diario de 7 días</h2>
+    <p>El test es una fotografía. El diario permite observar si determinados alimentos, el tiempo de almacenamiento, el sueño, el estrés o los cambios hormonales coinciden repetidamente con tus síntomas.</p>
+    <div class="diary-grid">
+      <div class="diary-card"><h3>📋 Registra</h3><p>Alimentos, bebidas, frescura o recalentado, medicamentos, suplementos, síntomas, intensidad, sueño, estrés y ejercicio.</p></div>
+      <div class="diary-card"><h3>🔎 Busca repeticiones</h3><p>Qué ocurrió, cuántas veces se repitió, cuánto tardó en aparecer y qué otras circunstancias estaban presentes.</p></div>
+    </div>
+    <a class="btn primary" href="Diario_7_Dias_Histamina_Menopausia_Dichosa.pdf" download>📥 Descargar mi Diario de 7 días en PDF</a>
+  </section>
+
+
+  <section class="recommendations" id="recomendaciones">
+    <div class="eyebrow">MENOPAUSIA DICHOSA® · MÉTODO D.I.C.H.O.S.A.</div>
+    <h2>Recomendaciones generales para La Histamínica</h2>
+    <p class="lead">Estas recomendaciones sirven como una guía educativa para observar tolerancia, alimentación, descanso y apoyo nutricional. No confirman una histaminosis ni sustituyen una valoración profesional.</p>
+
+    <div class="protocol-grid">
+      <article class="protocol-card">
+        <h3>1. Alimentación · primeros 14 días</h3>
+        <p><strong>Prioriza:</strong> proteína fresca no procesada, verduras de hoja verde que toleres, arroz, quinoa, aceite de oliva y frutas frescas.</p>
+        <p><strong>Reduce temporalmente si notas relación con síntomas:</strong> alcohol, quesos añejos, embutidos y curados, pescado ahumado o enlatado, fermentados, chocolate y sobras guardadas o recalentadas.</p>
+        <p><strong>Tip:</strong> registra también qué tan fresco estaba el alimento; la tolerancia puede variar de una persona a otra.</p>
+      </article>
+
+      <article class="protocol-card">
+        <h3>2. Hábitos de apoyo</h3>
+        <ul>
+          <li><strong>Sueño:</strong> procura 7–8 horas y observa si dormir mejor cambia tus síntomas.</li>
+          <li><strong>Respiración o relajación:</strong> 10 minutos diarios pueden ayudarte a reducir la carga de estrés.</li>
+          <li><strong>Movimiento suave:</strong> caminar, movilidad o yoga según tu tolerancia.</li>
+        </ul>
+      </article>
+
+      <article class="protocol-card full">
+        <h3>3. Apoyo Nutrilite para valorar</h3>
+        <p>No significa que necesites todos estos productos. Se presentan como opciones de apoyo nutricional para revisar según tu alimentación, síntomas, medicamentos y antecedentes.</p>
+
+        <div class="nutrilite-list">
+          <div class="nutrilite-item"><strong>Vitamina C Nutrilite</strong><br>Apoyo antioxidante y nutricional. Sigue la indicación de la etiqueta.</div>
+          <div class="nutrilite-item"><strong>Cal Mag D Nutrilite</strong><br>Aporta magnesio, calcio y vitamina D; puede formar parte del apoyo general de esta etapa.</div>
+          <div class="nutrilite-item"><strong>B Plus Nutrilite</strong><br>Aporta vitaminas del complejo B que participan en múltiples procesos metabólicos.</div>
+          <div class="nutrilite-item"><strong>Concentrado de Frutas y Vegetales Nutrilite</strong><br>Apoyo de fitonutrientes y antioxidantes como complemento de la alimentación.</div>
+          <div class="nutrilite-item"><strong>Omega 3 Nutrilite</strong><br>Fuente de ácidos grasos omega‑3 para apoyo nutricional general.</div>
+        </div>
+
+        <div class="caution"><strong>Importante:</strong> usa las dosis indicadas en la etiqueta. Si tomas medicamentos, tienes un diagnóstico, antecedentes de alergia, enfermedad renal/hepática o síntomas importantes, consulta con un profesional de salud antes de iniciar o combinar suplementos.</div>
+      </article>
+
+      <article class="protocol-card">
+        <h3>4. Seguimiento</h3>
+        <p>Revisa tu diario y tus síntomas después de 7–14 días. Busca patrones repetidos en lugar de atribuir un síntoma aislado a un solo alimento.</p>
+        <p>Si los síntomas son persistentes, frecuentes o afectan tu vida diaria, vale la pena compartir el registro con un profesional de salud.</p>
+      </article>
+
+      <article class="protocol-card">
+        <h3>🚨 Cuándo pedir ayuda de inmediato</h3>
+        <p>Dificultad para respirar, cierre de garganta, hinchazón rápida de lengua o labios, desmayo, confusión o una reacción intensa requieren atención de emergencia.</p>
+      </article>
+    </div>
+
+    <div class="welcome-box">
+      <h3>🌷 Primeros 3 pasos mientras llega tu sesión</h3>
+      <p><strong>1️⃣ Alimentación:</strong> durante unos días reduce los alimentos que hayas identificado como posibles disparadores y registra tu respuesta.</p>
+      <p><strong>2️⃣ Descanso:</strong> prioriza una rutina de sueño de 7–8 horas.</p>
+      <p><strong>3️⃣ Observa:</strong> usa el diario para registrar piel, digestión, dolor de cabeza, energía, sueño y cualquier cambio después de comer.</p>
+    </div>
+
+    <div class="reco-launch">
+      <a class="btn primary" href="Diario_7_Dias_Histamina_Menopausia_Dichosa.pdf" download>📥 Descargar Diario de 7 días</a>
+      <a class="btn secondary" href="https://wa.me/529982990230?text=Hola%20Mony%2C%20ya%20vi%20las%20recomendaciones%20de%20La%20Histam%C3%ADnica%20y%20quiero%20orientaci%C3%B3n." target="_blank" rel="noopener">💬 Quiero orientación</a>
+    </div>
+  </section>
+
+  <div class="warning">🚨 <strong>Atención inmediata:</strong> dificultad para respirar, cierre de garganta, hinchazón rápida de lengua o labios, desmayo, confusión o coloración pálida/azulada requieren atención de emergencia.</div>
+  <div class="disclaimer">Contenido educativo. Este test no diagnostica intolerancia a la histamina, alergia ni otros trastornos. No sustituye valoración, diagnóstico ni tratamiento médico.</div>
+</main>
+
+<footer>🌷 <strong>Menopausia Dichosa®</strong><br>Conocer a tus Villanos es el primer paso para tomar mejores decisiones.</footer>
+
+<script>
+const boxes=[...document.querySelectorAll('#quiz input[type="checkbox"]')];
+const count=document.getElementById('count');
+const progress=document.getElementById('progress');
+boxes.forEach(b=>b.addEventListener('change',()=>{
+  const n=boxes.filter(x=>x.checked).length;
+  count.textContent=n;
+  progress.style.width=(n/17*100)+'%';
+  document.getElementById('error').style.display='none';
+}));
+
+function calculate(){
+  const n=boxes.filter(x=>x.checked).length;
+  if(!n){document.getElementById('error').style.display='block';return;}
+  let tag,title,desc,tip;
+  if(n<=4){
+    tag='PATRÓN POCO EVIDENTE';
+    title='La Histamínica apenas asoma';
+    desc='Por el número de señales marcadas, el patrón no parece fuerte. Aun así, si un síntoma se repite después de determinados alimentos o situaciones, conviene registrarlo.';
+    tip='Usa el Diario de 7 días para comprobar si existe alguna repetición clara antes de sacar conclusiones.';
+  }else if(n<=10){
+    tag='HAY SEÑALES PARA OBSERVAR';
+    title='La Histamínica está haciendo ruido';
+    desc='Marcaste varias señales que pueden aparecer en distintos problemas de salud. Lo más útil ahora es buscar si se repiten juntas y si coinciden con alimentos, sueño, estrés o cambios hormonales.';
+    tip='Registra durante 7 días qué consumes y cuándo aparecen los síntomas; ese patrón será más útil que eliminar muchos alimentos de golpe.';
+  }else{
+    tag='PATRÓN QUE MERECE VALORACIÓN';
+    title='La Histamínica necesita más atención';
+    desc='Marcaste muchas señales y vale la pena estudiarlas con mayor detalle. El resultado no confirma histaminosis: distintos problemas pueden producir síntomas parecidos.';
+    tip='Completa el Diario de 7 días y considera compartirlo con un profesional de salud para valorar otras posibles causas.';
+  }
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='block';
+  document.getElementById('tag').textContent=tag;
+  document.getElementById('title').textContent=title;
+  document.getElementById('score').textContent=n+' de 17 señales marcadas';
+  document.getElementById('desc').textContent=desc;
+  document.getElementById('tip').textContent=tip;
+  const msg=encodeURIComponent('Hola Mony, hice el test de La Histamínica y marqué '+n+' de 17 señales. Mi resultado fue: '+title+'. Quiero orientación.');
+  document.getElementById('wa').href='https://wa.me/529982990230?text='+msg;
+  document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function restart(){
+  boxes.forEach(x=>x.checked=false);
+  count.textContent='0'; progress.style.width='0%';
+  document.getElementById('result').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  document.getElementById('test').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
