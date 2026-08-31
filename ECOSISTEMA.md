@@ -13,6 +13,10 @@ Este repositorio es la fuente principal del dominio `menopausiadichosa.com`.
 | `/embajadoras/` | Acceso estable a Embajadoras | Puente temporal |
 | `/embajadoras/centro/` | Ruta de Activación y Centro interno | Activa |
 | `/embajadoras/centro/entrenamientos/` | Cinco entrenamientos de Embajadoras | Activa |
+| `/embajadoras/centro/herramientas/` | Herramientas prácticas para acompañamiento | Activa |
+| `/embajadoras/centro/biblioteca/` | Biblioteca Dichosa de formación y consulta | Activa |
+| `/embajadoras/centro/compartir/` | Mensajes y recursos listos para compartir | Activa |
+| `/embajadoras/centro/perfil/` | Perfil, progreso e impacto de la Embajadora | Activa |
 | `/guia/` | Guía para vencer a tus Villanos | Activa |
 | `/recursos/` | Nutrientes y enlaces de compra | Activa |
 | `/histamina/` | Test y diario de seguimiento de 7 días | Activa |
