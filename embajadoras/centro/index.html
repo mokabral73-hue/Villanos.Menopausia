@@ -1281,4 +1281,29 @@ function openRoute(){
   }
 })();
 </script>
+<script>
+/* Respaldo de navegación: mantiene la pantalla visible sincronizada con el enlace #estación. */
+(function(){
+  const routeIds=['descubre','conecta','acompana','comparte','activate','multiplica','felicitacion'];
+  function syncRoute(){
+    const id=location.hash.slice(1);
+    if(!routeIds.includes(id)) return;
+    showCE('ceRoute');
+    routeShow(id);
+  }
+  document.addEventListener('click',function(event){
+    const link=event.target.closest('#routeRoot .station .btnrow a.btn:not(.secondary)');
+    if(!link) return;
+    const id=(link.getAttribute('href')||'').replace('#','');
+    if(!routeIds.includes(id)) return;
+    event.preventDefault();
+    routeShow(id);
+    history.replaceState(null,'','#'+id);
+  });
+  window.addEventListener('hashchange',syncRoute);
+  window.addEventListener('pageshow',syncRoute);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',syncRoute);
+  else syncRoute();
+})();
+</script>
 </body></html>
