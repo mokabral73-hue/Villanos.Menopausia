@@ -11,6 +11,8 @@ Este repositorio es la fuente principal del dominio `menopausiadichosa.com`.
 | `/ficha/` | Acceso estable a la ficha | Puente temporal |
 | `/metodo/` | Acceso estable al Método D.I.C.H.O.S.A.® | Puente temporal |
 | `/embajadoras/` | Acceso estable a Embajadoras | Puente temporal |
+| `/embajadoras/centro/` | Ruta de Activación y Centro interno | Activa |
+| `/embajadoras/centro/entrenamientos/` | Cinco entrenamientos de Embajadoras | Activa |
 | `/guia/` | Guía para vencer a tus Villanos | Activa |
 | `/recursos/` | Nutrientes y enlaces de compra | Activa |
 | `/histamina/` | Test y diario de seguimiento de 7 días | Activa |
