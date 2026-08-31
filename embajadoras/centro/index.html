@@ -1191,9 +1191,15 @@ function goCenter(){
 }
 function routeShow(stepId){
   const root=document.getElementById('routeRoot');
-  root.querySelectorAll('.station,.celebration').forEach(s=>s.classList.remove('routeScreenActive'));
+  root.querySelectorAll('.station,.celebration').forEach(s=>{
+    s.classList.remove('routeScreenActive');
+    s.style.setProperty('display','none','important');
+  });
   const target=document.getElementById(stepId);
-  if(target) target.classList.add('routeScreenActive');
+  if(target){
+    target.classList.add('routeScreenActive');
+    target.style.setProperty('display','block','important');
+  }
   const top=document.getElementById('inicio');
   if(top) top.scrollIntoView({behavior:'smooth',block:'start'});
 }
