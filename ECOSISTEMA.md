@@ -14,7 +14,7 @@ Este repositorio es la fuente principal del dominio `menopausiadichosa.com`.
 | `/guia/` | Guía para vencer a tus Villanos | Activa |
 | `/recursos/` | Nutrientes y enlaces de compra | Activa |
 | `/histamina/` | Test y diario de seguimiento de 7 días | Activa |
-| `/agenda/` | Agenda y orientación | Pendiente |
+| `/agenda/` | Agenda y orientación por WhatsApp | Activa |
 
 ## Regla de publicación
 
