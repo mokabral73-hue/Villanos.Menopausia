@@ -127,14 +127,16 @@ footer{background:#650925;color:#f5ccd7;padding:30px 0;text-align:center;font-si
 
 @media(max-width:920px){.referenceHero{display:none}.nav,.hero,.quick{display:block}.navlinks a:not(.navCta){display:none}
 .hero{background:var(--coral)}
-.heroGrid{grid-template-columns:1fr}
-.photoSide{min-height:0;aspect-ratio:1/1;background:var(--coral)}
+.heroGrid{grid-template-columns:1fr;min-height:0}
+.photoSide{min-height:0;height:min(92vw,500px);aspect-ratio:auto;background:var(--coral)}
 .heroPhoto{height:100%;inset:0;width:100%;object-fit:cover;object-position:center center}
 .photoSide:after{display:none}
-.heroCopy{position:relative;background:var(--cream);padding:66px 20px 52px;margin-top:-1px;overflow:visible}
-.heroCopy:before{content:"";position:absolute;z-index:0;left:-10%;top:-54px;width:120%;height:108px;background:var(--cream);border-radius:50% 50% 0 0/100% 100% 0 0}
-.heroCopy>*{position:relative;z-index:1}
-.brandLogo{position:relative;width:min(390px,78vw);margin:-36px auto 13px;filter:drop-shadow(0 7px 14px rgba(133,12,53,.09))}
+.heroCopy{position:relative;z-index:5;background:var(--cream);padding:38px 20px 34px;margin:-38px 8px 0;border-radius:48% 48% 26px 26px/38px 38px 26px 26px;overflow:hidden;box-shadow:0 -8px 24px rgba(133,12,53,.07)}
+.heroCopy:before{display:none}
+.brandLogo{position:relative;width:min(285px,66vw);margin:0 auto 8px;filter:drop-shadow(0 6px 12px rgba(133,12,53,.08))}
+.heroCopy .tagline{font-size:20px;margin-bottom:16px}
+.heroCopy .principles{margin-bottom:15px}
+.heroCopy .actions{display:none}
 .quickGrid{grid-template-columns:repeat(2,1fr)}
 .two{grid-template-columns:1fr}
 .methodGrid,.resources{grid-template-columns:repeat(2,1fr)}
@@ -143,19 +145,19 @@ footer{background:#650925;color:#f5ccd7;padding:30px 0;text-align:center;font-si
 }
 
 @media(max-width:590px){.navin{min-height:72px}
-.miniBrand img{width:120px}
+.miniBrand img{width:105px}
 .navCta{padding:9px 13px}
-.photoSide{aspect-ratio:1/1}
-.heroCopy{padding:56px 12px 40px}
-.heroCopy:before{top:-42px;height:86px}
-.brandLogo{width:min(285px,76vw);margin:-32px auto 11px}
-.tagline{font-size:20px}
+.heroGrid{min-height:0}
+.photoSide{height:min(92vw,430px);aspect-ratio:auto}
+.heroCopy{padding:34px 12px 27px;margin:-32px 6px 0;border-radius:48% 48% 22px 22px/32px 32px 22px 22px}
+.brandLogo{width:min(220px,58vw);margin:0 auto 7px}
+.heroCopy .tagline{font-size:17px;line-height:1.32;margin-bottom:13px}
 .principles{font-size:10px;letter-spacing:.16em}
 .monyLine{font-size:11px}
 .monyLine:before,.monyLine:after{width:28px}
 .actions{display:grid;width:100%;padding:0 14px}
 .quickGrid{gap:9px}
-.quick{padding:22px 0 28px}
+.quick{padding:18px 0 28px}
 .quick a{min-height:116px;flex-direction:column;text-align:center;justify-content:center;padding:13px 8px;font-size:12px;line-height:1.25}
 .icon{width:47px;height:47px;flex-basis:47px;border-radius:15px}
 .icon svg{width:26px;height:26px}
