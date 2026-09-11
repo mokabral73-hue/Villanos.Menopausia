@@ -13,58 +13,15 @@
 .topbar{max-width:1080px;margin:auto;padding:22px clamp(18px,5vw,54px);display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{width:190px;max-width:43vw;height:auto}.home{color:var(--wine);font-weight:800;text-decoration:none;padding:10px 0}.home:hover,.home:focus{text-decoration:underline}
 main{max-width:1000px;margin:auto;padding:clamp(28px,6vw,72px) 20px 80px}.intro{text-align:center;max-width:760px;margin:0 auto 38px}.eyebrow{margin:0 0 12px;color:var(--pink);font-weight:900;letter-spacing:.16em;text-transform:uppercase;font-size:13px}.intro h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,8vw,74px);line-height:.98;margin:0;color:var(--wine)}.intro p{font-size:clamp(18px,2.4vw,22px);line-height:1.55;color:var(--muted);margin:22px auto 0}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{display:flex;flex-direction:column;min-height:330px;padding:clamp(26px,4vw,42px);border:1px solid var(--rose);border-radius:30px;background:rgba(255,253,249,.92);box-shadow:var(--shadow)}.card.private{background:linear-gradient(160deg,#fff 0%,#fff3f7 100%)}.icon{width:62px;height:62px;border-radius:19px;display:grid;place-items:center;background:#ffe5ed;color:var(--pink);font-size:29px;font-weight:900}.card.private .icon{background:var(--wine);color:white}.card h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(27px,4vw,37px);line-height:1.05;margin:24px 0 12px;color:var(--wine)}.card p{font-size:17px;line-height:1.55;color:var(--muted);margin:0 0 26px}.btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:54px;border:0;cursor:pointer;border-radius:999px;padding:13px 22px;text-decoration:none;font:inherit;font-weight:900;text-align:center;color:white;background:linear-gradient(135deg,var(--pink),#c92560);box-shadow:0 12px 24px rgba(201,37,96,.2)}.btn.secondary{background:var(--wine);box-shadow:0 12px 24px rgba(124,23,56,.18)}.btn:hover,.btn:focus{transform:translateY(-1px);filter:brightness(.98);outline:3px solid rgba(218,53,112,.2);outline-offset:3px}.note{text-align:center;color:var(--muted);font-size:14px;margin:24px 0 0}.note strong{color:var(--wine)}
-.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(68,37,50,.58);backdrop-filter:blur(5px)}.modal.open{display:flex}.access{width:min(460px,100%);padding:30px;border-radius:28px;background:#fffdf9;box-shadow:0 28px 80px rgba(68,37,50,.3);text-align:center}.accessLogo{width:150px;max-width:45%;height:auto;margin-bottom:14px}.access h2{font-family:Georgia,"Times New Roman",serif;color:var(--wine);font-size:30px;margin:4px 0 10px}.access p{color:var(--muted);line-height:1.5;margin:0 0 18px}.access input{width:100%;min-height:54px;border:1px solid #dfc4ce;border-radius:15px;padding:13px 16px;font-size:18px;outline:none;background:white}.access input:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(218,53,112,.12)}.access .btn{width:100%;margin-top:12px}.cancel{display:inline-block;margin-top:16px;border:0;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}.error{min-height:22px;margin:10px 0 0!important;color:#a51945!important;font-size:14px;font-weight:800}
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(68,37,50,.58);backdrop-filter:blur(5px)}.modal.open{display:flex}.access{width:min(460px,100%);padding:30px;border-radius:28px;background:#fffdf9;box-shadow:0 28px 80px rgba(68,37,50,.3);text-align:center}.accessLogo{width:150px;max-width:45%;height:auto;margin-bottom:14px}.access h2{font-family:Georgia,"Times New Roman",serif;color:var(--wine);font-size:30px;margin:4px 0 10px}.access p{color:var(--muted);line-height:1.5;margin:0 0 18px}.passwordWrap{position:relative}.access input{width:100%;min-height:58px;border:1px solid #dfc4ce;border-radius:15px;padding:13px 62px 13px 16px;font-size:20px;outline:none;background:white}.access input:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(218,53,112,.12)}.showPass{position:absolute;right:7px;top:7px;min-width:48px;height:44px;border:0;border-radius:11px;background:#fff0f5;color:var(--wine);font-size:22px;cursor:pointer}.showPass:focus{outline:3px solid rgba(218,53,112,.2)}.showLabel{display:block;margin:9px 0 0;color:var(--wine);font-size:15px;font-weight:800;text-align:left}.access .btn{width:100%;margin-top:12px}.cancel{display:inline-block;margin-top:16px;border:0;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}.error{min-height:22px;margin:10px 0 0!important;color:#a51945!important;font-size:14px;font-weight:800}
 @media(max-width:700px){.topbar{padding:17px 18px}.logo{width:160px}main{padding-top:30px}.choices{grid-template-columns:1fr}.card{min-height:280px}.intro{margin-bottom:28px}}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <a href="/" aria-label="Ir al inicio"><img class="logo" src="/brand-logo.png" alt="Menopausia Dichosa®"></a>
-  <a class="home" href="/">Volver al inicio</a>
-</header>
-<main>
-  <section class="intro">
-    <p class="eyebrow">Embajadoras Menopausia Dichosa®</p>
-    <h1>Aprende, acompaña e inspira</h1>
-    <p>Elige si quieres conocer la propuesta o si ya formas parte de la comunidad y deseas entrar a tus herramientas.</p>
-  </section>
-  <section class="choices" aria-label="Opciones para Embajadoras">
-    <article class="card">
-      <div class="icon" aria-hidden="true">✦</div>
-      <h2>Quiero conocer la propuesta</h2>
-      <p>Descubre qué significa ser Embajadora, cómo puedes acompañar a otras mujeres y cuál es la ruta para comenzar.</p>
-      <a class="btn" href="/embajadoras/propuesta/">Conocer la propuesta</a>
-    </article>
-    <article class="card private">
-      <div class="icon" aria-hidden="true">🔒</div>
-      <h2>Ya soy Embajadora</h2>
-      <p>Accede al Centro de Embajadoras: ruta de activación, entrenamientos, biblioteca y materiales para compartir.</p>
-      <button class="btn secondary" type="button" id="openAccess">Ingresar al Centro</button>
-    </article>
-  </section>
-  <p class="note"><strong>El Centro es exclusivo para Embajadoras autorizadas.</strong> Solicita tu contraseña de acceso al incorporarte.</p>
-</main>
-<div class="modal" id="accessModal" role="dialog" aria-modal="true" aria-labelledby="accessTitle">
-  <div class="access">
-    <img class="accessLogo" src="/brand-logo.png" alt="Menopausia Dichosa®">
-    <h2 id="accessTitle">Acceso exclusivo para Embajadoras</h2>
-    <p>Ingresa la contraseña que recibiste para entrar al Centro de Embajadoras.</p>
-    <form id="accessForm">
-      <input id="accessPassword" type="password" autocomplete="current-password" placeholder="Contraseña" aria-label="Contraseña" required>
-      <p class="error" id="accessError" aria-live="polite"></p>
-      <button class="btn secondary" type="submit">Entrar al Centro →</button>
-    </form>
-    <button class="cancel" type="button" id="closeAccess">Cancelar</button>
-  </div>
-</div>
+<header class="topbar"><a href="/" aria-label="Ir al inicio"><img class="logo" src="/brand-logo.png" alt="Menopausia Dichosa®"></a><a class="home" href="/">Volver al inicio</a></header>
+<main><section class="intro"><p class="eyebrow">Embajadoras Menopausia Dichosa®</p><h1>Aprende, acompaña e inspira</h1><p>Elige si quieres conocer la propuesta o si ya formas parte de la comunidad y deseas entrar a tus herramientas.</p></section><section class="choices" aria-label="Opciones para Embajadoras"><article class="card"><div class="icon" aria-hidden="true">✦</div><h2>Quiero conocer la propuesta</h2><p>Descubre qué significa ser Embajadora, cómo puedes acompañar a otras mujeres y cuál es la ruta para comenzar.</p><a class="btn" href="/embajadoras/propuesta/">Conocer la propuesta</a></article><article class="card private"><div class="icon" aria-hidden="true">🔒</div><h2>Ya soy Embajadora</h2><p>Accede al Centro de Embajadoras: ruta de activación, entrenamientos, biblioteca y materiales para compartir.</p><button class="btn secondary" type="button" id="openAccess">Ingresar al Centro</button></article></section><p class="note"><strong>El Centro es exclusivo para Embajadoras autorizadas.</strong> Solicita tu contraseña de acceso al incorporarte.</p></main>
+<div class="modal" id="accessModal" role="dialog" aria-modal="true" aria-labelledby="accessTitle"><div class="access"><img class="accessLogo" src="/brand-logo.png" alt="Menopausia Dichosa®"><h2 id="accessTitle">Acceso exclusivo para Embajadoras</h2><p>Ingresa la contraseña que recibiste para entrar al Centro de Embajadoras.</p><form id="accessForm"><div class="passwordWrap"><input id="accessPassword" type="password" autocomplete="current-password" placeholder="Contraseña" aria-label="Contraseña" required><button class="showPass" type="button" id="showPass" aria-label="Mostrar contraseña" title="Mostrar contraseña">👁</button></div><span class="showLabel" id="showLabel">👁 Mostrar contraseña</span><p class="error" id="accessError" aria-live="polite"></p><button class="btn secondary" type="submit">Entrar al Centro →</button></form><button class="cancel" type="button" id="closeAccess">Cancelar</button></div></div>
 <script>
-(function(){
-  const modal=document.getElementById('accessModal'),open=document.getElementById('openAccess'),close=document.getElementById('closeAccess'),form=document.getElementById('accessForm'),input=document.getElementById('accessPassword'),error=document.getElementById('accessError');
-  function show(){modal.classList.add('open');error.textContent='';input.value='';setTimeout(()=>input.focus(),50)}
-  function hide(){modal.classList.remove('open');error.textContent='';input.value=''}
-  open.addEventListener('click',show);close.addEventListener('click',hide);modal.addEventListener('click',e=>{if(e.target===modal)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
-  form.addEventListener('submit',function(e){e.preventDefault();if(input.value==='Dichosa2026'){sessionStorage.setItem('md_embajadora_access','1');window.location.href='/embajadoras/centro/'}else{error.textContent='La contraseña no es correcta. Inténtalo nuevamente.';input.select()}});
-})();
+(function(){const modal=document.getElementById('accessModal'),open=document.getElementById('openAccess'),close=document.getElementById('closeAccess'),form=document.getElementById('accessForm'),input=document.getElementById('accessPassword'),error=document.getElementById('accessError'),showPass=document.getElementById('showPass'),showLabel=document.getElementById('showLabel');function show(){modal.classList.add('open');error.textContent='';input.value='';input.type='password';showLabel.textContent='👁 Mostrar contraseña';showPass.setAttribute('aria-label','Mostrar contraseña');setTimeout(()=>input.focus(),50)}function hide(){modal.classList.remove('open');error.textContent='';input.value=''}function togglePass(){const visible=input.type==='text';input.type=visible?'password':'text';showLabel.textContent=visible?'👁 Mostrar contraseña':'🙈 Ocultar contraseña';showPass.setAttribute('aria-label',visible?'Mostrar contraseña':'Ocultar contraseña');input.focus()}open.addEventListener('click',show);close.addEventListener('click',hide);showPass.addEventListener('click',togglePass);showLabel.addEventListener('click',togglePass);showLabel.style.cursor='pointer';modal.addEventListener('click',e=>{if(e.target===modal)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});form.addEventListener('submit',function(e){e.preventDefault();const typed=input.value.trim();if(typed==='Dichosa2026'){sessionStorage.setItem('md_embajadora_access','1');window.location.href='/embajadoras/centro/'}else{error.textContent='La contraseña no es correcta. Inténtalo nuevamente.';input.select()}})})();
 </script>
-</body>
-</html>
+</body></html>
