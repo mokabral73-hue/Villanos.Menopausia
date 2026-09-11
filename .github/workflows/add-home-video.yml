@@ -1,4 +1,4 @@
-name: Integrar video silencioso en portada
+name: Ajustar video de portada
 
 on:
   push:
@@ -9,38 +9,29 @@ permissions:
   contents: write
 
 jobs:
-  integrate:
+  adjust:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Reconstruir video sin audio
-        shell: bash
-        run: |
-          mkdir -p assets
-          cat .media_chunks/menopausia-video.part1 .media_chunks/menopausia-video.part2 .media_chunks/menopausia-video.part3 .media_chunks/menopausia-video.part4 .media_chunks/menopausia-video.part5 | base64 -d > assets/menopausia-medios-sin-musica.mp4
-      - name: Integrar bloque en la portada
+      - name: Hacer el video compacto y casi cuadrado
         shell: python
         run: |
           from pathlib import Path
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
-          marker = '<section id="metodo">'
-          if 'id="conversacion-publica"' not in s:
-              css = '''\n.mediaMoment{background:var(--paper);padding:54px 0}.mediaMomentCard{display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:30px;padding:24px 30px;box-shadow:var(--shadow)}.mediaMomentVideo{width:220px;max-width:100%;margin:auto;border-radius:22px;overflow:hidden;background:#f5dce2;box-shadow:0 12px 30px rgba(121,20,55,.13)}.mediaMomentVideo video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}.mediaMomentCopy .title{font-size:clamp(30px,3.4vw,46px);margin-bottom:12px}.mediaMomentCopy p{color:var(--muted);font-size:17px;margin:0;max-width:650px}@media(max-width:700px){.mediaMomentCard{grid-template-columns:1fr;padding:22px;gap:22px;text-align:center}.mediaMomentVideo{width:min(190px,72vw)}.mediaMomentCopy .sub{margin-left:auto;margin-right:auto}}\n'''
-              s = s.replace('</style>', css + '</style>', 1)
-              block = '''\n<section class="mediaMoment" id="conversacion-publica">\n<div class="wrap">\n<div class="mediaMomentCard">\n<div class="mediaMomentVideo"><video autoplay muted loop playsinline preload="metadata" aria-label="Menopausia Dichosa en conversación" src="/assets/menopausia-medios-sin-musica.mp4"></video></div>\n<div class="mediaMomentCopy">\n<div class="eyebrow">La causa en conversación</div>\n<h2 class="title">Hablarlo también transforma.</h2>\n<p>Cada espacio donde se habla de menopausia ayuda a romper el silencio, normalizar esta etapa y acercar información a más mujeres.</p>\n</div>\n</div>\n</div>\n</section>\n'''
-              if marker not in s:
-                  raise SystemExit('No se encontró el punto de inserción antes del Método D.I.C.H.O.S.A.')
-              s = s.replace(marker, block + marker, 1)
-              p.write_text(s, encoding='utf-8')
-      - name: Limpiar archivos temporales y publicar
+          old = '.mediaMomentVideo{width:220px;max-width:100%;margin:auto;border-radius:22px;overflow:hidden;background:#f5dce2;box-shadow:0 12px 30px rgba(121,20,55,.13)}.mediaMomentVideo video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}'
+          new = '.mediaMomentVideo{width:220px;height:220px;max-width:100%;margin:auto;border-radius:22px;overflow:hidden;background:#f5dce2;box-shadow:0 12px 30px rgba(121,20,55,.13)}.mediaMomentVideo video{display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}'
+          if old not in s:
+              raise SystemExit('No se encontró el estilo actual del video; no se modificó nada.')
+          s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
+      - name: Publicar ajuste
         shell: bash
         run: |
-          rm -rf .media_chunks
           git config user.name 'mokabral73-hue'
           git config user.email 'mokabral73@gmail.com'
-          git add index.html assets/menopausia-medios-sin-musica.mp4 .media_chunks
-          git commit -m 'Integra video silencioso en la historia de Menopausia Dichosa'
+          git add index.html
+          git commit -m 'Ajusta video de portada a formato compacto cuadrado'
           git push origin HEAD:main
