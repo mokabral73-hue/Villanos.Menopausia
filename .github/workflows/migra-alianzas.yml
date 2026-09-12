@@ -1,0 +1,50 @@
+name: Migra Alianzas al dominio oficial
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/migra-alianzas.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copiar Alianzas y su imagen social
+        shell: bash
+        run: |
+          mkdir -p alianzas
+          curl -L --fail --silent --show-error 'https://raw.githubusercontent.com/mokabral73-hue/AlianzasVillanos/main/index.html' -o alianzas/index.html
+          curl -L --fail --silent --show-error 'https://raw.githubusercontent.com/mokabral73-hue/AlianzasVillanos/main/compartir-alianzas.png' -o alianzas/compartir-alianzas.png
+      - name: Ajustar dominio y vista previa social
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('alianzas/index.html')
+          s = p.read_text(encoding='utf-8')
+          old_base = 'https://mokabral73-hue.github.io/AlianzasVillanos/'
+          new_base = 'https://menopausiadichosa.com/alianzas/'
+          s = s.replace(old_base, new_base)
+          if '<link rel="canonical"' not in s:
+              marker = '<meta name="description" content="Descubre qué síntomas de la menopausia están actuando juntos y reconoce tu alianza de Villanos.">'
+              s = s.replace(marker, marker + '\n<link rel="canonical" href="https://menopausiadichosa.com/alianzas/">', 1)
+          s = s.replace('https://menopausiadichosa.com/alianzas/compartir-alianzas.png', 'https://menopausiadichosa.com/alianzas/compartir-alianzas.png?v=20260912')
+          p.write_text(s, encoding='utf-8')
+      - name: Guardar migración
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add alianzas/index.html alianzas/compartir-alianzas.png
+          if git diff --cached --quiet; then
+            echo 'Sin cambios'
+          else
+            git commit -m '[alianzas] Migra herramienta al dominio oficial'
+            git push
+          fi
