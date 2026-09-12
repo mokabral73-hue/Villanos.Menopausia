@@ -56,21 +56,24 @@ jobs:
           p = Path('ficha/index.html')
           html = p.read_text(encoding='utf-8')
           marker = '<link rel="canonical" href="https://menopausiadichosa.com/ficha/">'
-          tags = '''<meta property="og:type" content="website">
-<meta property="og:site_name" content="Menopausia Dichosa®">
-<meta property="og:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">
-<meta property="og:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">
-<meta property="og:url" content="https://menopausiadichosa.com/ficha/">
-<meta property="og:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">
-<meta property="og:image:secure_url" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ficha previa de acompañamiento — Menopausia Dichosa®">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">
-<meta name="twitter:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">
-<meta name="twitter:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">'''
+          tag_lines = [
+              '<meta property="og:type" content="website">',
+              '<meta property="og:site_name" content="Menopausia Dichosa®">',
+              '<meta property="og:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">',
+              '<meta property="og:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">',
+              '<meta property="og:url" content="https://menopausiadichosa.com/ficha/">',
+              '<meta property="og:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">',
+              '<meta property="og:image:secure_url" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">',
+              '<meta property="og:image:type" content="image/jpeg">',
+              '<meta property="og:image:width" content="1200">',
+              '<meta property="og:image:height" content="630">',
+              '<meta property="og:image:alt" content="Ficha previa de acompañamiento — Menopausia Dichosa®">',
+              '<meta name="twitter:card" content="summary_large_image">',
+              '<meta name="twitter:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">',
+              '<meta name="twitter:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">',
+              '<meta name="twitter:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">'
+          ]
+          tags = '\n'.join(tag_lines)
           if '<meta property="og:type"' not in html:
               html = html.replace(marker, marker + '\n' + tags, 1)
           p.write_text(html, encoding='utf-8')
