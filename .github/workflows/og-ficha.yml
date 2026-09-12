@@ -1,8 +1,9 @@
-name: OG ficha previa
+name: Genera OG ficha
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - .github/workflows/og-ficha.yml
   workflow_dispatch:
@@ -23,48 +24,38 @@ jobs:
       - name: Instalar Pillow
         run: python -m pip install pillow
 
-      - name: Crear imagen social y metadatos
+      - name: Crear imagen OG y actualizar metadatos
         run: |
           python - <<'PY'
           from pathlib import Path
           from PIL import Image, ImageDraw, ImageFont
-          import re
 
           W, H = 1200, 630
-          bg = Image.new('RGB', (W, H), '#fffaf4')
-          d = ImageDraw.Draw(bg)
-          d.rounded_rectangle((55,55,1145,575), radius=38, fill='#fffdf9', outline='#ddd7ca', width=2)
-          d.rectangle((55,55,78,575), fill='#607341')
+          img = Image.new('RGB', (W, H), '#fffaf4')
+          draw = ImageDraw.Draw(img)
+          draw.rounded_rectangle((55,55,1145,575), radius=38, fill='#fffdf9', outline='#ddd7ca', width=2)
+          draw.rectangle((55,55,78,575), fill='#607341')
 
           logo_path = Path('brand-logo.png')
           if logo_path.exists():
               logo = Image.open(logo_path).convert('RGBA')
               logo.thumbnail((300,150), Image.Resampling.LANCZOS)
-              bg.paste(logo, (110,95), logo)
+              img.paste(logo, (110,95), logo)
 
-          def font(size, bold=False):
-              candidates = [
-                  '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf' if bold else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
-                  '/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf' if bold else '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'
-              ]
-              for p in candidates:
-                  if Path(p).exists():
-                      return ImageFont.truetype(p, size)
-              return ImageFont.load_default()
+          def get_font(size, bold=False):
+              p = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf' if bold else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+              return ImageFont.truetype(p, size)
 
-          olive = '#607341'
-          ink = '#304129'
-          muted = '#697064'
-          coral = '#d97b67'
-          d.text((110,260), 'FICHA PREVIA DE ACOMPAÑAMIENTO', font=font(28, True), fill=coral)
-          d.text((110,315), 'Conozcamos lo que', font=font(56, True), fill=ink)
-          d.text((110,380), 'estás viviendo', font=font(56, True), fill=ink)
-          d.text((110,470), 'Menopausia Dichosa®', font=font(30, True), fill=olive)
-          d.text((110,515), 'Conoce · identifica · empieza', font=font(24), fill=muted)
-          bg.save('ficha/ficha-whatsapp.jpg', 'JPEG', quality=92, optimize=True, progressive=True)
+          draw.text((110,260), 'FICHA PREVIA DE ACOMPAÑAMIENTO', font=get_font(28, True), fill='#d97b67')
+          draw.text((110,315), 'Conozcamos lo que', font=get_font(56, True), fill='#304129')
+          draw.text((110,380), 'estás viviendo', font=get_font(56, True), fill='#304129')
+          draw.text((110,470), 'Menopausia Dichosa®', font=get_font(30, True), fill='#607341')
+          draw.text((110,515), 'Conoce · identifica · empieza', font=get_font(24), fill='#697064')
+          img.save('ficha/ficha-whatsapp.jpg', 'JPEG', quality=92, optimize=True, progressive=True)
 
           p = Path('ficha/index.html')
           html = p.read_text(encoding='utf-8')
+          marker = '<link rel="canonical" href="https://menopausiadichosa.com/ficha/">'
           tags = '''<meta property="og:type" content="website">
 <meta property="og:site_name" content="Menopausia Dichosa®">
 <meta property="og:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">
@@ -80,11 +71,7 @@ jobs:
 <meta name="twitter:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">
 <meta name="twitter:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">
 <meta name="twitter:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">'''
-
-          if '<meta property="og:type"' in html:
-              html = re.sub(r'<meta property="og:type".*?<style>', tags + '\n<style>', html, count=1, flags=re.S)
-          else:
-              marker = '<link rel="canonical" href="https://menopausiadichosa.com/ficha/">'
+          if '<meta property="og:type"' not in html:
               html = html.replace(marker, marker + '\n' + tags, 1)
           p.write_text(html, encoding='utf-8')
           PY
@@ -97,6 +84,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sin cambios"
           else
-            git commit -m "[og-ficha] Agrega vista previa de WhatsApp"
+            git commit -m "[og-ficha] Crea vista previa de WhatsApp"
             git push
           fi
