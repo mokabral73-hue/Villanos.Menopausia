@@ -1,0 +1,97 @@
+name: Genera OG portada
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '.github/workflows/genera-og-portada.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    if: "!contains(github.event.head_commit.message, '[og-generated]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar Pillow
+        run: pip install pillow
+
+      - name: Crear imagen OG y actualizar metadatos
+        shell: python
+        run: |
+          import base64, io, re
+          from pathlib import Path
+          from PIL import Image
+
+          p = Path('index.html')
+          html = p.read_text(encoding='utf-8')
+
+          def extract(img_id):
+              m = re.search(rf'<img[^>]*id="{re.escape(img_id)}"[^>]*src="data:image/webp;base64,([^"]+)"', html)
+              if not m:
+                  raise SystemExit(f'No se encontró {img_id}')
+              return Image.open(io.BytesIO(base64.b64decode(m.group(1)))).convert('RGBA')
+
+          base = extract('portadaAprobada')
+          foto = extract('fotoActualizada')
+
+          bw, bh = base.size
+          fw = round(bw * 0.5078125)
+          fh = round(bh * 0.7199074)
+          foto = foto.resize((fw, fh), Image.Resampling.LANCZOS)
+          compuesto = base.copy()
+          compuesto.alpha_composite(foto, (0, 0))
+
+          target = Image.new('RGB', (1200, 630), '#fff7ef')
+          rgb = compuesto.convert('RGB')
+          scale = min(1200 / rgb.width, 630 / rgb.height)
+          nw, nh = round(rgb.width * scale), round(rgb.height * scale)
+          rgb = rgb.resize((nw, nh), Image.Resampling.LANCZOS)
+          x = (1200 - nw) // 2
+          y = (630 - nh) // 2
+          target.paste(rgb, (x, y))
+          target.save('compartir-portada.jpg', 'JPEG', quality=92, optimize=True, progressive=True)
+
+          new_block = '''<meta property="og:type" content="website">
+<meta property="og:site_name" content="Menopausia Dichosa®">
+<meta property="og:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
+<meta property="og:description" content="Una causa que transforma la manera de vivir esta etapa.">
+<meta property="og:url" content="https://menopausiadichosa.com/">
+<meta property="og:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
+<meta property="og:image:secure_url" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Menopausia Dichosa® — Mónica Cabral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
+<meta name="twitter:description" content="Una causa que transforma la manera de vivir esta etapa.">
+<meta name="twitter:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">'''
+
+          start = html.index('<meta property="og:title"')
+          end_marker = '<meta name="twitter:card" content="summary_large_image">'
+          end = html.index(end_marker, start) + len(end_marker)
+          html = html[:start] + new_block + html[end:]
+          p.write_text(html, encoding='utf-8')
+
+      - name: Commit de la imagen y metadatos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html compartir-portada.jpg
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "[og-generated] Crea portada social para WhatsApp"
+            git push
+          fi
