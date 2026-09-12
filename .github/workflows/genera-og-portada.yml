@@ -2,10 +2,11 @@ name: Genera OG portada
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
-      - 'index.html'
-      - '.github/workflows/genera-og-portada.yml'
+      - index.html
+      - .github/workflows/genera-og-portada.yml
   workflow_dispatch:
 
 permissions:
@@ -13,22 +14,20 @@ permissions:
 
 jobs:
   generar:
-    if: "!contains(github.event.head_commit.message, '[og-generated]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Preparar Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Instalar Pillow
-        run: pip install pillow
+        run: python -m pip install pillow
 
       - name: Crear imagen OG y actualizar metadatos
-        shell: python
         run: |
+          python - <<'PY'
           import base64, io, re
           from pathlib import Path
           from PIL import Image
@@ -63,28 +62,29 @@ jobs:
           target.save('compartir-portada.jpg', 'JPEG', quality=92, optimize=True, progressive=True)
 
           new_block = '''<meta property="og:type" content="website">
-<meta property="og:site_name" content="Menopausia Dichosa®">
-<meta property="og:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
-<meta property="og:description" content="Una causa que transforma la manera de vivir esta etapa.">
-<meta property="og:url" content="https://menopausiadichosa.com/">
-<meta property="og:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
-<meta property="og:image:secure_url" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Menopausia Dichosa® — Mónica Cabral">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
-<meta name="twitter:description" content="Una causa que transforma la manera de vivir esta etapa.">
-<meta name="twitter:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">'''
+          <meta property="og:site_name" content="Menopausia Dichosa®">
+          <meta property="og:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
+          <meta property="og:description" content="Una causa que transforma la manera de vivir esta etapa.">
+          <meta property="og:url" content="https://menopausiadichosa.com/">
+          <meta property="og:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
+          <meta property="og:image:secure_url" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
+          <meta property="og:image:type" content="image/jpeg">
+          <meta property="og:image:width" content="1200">
+          <meta property="og:image:height" content="630">
+          <meta property="og:image:alt" content="Menopausia Dichosa® — Mónica Cabral">
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
+          <meta name="twitter:description" content="Una causa que transforma la manera de vivir esta etapa.">
+          <meta name="twitter:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">'''.replace('          ','')
 
           start = html.index('<meta property="og:title"')
           end_marker = '<meta name="twitter:card" content="summary_large_image">'
           end = html.index(end_marker, start) + len(end_marker)
           html = html[:start] + new_block + html[end:]
           p.write_text(html, encoding='utf-8')
+          PY
 
-      - name: Commit de la imagen y metadatos
+      - name: Guardar cambios
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
