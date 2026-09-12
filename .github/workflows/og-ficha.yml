@@ -1,4 +1,4 @@
-name: Genera OG ficha
+name: Usa imagen original OG ficha
 
 on:
   push:
@@ -12,81 +12,31 @@ permissions:
   contents: write
 
 jobs:
-  generar:
+  actualizar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Instalar Pillow
-        run: python -m pip install pillow
-
-      - name: Crear imagen OG y actualizar metadatos
+      - name: Usar imagen original de la ficha
         run: |
           python - <<'PY'
           from pathlib import Path
-          from PIL import Image, ImageDraw, ImageFont
-
-          W, H = 1200, 630
-          img = Image.new('RGB', (W, H), '#fffaf4')
-          draw = ImageDraw.Draw(img)
-          draw.rounded_rectangle((55,55,1145,575), radius=38, fill='#fffdf9', outline='#ddd7ca', width=2)
-          draw.rectangle((55,55,78,575), fill='#607341')
-
-          logo_path = Path('brand-logo.png')
-          if logo_path.exists():
-              logo = Image.open(logo_path).convert('RGBA')
-              logo.thumbnail((300,150), Image.Resampling.LANCZOS)
-              img.paste(logo, (110,95), logo)
-
-          def get_font(size, bold=False):
-              p = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf' if bold else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
-              return ImageFont.truetype(p, size)
-
-          draw.text((110,260), 'FICHA PREVIA DE ACOMPAÑAMIENTO', font=get_font(28, True), fill='#d97b67')
-          draw.text((110,315), 'Conozcamos lo que', font=get_font(56, True), fill='#304129')
-          draw.text((110,380), 'estás viviendo', font=get_font(56, True), fill='#304129')
-          draw.text((110,470), 'Menopausia Dichosa®', font=get_font(30, True), fill='#607341')
-          draw.text((110,515), 'Conoce · identifica · empieza', font=get_font(24), fill='#697064')
-          img.save('ficha/ficha-whatsapp.jpg', 'JPEG', quality=92, optimize=True, progressive=True)
-
           p = Path('ficha/index.html')
           html = p.read_text(encoding='utf-8')
-          marker = '<link rel="canonical" href="https://menopausiadichosa.com/ficha/">'
-          tag_lines = [
-              '<meta property="og:type" content="website">',
-              '<meta property="og:site_name" content="Menopausia Dichosa®">',
-              '<meta property="og:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">',
-              '<meta property="og:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">',
-              '<meta property="og:url" content="https://menopausiadichosa.com/ficha/">',
-              '<meta property="og:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">',
-              '<meta property="og:image:secure_url" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">',
-              '<meta property="og:image:type" content="image/jpeg">',
-              '<meta property="og:image:width" content="1200">',
-              '<meta property="og:image:height" content="630">',
-              '<meta property="og:image:alt" content="Ficha previa de acompañamiento — Menopausia Dichosa®">',
-              '<meta name="twitter:card" content="summary_large_image">',
-              '<meta name="twitter:title" content="Ficha previa de acompañamiento | Menopausia Dichosa®">',
-              '<meta name="twitter:description" content="Conozcamos lo que estás viviendo. Esta ficha nos ayuda a personalizar tu sesión de acompañamiento.">',
-              '<meta name="twitter:image" content="https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912">'
-          ]
-          tags = '\n'.join(tag_lines)
-          if '<meta property="og:type"' not in html:
-              html = html.replace(marker, marker + '\n' + tags, 1)
+          old = 'https://menopausiadichosa.com/ficha/ficha-whatsapp.jpg?v=20260912'
+          new = 'https://menopausiadichosa.com/ficha/WhatsApp%20Image%202026-08-18%20at%2022.36.01.jpeg?v=20260912-original'
+          html = html.replace(old, new)
+          html = html.replace('<meta property="og:image:width" content="1200">\n', '')
+          html = html.replace('<meta property="og:image:height" content="630">\n', '')
           p.write_text(html, encoding='utf-8')
           PY
-
-      - name: Guardar cambios
+      - name: Guardar cambio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ficha/index.html ficha/ficha-whatsapp.jpg
+          git add ficha/index.html
           if git diff --cached --quiet; then
             echo "Sin cambios"
           else
-            git commit -m "[og-ficha] Crea vista previa de WhatsApp"
+            git commit -m "[og-ficha] Usa imagen original aprobada"
             git push
           fi
