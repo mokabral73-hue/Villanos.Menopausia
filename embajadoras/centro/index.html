@@ -80,7 +80,7 @@ function addHistamineResource(){try{
   const doc=iframe.contentDocument,share=doc.getElementById('share');if(!share||doc.getElementById('histamineShare'))return;
   const panel=share.querySelector('.panel')||share;
   const card=doc.createElement('div');card.id='histamineShare';card.className='resource';
-  card.innerHTML='<h3>🌿 Diario de Histamina</h3><p>Para observar alimentos, síntomas y posibles patrones relacionados con la histamina.</p><a class="btn" href="https://diario-histamina.menopausiadichosa.chatgpt.site" target="_blank" rel="noopener">ABRIR DIARIO DE HISTAMINA →</a>';
+  card.innerHTML='<h3>🌿 Diario de Histamina</h3><p>Para observar alimentos, síntomas y posibles patrones relacionados con la histamina.</p><a class="btn" href="https://menopausiadichosa.com/histamina/" target="_blank" rel="noopener">ABRIR DIARIO DE HISTAMINA →</a>';
   panel.appendChild(card);
 }catch(e){}}
 const suggestions={
