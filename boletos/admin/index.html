@@ -19,7 +19,7 @@
     content.querySelectorAll('[data-toggle]').forEach(b=>b.onclick=()=>{const event=data.events.find(item=>item.id===b.dataset.toggle);action('/api/admin/events',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:event.id,active:!event.active})})});
     content.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{if(confirm('¿Eliminar esta sesión cerrada? Esta acción no se puede deshacer.'))action('/api/admin/events',{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:b.dataset.delete})})});
     content.querySelectorAll('[data-attach]').forEach(form=>form.onsubmit=e=>{e.preventDefault();const fields=new FormData(form);fields.set('eventId',form.dataset.attach);action('/api/admin/image',{method:'POST',body:fields})});
-    content.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText('https://menopausiadichosa.com/boletos/');alert('Enlace copiado')});
+    content.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText('https://menopausiadichosa.com/boletos/?promo=1');alert('Enlace copiado')});
   }
   function check(code){action('/api/admin/checkin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:String(code).trim().toUpperCase()})})}
   if(key)refresh().catch(()=>{sessionStorage.removeItem('md_admin_key');key='';login()});else login();
