@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserva tu lugar | Menopausia Dichosa®</title>
+  <meta name="description" content="Reserva tu lugar para Villanos en la Menopausia y recibe tu boleto con código.">
+  <link rel="canonical" href="https://menopausiadichosa.com/boletos/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Menopausia Dichosa®">
+  <meta property="og:title" content="Reserva tu lugar | Menopausia Dichosa®">
+  <meta property="og:description" content="Elige tu sesión, reserva tu lugar y recibe tu boleto con código.">
+  <meta property="og:url" content="https://menopausiadichosa.com/boletos/">
+  <meta property="og:image" content="https://menopausiadichosa.com/compartir-villanos.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://menopausiadichosa.com/compartir-villanos.jpg">
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fffafd}
+    iframe{display:block;border:0;width:100%;height:100vh;height:100dvh}
+  </style>
+</head>
+<body>
+  <iframe id="boletos" title="Reservaciones y boletos de Menopausia Dichosa" src="https://boletos-menopausia-dichosa.menopausiadichosa.chatgpt.site/" allow="web-share"></iframe>
+  <script>
+    (() => {
+      const origin = 'https://boletos-menopausia-dichosa.menopausiadichosa.chatgpt.site';
+      const frame = document.getElementById('boletos');
+      const ticket = new URLSearchParams(location.search).get('boleto');
+      if (ticket && /^MD-[A-Z0-9]{8}$/i.test(ticket)) {
+        frame.src = origin + '/boleto/' + encodeURIComponent(ticket.toUpperCase());
+      }
+      addEventListener('message', event => {
+        if (event.origin !== origin || event.source !== frame.contentWindow) return;
+        const data = event.data;
+        if (!data || data.type !== 'menopausia-boletos-route') return;
+        if (data.code && /^MD-[A-Z0-9]{8}$/i.test(data.code)) {
+          history.replaceState(null, '', '/boletos/?boleto=' + encodeURIComponent(data.code.toUpperCase()));
+        } else if (data.code === null) {
+          history.replaceState(null, '', '/boletos/');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
