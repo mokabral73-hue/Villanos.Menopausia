@@ -508,7 +508,7 @@ section{padding:64px 0}
       add(body,'h3',event.title);
       if(event.villain)add(body,'p','Villano: '+event.villain,'upcomingVillain');
       if(event.description)add(body,'p',event.description);
-      if(event.price_note)add(body,'p',event.price_note,'upcomingPrice');
+      if(event.price_cents)add(body,'p','Acceso: '+(event.price_cents/100).toLocaleString('es-MX',{style:'currency',currency:'MXN'})+' · Mercado Pago','upcomingPrice');else if(event.price_note)add(body,'p',event.price_note,'upcomingPrice');
       if(event.arrival_note)add(body,'p',event.arrival_note,'upcomingNote');
       const link=document.createElement('a');link.className='btn primary';link.href='/boletos/?evento='+encodeURIComponent(event.id);
       link.textContent=event.available<=0?'Lugares agotados':event.active?'Ver detalles y reservar':'Reservas cerradas';
