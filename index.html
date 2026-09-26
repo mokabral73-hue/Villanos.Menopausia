@@ -183,6 +183,23 @@ section{padding:64px 0}
 
 
 .mediaMoment{background:var(--paper);padding:54px 0}.mediaMomentCard{display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:30px;padding:24px 30px;box-shadow:var(--shadow)}.mediaMomentVideo{width:220px;height:220px;max-width:100%;margin:auto;border-radius:22px;overflow:hidden;background:#f5dce2;box-shadow:0 12px 30px rgba(121,20,55,.13)}.mediaMomentVideo video{display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}.mediaMomentCopy .title{font-size:clamp(30px,3.4vw,46px);margin-bottom:12px}.mediaMomentCopy p{color:var(--muted);font-size:17px;margin:0;max-width:650px}@media(max-width:700px){.mediaMomentCard{grid-template-columns:1fr;padding:22px;gap:22px;text-align:center}.mediaMomentVideo{width:min(190px,72vw)}.mediaMomentCopy .sub{margin-left:auto;margin-right:auto}}
+
+/* Agenda conectada al panel de boletos */
+.upcoming{background:#fff6f4}
+.upcomingGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px}
+.upcomingCard{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.upcomingCard img{width:100%;height:245px;object-fit:contain;background:#fff0f4}
+.upcomingBody{padding:24px;display:flex;flex-direction:column;align-items:start;flex:1}
+.upcomingMeta{color:var(--pink);font-size:14px;font-weight:800}
+.upcomingBody h3{font:700 27px/1.17 Georgia,serif;color:var(--wine);margin:12px 0}
+.upcomingBody p{color:var(--muted);line-height:1.55;white-space:pre-line;margin:8px 0}
+.upcomingBody .upcomingVillain{color:var(--wine);font-weight:800}
+.upcomingBody .upcomingPrice{font-weight:700}
+.upcomingBody .btn{margin-top:auto;padding:12px 18px}
+.upcomingNote{font-size:14px}
+.upcomingEmpty{padding:24px;background:white;border:1px solid var(--line);border-radius:18px;margin-top:25px}
+@media(max-width:900px){.upcomingGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.upcomingGrid{grid-template-columns:1fr}.upcomingCard img{height:260px}}
 </style>
 </head>
 <body>
@@ -376,6 +393,14 @@ section{padding:64px 0}
 </div>
 </div>
 </section>
+<section class="upcoming" id="eventos" aria-labelledby="eventos-title">
+<div class="wrap">
+<div class="eyebrow">Nos vemos pronto</div>
+<h2 class="title" id="eventos-title">Próximos eventos</h2>
+<p class="sub">Encuentra tu próxima sesión, conoce los detalles y reserva tu lugar.</p>
+<div class="upcomingGrid" id="upcoming-events" aria-live="polite"><p>Cargando eventos…</p></div>
+</div>
+</section>
 <section id="recursos">
 <div class="wrap center">
 <div class="eyebrow">Empieza por donde estás</div>
@@ -458,11 +483,40 @@ section{padding:64px 0}
 <div class="footerLinks">
 <a href="/metodo/">Método</a>
 <a href="/guia/">Guía</a>
+<a href="#eventos">Próximos eventos</a>
 <a href="/agenda/">Agenda</a>
 <a href="/embajadoras/">Embajadoras</a>
 </div>
 <div>© 2026 Menopausia Dichosa® · Mónica Cabral · Contenido educativo; no sustituye valoración médica.</div>
 </div>
 </footer>
+<script>
+(() => {
+  const grid=document.getElementById('upcoming-events');
+  const api='https://boletos-menopausia-dichosa.menopausiadichosa.chatgpt.site';
+  const add=(parent,tag,value,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value;parent.appendChild(el);return el};
+  fetch(api+'/api/events').then(r=>{if(!r.ok)throw Error();return r.json()}).then(events=>{
+    if(!Array.isArray(events))throw Error();
+    grid.replaceChildren();
+    if(!events.length){add(grid,'p','Estamos preparando los próximos encuentros. Vuelve pronto para conocer las fechas.','upcomingEmpty');return}
+    for(const event of events){
+      const card=document.createElement('article');card.className='upcomingCard';
+      if(event.image_key){const img=document.createElement('img');img.src=api+'/api/events/'+encodeURIComponent(event.id)+'/image';img.alt='Promocional de '+event.title;img.loading='lazy';card.appendChild(img)}
+      const body=document.createElement('div');body.className='upcomingBody';card.appendChild(body);
+      const date=new Date(event.date+'T12:00:00').toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'});
+      add(body,'div',date+' · '+event.time+' h · '+(event.online?'En línea':event.place),'upcomingMeta');
+      add(body,'h3',event.title);
+      if(event.villain)add(body,'p','Villano: '+event.villain,'upcomingVillain');
+      if(event.description)add(body,'p',event.description);
+      if(event.price_note)add(body,'p',event.price_note,'upcomingPrice');
+      if(event.arrival_note)add(body,'p',event.arrival_note,'upcomingNote');
+      const link=document.createElement('a');link.className='btn primary';link.href='/boletos/?evento='+encodeURIComponent(event.id);
+      link.textContent=event.available<=0?'Lugares agotados':event.active?'Ver detalles y reservar':'Reservas cerradas';
+      if(event.available<=0||!event.active){link.removeAttribute('href');link.setAttribute('aria-disabled','true')}
+      body.appendChild(link);grid.appendChild(card)
+    }
+  }).catch(()=>{grid.replaceChildren();const p=add(grid,'p','No pudimos cargar los eventos en este momento.','upcomingEmpty');const a=add(p,'a','Ver agenda de eventos →');a.href='/boletos/'});
+})();
+</script>
 </body>
 </html>
