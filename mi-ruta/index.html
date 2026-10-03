@@ -30,4 +30,9 @@ footer{text-align:center;padding:28px;color:#876c76;font-size:.86rem;border-top:
 </div></main>
 <section class="evolution"><div class="wrap evoBox"><div><div class="eyebrow">Mi evolución</div><h2>Tu historia también se puede observar.</h2><p>No buscamos una puntuación perfecta. Buscamos que puedas mirar hacia atrás y reconocer qué aprendiste, qué cambiaste y qué quieres seguir construyendo.</p></div><div class="evoItems"><div class="evo"><strong>Inicio</strong>Tu punto de partida.</div><div class="evo"><strong>Proceso</strong>Lo que vas descubriendo.</div><div class="evo"><strong>Hoy</strong>Lo que reconoces diferente.</div></div></div></section>
 <footer>© 2026 Menopausia Dichosa™ · Mónica Cabral · Contenido educativo; no sustituye valoración médica.</footer>
-</body></html>
+<script type="module">
+import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");
+const{data:{session}}=await sb.auth.getSession();
+if(!session)location.replace("/mi-ruta/acceso/");
+</script></body></html>
