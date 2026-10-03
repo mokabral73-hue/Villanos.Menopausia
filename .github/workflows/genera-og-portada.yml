@@ -34,6 +34,9 @@ jobs:
 
           p = Path('index.html')
           html = p.read_text(encoding='utf-8')
+          if 'id="portadaAprobada"' not in html:
+              print('Portada HTML actual: conservar imagen social existente')
+              raise SystemExit(0)
 
           def extract(img_id):
               m = re.search(rf'<img[^>]*id="{re.escape(img_id)}"[^>]*src="data:image/webp;base64,([^"]+)"', html)
@@ -62,8 +65,8 @@ jobs:
           target.save('compartir-portada.jpg', 'JPEG', quality=92, optimize=True, progressive=True)
 
           new_block = '''<meta property="og:type" content="website">
-          <meta property="og:site_name" content="Menopausia Dichosa®">
-          <meta property="og:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
+          <meta property="og:site_name" content="Menopausia Dichosa™">
+          <meta property="og:title" content="Menopausia Dichosa™ | Una nueva etapa, una nueva tú">
           <meta property="og:description" content="Una causa que transforma la manera de vivir esta etapa.">
           <meta property="og:url" content="https://menopausiadichosa.com/">
           <meta property="og:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">
@@ -71,9 +74,9 @@ jobs:
           <meta property="og:image:type" content="image/jpeg">
           <meta property="og:image:width" content="1200">
           <meta property="og:image:height" content="630">
-          <meta property="og:image:alt" content="Menopausia Dichosa® — Mónica Cabral">
+          <meta property="og:image:alt" content="Menopausia Dichosa™ — Mónica Cabral">
           <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:title" content="Menopausia Dichosa® | Una nueva etapa, una nueva tú">
+          <meta name="twitter:title" content="Menopausia Dichosa™ | Una nueva etapa, una nueva tú">
           <meta name="twitter:description" content="Una causa que transforma la manera de vivir esta etapa.">
           <meta name="twitter:image" content="https://menopausiadichosa.com/compartir-portada.jpg?v=20260912">'''.replace('          ','')
 
