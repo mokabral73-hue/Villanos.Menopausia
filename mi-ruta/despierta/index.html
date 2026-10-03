@@ -18,7 +18,7 @@
 import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");
 const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw new Error("Sin sesión")}
-const uid=session.user.id,$=id=>document.getElementById(id),status=$("status");
+const uid=session.user.id,$=id=>document.getElementById(id),status=$("status");/* data-stage-access-guard */const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage","D").maybeSingle();if(access?.status==="locked"){location.replace("/mi-ruta/");throw new Error("Etapa bloqueada")}
 const signalList=["Cambios en el sueño","Cambios en mi energía","Sofocos o sensación de calor","Cambios en el estado de ánimo","Niebla mental o concentración","Cambios digestivos","Molestias articulares o musculares","Cambios en piel o cabello","Cambios en el deseo sexual","Cambios en el ciclo menstrual","Sensación de inflamación","Otra señal que quiero observar"];
 $("energy").innerHTML=Array.from({length:10},(_,i)=>`<label><input type="radio" name="energy" value="${i+1}"><span>${i+1}</span></label>`).join("");
 $("signals").innerHTML=signalList.map((s,i)=>`<label><input type="checkbox" value="${s}" id="sig${i}"><span>${s}</span></label>`).join("");
