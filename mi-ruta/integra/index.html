@@ -997,4 +997,74 @@
         <div class="eq-label">¿Qué días puedes hacer entrenamiento de fuerza? (sé realista, no aspiracional)</div>
         <textarea id="fuerza_dias" class="eq-textarea" style="min-height:54px;" placeholder="Ej: Martes y jueves por la mañana, antes de que arranque el día."></textarea>
 
-        <div class="eq-label">¿En qué momento del día encajan mejor los suplementos para que no se te olviden?</div>
+        <div class="eq-label">¿En qué momento del día encajan mejor los suplementos para que no se te olviden?</div>        <textarea id="suplementos_momento" class="eq-textarea" style="min-height:54px;" placeholder="Ej: Con el desayuno, porque es lo más rutinario que tengo."></textarea>
+
+        <div class="eq-label">¿Qué cambio de nutrición vas a implementar primero esta semana?</div>
+        <textarea id="nutricion_cambio" class="eq-textarea" placeholder="Ej: Empezar cada comida con proteína. Esta semana lo pruebo con el desayuno y el almuerzo."></textarea>
+
+        <div class="eq-label">¿Cómo vas a medir si esta semana fue buena? ¿Qué señal buscas en tu cuerpo?</div>
+        <textarea id="senal_semana" class="eq-textarea" placeholder="Ej: Si el viernes me levanto con más energía que el lunes, habrá valido la pena."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REFLEXIÓN -->
+  <div class="reflection">
+    <div class="reflection-title">Reflexión de cierre del módulo</div>
+    <div class="reflection-body">
+      Antes de pasar al siguiente módulo, responde esta pregunta. Es el puente entre integrar y conectar.
+    </div>
+    <div class="eq-label" style="color:#7FE0C0; margin-bottom:6px;">¿Qué hábito, si lo instalas de verdad, lo cambiaría todo?</div>
+    <textarea id="resultado_final" placeholder="Tu respuesta más honesta…"></textarea>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-banner">
+    <div class="result-icon">💥</div>
+    <div>
+      <div class="result-label">Resultado de este módulo</div>
+      <div class="result-text">Empieza a recuperar energía real — con pasos que sí caben en tu vida</div>
+    </div>
+  </div>
+
+  <!-- SIGUIENTE -->
+  
+<div class="route-actions"><button class="route-btn" id="save-route">Guardar avance</button><button class="route-btn secondary" id="complete-route">Completar este paso</button><span class="route-status" id="route-status">Tus respuestas quedan guardadas en tu Ruta.</span></div>
+<div class="next-module">
+    <div>
+      <div class="next-label">Siguiente módulo</div>
+      <div class="next-title">Conecta con tu nueva identidad</div>
+    </div>
+    <div class="next-letter">C</div>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem; padding-bottom:1rem;">
+    <div style="font-size:12px; color:var(--ink-faint);">Método D.I.C.H.O.S.A.™ · Todos los derechos reservados</div>
+  </div>
+
+</div>
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleSupp(card) {
+    card.classList.toggle('open');
+  }
+
+  function toggleEx(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+</script>
+
+<script type="module">
+import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}const uid=session.user.id,stage="I",ids=['alimentacion_actual', 'sueno_actual', 'movimiento_actual', 'suplementos_actual', 'pilar_prioridad', 'habito_manana', 'obstaculo_solucion', 'hora_habito', 'fuerza_dias', 'suplementos_momento', 'nutricion_cambio', 'senal_semana', 'resultado_final'],$=x=>document.getElementById(x),st=$("route-status");const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw 0}function pct(){return Math.round(ids.filter(x=>$(x)?.value.trim()).length/ids.length*100)}async function load(){const{data}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);for(const r of data||[])if(ids.includes(r.exercise_key)&&$(r.exercise_key))$(r.exercise_key).value=r.response?.text||"";await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available")}async function save(show=true){if(show)st.textContent="Guardando…";for(const id of ids){const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:id,response:{text:$(id)?.value.trim()||""}},{onConflict:"user_id,stage,exercise_key"});if(error){st.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:pct(),updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)st.textContent="✓ Avance guardado";return true}$("save-route").onclick=()=>save();$("complete-route").onclick=async()=>{const final=$("resultado_final");if(!final?.value.trim()){st.textContent="Escribe primero tu reflexión final.";return}if(!await save(false))return;const now=new Date().toISOString();await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary:final.value.trim(),completed_at:now}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:now}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","C").eq("status","locked");st.innerHTML='✓ Integra completada. <a href="/mi-ruta/conecta/">Conecta con tu nueva tú ya está disponible →</a>'};await load();
+</script>
+</body>
+</html>
