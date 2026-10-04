@@ -997,4 +997,139 @@
 
         <div class="eq-label">¿Qué podrías cambiar la próxima semana basándote en lo que ves?</div>
         <textarea id="route_h_4" class="eq-textarea" placeholder="Ej: Proteger las mañanas. Poner límite a esa reunión. No abrir Instagram después de las 9pm."></textarea>
+      </div>    </div>
+
+    <!-- EJ 2 -->
+    <div class="exercise" id="exH2">
+      <div class="exercise-header" onclick="toggleEx('exH2')">
+        <div class="ex-num">2</div>
+        <div class="ex-title">Diseña tu rutina de mañana real</div>
+        <div class="ex-time">20 min</div>
+        <div class="ex-toggle">↓</div>
       </div>
+      <div class="exercise-body">
+        <div class="ex-instructions">No la rutina perfecta de Instagram. La tuya — la que sí vas a cumplir mañana mismo. Empieza con 15–20 minutos máximo.</div>
+        <div class="eq-label">¿A qué hora te despiertas normalmente? ¿Cuánto tiempo tienes antes de que empiece el "caos"?</div>
+        <textarea id="route_h_5" class="eq-textarea" style="min-height:54px;" placeholder="Ej: Me despierto a las 7am. Tengo unos 30 minutos antes de que se levante mi hija."></textarea>
+
+        <div class="eq-label">¿Cuáles son los 2–3 elementos de la rutina de mañana que más quieres implementar?</div>
+        <textarea id="route_h_6" class="eq-textarea" placeholder="Ej: No mirar el móvil los primeros 10 minutos. Beber agua antes del café. Una intención del día."></textarea>
+
+        <div class="eq-label">Escribe cómo se verán esos primeros 20 minutos mañana, paso a paso</div>
+        <textarea id="route_h_7" class="eq-textarea" style="min-height:110px;" placeholder="7:00 — Despertador. No toco el móvil.&#10;7:02 — Vaso de agua con limón en la cocina.&#10;7:05 — Salgo al balcón 5 minutos.&#10;7:10 — Escribo mi intención del día en el cuaderno.&#10;7:15 — Preparo el desayuno."></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 3 -->
+    <div class="exercise" id="exH3">
+      <div class="exercise-header" onclick="toggleEx('exH3')">
+        <div class="ex-num">3</div>
+        <div class="ex-title">Tu lista de eliminación de drenadores</div>
+        <div class="ex-time">20 min · El más concreto</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-instructions">Basándote en los drenadores que marcaste arriba, elige 2 que vas a eliminar o reducir esta semana. Solo 2 — la energía también se hackea con enfoque, no con listas imposibles.</div>
+        <div class="eq-label">Drenador #1 que eliminarás esta semana: ¿cuál es y qué acción concreta tomarás?</div>
+        <textarea id="route_h_8" class="eq-textarea" placeholder="Ej: El scroll nocturno. Acción: el móvil se queda a cargar en el salón desde las 9:30pm. Sin excepciones esta semana."></textarea>
+
+        <div class="eq-label">Drenador #2 que eliminarás esta semana: ¿cuál es y qué acción concreta tomarás?</div>
+        <textarea id="route_h_9" class="eq-textarea" placeholder="Ej: Decir sí cuando quiero decir no. Esta semana: antes de responder cualquier petición, me doy 24 horas para decidir."></textarea>
+
+        <div class="eq-label">¿Qué pondrás en su lugar? (El hueco que dejan los drenadores necesita ser llenado con algo bueno)</div>
+        <textarea id="route_h_10" class="eq-textarea" placeholder="Ej: En lugar del scroll nocturno: 10 minutos de lectura en papel. En lugar del sí automático: silencio y respiración antes de responder."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REFLEXIÓN -->
+  <div class="reflection">
+    <div class="reflection-title">Reflexión de cierre del módulo</div>
+    <div class="reflection-body">Esta pregunta es el puente entre hackear tu energía y optimizar tu biología.</div>
+    <div class="eq-label" style="color:#FECF7A; margin-bottom:6px;">Si tuvieras el doble de energía que ahora, ¿qué harías diferente en tu vida?</div>
+    <textarea id="resultado_final" placeholder="Tu respuesta más honesta…"></textarea>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-banner">
+    <div class="result-icon">💥</div>
+    <div>
+      <div class="result-label">Resultado de este módulo</div>
+      <div class="result-text">Vuelve a sentirse viva — con un sistema de energía que sí funciona</div>
+    </div>
+  </div>
+
+  <!-- SIGUIENTE -->
+  
+<div class="route-actions"><button class="route-btn" id="save-route">Guardar avance</button><button class="route-btn secondary" id="complete-route">Completar este paso</button><span class="route-status" id="route-status">Tus respuestas quedan guardadas en tu Ruta.</span></div>
+<div class="next-module">
+    <div>
+      <div class="next-label">Siguiente módulo</div>
+      <div class="next-title">Optimiza tu Biología</div>
+    </div>
+    <div class="next-letter">O</div>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem; padding-bottom:1rem;">
+    <div style="font-size:12px; color:var(--ink-faint);">Método D.I.C.H.O.S.A.™ · Todos los derechos reservados</div>
+  </div>
+
+</div>
+
+<script>
+  // Medidor de energía
+  function selectMeter(btn, val) {
+    document.querySelectorAll('.meter-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const result = document.getElementById('meter-result');
+    result.classList.add('visible');
+    if (val <= 3) {
+      result.innerHTML = '⚠️ <strong>Energía muy baja.</strong> Tu cuerpo está en modo supervivencia. Este módulo es especialmente urgente para ti. Empieza por identificar tus drenadores principales — ahí está el mayor impacto.';
+    } else if (val <= 5) {
+      result.innerHTML = '🔸 <strong>Energía limitada.</strong> Tienes algunas ventanas buenas pero no es sostenible. Las rutinas de este módulo te van a dar resultados visibles en 1–2 semanas.';
+    } else if (val <= 7) {
+      result.innerHTML = '🟡 <strong>Energía funcional.</strong> Vas tirando pero sabes que puedes más. Aquí el enfoque es eliminar los drenadores ocultos y proteger tus ventanas de alta energía.';
+    } else {
+      result.innerHTML = '✅ <strong>Buena energía de base.</strong> Tienes una base sólida. Este módulo te ayudará a hacerla más consistente y a no depender de los días "buenos".';
+    }
+  }
+
+  // Drenadores
+  function toggleDrainer(card) {
+    card.classList.toggle('marked');
+    const marked = document.querySelectorAll('.drainer-card.marked');
+    const summary = document.getElementById('drainers-summary');
+    if (marked.length === 0) { summary.classList.remove('visible'); return; }
+    summary.classList.add('visible');
+    const names = Array.from(marked).map(c => c.querySelector('.drainer-name').textContent);
+    if (marked.length <= 2) {
+      summary.innerHTML = `<strong>Marcaste ${marked.length} drenador(es):</strong> ${names.join(', ')}. Buen punto de partida — en el Ejercicio 3 vas a elegir los primeros 2 a eliminar.`;
+    } else if (marked.length <= 5) {
+      summary.innerHTML = `<strong>Marcaste ${marked.length} drenadores.</strong> Hay un patrón claro aquí. No tienes que eliminarlos todos — empieza por los 2 que más energía te cuestan y trabaja desde ahí.`;
+    } else {
+      summary.innerHTML = `<strong>Marcaste ${marked.length} drenadores.</strong> Hay una carga acumulada importante. La buena noticia: muchos de estos se resuelven en cadena cuando atacas los más básicos (sueño, glucosa, límites).`;
+    }
+  }
+
+  // Tabs rutinas
+  function switchRTab(id, btn) {
+    document.querySelectorAll('.rtab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+    document.getElementById('rtab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Emociones
+  function toggleEmotion(card) { card.classList.toggle('open'); }
+
+  // Ejercicios
+  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+</script>
+
+<script type="module">
+import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}const uid=session.user.id,stage="H",ids=['route_h_1', 'route_h_2', 'route_h_3', 'route_h_4', 'route_h_5', 'route_h_6', 'route_h_7', 'route_h_8', 'route_h_9', 'route_h_10', 'resultado_final'],$=x=>document.getElementById(x),st=$("route-status");const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw 0}function pct(){return Math.round(ids.filter(x=>$(x)?.value.trim()).length/ids.length*100)}async function load(){const{data}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);for(const r of data||[])if(ids.includes(r.exercise_key)&&$(r.exercise_key))$(r.exercise_key).value=r.response?.text||"";await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available")}async function save(show=true){if(show)st.textContent="Guardando…";for(const id of ids){const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:id,response:{text:$(id)?.value.trim()||""}},{onConflict:"user_id,stage,exercise_key"});if(error){st.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:pct(),updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)st.textContent="✓ Avance guardado";return true}$("save-route").onclick=()=>save();$("complete-route").onclick=async()=>{const final=$("resultado_final");if(!final?.value.trim()){st.textContent="Escribe primero tu reflexión final.";return}if(!await save(false))return;const now=new Date().toISOString();await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary:final.value.trim(),completed_at:now}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:now}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","O").eq("status","locked");st.innerHTML='✓ Hackea completada. <a href="/mi-ruta/optimiza/">Optimízate ya está disponible →</a>'};await load();
+</script>
+</body>
+</html>
