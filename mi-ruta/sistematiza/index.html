@@ -1,42 +1,764 @@
-<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S · Sistematiza | Mi Ruta D.I.C.H.O.S.A.™</title><style>:root{--v:#65062e;--r:#df2467;--c:#fffaf5;--t:#3d2930;--b:#ead9df}*{box-sizing:border-box}body{margin:0;background:var(--c);color:var(--t);font-family:Arial,sans-serif}main{width:min(900px,92%);margin:auto;padding:35px 0 70px}.top{display:flex;justify-content:space-between;align-items:center}.logo{width:205px}.back{color:var(--v);font-weight:700;text-decoration:none}.hero{padding:38px 0 15px}.ey{color:var(--r);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}h1{font:700 clamp(3rem,7vw,5rem) Georgia;color:var(--v);margin:10px 0}h2{font:700 1.75rem Georgia;color:var(--v);margin:5px 0 10px}.lead{font:1.12rem/1.65 Georgia}.card{margin:20px 0;background:#fff;border:1px solid var(--b);border-radius:25px;padding:28px;box-shadow:0 12px 35px #65062e0b}textarea{width:100%;min-height:130px;border:1px solid var(--b);border-radius:14px;padding:14px;font:1rem Arial;resize:vertical}.notice{background:#fff3f7;border-left:4px solid var(--r);padding:14px;border-radius:10px;font-size:.92rem}.btn{border:0;background:var(--r);color:#fff;padding:14px 24px;border-radius:999px;font-weight:800;cursor:pointer}.secondary{background:#fff;color:var(--v);border:1px solid var(--b)}.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.status{color:#806770;font-size:.9rem}.progress{height:8px;background:#f0e5e8;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--r)}.guidegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 24px}.guideitem{background:#fff;border:1px solid var(--b);border-radius:18px;padding:18px}.guideitem b{display:block;color:var(--v);font-family:Georgia,serif;font-size:1.05rem;margin-bottom:5px}.introcard{background:linear-gradient(135deg,#fff7fa,#fff);border:1px solid var(--b);border-radius:25px;padding:28px;margin:20px 0}.introcard p{line-height:1.65}.steps{display:grid;gap:10px;margin-top:16px}.stepmini{display:flex;gap:12px;align-items:flex-start}.stepmini span{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:var(--v);font-weight:800}@media(max-width:650px){.guidegrid{grid-template-columns:1fr}}</style><style>
-.hero{position:relative;overflow:hidden;background:#65062e;color:white;border-radius:30px;padding:48px;margin-top:28px;box-shadow:0 18px 48px #65062e22}.hero:after{content:"S";position:absolute;right:20px;top:-70px;font:700 18rem Georgia;color:#ffffff10;pointer-events:none}.hero h1{position:relative;z-index:1;color:white;max-width:760px}.hero .lead,.hero .small{position:relative;z-index:1;color:#fff}.hero .ey{position:relative;z-index:1;color:#ffc4d8}.hero .progress{position:relative;z-index:1;background:#ffffff22}.guideitem,.introcard,.card{box-shadow:0 12px 36px #65062e0b}.introcard{border-radius:28px;padding:34px;border-left:5px solid #df2467}.steps{grid-template-columns:repeat(3,1fr)}.stepmini{background:#fff5f8;border-radius:16px;padding:14px}.card{padding:34px}.card>.ey:first-child{display:inline-block;background:#fff0f5;border-radius:999px;padding:7px 10px;margin-bottom:10px}.card h2{font-size:2rem}.final{position:relative;overflow:hidden}.final:after{content:"S";position:absolute;right:22px;top:-28px;font:700 8rem Georgia;color:#65062e08;pointer-events:none}.route-bottom-nav{border-top:1px solid #ead9df;padding-top:20px}@media(max-width:650px){.hero{padding:34px 23px}.hero:after{font-size:11rem;right:-8px;top:-25px}.steps{grid-template-columns:1fr}.card,.introcard{padding:23px}.route-bottom-nav .btn{width:100%}}
-</style><style>.exercise-fold{border:1px solid #ead9df;border-radius:22px;margin:18px 0;background:#fff;overflow:hidden;box-shadow:0 9px 28px #65062e08}.exercise-fold summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;gap:14px;color:#65062e;font:700 1.12rem Georgia}.exercise-fold summary::-webkit-details-marker{display:none}.exercise-fold summary:after{content:"＋";margin-left:auto;color:#df2467;font:700 1.35rem Arial}.exercise-fold[open] summary:after{content:"−"}.fold-icon{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:#65062e;font:700 1.05rem Arial}.exercise-fold[open] summary{background:#fff5f8}.exercise-fold>.card{margin:0;border:0;border-top:1px solid #f0e3e7;border-radius:0;box-shadow:none}@media(max-width:650px){.exercise-fold summary{padding:16px}.fold-icon{width:38px;height:38px;flex-basis:38px}}</style><style>
-/* Premium scale pass: wider desktop canvas + stronger guided accordions */
-@media (min-width:900px){
-  .wrap,.container,main{max-width:980px!important}
-}
-.exercise-fold{margin:24px 0!important;border-radius:24px!important;box-shadow:0 12px 34px rgba(101,6,46,.08)!important}
-.exercise-fold summary{min-height:76px;padding:20px 24px!important;font-size:1.2rem!important;letter-spacing:-.01em}
-.exercise-fold .fold-icon{width:50px!important;height:50px!important;flex:0 0 50px!important;font-size:1.2rem!important;box-shadow:inset 0 0 0 1px rgba(101,6,46,.08)}
-.exercise-fold[open] summary{border-bottom:1px solid #efdde4}
-.exercise-fold>.card{padding:30px 32px!important}
-.exercise-fold>.card h2{font-size:1.65rem!important;line-height:1.15;margin-bottom:14px}
-.exercise-fold>.card p,.exercise-fold>.card label,.exercise-fold>.card li{font-size:1rem;line-height:1.65}
-.exercise-fold textarea,.exercise-fold input,.exercise-fold select{font-size:1rem!important;padding:14px!important}
-@media(max-width:899px){
- .exercise-fold summary{min-height:66px!important;font-size:1.05rem!important}
- .exercise-fold>.card{padding:22px 18px!important}
-}
-</style><style id="method-visual-system">
-:root{--vino:#65062e;--rosa:#df2467;--rosa2:#f8d7df;--crema:#fffaf5;--dorado:#c99b56;--texto:#3d2930;--blanco:#fff}
-body{background:var(--crema)!important;color:var(--texto)}
-main{width:min(1180px,92%)!important}
-.top{min-height:78px!important}
-.logo{width:205px!important}
-.hero{background:radial-gradient(circle at 78% 28%,#f5d8c8 0,transparent 28%),linear-gradient(110deg,#fffaf6 0%,#fff4ed 58%,#f7e5d8 100%)!important;color:var(--texto)!important;border-radius:32px!important;padding:54px 58px!important;box-shadow:0 22px 55px rgba(101,6,46,.08)!important}
-.hero:after{content:"S"!important;right:34px!important;top:-70px!important;font:700 18rem Georgia!important;color:rgba(101,6,46,.055)!important}
-.hero h1{color:var(--vino)!important;font-size:clamp(3.2rem,6vw,5.7rem)!important}
-.hero .ey{color:var(--vino)!important}
-.hero .lead,.hero .small,.hero small{color:var(--texto)!important}
-.hero .progress{background:rgba(101,6,46,.10)!important}
-.hero .progress span{background:var(--rosa)!important}
-.guidegrid{gap:20px!important}.guideitem{padding:24px!important;border-radius:22px!important}
-.introcard{background:#fff!important;border-left:5px solid var(--rosa)!important;box-shadow:0 16px 38px rgba(101,6,46,.06)!important}
-.exercise-fold{border-radius:24px!important;box-shadow:0 14px 34px rgba(101,6,46,.06)!important}
-.exercise-fold summary{background:#fff!important}
-.exercise-fold[open] summary{background:#fff5f8!important}
-.fold-icon{background:radial-gradient(circle at 40% 35%,#fff6f4,#f7cbd4 72%)!important;border:1px solid #f3c5d0!important}
-.btn{background:var(--rosa)!important;box-shadow:0 12px 30px rgba(223,36,103,.18)}
-.btn.secondary{background:#fff!important;color:var(--vino)!important;border:1px solid #ead9df!important;box-shadow:none}
-@media(max-width:650px){.hero{padding:34px 23px!important}.hero:after{font-size:11rem!important;right:-8px!important;top:-25px!important}}
-</style></head><body><main><div class="top"><a href="/mi-ruta/"><img class="logo" src="/brand-logo.png?v=20261003"></a><a class="back" href="/mi-ruta/">← Mi Ruta</a></div><section class="hero"><div class="ey">Paso 6 de 7 · Método D.I.C.H.O.S.A.™</div><h1>S · Sistematiza tu cambio</h1><p class="lead"><strong>Sistematiza tu cambio.</strong> Empezar puede ser emocionante; sostener y saber volver es lo que convierte una intención en proceso.</p><div class="progress"><span id="bar"></span></div><small id="pct">0% de este paso</small></section><section class="guided-intro"><div class="guidegrid"><div class="guideitem"><b>Tiempo para ti</b>45–60 min</div><div class="guideitem"><b>Tu recorrido</b>3 experiencias guiadas</div><div class="guideitem"><b>Lo que te llevas</b>Tu sistema personal para sostener y volver</div></div><div class="introcard"><div class="ey">Antes de comenzar</div><h2>¿Por qué este paso?</h2><p>Empezar suele ser más fácil que continuar. Este paso no busca que nunca te salgas del camino; busca que tengas una forma sencilla de regresar.</p><h3>Lo que necesitas saber</h3><p>Un sistema útil contempla los días buenos y los difíciles. Por eso vas a definir tu <strong>mínimo sostenible</strong>, cómo volverás cuando pierdas el ritmo, qué seguimiento semanal usarás y a qué persona o comunidad puedes acercarte cuando necesites apoyo.</p><div class="ey" style="margin-top:22px">Te voy guiando</div><div class="steps"><div class="stepmini"><span>1</span><p>Reconoce lo que sí es sostenible para ti.</p></div><div class="stepmini"><span>2</span><p>Diseña tu versión para días difíciles.</p></div><div class="stepmini"><span>3</span><p>Define cómo sabrás volver cuando te interrumpas.</p></div></div><p class="small" style="margin-top:18px"><strong>No tienes que hacerlo todo de una vez.</strong> Guarda tu avance y vuelve cuando quieras. Tu Ruta conservará lo que vayas construyendo.</p></div></section><div class="notice">Este espacio es educativo y de autoobservación. No sustituye una valoración médica, psicológica o nutricional individual.</div><details class="exercise-fold" open><summary><span class="fold-icon">✓</span><span>01 · Lo que sí puedo sostener</span></summary><section class="card"><div class="ey">1</div><h2>Lo que sí puedo sostener</h2><p class="small"><strong>Hazlo así:</strong> Quédate con las decisiones que caben incluso en una semana normal, con pendientes e imprevistos. Define qué quieres cuidar cuando estás bien y qué mínimo quieres conservar cuando la vida se complica. Sostener no es hacerlo perfecto; es poder retomarlo.</p><p>¿Qué prácticas han demostrado ser realistas para ti?</p><textarea id="sostengo" placeholder="Escribe lo que observas en ti…"></textarea></section></details><details class="exercise-fold"><summary><span class="fold-icon">☂</span><span>02 · Mi plan para días difíciles</span></summary><section class="card"><div class="ey">2</div><h2>Mi plan para días difíciles</h2><p class="small"><strong>Hazlo así:</strong> Diseña la versión más pequeña de tus prácticas importantes que todavía te permita decir: hoy seguí cuidándome.</p><p>¿Cuál será tu versión mínima cuando tengas poco tiempo, ánimo o energía?</p><textarea id="dificil" placeholder="Hazlo concreto y personal…"></textarea></section></details><details class="exercise-fold"><summary><span class="fold-icon">↻</span><span>03 · Mi forma de volver</span></summary><section class="card"><div class="ey">3</div><h2>Mi forma de volver</h2><p class="small"><strong>Hazlo así:</strong> Define una señal para darte cuenta de que te desconectaste sin castigarte y la primera acción sencilla que usarás para regresar. Una vez por semana revisa: <strong>¿Qué funcionó? ¿Qué me costó? ¿Qué voy a ajustar esta semana?</strong> Una cosa, no diez. Identifica también a quién puedes acercarte cuando necesites apoyo.</p><p>Si interrumpes tu rutina, ¿qué señal y qué acción te ayudarán a retomarla?</p><textarea id="volver" placeholder="No busques perfección; busca una decisión posible…"></textarea></section></details><section class="card"><div class="ey">Resultado de este paso</div><h2>Cómo sostendré y volveré</h2><p>Resume en tus palabras lo más importante que quieres llevar contigo.</p><textarea id="final" placeholder="Lo que me llevo de este paso es…"></textarea><div class="actions" style="margin-top:18px"><button class="btn" id="save">Guardar avance</button><button class="btn secondary" id="complete">Completar este paso</button><span class="status" id="status">Tus respuestas quedan en tu Ruta.</span></div><div class="actions route-bottom-nav" style="margin-top:22px;justify-content:space-between"><a class="btn secondary" href="/mi-ruta/" style="text-decoration:none">← Volver a Mi Ruta</a><a class="btn" href="/mi-ruta/acciona/" style="text-decoration:none">Continuar a A · Activa tu poder →</a></div></section></main><script type="module">import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}const uid=session.user.id,stage="S",keys=["sostengo","dificil","volver","resultado_final"],ids=["sostengo","dificil","volver","final"],$=x=>document.getElementById(x),st=$("status");/* data-stage-access-guard */const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw new Error("Etapa bloqueada")}function progress(){let n=ids.filter(x=>$(x).value.trim()).length/ids.length*100;n=Math.round(n);$("bar").style.width=n+"%";$("pct").textContent=n+"% de este paso";return n}async function load(){const{data}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);for(const x of data||[]){const i=keys.indexOf(x.exercise_key);if(i>-1)$(ids[i]).value=x.response?.text||""}progress();await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available")}async function save(show=true){if(show)st.textContent="Guardando…";for(let i=0;i<keys.length;i++){const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:$(ids[i]).value.trim()}},{onConflict:"user_id,stage,exercise_key"});if(error){st.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:progress(),updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)st.textContent="✓ Avance guardado";return true}$("save").onclick=()=>save();$("complete").onclick=async()=>{if(!$("final").value.trim()){st.textContent="Escribe primero tu resultado personal.";return}if(!await save(false))return;await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary:$("final").value.trim(),completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","A").eq("status","locked");st.textContent="✓ Sistematiza tu cambio completada. Activa tu poder ya está disponible.";progress()};document.addEventListener("input",progress);await load();</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paso S – Sostén tu Transformación</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #639922;
+    --green-deep: #2F4A0A;
+    --green-mid: #4A7318;
+    --green-soft: #EAF3DE;
+    --green-pale: #F4FAF0;
+    --sage: #8AAF52;
+    --amber: #C8962A;
+    --amber-soft: #FDF4E3;
+    --rose: #C85A6B;
+    --rose-soft: #FBEDF0;
+    --ink: #111A08;
+    --ink-muted: #4A5E2A;
+    --ink-faint: #AABF80;
+    --cream: #F6FAF2;
+    --white: #FFFFFF;
+    --border: rgba(99,153,34,0.15);
+    --radius: 16px;
+    --shadow: 0 4px 28px rgba(47,74,10,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; line-height: 1.65; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(155deg, #080F02 0%, #1C3008 55%, #2D4D10 100%);
+    color: var(--white); padding: 3.5rem 2rem 2.75rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: 'S'; position: absolute;
+    font-family: 'Lora', serif; font-size: 380px; font-weight: 600;
+    color: rgba(99,153,34,0.07); top: 50%; left: 50%;
+    transform: translate(-50%,-46%); pointer-events: none; line-height: 1;
+  }
+  .hero-badge { display: inline-block; background: rgba(99,153,34,0.22); color: #C5E08A; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; padding: 5px 16px; border-radius: 100px; margin-bottom: 1.25rem; border: 1px solid rgba(99,153,34,0.3); position: relative; }
+  .hero-letter { font-family: 'Lora', serif; font-size: clamp(60px,13vw,96px); font-weight: 600; color: #C5E08A; line-height: 1; margin-bottom: 0.4rem; position: relative; }
+  .hero-title { font-family: 'Lora', serif; font-size: clamp(22px,5vw,32px); font-weight: 400; font-style: italic; color: var(--white); margin-bottom: 0.75rem; position: relative; }
+  .hero-subtitle { font-size: 14px; color: rgba(255,255,255,0.48); max-width: 480px; margin: 0 auto; position: relative; font-weight: 300; }
+
+  .promise { background: var(--green); padding: 1.6rem 2rem; text-align: center; }
+  .promise-text { font-family: 'Lora', serif; font-size: clamp(17px,3.8vw,21px); font-style: italic; color: var(--white); max-width: 620px; margin: 0 auto; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+  .section { margin-bottom: 2.75rem; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.5rem; }
+  .section-title { font-family: 'Lora', serif; font-size: clamp(21px,4.5vw,29px); font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; line-height: 1.28; }
+  .section-body { font-size: 15px; color: var(--ink-muted); max-width: 660px; font-weight: 300; line-height: 1.78; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2.25rem 0; }
+
+  .callout { border-left: 3px solid var(--green); background: var(--green-soft); border-radius: 0 10px 10px 0; padding: 0.9rem 1.1rem; margin: 1.25rem 0; }
+  .callout-amber { border-left-color: var(--amber); background: var(--amber-soft); }
+  .callout-rose { border-left-color: var(--rose); background: var(--rose-soft); }
+  .callout-text { font-size: 13.5px; color: var(--green-deep); line-height: 1.65; }
+  .callout-amber .callout-text { color: #6B3E08; }
+  .callout-rose .callout-text { color: #6B1828; }
+  .callout strong { font-weight: 600; }
+
+  .meta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; text-align: center; box-shadow: var(--shadow); }
+  .meta-icon { font-size: 22px; margin-bottom: 4px; }
+  .meta-label { font-size: 11.5px; color: var(--ink-muted); margin-bottom: 3px; font-weight: 300; }
+  .meta-val { font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  /* ── POR QUÉ FRACASAN ── */
+  .fail-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .fail-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.3rem; position: relative; overflow: hidden; }
+  .fail-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: var(--green); }
+  .fail-num { font-family: 'Lora', serif; font-size: 32px; font-weight: 600; color: var(--green-soft); line-height: 1; margin-bottom: 4px; }
+  .fail-title { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+  .fail-desc { font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; font-weight: 300; }
+  .fail-fix { font-size: 12px; color: var(--green-mid); font-weight: 600; margin-top: 8px; }
+
+  /* ── COMUNIDAD ── */
+  .community-pillars { display: grid; grid-template-columns: repeat(auto-fill,minmax(210px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .cp-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.3rem; }
+  .cp-icon { font-size: 26px; margin-bottom: 8px; }
+  .cp-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+  .cp-desc { font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; font-weight: 300; }
+
+  /* ── RITUALES ── */
+  .rituals-tabs { display: flex; gap: 6px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .rtab { padding: 7px 16px; border-radius: 100px; border: 1.5px solid var(--border); background: var(--white); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--ink-muted); cursor: pointer; transition: all 0.2s; }
+  .rtab.active, .rtab:hover { background: var(--green); border-color: var(--green); color: var(--white); }
+  .rtab-panel { display: none; }
+  .rtab-panel.active { display: block; }
+
+  .ritual-steps { display: flex; flex-direction: column; gap: 10px; }
+  .ritual-step { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; }
+  .rs-badge { background: var(--green-soft); border-radius: 8px; padding: 5px 6px; text-align: center; }
+  .rs-badge-val { font-size: 12px; font-weight: 700; color: var(--green-mid); line-height: 1.2; }
+  .rs-badge-unit { font-size: 10px; color: var(--ink-faint); }
+  .rs-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .rs-desc { font-size: 12.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.6; }
+  .rs-why { display: inline-block; margin-top: 6px; font-size: 11.5px; font-weight: 600; color: var(--green-mid); background: var(--green-soft); padding: 2px 10px; border-radius: 100px; }
+
+  /* ── SEGUIMIENTO ── */
+  .tracking-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .track-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.3rem; position: relative; overflow: hidden; }
+  .track-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: var(--green); }
+  .track-icon { font-size: 24px; margin-bottom: 6px; }
+  .track-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .track-freq { font-size: 11.5px; color: var(--green-mid); font-weight: 600; margin-bottom: 6px; }
+  .track-desc { font-size: 12.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.55; }
+
+  /* ── RECAÍDAS ── */
+  .relapse-steps { position: relative; margin-top: 1.25rem; padding-left: 28px; }
+  .relapse-steps::before { content:''; position:absolute; left:7px; top:8px; bottom:8px; width:2px; background: linear-gradient(to bottom,var(--green-soft),var(--green)); border-radius:2px; }
+  .relapse-item { position: relative; margin-bottom: 16px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+  .relapse-item::before { content:''; position:absolute; left:-23px; top:16px; width:10px; height:10px; border-radius:50%; background:var(--green); border:2px solid var(--white); box-shadow: 0 0 0 2px var(--green); }
+  .relapse-step-label { font-size: 11px; font-weight: 700; color: var(--green-mid); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+  .relapse-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .relapse-desc { font-size: 13px; color: var(--ink-muted); font-weight: 300; line-height: 1.6; }
+
+  /* ── CHECK-IN SEMANAL ── */
+  .checkin-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); margin-top: 1.25rem; }
+  .checkin-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 1.25rem; }
+  .checkin-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .checkin-row:last-child { border-bottom: none; }
+  .checkin-label { font-size: 13.5px; color: var(--ink-muted); font-weight: 300; }
+  .checkin-scale { display: flex; gap: 5px; }
+  .cs-btn { width: 30px; height: 30px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--cream); font-size: 12px; font-weight: 600; color: var(--ink-faint); cursor: pointer; transition: all 0.2s; font-family: 'Plus Jakarta Sans', sans-serif; display: flex; align-items: center; justify-content: center; }
+  .cs-btn:hover { border-color: var(--green); color: var(--green-mid); }
+  .cs-btn.sel { background: var(--green); border-color: var(--green); color: var(--white); }
+  .checkin-summary { margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--green-soft); border-radius: 10px; font-size: 13px; color: var(--green-deep); display: none; line-height: 1.65; }
+  .checkin-summary.visible { display: block; }
+
+  /* ── EXERCISES ── */
+  .exercise { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; }
+  .exercise-header { display: flex; align-items: center; gap: 14px; padding: 1.1rem 1.5rem; cursor: pointer; transition: background 0.15s; }
+  .exercise-header:hover { background: var(--green-pale); }
+  .ex-num { width: 32px; height: 32px; background: var(--green-soft); color: var(--green-deep); font-size: 13px; font-weight: 700; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ex-title { font-size: 14.5px; font-weight: 500; color: var(--ink); flex: 1; }
+  .ex-time { font-size: 12px; color: var(--ink-muted); font-weight: 300; }
+  .ex-toggle { font-size: 18px; color: var(--ink-faint); transition: transform 0.2s; }
+  .exercise.open .ex-toggle { transform: rotate(180deg); }
+  .exercise-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+  .exercise.open .exercise-body { display: block; }
+  .ex-inst { font-size: 14px; color: var(--ink-muted); margin: 1rem 0 1.25rem; line-height: 1.78; font-weight: 300; }
+  .eq-label { font-size: 11.5px; font-weight: 600; color: var(--green-mid); margin-bottom: 5px; letter-spacing: 0.03em; }
+  .eq-textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 300; color: var(--ink); resize: vertical; min-height: 72px; outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+  .eq-textarea:focus { border-color: var(--green); }
+  .eq-textarea::placeholder { color: var(--ink-faint); }
+
+  /* ── COMPROMISOS ── */
+  .commitments { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .commit-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; cursor: pointer; transition: all 0.2s; user-select: none; }
+  .commit-item:hover { border-color: var(--green); }
+  .commit-item.done { background: var(--green-soft); border-color: var(--green); }
+  .commit-check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--ink-faint); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 1px; transition: all 0.2s; }
+  .commit-item.done .commit-check { background: var(--green); border-color: var(--green); color: white; }
+  .commit-title { font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .commit-item.done .commit-title { color: var(--green-deep); }
+  .commit-desc { font-size: 12px; color: var(--ink-muted); font-weight: 300; line-height: 1.5; }
+  .commit-counter { font-size: 12px; color: var(--ink-muted); margin-top: 10px; font-weight: 300; }
+  .commit-counter span { color: var(--green); font-weight: 600; }
+
+  /* ── AFFIRMATIONS CAROUSEL ── */
+  .affirm-box { background: linear-gradient(135deg, #080F02 0%, #1C3008 100%); border-radius: var(--radius); padding: 2rem; color: var(--white); margin-top: 1.25rem; text-align: center; position: relative; overflow: hidden; }
+  .affirm-box::before { content:'❝'; position:absolute; font-size:100px; color:rgba(99,153,34,0.1); top:-10px; left:10px; font-family:'Lora',serif; line-height:1; }
+  .affirm-subtitle { font-size: 11px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(197,224,138,0.7); margin-bottom: 1.5rem; }
+  .affirm-text { font-family: 'Lora', serif; font-size: clamp(17px,3.5vw,21px); font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem; min-height: 60px; display: flex; align-items: center; justify-content: center; position: relative; }
+  .affirm-nav { display: flex; gap: 10px; justify-content: center; }
+  .affirm-btn { padding: 8px 20px; border-radius: 100px; border: 1.5px solid rgba(99,153,34,0.4); background: transparent; color: #C5E08A; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+  .affirm-btn:hover { background: rgba(99,153,34,0.25); border-color: rgba(99,153,34,0.7); }
+  .affirm-dots { display: flex; gap: 6px; justify-content: center; margin-top: 1rem; }
+  .affirm-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: background 0.2s; }
+  .affirm-dot.active { background: #C5E08A; }
+
+  /* ── REFLEXIÓN ── */
+  .reflection { background: linear-gradient(145deg, #080F02 0%, #1C3008 100%); border-radius: var(--radius); padding: 2rem; color: var(--white); margin-top: 2rem; }
+  .reflection-title { font-family: 'Lora', serif; font-size: 21px; font-weight: 400; font-style: italic; margin-bottom: 0.5rem; color: #C5E08A; }
+  .reflection-body { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; line-height: 1.7; font-weight: 300; }
+  .reflection textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.13); border-radius: 10px; padding: 12px 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 300; color: var(--white); resize: vertical; min-height: 90px; outline: none; }
+  .reflection textarea::placeholder { color: rgba(255,255,255,0.22); }
+
+  /* ── RESULT / NEXT ── */
+  .result-banner { display: flex; align-items: center; gap: 16px; background: var(--white); border: 1.5px solid var(--green); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 2rem; }
+  .result-icon { width: 48px; height: 48px; background: var(--green-soft); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .result-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 3px; }
+  .result-text { font-family: 'Lora', serif; font-size: 18px; color: var(--ink); }
+
+  .next-module { display: flex; align-items: center; justify-content: space-between; background: var(--ink); color: var(--white); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 1rem; gap: 12px; }
+  .next-label { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+  .next-title { font-size: 16px; font-weight: 500; color: var(--white); }
+  .next-letter { font-family: 'Lora', serif; font-size: 46px; color: #D85A30; font-weight: 600; line-height: 1; }
+.routebar{max-width:900px;margin:18px auto 0;padding:0 18px;display:flex;justify-content:space-between;gap:16px;font:600 13px Arial,sans-serif}.routebar a{text-decoration:none;color:inherit}.route-save{max-width:900px;margin:24px auto;padding:18px;border:1px solid rgba(120,100,100,.18);border-radius:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.route-save button{border:0;border-radius:999px;padding:11px 17px;font-weight:700;cursor:pointer}.route-save .primary{background:#28233a;color:#fff}.route-save .secondary{background:#fff;border:1px solid #ddd}.route-save span{font:12px Arial,sans-serif;opacity:.65}.next-module{cursor:pointer}
+</style>
+</head>
+<body><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>S · Sistematiza tu cambio</span></div>
+
+<div class="hero">
+  <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 6 de 7</div>
+  <div class="hero-letter">S</div>
+  <div class="hero-title">Sostén tu Transformación</div>
+  <div class="hero-subtitle">Comunidad, seguimiento y rituales diarios — el secreto que nadie más enseña</div>
+</div>
+
+<div class="promise">
+  <div class="promise-text">"No se trata de empezar bien. Se trata de no parar cuando se pone difícil."</div>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="section">
+    <div class="section-label">Bienvenida al sexto paso</div>
+    <div class="section-title">El paso que separa a las que cambian de las que transforman</div>
+    <div class="section-body">Has llegado muy lejos. Tienes el conocimiento, las herramientas, la identidad nueva. Ahora viene la parte que casi nadie enseña: cómo hacer que todo esto dure. No una semana. No un mes. El resto de tu vida. Sostener no es fuerza de voluntad — es sistema, comunidad y ritualización.</div>
+    <div class="callout" style="margin-top:1.25rem;">
+      <div class="callout-text"><strong>Lo que trabajarás aquí:</strong> por qué las transformaciones se caen, los tres pilares del sostenimiento, rituales diarios concretos, sistema de seguimiento, protocolo de recuperación de recaídas y tus compromisos finales.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="meta-card">
+      <div><div class="meta-icon">⏱</div><div class="meta-label">Duración</div><div class="meta-val">55–70 min</div></div>
+      <div><div class="meta-icon">🌿</div><div class="meta-label">Ejercicios</div><div class="meta-val">4 actividades</div></div>
+      <div><div class="meta-icon">🔒</div><div class="meta-label">Te llevas</div><div class="meta-val">Tu sistema de sostenimiento</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- POR QUÉ SE CAE TODO -->
+  <div class="section">
+    <div class="section-label">Parte 1 · El problema real</div>
+    <div class="section-title">Por qué las transformaciones no duran — y cómo evitarlo</div>
+    <div class="section-body">No es falta de ganas. No es falta de información. Hay 5 razones específicas por las que los cambios no se sostienen — y cada una tiene solución.</div>
+
+    <div class="fail-grid">
+      <div class="fail-card">
+        <div class="fail-num">01</div>
+        <div class="fail-title">Cambian conductas sin cambiar identidad</div>
+        <div class="fail-desc">Hacen cosas nuevas pero siguen sintiéndose la misma persona de antes. Sin nuevo yo, el cambio no tiene raíz.</div>
+        <div class="fail-fix">→ Paso C lo resuelve. Aquí lo reforzamos.</div>
+      </div>
+      <div class="fail-card">
+        <div class="fail-num">02</div>
+        <div class="fail-title">Dependen solo de la motivación</div>
+        <div class="fail-desc">La motivación sube y baja. Los días malos llegan. Sin sistema, cuando la motivación cae, cae todo.</div>
+        <div class="fail-fix">→ Los rituales son el sistema que no falla.</div>
+      </div>
+      <div class="fail-card">
+        <div class="fail-num">03</div>
+        <div class="fail-title">Lo hacen en solitario</div>
+        <div class="fail-desc">Sin comunidad, sin rendición de cuentas, sin espejo. El aislamiento en los procesos de cambio es el mayor predictor de recaída.</div>
+        <div class="fail-fix">→ La comunidad no es extra — es esencial.</div>
+      </div>
+      <div class="fail-card">
+        <div class="fail-num">04</div>
+        <div class="fail-title">No miden ni ajustan</div>
+        <div class="fail-desc">Siguen el mismo plan aunque su cuerpo esté pidiendo ajustes. Sin seguimiento, no hay información para mejorar.</div>
+        <div class="fail-fix">→ El check-in semanal lo cambia todo.</div>
+      </div>
+      <div class="fail-card">
+        <div class="fail-num">05</div>
+        <div class="fail-title">Una recaída = abandono total</div>
+        <div class="fail-desc">El pensamiento de todo o nada. Un mal día se convierte en "ya lo dejé". Sin protocolo de recuperación, la recaída es el final.</div>
+        <div class="fail-fix">→ El protocolo de recaída lo evita.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LOS 3 PILARES -->
+  <div class="section">
+    <div class="section-label">Parte 2 · Los tres pilares</div>
+    <div class="section-title">Comunidad, seguimiento y rituales — los tres pilares del sostén</div>
+
+    <div class="community-pillars">
+      <div class="cp-card">
+        <div class="cp-icon">👭</div>
+        <div class="cp-name">Comunidad</div>
+        <div class="cp-desc">No es opcional. El ser humano cambia en comunidad. Necesitas personas que estén en el mismo proceso, que te vean, que te recuerden quién estás siendo.</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-icon">📊</div>
+        <div class="cp-name">Seguimiento</div>
+        <div class="cp-desc">Lo que no se mide se olvida. Un check-in semanal de 10 minutos es la diferencia entre avanzar con intención y derivar sin darte cuenta.</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-icon">🕯️</div>
+        <div class="cp-name">Rituales diarios</div>
+        <div class="cp-desc">Un ritual no es un hábito. Es un acto con significado. Ritualizas lo que quieres preservar. Los rituales anclan tu nueva identidad al cuerpo.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.25rem;">
+      <div class="callout-text"><strong>La fórmula del sostenimiento:</strong> Identidad nueva (Paso C) + Rituales (este paso) + Comunidad (este paso) + Seguimiento (este paso) = Transformación que dura.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RITUALES -->
+  <div class="section">
+    <div class="section-label">Parte 3 · Rituales diarios</div>
+    <div class="section-title">Los rituales que anclan tu transformación</div>
+    <div class="section-body">No son horas de práctica. Son actos pequeños y cargados de intención que le recuerdan a tu cerebro quién estás eligiendo ser cada día.</div>
+
+    <div class="rituals-tabs">
+      <button class="rtab active" onclick="switchRTab('manana',this)">🌅 Ritual mañana</button>
+      <button class="rtab" onclick="switchRTab('noche',this)">🌙 Ritual noche</button>
+      <button class="rtab" onclick="switchRTab('semanal',this)">📅 Ritual semanal</button>
+      <button class="rtab" onclick="switchRTab('crisis',this)">⚡ Ritual de crisis</button>
+    </div>
+
+    <div class="rtab-panel active" id="rtab-manana">
+      <div class="callout" style="margin-bottom:1.25rem;">
+        <div class="callout-text"><strong>Duración:</strong> 10–15 minutos. No es la rutina de mañana del Paso H — es el ritual de identidad que la precede o la cierra.</div>
+      </div>
+      <div class="ritual-steps">
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">1</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">La declaración de identidad en voz alta</div><div class="rs-desc">La que escribiste en el Paso C. Léela o recítala. En voz alta, no en tu cabeza. El sonido de tu propia voz tiene un efecto diferente en el cerebro que el pensamiento silencioso.</div><span class="rs-why">Activa la identidad nueva</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">3</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Una intención + una gratitud + una acción</div><div class="rs-desc">Intención: ¿qué quieres sentir hoy? Gratitud: una cosa real, no genérica. Acción: la primera cosa que harás que está alineada con quien estás siendo.</div><span class="rs-why">Orienta el día desde adentro</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">El cuerpo primero — antes que la pantalla</div><div class="rs-desc">Estiramiento, respiraciones, agua, luz. Cualquier acto de cuidado corporal consciente antes de mirar cualquier pantalla. No es lo que haces — es el orden en que lo haces.</div><span class="rs-why">Confirma la nueva relación con tu cuerpo</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">1</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Los suplementos con consciencia, no con automatismo</div><div class="rs-desc">Tómalos como un acto de cuidado, no como una obligación más. Un segundo de agradecimiento por tener acceso a estas herramientas cambia la relación con el hábito.</div><span class="rs-why">Refuerza el compromiso con tu biología</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rtab-panel" id="rtab-noche">
+      <div class="callout" style="margin-bottom:1.25rem;">
+        <div class="callout-text"><strong>Duración:</strong> 10 minutos. El ritual de noche es el más importante para el sostenimiento — es donde cierras el día con intención en lugar de que el día te cierre a ti.</div>
+      </div>
+      <div class="ritual-steps">
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">3</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">El cierre del día: 3 preguntas en papel</div><div class="rs-desc">¿Qué hice hoy que estuvo alineado con quien estoy siendo? ¿Qué fue difícil y qué aprendí? ¿Qué suelto antes de dormir? Solo una frase por pregunta — no un diario extenso.</div><span class="rs-why">Cierra bucles cognitivos abiertos</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">3</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">La respiración de cierre: 4-7-8</div><div class="rs-desc">Inhala 4 segundos, retén 7, exhala 8. Repite 4 veces. Este es tu interruptor físico entre el modo "hacer" y el modo "ser". No lo saltes aunque estés cansada.</div><span class="rs-why">Desactiva el sistema nervioso</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">2</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Una afirmación de cierre elegida por ti</div><div class="rs-desc">Del carrusel de afirmaciones de este paso o de las que escribiste en el Paso C. Termina el día diciéndote algo que quieras que tu mente inconsciente procese mientras duermes.</div><span class="rs-why">Programa el inconsciente para el mañana</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">2</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Magnesio + temperatura fresca + oscuridad</div><div class="rs-desc">El cierre físico: el suplemento, la habitación fresca y sin luz. No como hábito de salud — como ritual de preparación. Tu cuerpo merece este nivel de cuidado cada noche.</div><span class="rs-why">Sueño reparador como acto de amor propio</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rtab-panel" id="rtab-semanal">
+      <div class="callout" style="margin-bottom:1.25rem;">
+        <div class="callout-text"><strong>Duración:</strong> 20–30 minutos. Una vez a la semana, mismo día, mismo momento. Es tu reunión contigo misma. La más importante de la semana.</div>
+      </div>
+      <div class="ritual-steps">
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Revisión del check-in de la semana</div><div class="rs-desc">Completa el check-in interactivo de este paso. No para juzgarte — para tener información. Los números son tu brújula, no tu examen.</div><span class="rs-why">Información para decidir mejor</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">3 victorias de la semana</div><div class="rs-desc">No importa cuán pequeñas. El cerebro refuerza lo que celebra. Si solo buscas lo que falló, el sistema de recompensa se desactiva y la motivación se va. Las victorias primero.</div><span class="rs-why">Refuerza el sistema de recompensa</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">1 ajuste para la próxima semana</div><div class="rs-desc">Solo uno. Qué cambiarás, qué añadirás o qué eliminarás. La transformación sostenida se construye con ajustes pequeños y frecuentes, no con revoluciones que duran 3 días.</div><span class="rs-why">Mejora continua sin agobio</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Conexión con la comunidad</div><div class="rs-desc">Comparte tu victoria de la semana en el grupo. Lee la de otra compañera. Responde a alguien que lo esté pasando difícil. Esta es la rendición de cuentas que lo sostiene todo.</div><span class="rs-why">La comunidad como espejo y sostén</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rtab-panel" id="rtab-crisis">
+      <div class="callout-rose callout" style="margin-bottom:1.25rem;">
+        <div class="callout-text"><strong>Para los días en que nada funciona.</strong> Todos llegan. La diferencia entre las que se caen y no vuelven y las que se caen y se levantan es tener esto preparado con antelación.</div>
+      </div>
+      <div class="ritual-steps">
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">30</div><div class="rs-badge-unit">seg</div></div>
+          <div><div class="rs-title">Para. Respira. No decidas nada en crisis.</div><div class="rs-desc">Cuando estás en el punto más bajo no es momento de evaluar si el proceso funciona. El cerebro en estrés distorsiona la realidad. La única regla en crisis: no tomar decisiones permanentes en estados temporales.</div><span class="rs-why">Evita el abandono impulsivo</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">2</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Activa el protocolo mínimo viable</div><div class="rs-desc">Cuando todo falla, hay 3 cosas que siempre puedes hacer: beber agua, salir a caminar 5 minutos y decirte tu declaración de identidad. Solo esas 3. El resto puede esperar.</div><span class="rs-why">Mantiene el hilo sin exigirte todo</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Escribe qué pasó — sin juzgar</div><div class="rs-desc">¿Qué detonó este momento? ¿Fue un estresor externo? ¿Falta de sueño? ¿Aislamiento? Los patrones de recaída son información, no fracasos. Escríbelo como una investigadora, no como una acusada.</div><span class="rs-why">Convierte la recaída en datos</span></div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-badge"><div class="rs-badge-val">5</div><div class="rs-badge-unit">min</div></div>
+          <div><div class="rs-title">Conecta con alguien de la comunidad</div><div class="rs-desc">No para quejarte — para que te vean. El aislamiento en los días difíciles es el camino al abandono. Una sola conversación con alguien que entiende puede revertir una semana perdida.</div><span class="rs-why">El contacto humano rompe la espiral</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHECK-IN SEMANAL INTERACTIVO -->
+  <div class="section">
+    <div class="section-label">Parte 4 · Tu seguimiento</div>
+    <div class="section-title">Check-in semanal interactivo</div>
+    <div class="section-body">Hazlo ahora como práctica. Cada semana, mismo momento, mismas preguntas. En 4 semanas tendrás más información sobre ti misma que en los últimos años.</div>
+
+    <div class="checkin-card">
+      <div class="checkin-title">¿Cómo estuvo esta semana? (del 1 al 5)</div>
+      <div class="checkin-row">
+        <div class="checkin-label">Nivel de energía general</div>
+        <div class="checkin-scale">
+          <button class="cs-btn" onclick="selectCI(this,'e')">1</button>
+          <button class="cs-btn" onclick="selectCI(this,'e')">2</button>
+          <button class="cs-btn" onclick="selectCI(this,'e')">3</button>
+          <button class="cs-btn" onclick="selectCI(this,'e')">4</button>
+          <button class="cs-btn" onclick="selectCI(this,'e')">5</button>
+        </div>
+      </div>
+      <div class="checkin-row">
+        <div class="checkin-label">Calidad del sueño</div>
+        <div class="checkin-scale">
+          <button class="cs-btn" onclick="selectCI(this,'s')">1</button>
+          <button class="cs-btn" onclick="selectCI(this,'s')">2</button>
+          <button class="cs-btn" onclick="selectCI(this,'s')">3</button>
+          <button class="cs-btn" onclick="selectCI(this,'s')">4</button>
+          <button class="cs-btn" onclick="selectCI(this,'s')">5</button>
+        </div>
+      </div>
+      <div class="checkin-row">
+        <div class="checkin-label">Estado emocional / humor</div>
+        <div class="checkin-scale">
+          <button class="cs-btn" onclick="selectCI(this,'h')">1</button>
+          <button class="cs-btn" onclick="selectCI(this,'h')">2</button>
+          <button class="cs-btn" onclick="selectCI(this,'h')">3</button>
+          <button class="cs-btn" onclick="selectCI(this,'h')">4</button>
+          <button class="cs-btn" onclick="selectCI(this,'h')">5</button>
+        </div>
+      </div>
+      <div class="checkin-row">
+        <div class="checkin-label">Adherencia a hábitos del método</div>
+        <div class="checkin-scale">
+          <button class="cs-btn" onclick="selectCI(this,'a')">1</button>
+          <button class="cs-btn" onclick="selectCI(this,'a')">2</button>
+          <button class="cs-btn" onclick="selectCI(this,'a')">3</button>
+          <button class="cs-btn" onclick="selectCI(this,'a')">4</button>
+          <button class="cs-btn" onclick="selectCI(this,'a')">5</button>
+        </div>
+      </div>
+      <div class="checkin-row">
+        <div class="checkin-label">Conexión con tu nueva identidad</div>
+        <div class="checkin-scale">
+          <button class="cs-btn" onclick="selectCI(this,'i')">1</button>
+          <button class="cs-btn" onclick="selectCI(this,'i')">2</button>
+          <button class="cs-btn" onclick="selectCI(this,'i')">3</button>
+          <button class="cs-btn" onclick="selectCI(this,'i')">4</button>
+          <button class="cs-btn" onclick="selectCI(this,'i')">5</button>
+        </div>
+      </div>
+      <div class="checkin-summary" id="ci-summary"></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROTOCOLO RECAÍDAS -->
+  <div class="section">
+    <div class="section-label">Parte 5 · Cuando te caes</div>
+    <div class="section-title">El protocolo de recuperación en 5 pasos</div>
+    <div class="section-body">La recaída no es el problema — es lo que haces en las 24 horas después lo que determina si la transformación continúa o se derrumba.</div>
+
+    <div class="relapse-steps">
+      <div class="relapse-item">
+        <div class="relapse-step-label">Paso 1 · Inmediato</div>
+        <div class="relapse-title">Nombra lo que pasó sin dramatizar</div>
+        <div class="relapse-desc">"Tuve un día difícil y no cumplí con mis hábitos." No "Fracasé otra vez." No "Nunca voy a cambiar." Solo los hechos. El drama es el combustible del abandono.</div>
+      </div>
+      <div class="relapse-item">
+        <div class="relapse-step-label">Paso 2 · Primeras 2 horas</div>
+        <div class="relapse-title">Activa el mínimo viable</div>
+        <div class="relapse-desc">Agua, 5 minutos afuera, tu declaración de identidad. Nada más. Demostrarle a tu cerebro que el proceso no terminó — aunque hoy sea al 10%.</div>
+      </div>
+      <div class="relapse-item">
+        <div class="relapse-step-label">Paso 3 · En las primeras 24h</div>
+        <div class="relapse-title">Investiga el patrón</div>
+        <div class="relapse-desc">¿Qué detonó la recaída? ¿Estrés, falta de sueño, aislamiento, hambre, un conflicto? Sin juicio. Solo datos. Cada recaída tiene un patrón — y los patrones se pueden anticipar.</div>
+      </div>
+      <div class="relapse-item">
+        <div class="relapse-step-label">Paso 4 · En los primeros 2 días</div>
+        <div class="relapse-title">Conecta con alguien del proceso</div>
+        <div class="relapse-desc">No para confesar ni para pedir permiso. Para ser vista. Para recordar que no estás sola y que el proceso incluye días difíciles. La comunidad no es para los días buenos — es para estos.</div>
+      </div>
+      <div class="relapse-item">
+        <div class="relapse-step-label">Paso 5 · Al tercer día</div>
+        <div class="relapse-title">Retoma — no recomiences</div>
+        <div class="relapse-desc">No empiezas de cero. Retomas desde donde estabas. Tres días difíciles no borran semanas de trabajo. El músculo de la constancia se forma exactamente en estos momentos.</div>
+      </div>
+    </div>
+
+    <div class="callout-amber callout">
+      <div class="callout-text"><strong>La regla de los 2 días:</strong> nunca falles más de 2 días seguidos. Un día difícil es humano. Dos pueden pasar. Tres días en blanco empiezan a desinstalar el hábito. Esta regla sola salva más transformaciones que cualquier otra.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- AFIRMACIONES CARRUSEL -->
+  <div class="section">
+    <div class="section-label">Parte 6 · Tu armadura diaria</div>
+    <div class="section-title">Afirmaciones de sostenimiento — para los días difíciles</div>
+    <div class="section-body">Estas no son afirmaciones genéricas. Están escritas específicamente para los momentos de duda en esta etapa y en este proceso.</div>
+
+    <div class="affirm-box">
+      <div class="affirm-subtitle">Afirmación del día — toca para cambiar</div>
+      <div class="affirm-text" id="affirm-text">"Cada día que elijo cuidarme es un voto a favor de quien estoy siendo."</div>
+      <div class="affirm-nav">
+        <button class="affirm-btn" onclick="prevAffirm()">← Anterior</button>
+        <button class="affirm-btn" onclick="nextAffirm()">Siguiente →</button>
+      </div>
+      <div class="affirm-dots" id="affirm-dots"></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EJERCICIOS -->
+  <div class="section">
+    <div class="section-label">Parte 7 · Ejercicios del paso</div>
+    <div class="section-title">Construye tu sistema de sostenimiento</div>
+
+    <!-- EJ 1 -->
+    <div class="exercise open" id="exS1">
+      <div class="exercise-header" onclick="toggleEx('exS1')">
+        <div class="ex-num">1</div>
+        <div class="ex-title">Diseña tu ritual de mañana definitivo</div>
+        <div class="ex-time">15 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Combina lo que aprendiste en el Paso H (rutina de mañana) con los elementos de ritual de identidad de este paso. El resultado es tu ritual de mañana definitivo — el que harás el resto del proceso.</div>
+        <div class="eq-label">¿A qué hora empieza tu ritual? ¿Cuánto tiempo tienes?</div>
+        <textarea id="route_s_1" class="eq-textarea" style="min-height:54px;" placeholder="Ej: A las 6:45am. Tengo 20 minutos antes de que empiece el movimiento familiar."></textarea>
+        <div class="eq-label">Escribe tu ritual de mañana paso a paso (incluye la declaración de identidad del Paso C)</div>
+        <textarea id="route_s_2" class="eq-textarea" style="min-height:140px;" placeholder="6:45 — Me levanto. Ni móvil ni noticias.&#10;6:46 — Vaso de agua. Salgo al balcón 3 minutos.&#10;6:49 — Digo mi declaración de identidad en voz alta.&#10;6:50 — Escribo: una intención, una gratitud, una acción.&#10;6:53 — Tomo mis suplementos con consciencia.&#10;6:55 — Desayuno proteico."></textarea>
+        <div class="eq-label">¿Qué podría interrumpir este ritual? ¿Cómo lo vas a proteger?</div>
+        <textarea id="route_s_3" class="eq-textarea" placeholder="Ej: Que alguien me necesite antes de tiempo. Solución: comunicar a mi familia que esos 20 minutos son no negociables."></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 2 -->
+    <div class="exercise" id="exS2">
+      <div class="exercise-header" onclick="toggleEx('exS2')">
+        <div class="ex-num">2</div>
+        <div class="ex-title">Tu plan de comunidad y rendición de cuentas</div>
+        <div class="ex-time">15 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">La comunidad no es esperar a que alguien te cuide — es elegir activamente quiénes van a ser parte de tu proceso. Este ejercicio define eso.</div>
+        <div class="eq-label">¿Participas en la comunidad del programa? ¿Con qué frecuencia?</div>
+        <textarea id="route_s_4" class="eq-textarea" style="min-height:54px;" placeholder="Ej: Entro cuando me acuerdo. Quiero comprometer 2 veces a la semana: compartir una victoria y responder a alguien."></textarea>
+        <div class="eq-label">¿Tienes una "compañera de proceso" — alguien que también esté en este camino?</div>
+        <textarea id="route_s_5" class="eq-textarea" placeholder="Ej: Mi amiga Sandra está empezando también. Voy a proponerle hacer un check-in juntas cada semana por mensaje de voz."></textarea>
+        <div class="eq-label">¿Qué vas a compartir activamente para mantener el compromiso? (victorias, dudas, recaídas)</div>
+        <textarea id="route_s_6" class="eq-textarea" placeholder="Ej: Esta semana voy a compartir mi victoria del ritual de mañana. Y si tengo un día difícil, lo voy a escribir en el grupo antes de dejarlo pasar."></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 3 -->
+    <div class="exercise" id="exS3">
+      <div class="exercise-header" onclick="toggleEx('exS3')">
+        <div class="ex-num">3</div>
+        <div class="ex-title">Prepara tu protocolo de recaída personal</div>
+        <div class="ex-time">20 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Los días difíciles llegan. Prepararte ahora, cuando estás bien, significa que cuando lleguen no tendrás que improvisar. Este ejercicio te da el guión para esos momentos.</div>
+        <div class="eq-label">¿Cuáles son tus principales detonantes de recaída? (los momentos, situaciones o estados que más te hacen abandonar)</div>
+        <textarea id="route_s_7" class="eq-textarea" placeholder="Ej: El estrés laboral intenso. Las semanas de viaje. Cuando me peleo con mi pareja. Cuando duermo muy mal varios días seguidos."></textarea>
+        <div class="eq-label">¿Cuál es tu señal de alerta temprana? (¿Cómo sabes que estás cerca del abandono antes de que ocurra?)</div>
+        <textarea id="route_s_8" class="eq-textarea" placeholder="Ej: Cuando empiezo a saltarme el ritual de mañana. Cuando ya no abro el grupo. Cuando digo 'mañana empiezo de nuevo' más de dos veces."></textarea>
+        <div class="eq-label">Escribe tu protocolo personal de crisis — las 3 acciones que harás SÍ O SÍ cuando llegue un día difícil</div>
+        <textarea id="route_s_9" class="eq-textarea" style="min-height:100px;" placeholder="1. Agua + 5 minutos afuera + mi declaración. Siempre. Sin excusas.&#10;2. Escribir qué pasó — sin juzgarme.&#10;3. Mandar un mensaje a Sandra o al grupo."></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 4 · COMPROMISOS -->
+    <div class="exercise" id="exS4">
+      <div class="exercise-header" onclick="toggleEx('exS4')">
+        <div class="ex-num">4</div>
+        <div class="ex-title">Tus compromisos de sostenimiento</div>
+        <div class="ex-time">10 min · Tu pacto contigo misma</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Marca los compromisos que estás dispuesta a adoptar. No los que "deberías" — los que sí vas a cumplir. Un compromiso real vale más que diez aspiracionales.</div>
+        <div class="commitments" id="commitments-list">
+          <div class="commit-item" onclick="toggleCommit(this)">
+            <div class="commit-check"></div>
+            <div><div class="commit-title">Haré mi ritual de mañana al menos 5 de 7 días esta semana</div><div class="commit-desc">No perfecto — constante. 5 de 7 ya es una transformación.</div></div>
+          </div>
+          <div class="commit-item" onclick="toggleCommit(this)">
+            <div class="commit-check"></div>
+            <div><div class="commit-title">Haré mi check-in semanal cada domingo (o el día que elija)</div><div class="commit-desc">Mismo día, mismo momento. 20 minutos a la semana que cambian todo.</div></div>
+          </div>
+          <div class="commit-item" onclick="toggleCommit(this)">
+            <div class="commit-check"></div>
+            <div><div class="commit-title">Compartiré una victoria por semana en la comunidad</div><div class="commit-desc">Pequeña o grande. Compartirla la hace más real y refuerza el proceso de los demás.</div></div>
+          </div>
+          <div class="commit-item" onclick="toggleCommit(this)">
+            <div class="commit-check"></div>
+            <div><div class="commit-title">Usaré el protocolo de recaída en lugar de abandonar</div><div class="commit-desc">Cuando venga el día difícil — y vendrá — activaré los 3 pasos del protocolo antes de decidir que "no puedo".</div></div>
+          </div>
+          <div class="commit-item" onclick="toggleCommit(this)">
+            <div class="commit-check"></div>
+            <div><div class="commit-title">Aplicaré la regla de los 2 días — nunca más de 2 en blanco</div><div class="commit-desc">No perfecta. Constante. Dos días difíciles están permitidos. Al tercero, retomo.</div></div>
+          </div>
+          <div class="commit-item" onclick="toggleCommit(this)">
+            <div class="commit-check"></div>
+            <div><div class="commit-title">Leeré mi declaración de identidad todos los días durante 30 días</div><div class="commit-desc">En voz alta. 60 segundos. 30 días. La inversión de tiempo más rentable del proceso.</div></div>
+          </div>
+        </div>
+        <div class="commit-counter">Compromisos activados: <span id="commit-count">0</span> de 6</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REFLEXIÓN -->
+  <div class="reflection">
+    <div class="reflection-title">Reflexión de cierre del paso</div>
+    <div class="reflection-body">Este es el penúltimo paso. Estás casi en el final del método — que en realidad es el inicio de tu nueva vida. Esta pregunta es el puente hacia la A.</div>
+    <div class="eq-label" style="color:#C5E08A; margin-bottom:6px;">¿Qué necesitas sostener para que dentro de un año puedas decir que esto realmente cambió tu vida?</div>
+    <textarea id="route_s_10" placeholder="Tu respuesta más honesta…"></textarea>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-banner">
+    <div class="result-icon">💥</div>
+    <div>
+      <div class="result-label">Resultado de este paso</div>
+      <div class="result-text">No vuelve a caer — porque ahora tiene un sistema, no solo buenas intenciones</div>
+    </div>
+  </div>
+
+  <!-- SIGUIENTE -->
+  <div class="next-module">
+    <div>
+      <div class="next-label">Paso final</div>
+      <div class="next-title">Activa tu poder</div>
+    </div>
+    <div class="next-letter">A</div>
+  </div>
+
+  <div class="route-save"><button id="routeSave" class="primary">Guardar avance</button><button id="routeComplete" class="secondary">Completar este paso</button><span id="routeStatus">Tus respuestas quedan en tu Ruta.</span><a href="/mi-ruta/acciona/" style="margin-left:auto;text-decoration:none;font-weight:700">Continuar a A · Activa tu poder →</a></div><div style="text-align:center; margin-top:2rem; padding-bottom:1rem;">
+    <div style="font-size:12px; color:var(--ink-faint);">Método D.I.C.H.O.S.A.™ · Todos los derechos reservados</div>
+  </div>
+
+</div>
+
+<script type="module">
+import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+  // Tabs rituales
+  function switchRTab(id, btn) {
+    document.querySelectorAll('.rtab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+    document.getElementById('rtab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Check-in
+  const ciScores = {e:0, s:0, h:0, a:0, i:0};
+  function selectCI(btn, cat) {
+    const row = btn.closest('.checkin-row');
+    row.querySelectorAll('.cs-btn').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+    ciScores[cat] = parseInt(btn.textContent);
+    const filled = Object.values(ciScores).filter(v => v > 0).length;
+    if (filled < 5) return;
+    const total = Object.values(ciScores).reduce((a,b) => a+b, 0);
+    const avg = total / 5;
+    const summary = document.getElementById('ci-summary');
+    summary.classList.add('visible');
+    if (avg >= 4) {
+      summary.innerHTML = `<strong>Semana muy buena (promedio ${avg.toFixed(1)}/5).</strong> Estás en un momento de impulso. Aprovéchalo para afianzar el hábito más débil y celebrar lo que está funcionando.`;
+    } else if (avg >= 2.5) {
+      summary.innerHTML = `<strong>Semana regular (promedio ${avg.toFixed(1)}/5).</strong> Hay avances y hay áreas que piden más atención. Elige una sola cosa que ajustar la próxima semana — no todo a la vez.`;
+    } else {
+      summary.innerHTML = `<strong>Semana difícil (promedio ${avg.toFixed(1)}/5).</strong> Es información, no fracaso. Revisa el protocolo de recaída. Activa el mínimo viable. Conecta con la comunidad hoy.`;
+    }
+  }
+
+  // Ejercicios
+  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+
+  // Compromisos
+  function toggleCommit(item) {
+    item.classList.toggle('done');
+    item.querySelector('.commit-check').textContent = item.classList.contains('done') ? '✓' : '';
+    document.getElementById('commit-count').textContent = document.querySelectorAll('.commit-item.done').length;
+  }
+
+  // Afirmaciones
+  const affirmations = [
+    '"Cada día que elijo cuidarme es un voto a favor de quien estoy siendo."',
+    '"No necesito ser perfecta — necesito ser constante."',
+    '"Los días difíciles no me definen. Cómo me levanto de ellos, sí."',
+    '"Tengo un sistema. Tengo una comunidad. No estoy sola en esto."',
+    '"Mi transformación no depende de mi estado de ánimo — depende de mi sistema."',
+    '"Cada vez que retomo después de caer, me hago más fuerte."',
+    '"Sostener es el acto más poderoso que existe. Hoy elijo sostener."',
+    '"No empiezo de cero. Sigo desde donde estoy."',
+    '"Mi cuerpo merece este nivel de cuidado. Yo merezco este nivel de cuidado."',
+    '"La versión que emerge de esta etapa es la más auténtica que he sido jamás."'
+  ];
+  let currentAffirm = 0;
+
+  function renderDots() {
+    const dots = document.getElementById('affirm-dots');
+    dots.innerHTML = affirmations.map((_, i) =>
+      `<div class="affirm-dot ${i === currentAffirm ? 'active' : ''}"></div>`
+    ).join('');
+  }
+
+  function showAffirm() {
+    document.getElementById('affirm-text').textContent = affirmations[currentAffirm];
+    renderDots();
+  }
+
+  function nextAffirm() { currentAffirm = (currentAffirm + 1) % affirmations.length; showAffirm(); }
+  function prevAffirm() { currentAffirm = (currentAffirm - 1 + affirmations.length) % affirmations.length; showAffirm(); }
+
+  renderDots();
+
+const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");
+const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}
+const uid=session.user.id,stage="S",ids=["route_s_1","route_s_2","route_s_3","route_s_4","route_s_5","route_s_6","route_s_7","route_s_8","route_s_9","route_s_10"],keys=["s_1","s_2","s_3","s_4","s_5","s_6","s_7","s_8","s_9","s_10"],statusEl=document.getElementById("routeStatus");
+const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw new Error("Paso bloqueado")}
+const{data:saved}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);
+for(const x of saved||[]){const i=keys.indexOf(x.exercise_key);if(i>-1&&document.getElementById(ids[i]))document.getElementById(ids[i]).value=x.response?.text||""}
+await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available");
+async function routeSave(show=true){if(show)statusEl.textContent="Guardando…";let filled=0;for(let i=0;i<ids.length;i++){const el=document.getElementById(ids[i]),value=el?.value.trim()||"";if(value)filled++;const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:value}},{onConflict:"user_id,stage,exercise_key"});if(error){statusEl.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:ids.length?Math.round(filled/ids.length*100):0,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)statusEl.textContent="✓ Avance guardado";return true}
+document.getElementById("routeSave").onclick=()=>routeSave();
+document.getElementById("routeComplete").onclick=async()=>{if(!await routeSave(false))return;const summary=ids.map(id=>document.getElementById(id)?.value.trim()).filter(Boolean).slice(-1)[0]||"Sistematiza tu cambio completada";await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","A").eq("status","locked");statusEl.textContent="✓ Sistematiza tu cambio completada. Activa tu poder ya está disponible.";};
+</script>
+</body>
+</html>
