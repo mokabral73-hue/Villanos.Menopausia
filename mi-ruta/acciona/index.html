@@ -567,10 +567,10 @@
 <script type="module">
 import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+  window.toggleEx=function(id){ document.getElementById(id).classList.toggle('open'); }
 
   // Seguridad
-  function toggleSec(item) {
+  window.toggleSec=function(item){
     item.classList.toggle('claimed');
     item.querySelector('.sec-check').textContent = item.classList.contains('claimed') ? '✓' : '';
     const count = document.querySelectorAll('.security-item.claimed').length;
@@ -578,7 +578,7 @@ import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+e
   }
 
   // Quiz expansión
-  function selectQuiz(btn, type) {
+  window.selectQuiz=function(btn, type){
     btn.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     const result = document.getElementById('quiz-result');
