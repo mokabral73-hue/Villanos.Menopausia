@@ -1,125 +1,755 @@
-<!doctype html>
-<html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>D · Despierta | Mi Ruta D.I.C.H.O.S.A.™</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D · Despierta tu Conciencia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--v:#65062e;--r:#df2467;--c:#fffaf5;--t:#3d2930;--p:#f9dbe6;--b:#ead9df;--g:#8a747c}*{box-sizing:border-box}body{margin:0;background:var(--c);color:var(--t);font-family:Arial,sans-serif}main{width:min(980px,92%);margin:auto;padding:34px 0 70px}.top{display:flex;justify-content:space-between;align-items:center;gap:20px}.logo{width:205px}.back{color:var(--v);font-weight:700;text-decoration:none}.hero{margin:38px 0 24px}.ey{color:var(--r);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}h1{font:700 clamp(3rem,7vw,5.2rem) Georgia;color:var(--v);margin:10px 0}.lead{font:1.12rem/1.65 Georgia;max-width:760px}.progress{height:8px;background:#f0e5e8;border-radius:99px;overflow:hidden;margin:24px 0 8px}.progress span{display:block;height:100%;width:0;background:var(--r);transition:.3s}.small{color:var(--g);font-size:.9rem}.card{margin:22px 0;background:#fff;border:1px solid var(--b);border-radius:25px;padding:28px;box-shadow:0 12px 35px #65062e0b}h2{font:700 1.8rem Georgia;color:var(--v);margin:0 0 10px}h3{color:var(--v);margin:20px 0 10px}.scale{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.scale label,.chips label{cursor:pointer}.scale input,.chips input{position:absolute;opacity:0}.scale span{display:grid;place-items:center;width:43px;height:43px;border:1px solid var(--b);border-radius:50%;font-weight:700}.scale input:checked+span,.chips input:checked+span{background:var(--v);color:#fff;border-color:var(--v)}.chips{display:flex;flex-wrap:wrap;gap:9px}.chips span{display:block;border:1px solid var(--b);border-radius:999px;padding:9px 13px;background:#fff}textarea,input[type=text],input[type=date]{width:100%;border:1px solid var(--b);border-radius:14px;padding:13px;font:1rem Arial;background:#fff;outline:none}textarea{min-height:105px;resize:vertical}.days{display:grid;gap:12px}.day{border:1px solid #f0e3e7;border-radius:18px;padding:18px;background:#fffafc}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;background:var(--r);color:#fff;padding:14px 24px;border-radius:999px;font-weight:800;cursor:pointer;font-size:1rem}.btn.secondary{background:#fff;color:var(--v);border:1px solid var(--b)}.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.status{font-size:.9rem;color:var(--g)}.notice{background:#fff3f7;border-left:4px solid var(--r);padding:14px 16px;border-radius:10px;font-size:.92rem;line-height:1.5}.final{background:linear-gradient(135deg,#fff,#fff3f7)}@media(max-width:650px){.row{grid-template-columns:1fr}.top{align-items:flex-start}.logo{width:170px}.card{padding:21px}}
-.guidegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 24px}.guideitem{background:#fff;border:1px solid var(--b);border-radius:18px;padding:18px}.guideitem b{display:block;color:var(--v);font-family:Georgia,serif;font-size:1.05rem;margin-bottom:5px}.introcard{background:linear-gradient(135deg,#fff7fa,#fff);border:1px solid var(--b);border-radius:25px;padding:28px;margin:20px 0}.introcard p{line-height:1.65}.steps{display:grid;gap:10px;margin-top:16px}.stepmini{display:flex;gap:12px;align-items:flex-start}.stepmini span{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:var(--v);font-weight:800}@media(max-width:650px){.guidegrid{grid-template-columns:1fr}}</style><style>
-body{font-family:Arial,sans-serif}.hero{position:relative;overflow:hidden;background:#65062e;color:white;border-radius:30px;padding:48px;margin-top:28px;box-shadow:0 18px 48px #65062e22}.hero:after{content:"D";position:absolute;right:20px;top:-70px;font:700 18rem Georgia;color:#ffffff10;pointer-events:none}.hero h1{position:relative;z-index:1;color:white;max-width:760px}.hero .lead,.hero .small{position:relative;z-index:1;color:#fff}.hero .ey{position:relative;z-index:1;color:#ffc4d8}.hero .progress{position:relative;z-index:1;background:#ffffff22}.guideitem,.introcard,.card{box-shadow:0 12px 36px #65062e0b}.introcard{border-radius:28px;padding:34px;border-left:5px solid #df2467}.steps{grid-template-columns:repeat(3,1fr)}.stepmini{background:#fff5f8;border-radius:16px;padding:14px}.card{padding:34px}.card>.ey:first-child{display:inline-block;background:#fff0f5;border-radius:999px;padding:7px 10px;margin-bottom:10px}.card h2{font-size:2rem}.final{position:relative;overflow:hidden}.final:after{content:"D";position:absolute;right:22px;top:-28px;font:700 8rem Georgia;color:#65062e08;pointer-events:none}.route-bottom-nav{border-top:1px solid #ead9df;padding-top:20px}@media(max-width:650px){.hero{padding:34px 23px}.hero:after{font-size:11rem;right:-8px;top:-25px}.steps{grid-template-columns:1fr}.card,.introcard{padding:23px}.route-bottom-nav .btn{width:100%}}
-</style><style>.exercise-fold{border:1px solid #ead9df;border-radius:22px;margin:18px 0;background:#fff;overflow:hidden;box-shadow:0 9px 28px #65062e08}.exercise-fold summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;gap:14px;color:#65062e;font:700 1.12rem Georgia}.exercise-fold summary::-webkit-details-marker{display:none}.exercise-fold summary:after{content:"＋";margin-left:auto;color:#df2467;font:700 1.35rem Arial}.exercise-fold[open] summary:after{content:"−"}.fold-icon{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:#65062e;font:700 1.05rem Arial}.exercise-fold[open] summary{background:#fff5f8}.exercise-fold>.card{margin:0;border:0;border-top:1px solid #f0e3e7;border-radius:0;box-shadow:none}@media(max-width:650px){.exercise-fold summary{padding:16px}.fold-icon{width:38px;height:38px;flex-basis:38px}}</style><style>
-/* Premium scale pass: wider desktop canvas + stronger guided accordions */
-@media (min-width:900px){
-  .wrap,.container,main{max-width:980px!important}
-}
-.exercise-fold{margin:24px 0!important;border-radius:24px!important;box-shadow:0 12px 34px rgba(101,6,46,.08)!important}
-.exercise-fold summary{min-height:76px;padding:20px 24px!important;font-size:1.2rem!important;letter-spacing:-.01em}
-.exercise-fold .fold-icon{width:50px!important;height:50px!important;flex:0 0 50px!important;font-size:1.2rem!important;box-shadow:inset 0 0 0 1px rgba(101,6,46,.08)}
-.exercise-fold[open] summary{border-bottom:1px solid #efdde4}
-.exercise-fold>.card{padding:30px 32px!important}
-.exercise-fold>.card h2{font-size:1.65rem!important;line-height:1.15;margin-bottom:14px}
-.exercise-fold>.card p,.exercise-fold>.card label,.exercise-fold>.card li{font-size:1rem;line-height:1.65}
-.exercise-fold textarea,.exercise-fold input,.exercise-fold select{font-size:1rem!important;padding:14px!important}
-@media(max-width:899px){
- .exercise-fold summary{min-height:66px!important;font-size:1.05rem!important}
- .exercise-fold>.card{padding:22px 18px!important}
-}
-</style><style id="method-visual-system">
-:root{--vino:#65062e;--rosa:#df2467;--rosa2:#f8d7df;--crema:#fffaf5;--dorado:#c99b56;--texto:#3d2930;--blanco:#fff}
-body{background:var(--crema)!important;color:var(--texto)}
-main{width:min(1180px,92%)!important}
-.top{min-height:78px!important}
-.logo{width:205px!important}
-.hero{background:radial-gradient(circle at 78% 28%,#f5d8c8 0,transparent 28%),linear-gradient(110deg,#fffaf6 0%,#fff4ed 58%,#f7e5d8 100%)!important;color:var(--texto)!important;border-radius:32px!important;padding:54px 58px!important;box-shadow:0 22px 55px rgba(101,6,46,.08)!important}
-.hero:after{content:"D"!important;right:34px!important;top:-70px!important;font:700 18rem Georgia!important;color:rgba(101,6,46,.055)!important}
-.hero h1{color:var(--vino)!important;font-size:clamp(3.2rem,6vw,5.7rem)!important}
-.hero .ey{color:var(--vino)!important}
-.hero .lead,.hero .small,.hero small{color:var(--texto)!important}
-.hero .progress{background:rgba(101,6,46,.10)!important}
-.hero .progress span{background:var(--rosa)!important}
-.guidegrid{gap:20px!important}.guideitem{padding:24px!important;border-radius:22px!important}
-.introcard{background:#fff!important;border-left:5px solid var(--rosa)!important;box-shadow:0 16px 38px rgba(101,6,46,.06)!important}
-.exercise-fold{border-radius:24px!important;box-shadow:0 14px 34px rgba(101,6,46,.06)!important}
-.exercise-fold summary{background:#fff!important}
-.exercise-fold[open] summary{background:#fff5f8!important}
-.fold-icon{background:radial-gradient(circle at 40% 35%,#fff6f4,#f7cbd4 72%)!important;border:1px solid #f3c5d0!important}
-.btn{background:var(--rosa)!important;box-shadow:0 12px 30px rgba(223,36,103,.18)}
-.btn.secondary{background:#fff!important;color:var(--vino)!important;border:1px solid #ead9df!important;box-shadow:none}
-@media(max-width:650px){.hero{padding:34px 23px!important}.hero:after{font-size:11rem!important;right:-8px!important;top:-25px!important}}
-</style></head><body><main>
-<div class="top"><a href="/mi-ruta/"><img class="logo" src="/brand-logo.png?v=20261003" alt="Menopausia Dichosa™"></a><a class="back" href="/mi-ruta/">← Mi Ruta</a></div>
-<section class="hero"><div class="ey">Paso 1 de 7 · Método D.I.C.H.O.S.A.™</div><h1>D · Despierta tu conciencia</h1><p class="lead"><strong>Antes de cambiar algo, observa.</strong> Este paso es tu punto de partida para escuchar las señales de tu cuerpo, reconocer patrones y comenzar a conocerte con mayor intención.</p><div class="progress"><span id="bar"></span></div><div class="small" id="pct">0% de este paso</div></section>
-<section class="guided-intro">
-<div class="introcard">
-<h2>¿Por qué empezamos aquí?</h2>
-<p>Antes de cambiar cualquier hábito, antes de tomar cualquier suplemento, antes de cualquier cosa… necesitas entender tu propio cuerpo. Este paso existe para ayudarte a dejar de sentirte confundida y empezar a observarte con claridad.</p>
-<div class="learning-callout" style="border-left:3px solid #df2467;padding:14px 16px;margin:18px 0 26px;background:#fff7f8;color:#7a3850"><strong>Lo que aprenderás aquí:</strong> qué está pasando en esta etapa, por qué tu cuerpo puede responder distinto y cómo identificar cuáles señales son tuyas para poder actuar con mayor claridad.</div>
+  :root {
+    --violet: #7F77DD;
+    --violet-deep: #3C3489;
+    --violet-soft: #EEEDFE;
+    --rose: #D4537E;
+    --cream: #FDF8F3;
+    --ink: #1A1626;
+    --ink-muted: #6B6580;
+    --ink-faint: #C8C4D8;
+    --white: #FFFFFF;
+    --border: rgba(127,119,221,0.18);
+    --radius: 16px;
+    --shadow: 0 4px 32px rgba(60,52,137,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    line-height: 1.65;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--white);
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: 'D';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 280px;
+    font-weight: 600;
+    color: rgba(127,119,221,0.08);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(127,119,221,0.25);
+    color: #C5C1F6;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(127,119,221,0.35);
+  }
+  .hero-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 80px);
+    font-weight: 600;
+    color: var(--violet);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ── PROMISE ── */
+  .promise {
+    background: var(--violet);
+    color: var(--white);
+    padding: 1.75rem 2rem;
+    text-align: center;
+  }
+  .promise-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 3.5vw, 20px);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 26px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .section-body {
+    font-size: 15px;
+    color: var(--ink-muted);
+    max-width: 660px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+  }
+
+  /* ── HORMONES GRID ── */
+  .hormones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 12px;
+    margin-top: 1.25rem;
+  }
+  .hormone-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hormone-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--violet);
+  }
+  .hormone-name {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .hormone-role {
+    font-size: 12px;
+    color: var(--violet);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .hormone-desc {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+
+  /* ── SYMPTOMS ── */
+  .symptoms-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+  .sym-cat-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .sym-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .sym-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .sym-item:hover { border-color: var(--violet); }
+  .sym-item.checked {
+    background: var(--violet-soft);
+    border-color: var(--violet);
+    color: var(--violet-deep);
+    font-weight: 500;
+  }
+  .sym-check {
+    width: 16px; height: 16px;
+    border-radius: 4px;
+    border: 1.5px solid var(--ink-faint);
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    font-size: 11px;
+  }
+  .sym-item.checked .sym-check {
+    background: var(--violet);
+    border-color: var(--violet);
+    color: white;
+  }
+  .sym-result {
+    background: var(--violet-soft);
+    border: 1px solid rgba(127,119,221,0.25);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: none;
+  }
+  .sym-result.visible { display: block; }
+  .sym-result-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--violet-deep);
+    margin-bottom: 4px;
+  }
+  .sym-result-text {
+    font-size: 13px;
+    color: var(--violet-deep);
+    opacity: 0.8;
+  }
+
+  /* ── EXERCISES ── */
+  .exercise {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .exercise-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 1.1rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .exercise-header:hover { background: #FAFAFA; }
+  .ex-num {
+    width: 32px; height: 32px;
+    background: var(--violet-soft);
+    color: var(--violet-deep);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .ex-title { font-size: 14.5px; font-weight: 500; color: var(--ink); flex: 1; }
+  .ex-time { font-size: 12px; color: var(--ink-muted); }
+  .ex-toggle { font-size: 18px; color: var(--ink-faint); transition: transform 0.2s; }
+  .exercise.open .ex-toggle { transform: rotate(180deg); }
+  .exercise-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .exercise.open .exercise-body { display: block; }
+  .exercise-instructions {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin: 1rem 0 1.25rem;
+    line-height: 1.7;
+  }
+  .exercise-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .eq-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--violet);
+    margin-bottom: 5px;
+  }
+  .eq-textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    resize: vertical;
+    min-height: 72px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .eq-textarea:focus { border-color: var(--violet); }
+  .eq-textarea::placeholder { color: var(--ink-faint); }
+
+  /* ── REFLECTION BOX ── */
+  .reflection {
+    background: linear-gradient(135deg, var(--ink) 0%, #2D2650 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    color: var(--white);
+    margin-top: 2rem;
+  }
+  .reflection-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #C5C1F6;
+  }
+  .reflection-body {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+  .reflection textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--white);
+    resize: vertical;
+    min-height: 100px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .reflection textarea:focus { border-color: rgba(127,119,221,0.6); }
+  .reflection textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+  /* ── RESULT BANNER ── */
+  .result-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--white);
+    border: 1.5px solid var(--violet);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+  }
+  .result-icon {
+    width: 48px; height: 48px;
+    background: var(--violet-soft);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .result-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 3px;
+  }
+  .result-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+  }
+
+  /* ── NEXT ── */
+  .next-module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    gap: 12px;
+  }
+  .next-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+  .next-title { font-size: 16px; font-weight: 500; color: var(--white); }
+  .next-letter { font-family: 'Playfair Display', serif; font-size: 42px; color: #1D9E75; font-weight: 600; line-height: 1; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  /* ── TAG ── */
+  .tag {
+    display: inline-block;
+    background: var(--violet-soft);
+    color: var(--violet-deep);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin: 0 4px 6px 0;
+  }
+
+  /* ── INFO CALLOUT ── */
+  .callout {
+    border-left: 3px solid var(--rose);
+    background: #FFF5F8;
+    border-radius: 0 10px 10px 0;
+    padding: 0.9rem 1.1rem;
+    margin: 1.25rem 0;
+  }
+  .callout-text { font-size: 13.5px; color: #72243E; line-height: 1.6; }
+  .callout strong { color: #5A1830; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 1 de 7</div>
+  <div class="hero-letter">D</div>
+  <div class="hero-title">Despierta tu Conciencia</div>
+  <div class="hero-subtitle">Entiende qué le pasa a tu cuerpo — sin tecnicismos, sin sentirte "rara"</div>
 </div>
-<div class="guidegrid"><div class="guideitem"><b>Duración estimada</b>45–60 min</div><div class="guideitem"><b>Ejercicios</b>3 actividades</div><div class="guideitem"><b>Lo que te llevas</b>Tu mapa corporal</div></div>
-<div class="introcard">
-<div class="ey">PARTE 1 · CONOCIMIENTO</div>
-<h2>Primero comprende lo que estás viviendo</h2>
-<p>Esta parte te ayuda a poner contexto a los cambios que estás observando. No busca diagnosticarte ni decirte en qué etapa hormonal estás: busca darte un marco sencillo para que puedas reconocer patrones y llegar a tus propias preguntas con más claridad.</p>
+
+<!-- PROMISE -->
+<div class="promise">
+  <div class="promise-text">"Cuando entiendes lo que te pasa, dejas de temerle."</div>
 </div>
-</section>
-<div class="notice">Esta experiencia es educativa y de autoobservación. No sustituye una valoración médica, psicológica o nutricional individual.</div>
-<div class="ey" style="color:#7165e8;margin:36px 0 8px">PARTE 2 · EXPERIENCIA</div>
-<h2 style="color:#242035;margin-bottom:8px">Activa tu conciencia corporal</h2>
-<p style="color:#625d75;line-height:1.7;margin-bottom:22px">Haz estos tres ejercicios en el orden que aparecen. Lo importante no es la perfección: es la honestidad.</p>
 
-<details class="exercise-fold" open><summary><span class="fold-icon">1</span><span>El Diario de 7 Días</span></summary><section class="card">
-<p>Durante 7 días, al terminar la noche, responde las mismas 4 preguntas. No hace falta mucho texto — basta con una frase honesta. Al final de la semana, tendrás un patrón más claro de tu cuerpo.</p>
-<p><strong>Haz una prueba aquí con el día de hoy:</strong></p>
-<label>¿Cómo fue tu nivel de energía hoy? (1 siendo agotada, 10 siendo plena)</label><textarea id="intention" placeholder="Ej: Un 4. Me arrastré hasta las 3pm, luego algo mejoró. No sé por qué."></textarea>
-<label>¿Qué síntoma físico estuvo más presente hoy?</label><textarea id="focus" placeholder="Ej: Inflamación después de comer. Y dos sofocos por la tarde."></textarea>
-<label>¿Cómo estuvo tu humor / estado emocional?</label><textarea id="pattern" placeholder="Ej: Irritable por la mañana, mejor al mediodía."></textarea>
-<label>¿Hay algo que hayas comido, hecho o vivido hoy que notes que influyó?</label><textarea id="letter" placeholder="Ej: Dormí mal anoche y hoy todo estuvo peor. Coincidencia sospechosa."></textarea>
-<div class="days" id="days"></div>
-</section></details>
+<div class="container">
 
-<details class="exercise-fold"><summary><span class="fold-icon">2</span><span>El Mapa Corporal</span></summary><section class="card">
-<p>Cierra los ojos. Haz tres respiraciones profundas. Ahora recorre tu cuerpo mentalmente de arriba a abajo: cabeza, cuello, pecho, vientre, caderas, piernas. ¿Dónde sientes tensión? ¿Dónde hay bloqueo? ¿Qué zona parece diferente a hace 2 o 3 años?</p>
-<p>Luego responde:</p>
-<label>¿Qué zona de tu cuerpo sientes que “ya no es la misma”?</label><textarea id="bodymap" placeholder="Ej: Mi vientre. Está diferente y no entiendo por qué."></textarea>
-<label>Si tu cuerpo pudiera hablarte ahora mismo, ¿qué crees que te diría?</label><textarea id="bodyvoice" placeholder="Ej: Necesito que descanses. Llevas años ignorando lo que te digo."></textarea>
-<label>¿Hay algún síntoma que hayas normalizado o minimizado y que en realidad te molesta mucho?</label><textarea id="normalized" placeholder="Ej: El insomnio. Le digo a todos que “es que soy así”, pero la verdad es que me destroza."></textarea>
-</section></details>
+  <!-- INTRO -->
+  <div class="section">
+    <div class="section-label">Bienvenida al primer paso</div>
+    <div class="section-title">¿Por qué empezamos aquí?</div>
+    <div class="section-body">
+      Antes de cambiar cualquier hábito, antes de tomar cualquier suplemento, antes de cualquier cosa… necesitas entender tu propio cuerpo. La mayoría de las mujeres llegan a la perimenopausia sintiéndose confundidas, asustadas o avergonzadas. Este paso existe para acabar con eso.
+    </div>
 
-<details class="exercise-fold"><summary><span class="fold-icon">3</span><span>La Carta a tu Cuerpo</span></summary><section class="card">
-<p>Este ejercicio parece sencillo. No lo es. Escribe una carta corta dirigida a tu cuerpo — como si fuera una persona. Sin filtros. Puedes estar enojada, asustada, agradecida, confundida. Todo vale.</p>
-<p>Empieza con “Querido cuerpo…” y escribe lo que lleva tiempo sin decirse.</p>
-<label>Tu carta (espacio privado, solo para ti)</label><textarea id="bodyletter" placeholder="Querido cuerpo…"></textarea>
-<label>Después de escribirla: ¿qué sientes? ¿Qué descubriste?</label><textarea id="afterletter" placeholder="Escribe lo que apareció al terminar…"></textarea>
-</section></details>
-<section class="card final"><div class="ey">Reflexión de cierre del paso</div><h2>Antes de continuar, detente un momento</h2><p>Esta pregunta es el puente entre entender y actuar.</p><label>¿Qué es lo más importante que aprendiste sobre tu cuerpo en este paso?</label><textarea id="discovery" placeholder="Al observarme con más atención descubrí que…"></textarea><div class="actions" style="margin-top:18px"><button class="btn" id="save">Guardar mi avance</button><button class="btn secondary" id="complete">Completar este paso</button><span class="status" id="status">Tus respuestas se guardan en tu espacio personal.</span></div><div class="actions route-bottom-nav" style="margin-top:22px;justify-content:space-between"><a class="btn secondary" href="/mi-ruta/" style="text-decoration:none">← Volver a Mi Ruta</a><a class="btn" href="/mi-ruta/integra/" style="text-decoration:none">Continuar a I · Integra hábitos nuevos →</a></div></section>
-</main>
+    <div class="callout" style="margin-top:1.25rem;">
+      <div class="callout-text">
+        <strong>Lo que aprenderás aquí:</strong> qué está pasando con tus hormonas, por qué tu cuerpo responde como responde, y cómo identificar exactamente qué síntomas son tuyos — para poder actuar con claridad.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- DURACIÓN Y OBJETIVOS -->
+  <div class="section">
+    <div class="card" style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; text-align:center;">
+      <div>
+        <div style="font-size:24px; margin-bottom:4px;">⏱</div>
+        <div style="font-size:12px; color:var(--ink-muted);">Duración estimada</div>
+        <div style="font-size:14px; font-weight:500; color:var(--ink);">45–60 min</div>
+      </div>
+      <div>
+        <div style="font-size:24px; margin-bottom:4px;">📋</div>
+        <div style="font-size:12px; color:var(--ink-muted);">Ejercicios</div>
+        <div style="font-size:14px; font-weight:500; color:var(--ink);">3 actividades</div>
+      </div>
+      <div>
+        <div style="font-size:24px; margin-bottom:4px;">💎</div>
+        <div style="font-size:12px; color:var(--ink-muted);">Lo que te llevas</div>
+        <div style="font-size:14px; font-weight:500; color:var(--ink);">Tu mapa corporal</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CONTENIDO HORMONAL -->
+  <div class="section">
+    <div class="section-label">Parte 1 · Conocimiento</div>
+    <div class="section-title">Las 3 hormonas que mandan en esta etapa</div>
+    <div class="section-body">
+      No necesitas un grado en medicina. Solo necesitas entender qué están haciendo estas tres protagonistas en tu cuerpo ahora mismo.
+    </div>
+
+    <div class="hormones-grid">
+      <div class="hormone-card">
+        <div class="hormone-name">Estrógeno</div>
+        <div class="hormone-role">La directora general</div>
+        <div class="hormone-desc">Cuando baja, arrastra contigo: sueño, humor, piel, memoria, libido y mucho más. No es solo "la hormona femenina" — es el centro de control.</div>
+      </div>
+      <div class="hormone-card">
+        <div class="hormone-name">Progesterona</div>
+        <div class="hormone-role">La que te calma</div>
+        <div class="hormone-desc">Es la que equilibra al estrógeno. Cuando desaparece primero (y lo hace), aparece la ansiedad, el insomnio y la sensación de estar "al límite" sin razón aparente.</div>
+      </div>
+      <div class="hormone-card">
+        <div class="hormone-name">Cortisol</div>
+        <div class="hormone-role">La que lo complica todo</div>
+        <div class="hormone-desc">Con el estrés elevado, el cortisol sube y roba recursos al resto de hormonas. En esta etapa, el estrés no es opcional — es una variable hormonal real.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-text">
+        <strong>Importante:</strong> No estás "volviéndote loca". Estás respondiendo a cambios bioquímicos reales. Entender esto no es excusa — es el primer acto de autorrespeto.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHECKLIST SÍNTOMAS -->
+  <div class="section">
+    <div class="section-label">Parte 2 · Autodiagnóstico</div>
+    <div class="section-title">¿Qué síntomas reconoces en ti?</div>
+    <div class="section-body">
+      Marca todo lo que has sentido en los últimos 3 meses. Sin juzgar, sin comparar. Solo observar.
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <div class="symptoms-header">
+        <div class="sym-dot" style="background:#7F77DD;"></div>
+        <div class="sym-cat-title">Físicos</div>
+      </div>
+      <div class="symptoms-grid" id="physical-syms">
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Sofocos / calores</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Insomnio o sueño fragmentado</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Fatiga persistente</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Inflamación abdominal</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Cambios en el peso</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Dolor en articulaciones</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Sequedad (piel, mucosas)</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Cabello más débil o fino</div>
+      </div>
+
+      <div class="symptoms-header">
+        <div class="sym-dot" style="background:#D4537E;"></div>
+        <div class="sym-cat-title">Emocionales y mentales</div>
+      </div>
+      <div class="symptoms-grid" id="emotional-syms">
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Irritabilidad sin causa clara</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Ansiedad nueva o aumentada</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Niebla mental / falta de foco</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Tristeza inexplicable</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Pérdida de motivación</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Sensación de "no me reconozco"</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Cambios bruscos de humor</div>
+        <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Menor tolerancia al estrés</div>
+      </div>
+
+      <div id="sym-feedback" class="sym-result"></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EJERCICIOS -->
+  <div class="section">
+    <div class="section-label">Parte 3 · Ejercicios</div>
+    <div class="section-title">Activa tu conciencia corporal</div>
+    <div class="section-body">
+      Haz estos tres ejercicios en el orden que aparecen. Cada uno tarda entre 10 y 20 minutos. Lo importante no es la perfección — es la honestidad.
+    </div>
+
+    <div style="margin-top:1.5rem;">
+
+      <!-- EJ 1 -->
+      <div class="exercise" id="ex1">
+        <div class="exercise-header" onclick="toggleEx('ex1')">
+          <div class="ex-num">1</div>
+          <div class="ex-title">El Diario de 7 Días</div>
+          <div class="ex-time">15 min / día</div>
+          <div class="ex-toggle">↓</div>
+        </div>
+        <div class="exercise-body">
+          <div class="exercise-instructions">
+            Durante 7 días, al terminar la noche, responde las mismas 4 preguntas. No hace falta mucho texto — basta con una frase honesta. Al final de la semana, tendrás el patrón más claro de tu cuerpo que hayas tenido en años.
+            <br><br>
+            Haz una prueba aquí con el día de hoy:
+          </div>
+          <div class="exercise-questions">
+            <div>
+              <div class="eq-label">¿Cómo fue tu nivel de energía hoy? (1 siendo agotada, 10 siendo plena)</div>
+              <textarea id="energy_today" class="eq-textarea" placeholder="Ej: Un 4. Me arrastré hasta las 3pm, luego algo mejoró. No sé por qué."></textarea>
+            </div>
+            <div>
+              <div class="eq-label">¿Qué síntoma físico estuvo más presente hoy?</div>
+              <textarea id="physical_today" class="eq-textarea" placeholder="Ej: Inflación después de comer. Y dos sofocos por la tarde."></textarea>
+            </div>
+            <div>
+              <div class="eq-label">¿Cómo estuvo tu humor / estado emocional?</div>
+              <textarea id="mood_today" class="eq-textarea" placeholder="Ej: Irritable por la mañana, mejor al mediodía. Me sorprendí llorando sin razón clara."></textarea>
+            </div>
+            <div>
+              <div class="eq-label">¿Hay algo que hayas comido, hecho o vivido hoy que note que influyó?</div>
+              <textarea id="influence_today" class="eq-textarea" placeholder="Ej: Dormí mal anoche y hoy todo estuvo peor. Coincidencia sospechosa."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EJ 2 -->
+      <div class="exercise" id="ex2">
+        <div class="exercise-header" onclick="toggleEx('ex2')">
+          <div class="ex-num">2</div>
+          <div class="ex-title">El Mapa Corporal</div>
+          <div class="ex-time">20 min</div>
+          <div class="ex-toggle">↓</div>
+        </div>
+        <div class="exercise-body">
+          <div class="exercise-instructions">
+            Cierra los ojos. Haz tres respiraciones profundas. Ahora recorre tu cuerpo mentalmente de arriba a abajo: cabeza, cuello, pecho, vientre, caderas, piernas. ¿Dónde sientes tensión? ¿Dónde hay bloqueo? ¿Qué zona parece diferente a hace 2 o 3 años?
+            <br><br>
+            Luego responde:
+          </div>
+          <div class="exercise-questions">
+            <div>
+              <div class="eq-label">¿Qué zona de tu cuerpo sientes que "ya no es la misma"?</div>
+              <textarea id="body_zone" class="eq-textarea" placeholder="Ej: Mi vientre. Está diferente y no entiendo por qué. No cambié tanto mi alimentación."></textarea>
+            </div>
+            <div>
+              <div class="eq-label">Si tu cuerpo pudiera hablarte ahora mismo, ¿qué crees que te diría?</div>
+              <textarea id="body_voice" class="eq-textarea" placeholder="Ej: 'Necesito que descanses. Llevas años ignorando lo que te digo.'"></textarea>
+            </div>
+            <div>
+              <div class="eq-label">¿Hay algún síntoma que hayas normalizado o minimizado y que en realidad te molesta mucho?</div>
+              <textarea id="normalized_symptom" class="eq-textarea" placeholder="Ej: El insomnio. Le digo a todos que 'es que soy así', pero la verdad es que me destroza."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EJ 3 -->
+      <div class="exercise" id="ex3">
+        <div class="exercise-header" onclick="toggleEx('ex3')">
+          <div class="ex-num">3</div>
+          <div class="ex-title">La Carta a tu Cuerpo</div>
+          <div class="ex-time">20 min · El más poderoso</div>
+          <div class="ex-toggle">↓</div>
+        </div>
+        <div class="exercise-body">
+          <div class="exercise-instructions">
+            Este ejercicio parece sencillo. No lo es. Escribe una carta corta dirigida a tu cuerpo — como si fuera una persona. Sin filtros. Puedes estar enojada, asustada, agradecida, confundida. Todo vale.
+            <br><br>
+            Empieza con "Querido cuerpo…" y escribe lo que lleva tiempo sin decirse.
+          </div>
+          <div class="exercise-questions">
+            <div>
+              <div class="eq-label">Tu carta (espacio privado, solo para ti)</div>
+              <textarea id="body_letter" class="eq-textarea" style="min-height:140px;" placeholder="Querido cuerpo…"></textarea>
+            </div>
+            <div>
+              <div class="eq-label">Después de escribirla: ¿qué sientes? ¿Qué descubriste?</div>
+              <textarea id="after_letter" class="eq-textarea" placeholder="Ej: Me di cuenta de que estoy más enojada de lo que creía. Y también más asustada."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- REFLEXIÓN FINAL -->
+  <div class="reflection">
+    <div class="reflection-title">Reflexión de cierre del paso</div>
+    <div class="reflection-body">
+      Antes de continuar al siguiente paso, tómate un momento. Esta pregunta es el puente entre entender y actuar.
+    </div>
+    <div class="eq-label" style="color:#C5C1F6; margin-bottom:6px;">¿Qué es lo más importante que aprendiste sobre tu cuerpo en este paso?</div>
+    <textarea id="discovery" placeholder="Escribe aquí tu respuesta más honesta…"></textarea>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-banner">
+    <div class="result-icon">💥</div>
+    <div>
+      <div class="result-label">Resultado de este paso</div>
+      <div class="result-text">Dejas de sentirte "loca" — y empiezas a entenderte</div>
+    </div>
+  </div>
+
+  <!-- SIGUIENTE -->
+  <div class="next-module">
+    <div>
+      <div class="next-label">Siguiente paso</div>
+      <div class="next-title">Integra hábitos nuevos</div>
+    </div>
+    <div class="next-letter">I</div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem"><div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button id="save" style="border:0;border-radius:999px;padding:12px 20px;background:#7F77DD;color:white;font:500 14px 'DM Sans';cursor:pointer">Guardar mi avance</button><button id="complete" style="border:1px solid #7F77DD;border-radius:999px;padding:12px 20px;background:white;color:#3C3489;font:500 14px 'DM Sans';cursor:pointer">Completar este paso</button><span id="status" style="font-size:12px;color:#6B6580">Tus respuestas se guardan en tu espacio personal.</span></div><div style="margin-top:14px"><a href="/mi-ruta/" style="color:#3C3489;text-decoration:none">← Volver a Mi Ruta</a> · <a href="/mi-ruta/integra/" style="color:#3C3489;text-decoration:none">Continuar a I · Integra hábitos nuevos →</a></div></div><div style="text-align:center; margin-top:2rem; padding-bottom:1rem;">
+    <div style="font-size:12px; color:var(--ink-faint);">Método D.I.C.H.O.S.A.™ · Todos los derechos reservados</div>
+  </div>
+
+</div>
+
 <script type="module">
 import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");
 const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw new Error("Sin sesión")}
-const uid=session.user.id,$=id=>document.getElementById(id),status=$("status");/* data-stage-access-guard */const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage","D").maybeSingle();if(access?.status==="locked"){location.replace("/mi-ruta/");throw new Error("Etapa bloqueada")}
-const signalList=["Cambios en el sueño","Cambios en mi energía","Sofocos o sensación de calor","Cambios en el estado de ánimo","Niebla mental o concentración","Cambios digestivos","Molestias articulares o musculares","Cambios en piel o cabello","Cambios en el deseo sexual","Cambios en el ciclo menstrual","Sensación de inflamación","Otra señal que quiero observar"];
-$("energy").innerHTML=Array.from({length:10},(_,i)=>`<label><input type="radio" name="energy" value="${i+1}"><span>${i+1}</span></label>`).join("");
-$("signals").innerHTML=signalList.map((s,i)=>`<label><input type="checkbox" value="${s}" id="sig${i}"><span>${s}</span></label>`).join("");
-$("days").innerHTML=Array.from({length:7},(_,i)=>`<div class="day"><h3>Día ${i+1}</h3><div class="row"><label>Fecha<input type="date" id="d${i}date"></label><label>Energía (1–10)<input type="text" id="d${i}energy" inputmode="numeric" placeholder="1 a 10"></label></div><div class="row" style="margin-top:10px"><label>¿Cómo dormí?<input type="text" id="d${i}sleep" placeholder="Describe brevemente"></label><label>Señal que noté<input type="text" id="d${i}signal" placeholder="Física o emocional"></label></div><label style="display:block;margin-top:10px">¿Qué pudo influir hoy?<textarea id="d${i}influence" placeholder="Rutina, descanso, movimiento, alimentación, estrés, contexto…"></textarea></label></div>`).join("");
-const keys=["punto_partida","senales","diario_7_dias","mapa_corporal","carta_cuerpo","descubrimiento_final"];
-async function load(){
- const{data}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage","D");
- const map=Object.fromEntries((data||[]).map(x=>[x.exercise_key,x.response]));
- let r=map.punto_partida||{};if(r.energy)document.querySelector(`input[name=energy][value="${r.energy}"]`)?.click();$("intention").value=r.intention||"";
- r=map.senales||{};(r.selected||[]).forEach(v=>{const x=[...document.querySelectorAll("#signals input")].find(e=>e.value===v);if(x)x.checked=true});$("focus").value=r.focus||"";
- (map.diario_7_dias?.days||[]).forEach((d,i)=>{["date","energy","sleep","signal","influence"].forEach(k=>{const e=$(`d${i}${k}`);if(e)e.value=d[k]||""})});
- r=map.mapa_corporal||{};$("bodymap").value=r.bodymap||""; if($("bodyvoice"))$("bodyvoice").value=r.bodyvoice||""; if($("normalized"))$("normalized").value=r.normalized||""; $("pattern").value=map.punto_partida?.mood||$("pattern").value||""; $("letter").value=map.punto_partida?.influence||$("letter").value||""; if($("bodyletter"))$("bodyletter").value=map.carta_cuerpo?.letter||""; if($("afterletter"))$("afterletter").value=map.carta_cuerpo?.after||""; $("discovery").value=map.descubrimiento_final?.discovery||"";
- updateProgress();
- await sb.from("stage_progress").update({status:"in_progress",updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D").eq("status","available");
-}
-function payloads(){return{
- punto_partida:{energy:"",intention:$("intention").value.trim(),mood:$("pattern").value.trim(),influence:$("letter").value.trim()},
- senales:{selected:[...document.querySelectorAll("#signals input:checked")].map(x=>x.value),focus:$("focus").value.trim()},
- diario_7_dias:{days:Array.from({length:7},(_,i)=>({date:$("d"+i+"date").value,energy:$("d"+i+"energy").value.trim(),sleep:$("d"+i+"sleep").value.trim(),signal:$("d"+i+"signal").value.trim(),influence:$("d"+i+"influence").value.trim()}))},
- mapa_corporal:{bodymap:$("bodymap").value.trim(),bodyvoice:$("bodyvoice")?.value.trim()||"",normalized:$("normalized")?.value.trim()||""},
- carta_cuerpo:{letter:$("bodyletter")?.value.trim()||"",after:$("afterletter")?.value.trim()||""},descubrimiento_final:{discovery:$("discovery").value.trim()}}}
-function updateProgress(){const p=payloads();let done=0,total=6;if(p.punto_partida.energy&&p.punto_partida.intention)done++;if(p.senales.selected.length&&p.senales.focus)done++;if(p.diario_7_dias.days.some(d=>d.date||d.signal||d.influence))done++;if(p.mapa_corporal.bodymap&&p.mapa_corporal.pattern)done++;if(p.carta_cuerpo.letter)done++;if(p.descubrimiento_final.discovery)done++;const n=Math.round(done/total*100);$("bar").style.width=n+"%";$("pct").textContent=n+"% de este paso";return n}
-async function save(show=true){if(show)status.textContent="Guardando…";const p=payloads();for(const key of keys){const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage:"D",exercise_key:key,response:p[key]},{onConflict:"user_id,stage,exercise_key"});if(error){status.textContent="No se pudo guardar. Intenta nuevamente.";return false}}const n=updateProgress();await sb.from("stage_progress").update({status:"in_progress",progress_percent:n,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D");if(show)status.textContent="✓ Avance guardado";return true}
-$("save").onclick=()=>save(true);
-$("complete").onclick=async()=>{const p=payloads();if(!p.descubrimiento_final.discovery){status.textContent="Antes de completar, escribe “Lo que descubrí de mí”.";return}if(!await save(false))return;status.textContent="Completando Despierta…";await sb.from("stage_results").upsert({user_id:uid,stage:"D",result:{discovery:p.descubrimiento_final.discovery,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D");await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","I").eq("status","locked");status.textContent="✓ Despierta completada. Integra ya está disponible.";$("bar").style.width="100%";$("pct").textContent="100% de este paso"};
-document.addEventListener("input",updateProgress);document.addEventListener("change",updateProgress);await load();
-</script></body></html>
+const uid=session.user.id,status=document.getElementById("status");
+const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage","D").maybeSingle();if(access?.status==="locked"){location.replace("/mi-ruta/");throw new Error("Paso bloqueado")}
+window.toggleSym=function(el){el.classList.toggle("checked");const check=el.querySelector(".sym-check");check.textContent=el.classList.contains("checked")?"✓":"";const count=document.querySelectorAll(".sym-item.checked").length,feedback=document.getElementById("sym-feedback");if(!count){feedback.classList.remove("visible");return}feedback.classList.add("visible");feedback.innerHTML=count<=3?`<div class="sym-result-title">Marcaste ${count} síntoma(s)</div><div class="sym-result-text">Estás observando señales de tu cuerpo. Registrar patrones puede ayudarte a entender mejor qué cambia y cuándo.</div>`:count<=7?`<div class="sym-result-title">Marcaste ${count} síntomas</div><div class="sym-result-text">Tu cuerpo está enviando varias señales. Obsérvalas sin juzgar y registra qué coincide con ellas.</div>`:`<div class="sym-result-title">Marcaste ${count} síntomas</div><div class="sym-result-text">Son varias señales a la vez. Este registro puede ayudarte a ordenarlas y también a preparar mejor una consulta profesional si la necesitas.</div>`};
+window.toggleEx=id=>document.getElementById(id).classList.toggle("open");document.getElementById("ex1")?.classList.add("open");
+const fieldIds=["energy_today","physical_today","mood_today","influence_today","body_zone","body_voice","normalized_symptom","body_letter","after_letter","discovery"];
+function payload(){return{fields:Object.fromEntries(fieldIds.map(id=>[id,document.getElementById(id)?.value||""])),symptoms:[...document.querySelectorAll(".sym-item.checked")].map(x=>x.textContent.replace("✓","").trim())}}
+async function load(){const{data}=await sb.from("exercise_responses").select("response").eq("user_id",uid).eq("stage","D").eq("exercise_key","despierta_original").maybeSingle();const r=data?.response||{};for(const[id,v]of Object.entries(r.fields||{})){const e=document.getElementById(id);if(e)e.value=v}(r.symptoms||[]).forEach(v=>{const e=[...document.querySelectorAll(".sym-item")].find(x=>x.textContent.trim()===v);if(e)window.toggleSym(e)});await sb.from("stage_progress").update({status:"in_progress",updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D").eq("status","available")}
+async function save(show=true){if(show)status.textContent="Guardando…";const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage:"D",exercise_key:"despierta_original",response:payload()},{onConflict:"user_id,stage,exercise_key"});if(error){status.textContent="No se pudo guardar. Intenta nuevamente.";return false}await sb.from("stage_progress").update({status:"in_progress",progress_percent:75,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D");if(show)status.textContent="✓ Avance guardado";return true}
+document.getElementById("save").onclick=()=>save(true);
+document.getElementById("complete").onclick=async()=>{const p=payload();if(!p.fields.discovery.trim()){status.textContent="Antes de completar, responde la reflexión final.";return}if(!await save(false))return;await sb.from("stage_results").upsert({user_id:uid,stage:"D",result:{discovery:p.fields.discovery,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D");await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","I").eq("status","locked");status.textContent="✓ Despierta completada. Integra ya está disponible."};
+await load();
+</script>
+</body>
+</html>
