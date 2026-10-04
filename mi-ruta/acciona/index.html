@@ -183,8 +183,8 @@
   .result-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--ink); }
 .routebar{max-width:900px;margin:18px auto 0;padding:0 18px;display:flex;justify-content:space-between;gap:16px;font:600 13px Arial,sans-serif}.routebar a{text-decoration:none;color:inherit}.route-save{max-width:900px;margin:24px auto;padding:18px;border:1px solid rgba(120,100,100,.18);border-radius:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.route-save button{border:0;border-radius:999px;padding:11px 17px;font-weight:700;cursor:pointer}.route-save .primary{background:#28233a;color:#fff}.route-save .secondary{background:#fff;border:1px solid #ddd}.route-save span{font:12px Arial,sans-serif;opacity:.65}.next-module{cursor:pointer}
 </style>
-</head>
-<body><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>A · Activa tu poder</span></div>
+<style id="route-home-nav-style">.route-home-nav{max-width:760px;margin:0 auto;padding:14px 1.5rem;display:flex;justify-content:flex-start}.route-home-nav.bottom{padding-top:8px;padding-bottom:26px}.route-home-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font:500 13px 'DM Sans',Arial,sans-serif;color:#6B6580;background:rgba(255,255,255,.78);border:1px solid rgba(127,119,221,.18);border-radius:999px;padding:8px 13px}.route-home-link:hover{color:#3C3489;border-color:#7F77DD}</style></head>
+<body><div class="route-home-nav"><a class="route-home-link" href="/mi-ruta/">← Volver al inicio de Mi Ruta</a></div><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>A · Activa tu poder</span></div>
 
 <div class="hero">
   <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 7 de 7 · El cierre</div>
@@ -605,5 +605,5 @@ async function routeSave(show=true){if(show)statusEl.textContent="Guardando…";
 document.getElementById("routeSave").onclick=()=>routeSave();
 document.getElementById("routeComplete").onclick=async()=>{if(!await routeSave(false))return;const summary=ids.map(id=>document.getElementById(id)?.value.trim()).filter(Boolean).slice(-1)[0]||"Activa tu poder completada";await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);statusEl.textContent="✓ Has completado tu Ruta D.I.C.H.O.S.A.™.";setTimeout(()=>location.href="/mi-ruta/resultado/",900);};
 </script>
-</body>
+<div class="route-home-nav bottom"><a class="route-home-link" href="/mi-ruta/">← Volver al inicio de Mi Ruta</a></div></body>
 </html>
