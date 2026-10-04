@@ -938,10 +938,10 @@
 <script type="module">
 import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-  function toggleBelief(card) { card.classList.toggle('open'); }
-  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+  window.toggleBelief=function(card) { card.classList.toggle('open'); };
+  window.toggleEx=function(id) { document.getElementById(id)?.classList.toggle('open'); };
 
-  function toggleValor(chip) {
+  window.toggleValor=function(chip) {
     const selected = document.querySelectorAll('.valor-chip.selected');
     if (!chip.classList.contains('selected') && selected.length >= 5) return;
     chip.classList.toggle('selected');
