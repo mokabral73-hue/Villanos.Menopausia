@@ -455,8 +455,8 @@
   .callout-text { font-size: 13.5px; color: #72243E; line-height: 1.6; }
   .callout strong { color: #5A1830; }
 </style>
-</head>
-<body>
+<style id="route-home-nav-style">.route-home-nav{max-width:760px;margin:0 auto;padding:14px 1.5rem;display:flex;justify-content:flex-start}.route-home-nav.bottom{padding-top:8px;padding-bottom:26px}.route-home-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font:500 13px 'DM Sans',Arial,sans-serif;color:#6B6580;background:rgba(255,255,255,.78);border:1px solid rgba(127,119,221,.18);border-radius:999px;padding:8px 13px}.route-home-link:hover{color:#3C3489;border-color:#7F77DD}</style></head>
+<body><div class="route-home-nav"><a class="route-home-link" href="/mi-ruta/">← Volver al inicio de Mi Ruta</a></div>
 
 <!-- HERO -->
 <div class="hero">
@@ -751,5 +751,5 @@ document.getElementById("save").onclick=()=>save(true);
 document.getElementById("complete").onclick=async()=>{const p=payload();if(!p.fields.discovery.trim()){status.textContent="Antes de completar, responde la reflexión final.";return}if(!await save(false))return;await sb.from("stage_results").upsert({user_id:uid,stage:"D",result:{discovery:p.fields.discovery,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage","D");await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","I").eq("status","locked");status.textContent="✓ Despierta completada. Integra ya está disponible."};
 await load();
 </script>
-</body>
+<div class="route-home-nav bottom"><a class="route-home-link" href="/mi-ruta/">← Volver al inicio de Mi Ruta</a></div></body>
 </html>
