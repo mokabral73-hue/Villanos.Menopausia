@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paso S – Sostén tu Transformación</title>
+<title>Paso S – Sistematiza</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -206,7 +206,7 @@
 <div class="hero">
   <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 6 de 7</div>
   <div class="hero-letter">S</div>
-  <div class="hero-title">Sostén tu Transformación</div>
+  <div class="hero-title">Sistematiza</div>
   <div class="hero-subtitle">Comunidad, seguimiento y rituales diarios — el secreto que nadie más enseña</div>
 </div>
 
@@ -684,7 +684,7 @@
 import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
   // Tabs rituales
-  function switchRTab(id, btn) {
+  window.switchRTab=function(id, btn){
     document.querySelectorAll('.rtab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
     document.getElementById('rtab-' + id).classList.add('active');
@@ -693,7 +693,7 @@ import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+e
 
   // Check-in
   const ciScores = {e:0, s:0, h:0, a:0, i:0};
-  function selectCI(btn, cat) {
+  window.selectCI=function(btn, cat){
     const row = btn.closest('.checkin-row');
     row.querySelectorAll('.cs-btn').forEach(b => b.classList.remove('sel'));
     btn.classList.add('sel');
@@ -714,10 +714,10 @@ import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+e
   }
 
   // Ejercicios
-  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+  window.toggleEx=function(id){ document.getElementById(id).classList.toggle('open'); }
 
   // Compromisos
-  function toggleCommit(item) {
+  window.toggleCommit=function(item){
     item.classList.toggle('done');
     item.querySelector('.commit-check').textContent = item.classList.contains('done') ? '✓' : '';
     document.getElementById('commit-count').textContent = document.querySelectorAll('.commit-item.done').length;
@@ -750,8 +750,8 @@ import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+e
     renderDots();
   }
 
-  function nextAffirm() { currentAffirm = (currentAffirm + 1) % affirmations.length; showAffirm(); }
-  function prevAffirm() { currentAffirm = (currentAffirm - 1 + affirmations.length) % affirmations.length; showAffirm(); }
+  window.nextAffirm=function(){ currentAffirm = (currentAffirm + 1) % affirmations.length; showAffirm(); }
+  window.prevAffirm=function(){ currentAffirm = (currentAffirm - 1 + affirmations.length) % affirmations.length; showAffirm(); }
 
   renderDots();
 
