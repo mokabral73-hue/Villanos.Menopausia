@@ -201,7 +201,7 @@
 .route-home-link:hover{opacity:1;transform:translateX(-2px)}
 @media(max-width:650px){.route-home-nav,.route-home-nav.bottom{padding-left:1.25rem;padding-right:1.25rem}}
 </style></head>
-<body><div class="route-home-nav"><a class="route-home-link" href="/mi-ruta/">← Mi Ruta</a></div><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>S · Sistematiza tu cambio</span></div>
+<body><div class="route-home-nav"><a class="route-home-link" href="/mi-ruta/">← Mi Ruta</a></div><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>S · Sistematiza</span></div>
 
 <div class="hero">
   <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 6 de 7</div>
@@ -764,7 +764,7 @@ for(const x of saved||[]){const i=keys.indexOf(x.exercise_key);if(i>-1&&document
 await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available");
 async function routeSave(show=true){if(show)statusEl.textContent="Guardando…";let filled=0;for(let i=0;i<ids.length;i++){const el=document.getElementById(ids[i]),value=el?.value.trim()||"";if(value)filled++;const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:value}},{onConflict:"user_id,stage,exercise_key"});if(error){statusEl.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:ids.length?Math.round(filled/ids.length*100):0,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)statusEl.textContent="✓ Avance guardado";return true}
 document.getElementById("routeSave").onclick=()=>routeSave();
-document.getElementById("routeComplete").onclick=async()=>{if(!await routeSave(false))return;const summary=ids.map(id=>document.getElementById(id)?.value.trim()).filter(Boolean).slice(-1)[0]||"Sistematiza tu cambio completada";await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","A").eq("status","locked");statusEl.textContent="✓ Sistematiza tu cambio completada. Activa tu poder ya está disponible.";};
+document.getElementById("routeComplete").onclick=async()=>{if(!await routeSave(false))return;const summary=ids.map(id=>document.getElementById(id)?.value.trim()).filter(Boolean).slice(-1)[0]||"Sistematiza completada";await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","A").eq("status","locked");statusEl.textContent="✓ Sistematiza completada. Activa tu poder ya está disponible.";};
 </script>
 <div id="integrated-route-footer" style="max-width:760px;margin:18px auto 0;padding:18px 1.5rem 28px;border-top:1px solid rgba(127,119,221,.12)"><a class="route-home-link" href="/mi-ruta/">← Volver a Mi Ruta</a></div></body>
 </html>
