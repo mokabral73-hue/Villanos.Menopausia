@@ -1,42 +1,754 @@
-<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>O · Optimiza | Mi Ruta D.I.C.H.O.S.A.™</title><style>:root{--v:#65062e;--r:#df2467;--c:#fffaf5;--t:#3d2930;--b:#ead9df}*{box-sizing:border-box}body{margin:0;background:var(--c);color:var(--t);font-family:Arial,sans-serif}main{width:min(900px,92%);margin:auto;padding:35px 0 70px}.top{display:flex;justify-content:space-between;align-items:center}.logo{width:205px}.back{color:var(--v);font-weight:700;text-decoration:none}.hero{padding:38px 0 15px}.ey{color:var(--r);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}h1{font:700 clamp(3rem,7vw,5rem) Georgia;color:var(--v);margin:10px 0}h2{font:700 1.75rem Georgia;color:var(--v);margin:5px 0 10px}.lead{font:1.12rem/1.65 Georgia}.card{margin:20px 0;background:#fff;border:1px solid var(--b);border-radius:25px;padding:28px;box-shadow:0 12px 35px #65062e0b}textarea{width:100%;min-height:130px;border:1px solid var(--b);border-radius:14px;padding:14px;font:1rem Arial;resize:vertical}.notice{background:#fff3f7;border-left:4px solid var(--r);padding:14px;border-radius:10px;font-size:.92rem}.btn{border:0;background:var(--r);color:#fff;padding:14px 24px;border-radius:999px;font-weight:800;cursor:pointer}.secondary{background:#fff;color:var(--v);border:1px solid var(--b)}.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.status{color:#806770;font-size:.9rem}.progress{height:8px;background:#f0e5e8;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--r)}.guidegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 24px}.guideitem{background:#fff;border:1px solid var(--b);border-radius:18px;padding:18px}.guideitem b{display:block;color:var(--v);font-family:Georgia,serif;font-size:1.05rem;margin-bottom:5px}.introcard{background:linear-gradient(135deg,#fff7fa,#fff);border:1px solid var(--b);border-radius:25px;padding:28px;margin:20px 0}.introcard p{line-height:1.65}.steps{display:grid;gap:10px;margin-top:16px}.stepmini{display:flex;gap:12px;align-items:flex-start}.stepmini span{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:var(--v);font-weight:800}@media(max-width:650px){.guidegrid{grid-template-columns:1fr}}</style><style>
-.hero{position:relative;overflow:hidden;background:#65062e;color:white;border-radius:30px;padding:48px;margin-top:28px;box-shadow:0 18px 48px #65062e22}.hero:after{content:"O";position:absolute;right:20px;top:-70px;font:700 18rem Georgia;color:#ffffff10;pointer-events:none}.hero h1{position:relative;z-index:1;color:white;max-width:760px}.hero .lead,.hero .small{position:relative;z-index:1;color:#fff}.hero .ey{position:relative;z-index:1;color:#ffc4d8}.hero .progress{position:relative;z-index:1;background:#ffffff22}.guideitem,.introcard,.card{box-shadow:0 12px 36px #65062e0b}.introcard{border-radius:28px;padding:34px;border-left:5px solid #df2467}.steps{grid-template-columns:repeat(3,1fr)}.stepmini{background:#fff5f8;border-radius:16px;padding:14px}.card{padding:34px}.card>.ey:first-child{display:inline-block;background:#fff0f5;border-radius:999px;padding:7px 10px;margin-bottom:10px}.card h2{font-size:2rem}.final{position:relative;overflow:hidden}.final:after{content:"O";position:absolute;right:22px;top:-28px;font:700 8rem Georgia;color:#65062e08;pointer-events:none}.route-bottom-nav{border-top:1px solid #ead9df;padding-top:20px}@media(max-width:650px){.hero{padding:34px 23px}.hero:after{font-size:11rem;right:-8px;top:-25px}.steps{grid-template-columns:1fr}.card,.introcard{padding:23px}.route-bottom-nav .btn{width:100%}}
-</style><style>.exercise-fold{border:1px solid #ead9df;border-radius:22px;margin:18px 0;background:#fff;overflow:hidden;box-shadow:0 9px 28px #65062e08}.exercise-fold summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;gap:14px;color:#65062e;font:700 1.12rem Georgia}.exercise-fold summary::-webkit-details-marker{display:none}.exercise-fold summary:after{content:"＋";margin-left:auto;color:#df2467;font:700 1.35rem Arial}.exercise-fold[open] summary:after{content:"−"}.fold-icon{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:#65062e;font:700 1.05rem Arial}.exercise-fold[open] summary{background:#fff5f8}.exercise-fold>.card{margin:0;border:0;border-top:1px solid #f0e3e7;border-radius:0;box-shadow:none}@media(max-width:650px){.exercise-fold summary{padding:16px}.fold-icon{width:38px;height:38px;flex-basis:38px}}</style><style>
-/* Premium scale pass: wider desktop canvas + stronger guided accordions */
-@media (min-width:900px){
-  .wrap,.container,main{max-width:980px!important}
-}
-.exercise-fold{margin:24px 0!important;border-radius:24px!important;box-shadow:0 12px 34px rgba(101,6,46,.08)!important}
-.exercise-fold summary{min-height:76px;padding:20px 24px!important;font-size:1.2rem!important;letter-spacing:-.01em}
-.exercise-fold .fold-icon{width:50px!important;height:50px!important;flex:0 0 50px!important;font-size:1.2rem!important;box-shadow:inset 0 0 0 1px rgba(101,6,46,.08)}
-.exercise-fold[open] summary{border-bottom:1px solid #efdde4}
-.exercise-fold>.card{padding:30px 32px!important}
-.exercise-fold>.card h2{font-size:1.65rem!important;line-height:1.15;margin-bottom:14px}
-.exercise-fold>.card p,.exercise-fold>.card label,.exercise-fold>.card li{font-size:1rem;line-height:1.65}
-.exercise-fold textarea,.exercise-fold input,.exercise-fold select{font-size:1rem!important;padding:14px!important}
-@media(max-width:899px){
- .exercise-fold summary{min-height:66px!important;font-size:1.05rem!important}
- .exercise-fold>.card{padding:22px 18px!important}
-}
-</style><style id="method-visual-system">
-:root{--vino:#65062e;--rosa:#df2467;--rosa2:#f8d7df;--crema:#fffaf5;--dorado:#c99b56;--texto:#3d2930;--blanco:#fff}
-body{background:var(--crema)!important;color:var(--texto)}
-main{width:min(1180px,92%)!important}
-.top{min-height:78px!important}
-.logo{width:205px!important}
-.hero{background:radial-gradient(circle at 78% 28%,#f5d8c8 0,transparent 28%),linear-gradient(110deg,#fffaf6 0%,#fff4ed 58%,#f7e5d8 100%)!important;color:var(--texto)!important;border-radius:32px!important;padding:54px 58px!important;box-shadow:0 22px 55px rgba(101,6,46,.08)!important}
-.hero:after{content:"O"!important;right:34px!important;top:-70px!important;font:700 18rem Georgia!important;color:rgba(101,6,46,.055)!important}
-.hero h1{color:var(--vino)!important;font-size:clamp(3.2rem,6vw,5.7rem)!important}
-.hero .ey{color:var(--vino)!important}
-.hero .lead,.hero .small,.hero small{color:var(--texto)!important}
-.hero .progress{background:rgba(101,6,46,.10)!important}
-.hero .progress span{background:var(--rosa)!important}
-.guidegrid{gap:20px!important}.guideitem{padding:24px!important;border-radius:22px!important}
-.introcard{background:#fff!important;border-left:5px solid var(--rosa)!important;box-shadow:0 16px 38px rgba(101,6,46,.06)!important}
-.exercise-fold{border-radius:24px!important;box-shadow:0 14px 34px rgba(101,6,46,.06)!important}
-.exercise-fold summary{background:#fff!important}
-.exercise-fold[open] summary{background:#fff5f8!important}
-.fold-icon{background:radial-gradient(circle at 40% 35%,#fff6f4,#f7cbd4 72%)!important;border:1px solid #f3c5d0!important}
-.btn{background:var(--rosa)!important;box-shadow:0 12px 30px rgba(223,36,103,.18)}
-.btn.secondary{background:#fff!important;color:var(--vino)!important;border:1px solid #ead9df!important;box-shadow:none}
-@media(max-width:650px){.hero{padding:34px 23px!important}.hero:after{font-size:11rem!important;right:-8px!important;top:-25px!important}}
-</style></head><body><main><div class="top"><a href="/mi-ruta/"><img class="logo" src="/brand-logo.png?v=20261003"></a><a class="back" href="/mi-ruta/">← Mi Ruta</a></div><section class="hero"><div class="ey">Paso 5 de 7 · Método D.I.C.H.O.S.A.™</div><h1>O · Optimízate</h1><p class="lead"><strong>Optimízate.</strong> Optimizar no es hacer más. Es ordenar lo importante para que tus decisiones trabajen juntas.</p><div class="progress"><span id="bar"></span></div><small id="pct">0% de este paso</small></section><section class="guided-intro"><div class="guidegrid"><div class="guideitem"><b>Tiempo para ti</b>45–60 min</div><div class="guideitem"><b>Tu recorrido</b>3 experiencias guiadas</div><div class="guideitem"><b>Lo que te llevas</b>Tus prioridades y un ajuste que ordene lo demás</div></div><div class="introcard"><div class="ey">Antes de comenzar</div><h2>¿Por qué este paso?</h2><p>Después de observar, integrar, conectar y proteger tu energía, toca ordenar. Optimizar no es añadir más tareas: es decidir qué merece prioridad y hacer que tus decisiones trabajen juntas.</p><h3>Lo que necesitas saber</h3><p>Optimizar no significa controlar tus hormonas ni convertirte en experta médica de tu propio cuerpo. Significa crear mejores condiciones para tu bienestar y participar activamente en el cuidado de tu salud. Aquí reunimos <strong>nutrición, suplementación, sueño, movimiento, rutinas y seguimiento profesional</strong> para que dejen de funcionar como esfuerzos aislados.</p><div class="ey" style="margin-top:22px">Te voy guiando</div><div class="steps"><div class="stepmini"><span>1</span><p>Elige las áreas que hoy importan más.</p></div><div class="stepmini"><span>2</span><p>Observa qué necesita coordinarse.</p></div><div class="stepmini"><span>3</span><p>Define un ajuste prioritario y posible.</p></div></div><p class="small" style="margin-top:18px"><strong>No tienes que hacerlo todo de una vez.</strong> Guarda tu avance y vuelve cuando quieras. Tu Ruta conservará lo que vayas construyendo.</p></div></section><div class="notice">Este espacio es educativo y de autoobservación. No sustituye una valoración médica, psicológica o nutricional individual.</div><details class="exercise-fold" open><summary><span class="fold-icon">★</span><span>01 · Lo que realmente importa</span></summary><section class="card"><div class="ey">1</div><h2>Lo que realmente importa</h2><p class="small"><strong>Hazlo así:</strong> Revisa lo descubierto en los pasos anteriores. En I preguntaste qué hábito incorporar; aquí la pregunta es qué condiciones estás creando de manera sostenida para tu salud futura. Priorizar también significa aceptar qué no será prioridad por ahora.</p><p>¿Qué tres áreas merecen hoy más atención?</p><textarea id="prioridades" placeholder="Escribe lo que observas en ti…"></textarea></section></details><details class="exercise-fold"><summary><span class="fold-icon">↔</span><span>02 · Lo que necesito coordinar</span></summary><section class="card"><div class="ey">2</div><h2>Lo que necesito coordinar</h2><p class="small"><strong>Hazlo así:</strong> Pregunta si hay decisiones que compiten entre sí o algo importante que siempre queda al final. Revisa nutrición, suplementación, sueño, movimiento y aquello de tu salud que necesites conocer o revisar mejor con un profesional. Busca qué podrías ordenar para que una decisión facilite otra.</p><p>Observa cómo descanso, movimiento, alimentación, autocuidado y apoyo profesional conviven en tu realidad.</p><textarea id="coordina" placeholder="Hazlo concreto y personal…"></textarea></section></details><details class="exercise-fold"><summary><span class="fold-icon">◎</span><span>03 · Mi ajuste prioritario</span></summary><section class="card"><div class="ey">3</div><h2>Mi ajuste prioritario</h2><p class="small"><strong>Hazlo así:</strong> Construye tus tres anclas: <strong>mañana, día y noche.</strong> Elige qué acción quieres proteger en cada momento y un aspecto de tu salud que necesites conocer o revisar mejor. No necesitas hacerlas todas a la vez; optimizar aquí significa simplificar, coordinar y dar un lugar real a lo importante.</p><p>¿Cuál es el cambio que puede ordenar mejor lo demás sin exigirte perfección?</p><textarea id="ajuste" placeholder="No busques perfección; busca una decisión posible…"></textarea></section></details><section class="card"><div class="ey">Resultado de este paso</div><h2>Lo que decidí optimizar</h2><p>Resume en tus palabras lo más importante que quieres llevar contigo.</p><textarea id="final" placeholder="Lo que me llevo de este paso es…"></textarea><div class="actions" style="margin-top:18px"><button class="btn" id="save">Guardar avance</button><button class="btn secondary" id="complete">Completar este paso</button><span class="status" id="status">Tus respuestas quedan en tu Ruta.</span></div><div class="actions route-bottom-nav" style="margin-top:22px;justify-content:space-between"><a class="btn secondary" href="/mi-ruta/" style="text-decoration:none">← Volver a Mi Ruta</a><a class="btn" href="/mi-ruta/sistematiza/" style="text-decoration:none">Continuar a S · Sistematiza tu cambio →</a></div></section></main><script type="module">import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}const uid=session.user.id,stage="O",keys=["prioridades","coordina","ajuste","resultado_final"],ids=["prioridades","coordina","ajuste","final"],$=x=>document.getElementById(x),st=$("status");/* data-stage-access-guard */const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw new Error("Etapa bloqueada")}function progress(){let n=ids.filter(x=>$(x).value.trim()).length/ids.length*100;n=Math.round(n);$("bar").style.width=n+"%";$("pct").textContent=n+"% de este paso";return n}async function load(){const{data}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);for(const x of data||[]){const i=keys.indexOf(x.exercise_key);if(i>-1)$(ids[i]).value=x.response?.text||""}progress();await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available")}async function save(show=true){if(show)st.textContent="Guardando…";for(let i=0;i<keys.length;i++){const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:$(ids[i]).value.trim()}},{onConflict:"user_id,stage,exercise_key"});if(error){st.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:progress(),updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)st.textContent="✓ Avance guardado";return true}$("save").onclick=()=>save();$("complete").onclick=async()=>{if(!$("final").value.trim()){st.textContent="Escribe primero tu resultado personal.";return}if(!await save(false))return;await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary:$("final").value.trim(),completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","S").eq("status","locked");st.textContent="✓ Optimízate completada. Sistematiza tu cambio ya está disponible.";progress()};document.addEventListener("input",progress);await load();</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paso O – Optimízate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #378ADD;
+    --blue-deep: #0C447C;
+    --blue-mid: #1D6BB0;
+    --blue-soft: #E6F1FB;
+    --blue-pale: #F2F7FD;
+    --teal: #1D9E75;
+    --teal-soft: #E1F5EE;
+    --amber: #E8962A;
+    --amber-soft: #FEF3E2;
+    --ink: #091420;
+    --ink-muted: #3A5570;
+    --ink-faint: #9BBCD4;
+    --cream: #F4F8FC;
+    --white: #FFFFFF;
+    --border: rgba(55,138,221,0.15);
+    --radius: 16px;
+    --shadow: 0 4px 28px rgba(12,68,124,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; line-height: 1.65; }
+
+  .hero { background: linear-gradient(155deg, #030D18 0%, #0A2540 55%, #0E3D6B 100%); color: var(--white); padding: 3.5rem 2rem 2.75rem; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: 'O'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 380px; font-weight: 600; color: rgba(55,138,221,0.07); top: 50%; left: 50%; transform: translate(-50%,-46%); pointer-events: none; line-height: 1; }
+  .hero-badge { display: inline-block; background: rgba(55,138,221,0.2); color: #8EC8F5; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; padding: 5px 16px; border-radius: 100px; margin-bottom: 1.25rem; border: 1px solid rgba(55,138,221,0.3); position: relative; }
+  .hero-letter { font-family: 'Cormorant Garamond', serif; font-size: clamp(60px,13vw,96px); font-weight: 600; color: #8EC8F5; line-height: 1; margin-bottom: 0.4rem; position: relative; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,5vw,32px); font-weight: 400; font-style: italic; color: var(--white); margin-bottom: 0.75rem; position: relative; }
+  .hero-subtitle { font-size: 14px; color: rgba(255,255,255,0.48); max-width: 480px; margin: 0 auto; position: relative; font-weight: 300; }
+
+  .promise { background: var(--blue); padding: 1.6rem 2rem; text-align: center; }
+  .promise-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px,3.8vw,21px); font-style: italic; color: var(--white); max-width: 620px; margin: 0 auto; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+  .section { margin-bottom: 2.75rem; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.5rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(21px,4.5vw,29px); font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; line-height: 1.28; }
+  .section-body { font-size: 15px; color: var(--ink-muted); max-width: 660px; font-weight: 300; line-height: 1.78; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2.25rem 0; }
+
+  .callout { border-left: 3px solid var(--blue); background: var(--blue-soft); border-radius: 0 10px 10px 0; padding: 0.9rem 1.1rem; margin: 1.25rem 0; }
+  .callout-teal { border-left-color: var(--teal); background: var(--teal-soft); }
+  .callout-amber { border-left-color: var(--amber); background: var(--amber-soft); }
+  .callout-text { font-size: 13.5px; color: var(--blue-deep); line-height: 1.65; }
+  .callout-teal .callout-text { color: #085041; }
+  .callout-amber .callout-text { color: #6B3E08; }
+  .callout strong { font-weight: 600; }
+
+  .meta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; text-align: center; box-shadow: var(--shadow); }
+  .meta-icon { font-size: 22px; margin-bottom: 4px; }
+  .meta-label { font-size: 11.5px; color: var(--ink-muted); margin-bottom: 3px; font-weight: 300; }
+  .meta-val { font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  /* HORMONES */
+  .hormones-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .hormone-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.3rem; position: relative; overflow: hidden; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+  .hormone-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+  .hormone-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .hc-e::before { background: #D4537E; }
+  .hc-p::before { background: var(--teal); }
+  .hc-c::before { background: var(--amber); }
+  .hc-i::before { background: var(--blue); }
+  .hc-t::before { background: #7F77DD; }
+  .hormone-icon { font-size: 24px; margin-bottom: 7px; }
+  .hormone-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .hormone-status { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 100px; margin-bottom: 8px; }
+  .hs-low { background: #FBEAF0; color: #72243E; }
+  .hs-fluct { background: var(--amber-soft); color: #6B3E08; }
+  .hs-high { background: #FAEEDE; color: #5E2A02; }
+  .hormone-desc { font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; font-weight: 300; }
+  .hormone-expand { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.6; }
+  .hormone-expand strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 5px; }
+  .hormone-card.open .hormone-expand { display: block; }
+  .hormone-toggle { font-size: 12px; color: var(--blue-mid); font-weight: 500; margin-top: 8px; }
+
+  /* ANTIINFLAMATORIO */
+  .inflam-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1.25rem; }
+  @media(max-width:480px){ .inflam-grid { grid-template-columns: 1fr; } }
+  .inflam-col { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem; }
+  .inflam-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .inflam-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .inflam-title { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .inflam-list { list-style: none; }
+  .inflam-list li { font-size: 13px; color: var(--ink-muted); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 7px; font-weight: 300; line-height: 1.45; }
+  .inflam-list li:last-child { border-bottom: none; }
+  .inflam-list li span { font-weight: 700; flex-shrink: 0; }
+
+  /* BIOMARKERS */
+  .biomarkers-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .bm-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: pointer; transition: border-color 0.2s; }
+  .bm-card:hover { border-color: var(--blue); }
+  .bm-header { display: grid; grid-template-columns: auto 1fr auto auto; gap: 12px; align-items: center; padding: 1rem 1.25rem; }
+  .bm-icon { width: 36px; height: 36px; background: var(--blue-soft); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .bm-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .bm-prio { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+  .bp-e { background: var(--blue-soft); color: var(--blue-deep); }
+  .bp-i { background: var(--teal-soft); color: #085041; }
+  .bp-o { background: #F5F5F5; color: #666; }
+  .bm-tog { font-size: 16px; color: var(--ink-faint); transition: transform 0.2s; }
+  .bm-card.open .bm-tog { transform: rotate(180deg); }
+  .bm-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+  .bm-card.open .bm-body { display: block; }
+  .bm-st { font-size: 11.5px; font-weight: 700; color: var(--blue-mid); letter-spacing: 0.08em; text-transform: uppercase; margin: 10px 0 4px; }
+  .bm-txt { font-size: 13px; color: var(--ink-muted); font-weight: 300; line-height: 1.65; }
+  .bm-range { display: inline-block; background: var(--blue-soft); color: var(--blue-deep); font-size: 12px; font-weight: 600; padding: 3px 12px; border-radius: 100px; margin-top: 6px; }
+
+  /* SUPLEMENTOS AVANZADOS */
+  .supps-adv { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .sa-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: pointer; transition: border-color 0.2s; }
+  .sa-card:hover { border-color: var(--blue); }
+  .sa-header { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; padding: 1rem 1.25rem; }
+  .sa-icon { width: 38px; height: 38px; background: var(--blue-soft); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
+  .sa-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .sa-short { font-size: 12.5px; color: var(--ink-muted); font-weight: 300; }
+  .sa-tog { font-size: 16px; color: var(--ink-faint); transition: transform 0.2s; margin-top: 4px; }
+  .sa-card.open .sa-tog { transform: rotate(180deg); }
+  .sa-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink-muted); font-weight: 300; line-height: 1.68; }
+  .sa-card.open .sa-body { display: block; }
+  .sa-tags { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .sa-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+  .st-b { background: var(--blue-soft); color: var(--blue-deep); }
+  .st-t { background: var(--teal-soft); color: #085041; }
+  .st-a { background: var(--amber-soft); color: #6B3E08; }
+
+  /* CRONOBIOLOGÍA */
+  .chrono-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 10px; margin-top: 1.25rem; }
+  .chrono-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; position: relative; overflow: hidden; }
+  .chrono-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: var(--blue); }
+  .chrono-time { font-size: 12px; font-weight: 700; color: var(--blue-mid); margin-bottom: 4px; }
+  .chrono-action { font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .chrono-why { font-size: 12px; color: var(--ink-muted); font-weight: 300; line-height: 1.5; }
+
+  /* PROTOCOLO */
+  .proto-timeline { position: relative; margin-top: 1.25rem; padding-left: 28px; }
+  .proto-timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--blue-soft), var(--blue)); border-radius: 2px; }
+  .proto-item { position: relative; margin-bottom: 18px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+  .proto-item::before { content: ''; position: absolute; left: -23px; top: 16px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--blue); }
+  .proto-week { font-size: 11px; font-weight: 700; color: var(--blue-mid); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .proto-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .proto-desc { font-size: 13px; color: var(--ink-muted); font-weight: 300; line-height: 1.6; }
+  .proto-focus { display: inline-block; background: var(--blue-soft); color: var(--blue-deep); font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 100px; margin-top: 6px; }
+
+  /* EXERCISES */
+  .exercise { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; }
+  .exercise-header { display: flex; align-items: center; gap: 14px; padding: 1.1rem 1.5rem; cursor: pointer; transition: background 0.15s; }
+  .exercise-header:hover { background: var(--blue-pale); }
+  .ex-num { width: 32px; height: 32px; background: var(--blue-soft); color: var(--blue-deep); font-size: 13px; font-weight: 700; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ex-title { font-size: 14.5px; font-weight: 500; color: var(--ink); flex: 1; }
+  .ex-time { font-size: 12px; color: var(--ink-muted); font-weight: 300; }
+  .ex-toggle { font-size: 18px; color: var(--ink-faint); transition: transform 0.2s; }
+  .exercise.open .ex-toggle { transform: rotate(180deg); }
+  .exercise-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+  .exercise.open .exercise-body { display: block; }
+  .ex-inst { font-size: 14px; color: var(--ink-muted); margin: 1rem 0 1.25rem; line-height: 1.78; font-weight: 300; }
+  .eq-label { font-size: 11.5px; font-weight: 600; color: var(--blue-mid); margin-bottom: 5px; letter-spacing: 0.03em; }
+  .eq-textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 300; color: var(--ink); resize: vertical; min-height: 72px; outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+  .eq-textarea:focus { border-color: var(--blue); }
+  .eq-textarea::placeholder { color: var(--ink-faint); }
+
+  /* SÍNTOMAS */
+  .sym-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 8px; margin-top: 1rem; margin-bottom: 0.5rem; }
+  .sym-item { display: flex; align-items: flex-start; gap: 8px; padding: 9px 12px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--ink-muted); cursor: pointer; transition: all 0.2s; user-select: none; font-weight: 300; }
+  .sym-item:hover { border-color: var(--blue); }
+  .sym-item.checked { background: var(--blue-soft); border-color: var(--blue); color: var(--blue-deep); font-weight: 500; }
+  .sym-check { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--ink-faint); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 11px; }
+  .sym-item.checked .sym-check { background: var(--blue); border-color: var(--blue); color: white; }
+  .sym-feedback { margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--blue-soft); border-radius: 10px; font-size: 13px; color: var(--blue-deep); display: none; line-height: 1.65; }
+  .sym-feedback.visible { display: block; }
+
+  /* REFLECTION / RESULT / NEXT */
+  .reflection { background: linear-gradient(145deg, #030D18 0%, #0A2540 100%); border-radius: var(--radius); padding: 2rem; color: var(--white); margin-top: 2rem; }
+  .reflection-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; font-style: italic; margin-bottom: 0.5rem; color: #8EC8F5; }
+  .reflection-body { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; line-height: 1.7; font-weight: 300; }
+  .reflection textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.13); border-radius: 10px; padding: 12px 16px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 300; color: var(--white); resize: vertical; min-height: 90px; outline: none; }
+  .reflection textarea::placeholder { color: rgba(255,255,255,0.22); }
+
+  .result-banner { display: flex; align-items: center; gap: 16px; background: var(--white); border: 1.5px solid var(--blue); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 2rem; }
+  .result-icon { width: 48px; height: 48px; background: var(--blue-soft); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .result-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 3px; }
+  .result-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--ink); }
+
+  .next-module { display: flex; align-items: center; justify-content: space-between; background: var(--ink); color: var(--white); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 1rem; gap: 12px; }
+  .next-label { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+  .next-title { font-size: 16px; font-weight: 500; color: var(--white); }
+  .next-letter { font-family: 'Cormorant Garamond', serif; font-size: 46px; color: #639922; font-weight: 600; line-height: 1; }
+.routebar{max-width:900px;margin:18px auto 0;padding:0 18px;display:flex;justify-content:space-between;gap:16px;font:600 13px Arial,sans-serif}.routebar a{text-decoration:none;color:inherit}.route-save{max-width:900px;margin:24px auto;padding:18px;border:1px solid rgba(120,100,100,.18);border-radius:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.route-save button{border:0;border-radius:999px;padding:11px 17px;font-weight:700;cursor:pointer}.route-save .primary{background:#28233a;color:#fff}.route-save .secondary{background:#fff;border:1px solid #ddd}.route-save span{font:12px Arial,sans-serif;opacity:.65}.next-module{cursor:pointer}
+</style>
+</head>
+<body><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>O · Optimízate</span></div>
+
+<div class="hero">
+  <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 5 de 7</div>
+  <div class="hero-letter">O</div>
+  <div class="hero-title">Optimízate</div>
+  <div class="hero-subtitle">Balance hormonal natural, antiinflamación profunda y suplementación de nivel experta</div>
+</div>
+
+<div class="promise">
+  <div class="promise-text">"Cuando tu biología trabaja contigo, todo lo demás se vuelve posible."</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Bienvenida al quinto paso</div>
+    <div class="section-title">El nivel donde te conviertes en experta de tu propio cuerpo</div>
+    <div class="section-body">Los pasos anteriores construyeron la base. Ahora vamos al nivel más profundo: qué marcadores importan, cómo optimizar cada hormona de forma natural, y qué suplementación estratégica potencia todo. Este es el paso donde tu conocimiento te diferencia.</div>
+    <div class="callout" style="margin-top:1.25rem;">
+      <div class="callout-text"><strong>Lo que trabajarás aquí:</strong> balance hormonal por hormona, estrategias antiinflamatorias avanzadas, biomarcadores clave, suplementación experta y tu protocolo de 8 semanas personalizado.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="meta-card">
+      <div><div class="meta-icon">⏱</div><div class="meta-label">Duración</div><div class="meta-val">65–80 min</div></div>
+      <div><div class="meta-icon">🔬</div><div class="meta-label">Ejercicios</div><div class="meta-val">3 actividades</div></div>
+      <div><div class="meta-icon">📋</div><div class="meta-label">Te llevas</div><div class="meta-val">Tu protocolo personal</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HORMONAS -->
+  <div class="section">
+    <div class="section-label">Parte 1 · Balance hormonal natural</div>
+    <div class="section-title">Cada hormona tiene su protocolo específico</div>
+    <div class="section-body">No existe una sola palanca. Toca cada tarjeta para ver las estrategias naturales de cada hormona.</div>
+    <div class="hormones-grid">
+
+      <div class="hormone-card hc-e" onclick="this.classList.toggle('open')">
+        <div class="hormone-icon">🌸</div>
+        <div class="hormone-name">Estrógeno</div>
+        <span class="hormone-status hs-low">En descenso</span>
+        <div class="hormone-desc">Regula más de 400 funciones. Su bajada no es uniforme — fluctúa antes de estabilizarse.</div>
+        <div class="hormone-toggle">▾ Ver estrategias</div>
+        <div class="hormone-expand">
+          <strong>Estrategias naturales:</strong>
+          · Fitoestrógenos diarios: soja, lino molido, garbanzos<br>
+          · Reducir xenoestrógenos: plásticos BPA, pesticidas, cosméticos tóxicos<br>
+          · Mantener porcentaje graso saludable (el tejido adiposo produce estrógeno)<br>
+          · Ejercicio moderado — el exceso lo reduce más<br>
+          · Gestión del estrés: el cortisol compite con el estrógeno por receptores
+        </div>
+      </div>
+
+      <div class="hormone-card hc-p" onclick="this.classList.toggle('open')">
+        <div class="hormone-icon">🌿</div>
+        <div class="hormone-name">Progesterona</div>
+        <span class="hormone-status hs-low">Primera en bajar</span>
+        <div class="hormone-desc">La primera hormona en declinar. Su déficit provoca ansiedad e insomnio antes que otros síntomas.</div>
+        <div class="hormone-toggle">▾ Ver estrategias</div>
+        <div class="hormone-expand">
+          <strong>Estrategias naturales:</strong>
+          · Vitamina C (500mg/día) — apoya su producción<br>
+          · Zinc en alimentos: pipas de calabaza, legumbres<br>
+          · Reducir cortisol: el estrés crónico convierte progesterona en cortisol<br>
+          · Sueño reparador: la producción ocurre principalmente de noche<br>
+          · Evitar restricción calórica severa — frena la producción hormonal
+        </div>
+      </div>
+
+      <div class="hormone-card hc-c" onclick="this.classList.toggle('open')">
+        <div class="hormone-icon">⚡</div>
+        <div class="hormone-name">Cortisol</div>
+        <span class="hormone-status hs-high">Frecuentemente elevado</span>
+        <div class="hormone-desc">El estrés crónico lo mantiene alto, bloqueando otras hormonas y generando inflamación sistémica.</div>
+        <div class="hormone-toggle">▾ Ver estrategias</div>
+        <div class="hormone-expand">
+          <strong>Estrategias de regulación:</strong>
+          · Adaptógenos: ashwagandha, rhodiola (consultar con profesional)<br>
+          · Respiración diafragmática diaria — activa el nervio vago<br>
+          · No entrenar en ayunas si tienes cortisol elevado<br>
+          · Reducir cafeína a 1–2 tazas antes del mediodía<br>
+          · Magnesio nocturno: frena la producción de cortisol nocturno
+        </div>
+      </div>
+
+      <div class="hormone-card hc-i" onclick="this.classList.toggle('open')">
+        <div class="hormone-icon">🍬</div>
+        <div class="hormone-name">Insulina</div>
+        <span class="hormone-status hs-fluct">Resistencia creciente</span>
+        <div class="hormone-desc">La sensibilidad a la insulina baja en esta etapa. Resultado: más grasa abdominal y más fatiga.</div>
+        <div class="hormone-toggle">▾ Ver estrategias</div>
+        <div class="hormone-expand">
+          <strong>Estrategias de sensibilidad:</strong>
+          · Entrenamiento de fuerza: el músculo es el mayor captador de glucosa<br>
+          · Proteína antes que carbohidratos — reduce el pico glucémico<br>
+          · Caminata 10–15 min después de comer: baja glucosa postprandial<br>
+          · Berberina 500mg (consultar médico): efecto similar a metformina<br>
+          · Vinagre de manzana diluido antes de comidas ricas en carbohidratos
+        </div>
+      </div>
+
+      <div class="hormone-card hc-t" onclick="this.classList.toggle('open')">
+        <div class="hormone-icon">🦋</div>
+        <div class="hormone-name">Tiroides</div>
+        <span class="hormone-status hs-fluct">Frecuentemente afectada</span>
+        <div class="hormone-desc">El hipotiroidismo subclínico es muy común aquí y frecuentemente no diagnosticado.</div>
+        <div class="hormone-toggle">▾ Ver estrategias</div>
+        <div class="hormone-expand">
+          <strong>Nutrientes clave para la tiroides:</strong>
+          · Yodo: algas, mariscos, sal yodada (cantidades adecuadas)<br>
+          · Selenio: 1–2 nueces de Brasil al día (no más — el exceso es tóxico)<br>
+          · Zinc: refuerza la conversión de T4 a T3 activa<br>
+          · Pedir TSH + T3 libre + T4 libre — no solo TSH<br>
+          · Evitar goitrógenos crudos en exceso (col, brócoli, coliflor crudos)
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ANTIINFLAMACIÓN -->
+  <div class="section">
+    <div class="section-label">Parte 2 · Antiinflamación profunda</div>
+    <div class="section-title">La inflamación silenciosa: el enemigo invisible de esta etapa</div>
+    <div class="section-body">La inflamación crónica de bajo grado es la raíz de la mayoría de los síntomas. No duele — pero está ahí, bloqueando hormonas, sueño y energía.</div>
+    <div class="callout-amber callout">
+      <div class="callout-text"><strong>Señales de inflamación silenciosa:</strong> hinchazón persistente, dolores articulares, niebla mental, cansancio que no mejora, digestión irregular y piel apagada. 3 o más señales = la inflamación es un factor clave.</div>
+    </div>
+    <div class="inflam-grid">
+      <div class="inflam-col">
+        <div class="inflam-header"><div class="inflam-dot" style="background:var(--teal);"></div><div class="inflam-title">Antiinflamatorios naturales</div></div>
+        <ul class="inflam-list">
+          <li><span>✦</span>Cúrcuma con pimienta negra (potencia x20 la absorción)</li>
+          <li><span>✦</span>Omega-3 EPA+DHA — 2g diarios mínimo</li>
+          <li><span>✦</span>Jengibre fresco — en infusiones o rallado</li>
+          <li><span>✦</span>Berries antioxidantes — arándanos, frambuesas, moras</li>
+          <li><span>✦</span>Aceite de oliva virgen extra — polifenoles clave</li>
+          <li><span>✦</span>Verduras crucíferas cocinadas — brócoli, kale, col</li>
+        </ul>
+      </div>
+      <div class="inflam-col">
+        <div class="inflam-header"><div class="inflam-dot" style="background:#C85A1A;"></div><div class="inflam-title">Proinflamatorios a eliminar</div></div>
+        <ul class="inflam-list">
+          <li><span>✖</span>Azúcar refinada y jarabe de maíz de alta fructosa</li>
+          <li><span>✖</span>Aceites vegetales refinados (girasol, maíz, soja)</li>
+          <li><span>✖</span>Harinas blancas y ultraprocesados</li>
+          <li><span>✖</span>Alcohol — incluso en cantidades "moderadas"</li>
+          <li><span>✖</span>Carnes procesadas (embutidos, salchichas)</li>
+          <li><span>✖</span>Estrés crónico no gestionado (el estrés inflama)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout-teal callout">
+      <div class="callout-text"><strong>Protocolo de 21 días:</strong> elimina los 6 proinflamatorios y añade 3 antiinflamatorios diariamente. El cambio en energía y síntomas es visible en 2 semanas.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BIOMARCADORES -->
+  <div class="section">
+    <div class="section-label">Parte 3 · Conoce tus números</div>
+    <div class="section-title">Los biomarcadores que toda mujer en esta etapa debería conocer</div>
+    <div class="section-body">No puedes optimizar lo que no mides. Estos son los análisis clave — y lo que significan realmente.</div>
+    <div class="biomarkers-list">
+
+      <div class="bm-card" onclick="this.classList.toggle('open')">
+        <div class="bm-header">
+          <div class="bm-icon">🩸</div>
+          <div class="bm-name">FSH y Estradiol</div>
+          <span class="bm-prio bp-e">Esencial</span>
+          <div class="bm-tog">↓</div>
+        </div>
+        <div class="bm-body">
+          <div class="bm-st">Qué mide</div>
+          <div class="bm-txt">La FSH sube cuando los ovarios responden menos. El estradiol es la forma principal de estrógeno. Juntos indican en qué fase de la transición estás.</div>
+          <div class="bm-st">Rango de referencia</div>
+          <span class="bm-range">FSH: 10–40 mUI/mL · Estradiol: 15–350 pg/mL</span>
+          <div class="bm-st">Importante</div>
+          <div class="bm-txt">Un solo resultado no basta — los niveles fluctúan enormemente semana a semana. Pide que se midan en varios momentos.</div>
+        </div>
+      </div>
+
+      <div class="bm-card" onclick="this.classList.toggle('open')">
+        <div class="bm-header">
+          <div class="bm-icon">🦋</div>
+          <div class="bm-name">TSH + T3 libre + T4 libre</div>
+          <span class="bm-prio bp-e">Esencial</span>
+          <div class="bm-tog">↓</div>
+        </div>
+        <div class="bm-body">
+          <div class="bm-st">Qué mide</div>
+          <div class="bm-txt">La función tiroidea completa. La TSH sola no es suficiente — puede estar "normal" mientras T3 libre está baja. Muchas mujeres tienen hipotiroidismo subclínico no detectado.</div>
+          <div class="bm-st">Rango óptimo</div>
+          <span class="bm-range">TSH: 1–2.5 mUI/L (óptimo) · T3 libre: 3.1–4.4 pg/mL</span>
+          <div class="bm-st">Importante</div>
+          <div class="bm-txt">Si tu médico solo pide TSH, pide explícitamente T3 y T4 libres. Hay diferencia entre "normal" y "óptimo para sentirte bien".</div>
+        </div>
+      </div>
+
+      <div class="bm-card" onclick="this.classList.toggle('open')">
+        <div class="bm-header">
+          <div class="bm-icon">☀️</div>
+          <div class="bm-name">Vitamina D (25-OH)</div>
+          <span class="bm-prio bp-e">Esencial</span>
+          <div class="bm-tog">↓</div>
+        </div>
+        <div class="bm-body">
+          <div class="bm-st">Qué mide</div>
+          <div class="bm-txt">El nivel de vitamina D en sangre. No solo importa para los huesos — regula el sistema inmune, el humor y la producción hormonal.</div>
+          <div class="bm-st">Rango óptimo</div>
+          <span class="bm-range">40–60 ng/mL (óptimo) · Más de 30 ng/mL (suficiente)</span>
+          <div class="bm-st">Importante</div>
+          <div class="bm-txt">Más del 70% de las mujeres en esta etapa tienen niveles subóptimos. El déficit severo requiere dosis terapéuticas supervisadas.</div>
+        </div>
+      </div>
+
+      <div class="bm-card" onclick="this.classList.toggle('open')">
+        <div class="bm-header">
+          <div class="bm-icon">🔥</div>
+          <div class="bm-name">PCR ultrasensible (inflamación)</div>
+          <span class="bm-prio bp-i">Importante</span>
+          <div class="bm-tog">↓</div>
+        </div>
+        <div class="bm-body">
+          <div class="bm-st">Qué mide</div>
+          <div class="bm-txt">El marcador más usado para inflamación sistémica de bajo grado. Predice riesgo cardiovascular y metabólico antes de que aparezcan síntomas.</div>
+          <div class="bm-st">Rango óptimo</div>
+          <span class="bm-range">Menos de 1 mg/L (óptimo) · 1–3 mg/L (riesgo moderado)</span>
+          <div class="bm-st">Si está elevada</div>
+          <div class="bm-txt">Protocolo antiinflamatorio 12 semanas + re-analizar. La PCR responde rápido a cambios de estilo de vida.</div>
+        </div>
+      </div>
+
+      <div class="bm-card" onclick="this.classList.toggle('open')">
+        <div class="bm-header">
+          <div class="bm-icon">🩺</div>
+          <div class="bm-name">Glucosa e insulina en ayunas</div>
+          <span class="bm-prio bp-i">Importante</span>
+          <div class="bm-tog">↓</div>
+        </div>
+        <div class="bm-body">
+          <div class="bm-st">Qué mide</div>
+          <div class="bm-txt">La resistencia a la insulina se desarrolla en silencio. Medirla junto con glucosa da información del metabolismo glucémico años antes de que aparezca la diabetes.</div>
+          <div class="bm-st">Rango óptimo</div>
+          <span class="bm-range">Glucosa: 70–85 mg/dL · Insulina ayunas: 2–6 μIU/mL</span>
+          <div class="bm-st">Si insulina está elevada</div>
+          <div class="bm-txt">Fuerza 3x/semana + reducción de carbohidratos refinados + caminata postprandial. Resultados en analítica en 8–12 semanas.</div>
+        </div>
+      </div>
+
+      <div class="bm-card" onclick="this.classList.toggle('open')">
+        <div class="bm-header">
+          <div class="bm-icon">⚡</div>
+          <div class="bm-name">Magnesio en eritrocitos</div>
+          <span class="bm-prio bp-o">Complementario</span>
+          <div class="bm-tog">↓</div>
+        </div>
+        <div class="bm-body">
+          <div class="bm-st">Qué mide</div>
+          <div class="bm-txt">El magnesio sérico habitual no refleja el magnesio intracelular real. El déficit es muy prevalente pero raramente detectado con la analítica estándar.</div>
+          <div class="bm-st">Rango óptimo en eritrocitos</div>
+          <span class="bm-range">4.2–6.8 mg/dL en eritrocitos</span>
+          <div class="bm-st">Si no puedes medirlo</div>
+          <div class="bm-txt">Con 3 o más síntomas de déficit (insomnio, calambres, ansiedad, fatiga), considera suplementar con glicinato o malato durante 8 semanas.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SUPLEMENTACIÓN AVANZADA -->
+  <div class="section">
+    <div class="section-label">Parte 4 · Suplementación avanzada</div>
+    <div class="section-title">Más allá de lo básico — los que marcan la diferencia</div>
+    <div class="section-body">En el Paso I viste los 5 esenciales. Aquí añadimos los de nivel experta — cuando la base ya está construida.</div>
+    <div class="callout">
+      <div class="callout-text"><strong>Importante:</strong> son complemento a los del Paso I, no sustitutos. La clave es la personalización según síntomas y analíticas. Más no siempre es mejor.</div>
+    </div>
+    <div class="supps-adv">
+
+      <div class="sa-card" onclick="this.classList.toggle('open')">
+        <div class="sa-header">
+          <div class="sa-icon">🌿</div>
+          <div><div class="sa-name">Ashwagandha</div><div class="sa-short">Adaptógeno regulador del cortisol · Para el estrés crónico</div></div>
+          <div class="sa-tog">↓</div>
+        </div>
+        <div class="sa-body">
+          El adaptógeno más estudiado para mujeres en perimenopausia. Regula el cortisol, mejora la calidad del sueño, reduce la ansiedad y tiene evidencia sobre mejora de función tiroidea. Estudios muestran reducción del cortisol del 27% en 60 días con 300–600mg diarios.
+          <div class="sa-tags"><span class="sa-tag st-b">Cortisol</span><span class="sa-tag st-b">Sueño</span><span class="sa-tag st-t">Tiroides</span><span class="sa-tag st-a">300–600mg · Por la noche</span></div>
+        </div>
+      </div>
+
+      <div class="sa-card" onclick="this.classList.toggle('open')">
+        <div class="sa-header">
+          <div class="sa-icon">🧠</div>
+          <div><div class="sa-name">L-Teanina</div><div class="sa-short">Aminoácido calmante · Para ansiedad y niebla mental</div></div>
+          <div class="sa-tog">↓</div>
+        </div>
+        <div class="sa-body">
+          Presente en el té verde, la L-teanina activa ondas alfa cerebrales — el estado de "alerta relajada" que favorece el foco sin tensión. Ideal combinada con cafeína para reducir sus efectos negativos. No genera dependencia ni somnolencia diurna.
+          <div class="sa-tags"><span class="sa-tag st-b">Ansiedad</span><span class="sa-tag st-b">Foco mental</span><span class="sa-tag st-t">Sueño ligero</span><span class="sa-tag st-a">200mg · Mañana o noche</span></div>
+        </div>
+      </div>
+
+      <div class="sa-card" onclick="this.classList.toggle('open')">
+        <div class="sa-header">
+          <div class="sa-icon">🦴</div>
+          <div><div class="sa-name">Colágeno hidrolizado tipo I y III</div><div class="sa-short">Piel, articulaciones y tejidos · El antiaging real</div></div>
+          <div class="sa-tog">↓</div>
+        </div>
+        <div class="sa-body">
+          El estrógeno estimula la producción de colágeno — cuando baja, la piel pierde firmeza y las articulaciones se resienten. El colágeno hidrolizado tiene evidencia sólida en elasticidad cutánea, dolor articular y densidad ósea. Requiere vitamina C para su síntesis.
+          <div class="sa-tags"><span class="sa-tag st-b">Piel y elasticidad</span><span class="sa-tag st-b">Articulaciones</span><span class="sa-tag st-t">Huesos</span><span class="sa-tag st-a">10–15g/día · Con vitamina C</span></div>
+        </div>
+      </div>
+
+      <div class="sa-card" onclick="this.classList.toggle('open')">
+        <div class="sa-header">
+          <div class="sa-icon">🌱</div>
+          <div><div class="sa-name">Probióticos + Prebióticos</div><div class="sa-short">Eje intestino-hormonas · La conexión que pocos explican</div></div>
+          <div class="sa-tog">↓</div>
+        </div>
+        <div class="sa-body">
+          El "estroboloma" — las bacterias intestinales que metabolizan el estrógeno — es un regulador hormonal clave casi nunca mencionado. Una microbiota sana recicla el estrógeno eficientemente. La disbiosis puede empeorar significativamente los síntomas menopáusicos.
+          <div class="sa-tags"><span class="sa-tag st-b">Microbiota</span><span class="sa-tag st-b">Metabolismo estrogénico</span><span class="sa-tag st-t">Inflamación intestinal</span><span class="sa-tag st-a">Lactobacilos + Bifidobacterias · Con comida</span></div>
+        </div>
+      </div>
+
+      <div class="sa-card" onclick="this.classList.toggle('open')">
+        <div class="sa-header">
+          <div class="sa-icon">💛</div>
+          <div><div class="sa-name">CoQ10 (Ubiquinol)</div><div class="sa-short">Energía mitocondrial · Para fatiga profunda y corazón</div></div>
+          <div class="sa-tog">↓</div>
+        </div>
+        <div class="sa-body">
+          La CoQ10 es el combustible de las mitocondrias. Sus niveles disminuyen con la edad. En perimenopausia mejora la energía física, protege el sistema cardiovascular (el estrógeno deja de proteger el corazón) y reduce el estrés oxidativo.
+          <div class="sa-tags"><span class="sa-tag st-b">Energía celular</span><span class="sa-tag st-b">Corazón</span><span class="sa-tag st-t">Antioxidante</span><span class="sa-tag st-a">100–200mg/día · Preferir ubiquinol</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CRONOBIOLOGÍA -->
+  <div class="section">
+    <div class="section-label">Parte 5 · Timing biológico</div>
+    <div class="section-title">Cuándo lo haces importa tanto como qué haces</div>
+    <div class="section-body">Tu biología tiene ventanas óptimas para cada tipo de acción. Usarlas correctamente multiplica los resultados.</div>
+    <div class="chrono-grid">
+      <div class="chrono-card"><div class="chrono-time">6–8am</div><div class="chrono-action">Luz solar + proteína</div><div class="chrono-why">Sincroniza el ritmo circadiano y activa el metabolismo matutino</div></div>
+      <div class="chrono-card"><div class="chrono-time">8–11am</div><div class="chrono-action">Trabajo cognitivo + fuerza</div><div class="chrono-why">Cortisol naturalmente alto → máxima capacidad mental y muscular</div></div>
+      <div class="chrono-card"><div class="chrono-time">12–14h</div><div class="chrono-action">Comida principal del día</div><div class="chrono-why">La sensibilidad a la insulina es máxima — procesas mejor los carbohidratos</div></div>
+      <div class="chrono-card"><div class="chrono-time">16–18h</div><div class="chrono-action">Ejercicio suave o creativo</div><div class="chrono-why">Segunda ventana de energía — yoga, pilates o trabajo creativo</div></div>
+      <div class="chrono-card"><div class="chrono-time">19–20h</div><div class="chrono-action">Cena ligera</div><div class="chrono-why">Comer tarde eleva la glucosa nocturna y fragmenta el sueño</div></div>
+      <div class="chrono-card"><div class="chrono-time">21–22h</div><div class="chrono-action">Magnesio + ritual de cierre</div><div class="chrono-why">La melatonina sube — apoyarla con magnesio y oscuridad maximiza el sueño</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROTOCOLO 8 SEMANAS -->
+  <div class="section">
+    <div class="section-label">Parte 6 · Tu hoja de ruta</div>
+    <div class="section-title">Protocolo de optimización de 8 semanas</div>
+    <div class="section-body">No todo a la vez. Este es el orden correcto para que los cambios se asienten y puedas medir resultados reales.</div>
+    <div class="proto-timeline">
+      <div class="proto-item">
+        <div class="proto-week">Semanas 1–2</div>
+        <div class="proto-title">Limpieza antiinflamatoria</div>
+        <div class="proto-desc">Elimina los 6 proinflamatorios. Añade Omega-3, Vitamina D y Magnesio. Consolida las rutinas del Paso H.</div>
+        <span class="proto-focus">Base antiinflamatoria</span>
+      </div>
+      <div class="proto-item">
+        <div class="proto-week">Semanas 3–4</div>
+        <div class="proto-title">Regulación del cortisol</div>
+        <div class="proto-desc">Introduce ashwagandha si el estrés es un factor principal. Consolida la rutina de sueño. Elimina café después del mediodía. Respiración diafragmática diaria.</div>
+        <span class="proto-focus">Eje cortisol-sueño</span>
+      </div>
+      <div class="proto-item">
+        <div class="proto-week">Semanas 5–6</div>
+        <div class="proto-title">Optimización metabólica</div>
+        <div class="proto-desc">Fuerza 3x/semana consolidada. Proteína prioritaria en cada comida. Introduce colágeno con vitamina C. Caminata postprandial como hábito.</div>
+        <span class="proto-focus">Metabolismo e insulina</span>
+      </div>
+      <div class="proto-item">
+        <div class="proto-week">Semanas 7–8</div>
+        <div class="proto-title">Analítica y ajuste</div>
+        <div class="proto-desc">Solicita analítica completa con los biomarcadores de la Parte 3. Evalúa qué síntomas mejoraron. Ajusta el protocolo de suplementación según resultados.</div>
+        <span class="proto-focus">Medir para optimizar</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EJERCICIOS -->
+  <div class="section">
+    <div class="section-label">Parte 7 · Ejercicios del paso</div>
+    <div class="section-title">Del conocimiento a tu protocolo personal</div>
+
+    <div class="exercise open" id="exO1">
+      <div class="exercise-header" onclick="toggleEx('exO1')">
+        <div class="ex-num">1</div>
+        <div class="ex-title">Checklist de síntomas de optimización</div>
+        <div class="ex-time">15 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Marca los síntomas que estás experimentando. Esto identifica qué áreas biológicas necesitan más atención en tu protocolo.</div>
+
+        <div class="eq-label" style="margin-bottom:8px;">Síntomas hormonales</div>
+        <div class="sym-grid">
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Sofocos frecuentes</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Ciclos irregulares</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Sequedad vaginal</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Cambios de humor severos</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Pérdida de libido</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Palpitaciones</div>
+        </div>
+
+        <div class="eq-label" style="margin:1rem 0 8px;">Síntomas metabólicos e inflamatorios</div>
+        <div class="sym-grid">
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Ganancia de peso abdominal</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Hinchazón persistente</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Dolores articulares</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Digestión lenta o irregular</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Piel apagada o seca</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Cabello más débil</div>
+        </div>
+
+        <div class="eq-label" style="margin:1rem 0 8px;">Síntomas neurológicos y de energía</div>
+        <div class="sym-grid">
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Niebla mental frecuente</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Fatiga que no mejora</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Insomnio o sueño fragmentado</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Ansiedad aumentada</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Dificultad de concentración</div>
+          <div class="sym-item" onclick="toggleSym(this)"><div class="sym-check"></div>Pérdida de memoria reciente</div>
+        </div>
+        <div class="sym-feedback" id="sym-fb"></div>
+      </div>
+    </div>
+
+    <div class="exercise" id="exO2">
+      <div class="exercise-header" onclick="toggleEx('exO2')">
+        <div class="ex-num">2</div>
+        <div class="ex-title">Tu lista de analíticas pendientes</div>
+        <div class="ex-time">15 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">La información es poder. Este ejercicio te prepara para ir a tu próxima cita médica sabiendo exactamente qué pedir.</div>
+        <div class="eq-label">¿Cuándo fue tu última analítica? ¿Qué se midió?</div>
+        <textarea id="route_o_1" class="eq-textarea" placeholder="Ej: Hace 8 meses. Solo glucosa, colesterol y TSH básica. Sin hormonas sexuales."></textarea>
+        <div class="eq-label">¿Cuáles biomarcadores de este paso nunca te han medido?</div>
+        <textarea id="route_o_2" class="eq-textarea" placeholder="Ej: FSH y estradiol nunca. Vitamina D hace 2 años. PCR ultrasensible nunca. T3 libre tampoco."></textarea>
+        <div class="eq-label">Lista de analíticas que pedirás en tu próxima visita</div>
+        <textarea id="route_o_3" class="eq-textarea" style="min-height:110px;" placeholder="Voy a pedir:&#10;· FSH y estradiol&#10;· TSH + T3 libre + T4 libre&#10;· Vitamina D (25-OH)&#10;· PCR ultrasensible&#10;· Glucosa e insulina en ayunas"></textarea>
+        <div class="eq-label">¿Tienes alguna resistencia para pedir estas pruebas a tu médico?</div>
+        <textarea id="route_o_4" class="eq-textarea" placeholder="Ej: Mi médico dice que 'no hacen falta' si el TSH está normal. Llevaré esta lista escrita y pediré derivación si es necesario."></textarea>
+      </div>
+    </div>
+
+    <div class="exercise" id="exO3">
+      <div class="exercise-header" onclick="toggleEx('exO3')">
+        <div class="ex-num">3</div>
+        <div class="ex-title">Diseña tu protocolo personal de 8 semanas</div>
+        <div class="ex-time">25 min · El más estratégico</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Personaliza el protocolo de 8 semanas según tus síntomas prioritarios. No tienes que hacerlo todo — tienes que hacer lo correcto para ti.</div>
+        <div class="eq-label">¿Cuál es el área biológica que más urgentemente necesita atención según tus síntomas?</div>
+        <textarea id="route_o_5" class="eq-textarea" placeholder="Ej: La inflamación y el sueño. Casi todos mis síntomas apuntan ahí. El cortisol elevado también."></textarea>
+        <div class="eq-label">¿Qué suplementos tienes ya, cuáles añadirás en semanas 1–2 y cuáles reservarás para más adelante?</div>
+        <textarea id="route_o_6" class="eq-textarea" style="min-height:110px;" placeholder="Ya tengo: Omega-3 y magnesio.&#10;Semanas 1–2: Añadir Vitamina D3+K2.&#10;Semanas 3–4: Ashwagandha para el cortisol.&#10;Semanas 5–6: Colágeno con vitamina C.&#10;Más adelante: CoQ10 si la fatiga persiste."></textarea>
+        <div class="eq-label">¿Qué cambio antiinflamatorio implementarás esta semana?</div>
+        <textarea id="route_o_7" class="eq-textarea" placeholder="Ej: Eliminar azúcar añadida 21 días. Añadir cúrcuma con pimienta en la comida del mediodía."></textarea>
+        <div class="eq-label">¿Cómo medirás si el protocolo funciona? ¿Qué señales buscarás en tu cuerpo?</div>
+        <textarea id="route_o_8" class="eq-textarea" placeholder="Ej: Menos hinchazón en 2 semanas. Más energía por las mañanas en 3–4 semanas. Menos sofocos en 6 semanas. Analítica en semana 8."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="reflection">
+    <div class="reflection-title">Reflexión de cierre del paso</div>
+    <div class="reflection-body">Este paso te dio el nivel más profundo de conocimiento sobre tu biología. Esta pregunta conecta ese conocimiento con tu siguiente paso.</div>
+    <div class="eq-label" style="color:#8EC8F5; margin-bottom:6px;">Ahora que entiendes lo que está pasando en tu biología, ¿qué es lo más importante que puedes hacer por tu cuerpo esta semana?</div>
+    <textarea id="route_o_9" placeholder="Tu respuesta más honesta…"></textarea>
+  </div>
+
+  <div class="result-banner">
+    <div class="result-icon">💥</div>
+    <div>
+      <div class="result-label">Resultado de este paso</div>
+      <div class="result-text">Tu cuerpo empieza a responder — porque ahora trabajas con él, no contra él</div>
+    </div>
+  </div>
+
+  <div class="next-module">
+    <div>
+      <div class="next-label">Siguiente paso</div>
+      <div class="next-title">Sostén tu Transformación</div>
+    </div>
+    <div class="next-letter">S</div>
+  </div>
+
+  <div class="route-save"><button id="routeSave" class="primary">Guardar avance</button><button id="routeComplete" class="secondary">Completar este paso</button><span id="routeStatus">Tus respuestas quedan en tu Ruta.</span><a href="/mi-ruta/sistematiza/" style="margin-left:auto;text-decoration:none;font-weight:700">Continuar a S · Sistematiza tu cambio →</a></div><div style="text-align:center; margin-top:2rem; padding-bottom:1rem;">
+    <div style="font-size:12px; color:var(--ink-faint);">Método D.I.C.H.O.S.A.™ · Todos los derechos reservados</div>
+  </div>
+
+</div>
+
+<script type="module">
+import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+
+  function toggleSym(el) {
+    el.classList.toggle('checked');
+    el.querySelector('.sym-check').textContent = el.classList.contains('checked') ? '✓' : '';
+    const total = document.querySelectorAll('.sym-item.checked').length;
+    const fb = document.getElementById('sym-fb');
+    if (total === 0) { fb.classList.remove('visible'); return; }
+    fb.classList.add('visible');
+    if (total <= 3) {
+      fb.innerHTML = `<strong>Marcaste ${total} síntoma(s).</strong> Tu biología responde de forma moderada. El protocolo te ayudará a afinar y prevenir progresión.`;
+    } else if (total <= 8) {
+      fb.innerHTML = `<strong>Marcaste ${total} síntomas.</strong> Varias áreas necesitan atención. El protocolo de 8 semanas y las analíticas te darán el mapa claro de por dónde empezar.`;
+    } else {
+      fb.innerHTML = `<strong>Marcaste ${total} síntomas.</strong> Tu cuerpo está enviando señales importantes en múltiples sistemas. Este paso es especialmente relevante para ti — considera también apoyo profesional complementario.`;
+    }
+  }
+
+const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");
+const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}
+const uid=session.user.id,stage="O",ids=["route_o_1","route_o_2","route_o_3","route_o_4","route_o_5","route_o_6","route_o_7","route_o_8","route_o_9"],keys=["o_1","o_2","o_3","o_4","o_5","o_6","o_7","o_8","o_9"],statusEl=document.getElementById("routeStatus");
+const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw new Error("Paso bloqueado")}
+const{data:saved}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);
+for(const x of saved||[]){const i=keys.indexOf(x.exercise_key);if(i>-1&&document.getElementById(ids[i]))document.getElementById(ids[i]).value=x.response?.text||""}
+await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available");
+async function routeSave(show=true){if(show)statusEl.textContent="Guardando…";let filled=0;for(let i=0;i<ids.length;i++){const el=document.getElementById(ids[i]),value=el?.value.trim()||"";if(value)filled++;const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:value}},{onConflict:"user_id,stage,exercise_key"});if(error){statusEl.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:ids.length?Math.round(filled/ids.length*100):0,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)statusEl.textContent="✓ Avance guardado";return true}
+document.getElementById("routeSave").onclick=()=>routeSave();
+document.getElementById("routeComplete").onclick=async()=>{if(!await routeSave(false))return;const summary=ids.map(id=>document.getElementById(id)?.value.trim()).filter(Boolean).slice(-1)[0]||"Optimízate completada";await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);await sb.from("stage_progress").update({status:"available"}).eq("user_id",uid).eq("stage","S").eq("status","locked");statusEl.textContent="✓ Optimízate completada. Sistematiza tu cambio ya está disponible.";};
+</script>
+</body>
+</html>
