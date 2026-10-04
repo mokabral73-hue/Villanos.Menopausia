@@ -1,42 +1,609 @@
-<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A · Activa tu poder | Mi Ruta D.I.C.H.O.S.A.™</title><style>:root{--v:#65062e;--r:#df2467;--c:#fffaf5;--t:#3d2930;--b:#ead9df}*{box-sizing:border-box}body{margin:0;background:var(--c);color:var(--t);font-family:Arial,sans-serif}main{width:min(900px,92%);margin:auto;padding:35px 0 70px}.top{display:flex;justify-content:space-between;align-items:center}.logo{width:205px}.back{color:var(--v);font-weight:700;text-decoration:none}.hero{padding:38px 0 15px}.ey{color:var(--r);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}h1{font:700 clamp(3rem,7vw,5rem) Georgia;color:var(--v);margin:10px 0}h2{font:700 1.75rem Georgia;color:var(--v);margin:5px 0 10px}.lead{font:1.12rem/1.65 Georgia}.card{margin:20px 0;background:#fff;border:1px solid var(--b);border-radius:25px;padding:28px;box-shadow:0 12px 35px #65062e0b}textarea{width:100%;min-height:130px;border:1px solid var(--b);border-radius:14px;padding:14px;font:1rem Arial;resize:vertical}.notice{background:#fff3f7;border-left:4px solid var(--r);padding:14px;border-radius:10px;font-size:.92rem}.btn{border:0;background:var(--r);color:#fff;padding:14px 24px;border-radius:999px;font-weight:800;cursor:pointer}.secondary{background:#fff;color:var(--v);border:1px solid var(--b)}.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.status{color:#806770;font-size:.9rem}.progress{height:8px;background:#f0e5e8;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--r)}.guidegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 24px}.guideitem{background:#fff;border:1px solid var(--b);border-radius:18px;padding:18px}.guideitem b{display:block;color:var(--v);font-family:Georgia,serif;font-size:1.05rem;margin-bottom:5px}.introcard{background:linear-gradient(135deg,#fff7fa,#fff);border:1px solid var(--b);border-radius:25px;padding:28px;margin:20px 0}.introcard p{line-height:1.65}.steps{display:grid;gap:10px;margin-top:16px}.stepmini{display:flex;gap:12px;align-items:flex-start}.stepmini span{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:var(--v);font-weight:800}@media(max-width:650px){.guidegrid{grid-template-columns:1fr}}</style><style>
-.hero{position:relative;overflow:hidden;background:#65062e;color:white;border-radius:30px;padding:48px;margin-top:28px;box-shadow:0 18px 48px #65062e22}.hero:after{content:"A";position:absolute;right:20px;top:-70px;font:700 18rem Georgia;color:#ffffff10;pointer-events:none}.hero h1{position:relative;z-index:1;color:white;max-width:760px}.hero .lead,.hero .small{position:relative;z-index:1;color:#fff}.hero .ey{position:relative;z-index:1;color:#ffc4d8}.hero .progress{position:relative;z-index:1;background:#ffffff22}.guideitem,.introcard,.card{box-shadow:0 12px 36px #65062e0b}.introcard{border-radius:28px;padding:34px;border-left:5px solid #df2467}.steps{grid-template-columns:repeat(3,1fr)}.stepmini{background:#fff5f8;border-radius:16px;padding:14px}.card{padding:34px}.card>.ey:first-child{display:inline-block;background:#fff0f5;border-radius:999px;padding:7px 10px;margin-bottom:10px}.card h2{font-size:2rem}.final{position:relative;overflow:hidden}.final:after{content:"A";position:absolute;right:22px;top:-28px;font:700 8rem Georgia;color:#65062e08;pointer-events:none}.route-bottom-nav{border-top:1px solid #ead9df;padding-top:20px}@media(max-width:650px){.hero{padding:34px 23px}.hero:after{font-size:11rem;right:-8px;top:-25px}.steps{grid-template-columns:1fr}.card,.introcard{padding:23px}.route-bottom-nav .btn{width:100%}}
-</style><style>.exercise-fold{border:1px solid #ead9df;border-radius:22px;margin:18px 0;background:#fff;overflow:hidden;box-shadow:0 9px 28px #65062e08}.exercise-fold summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;gap:14px;color:#65062e;font:700 1.12rem Georgia}.exercise-fold summary::-webkit-details-marker{display:none}.exercise-fold summary:after{content:"＋";margin-left:auto;color:#df2467;font:700 1.35rem Arial}.exercise-fold[open] summary:after{content:"−"}.fold-icon{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;background:#f9dbe6;color:#65062e;font:700 1.05rem Arial}.exercise-fold[open] summary{background:#fff5f8}.exercise-fold>.card{margin:0;border:0;border-top:1px solid #f0e3e7;border-radius:0;box-shadow:none}@media(max-width:650px){.exercise-fold summary{padding:16px}.fold-icon{width:38px;height:38px;flex-basis:38px}}</style><style>
-/* Premium scale pass: wider desktop canvas + stronger guided accordions */
-@media (min-width:900px){
-  .wrap,.container,main{max-width:980px!important}
-}
-.exercise-fold{margin:24px 0!important;border-radius:24px!important;box-shadow:0 12px 34px rgba(101,6,46,.08)!important}
-.exercise-fold summary{min-height:76px;padding:20px 24px!important;font-size:1.2rem!important;letter-spacing:-.01em}
-.exercise-fold .fold-icon{width:50px!important;height:50px!important;flex:0 0 50px!important;font-size:1.2rem!important;box-shadow:inset 0 0 0 1px rgba(101,6,46,.08)}
-.exercise-fold[open] summary{border-bottom:1px solid #efdde4}
-.exercise-fold>.card{padding:30px 32px!important}
-.exercise-fold>.card h2{font-size:1.65rem!important;line-height:1.15;margin-bottom:14px}
-.exercise-fold>.card p,.exercise-fold>.card label,.exercise-fold>.card li{font-size:1rem;line-height:1.65}
-.exercise-fold textarea,.exercise-fold input,.exercise-fold select{font-size:1rem!important;padding:14px!important}
-@media(max-width:899px){
- .exercise-fold summary{min-height:66px!important;font-size:1.05rem!important}
- .exercise-fold>.card{padding:22px 18px!important}
-}
-</style><style id="method-visual-system">
-:root{--vino:#65062e;--rosa:#df2467;--rosa2:#f8d7df;--crema:#fffaf5;--dorado:#c99b56;--texto:#3d2930;--blanco:#fff}
-body{background:var(--crema)!important;color:var(--texto)}
-main{width:min(1180px,92%)!important}
-.top{min-height:78px!important}
-.logo{width:205px!important}
-.hero{background:radial-gradient(circle at 78% 28%,#f5d8c8 0,transparent 28%),linear-gradient(110deg,#fffaf6 0%,#fff4ed 58%,#f7e5d8 100%)!important;color:var(--texto)!important;border-radius:32px!important;padding:54px 58px!important;box-shadow:0 22px 55px rgba(101,6,46,.08)!important}
-.hero:after{content:"A"!important;right:34px!important;top:-70px!important;font:700 18rem Georgia!important;color:rgba(101,6,46,.055)!important}
-.hero h1{color:var(--vino)!important;font-size:clamp(3.2rem,6vw,5.7rem)!important}
-.hero .ey{color:var(--vino)!important}
-.hero .lead,.hero .small,.hero small{color:var(--texto)!important}
-.hero .progress{background:rgba(101,6,46,.10)!important}
-.hero .progress span{background:var(--rosa)!important}
-.guidegrid{gap:20px!important}.guideitem{padding:24px!important;border-radius:22px!important}
-.introcard{background:#fff!important;border-left:5px solid var(--rosa)!important;box-shadow:0 16px 38px rgba(101,6,46,.06)!important}
-.exercise-fold{border-radius:24px!important;box-shadow:0 14px 34px rgba(101,6,46,.06)!important}
-.exercise-fold summary{background:#fff!important}
-.exercise-fold[open] summary{background:#fff5f8!important}
-.fold-icon{background:radial-gradient(circle at 40% 35%,#fff6f4,#f7cbd4 72%)!important;border:1px solid #f3c5d0!important}
-.btn{background:var(--rosa)!important;box-shadow:0 12px 30px rgba(223,36,103,.18)}
-.btn.secondary{background:#fff!important;color:var(--vino)!important;border:1px solid #ead9df!important;box-shadow:none}
-@media(max-width:650px){.hero{padding:34px 23px!important}.hero:after{font-size:11rem!important;right:-8px!important;top:-25px!important}}
-</style></head><body><main><div class="top"><a href="/mi-ruta/"><img class="logo" src="/brand-logo.png?v=20261003"></a><a class="back" href="/mi-ruta/">← Mi Ruta</a></div><section class="hero"><div class="ey">Paso 7 de 7 · Método D.I.C.H.O.S.A.™</div><h1>A · Activa tu poder</h1><p class="lead"><strong>Activa tu poder.</strong> Usa lo aprendido para darle dirección a la siguiente etapa de tu vida.</p><div class="progress"><span id="bar"></span></div><small id="pct">0% de este paso</small></section><section class="guided-intro"><div class="guidegrid"><div class="guideitem"><b>Tiempo para ti</b>50–65 min</div><div class="guideitem"><b>Tu recorrido</b>3 experiencias guiadas + cierre de Ruta</div><div class="guideitem"><b>Lo que te llevas</b>Dirección, primer paso y tu Ruta D.I.C.H.O.S.A.™ integrada</div></div><div class="introcard"><div class="ey">Antes de comenzar</div><h2>¿Por qué este paso?</h2><p>Todo lo anterior cobra sentido cuando se convierte en dirección. Aquí vas a reunir lo aprendido y decidir qué quieres hacer con ello en la siguiente etapa de tu vida.</p><h3>Lo que necesitas saber</h3><p>Activar tu poder no significa poder con todo. Significa conocerte suficientemente bien para elegir qué quieres, qué ya no quieres, dónde pondrás tu tiempo y tu energía y qué quieres construir con los años que tienes delante. Este cierre convierte el recorrido en dirección y decisiones.</p><div class="ey" style="margin-top:22px">Te voy guiando</div><div class="steps"><div class="stepmini"><span>1</span><p>Visualiza cómo quieres vivir tu siguiente etapa.</p></div><div class="stepmini"><span>2</span><p>Elige lo que ya merece tu acción.</p></div><div class="stepmini"><span>3</span><p>Define un primer paso concreto y cierra tu Ruta.</p></div></div><p class="small" style="margin-top:18px"><strong>No tienes que hacerlo todo de una vez.</strong> Guarda tu avance y vuelve cuando quieras. Tu Ruta conservará lo que vayas construyendo.</p></div></section><div class="notice">Este espacio es educativo y de autoobservación. No sustituye una valoración médica, psicológica o nutricional individual.</div><details class="exercise-fold" open><summary><span class="fold-icon">◇</span><span>01 · Mi siguiente etapa</span></summary><section class="card"><div class="ey">1</div><h2>Mi siguiente etapa</h2><p class="small"><strong>Hazlo así:</strong> Imagínate dentro de doce meses. No pienses solo en metas: piensa en tu vida cotidiana. Qué ocupa más espacio, qué ocupa menos y qué decisiones ya tomaste.</p><p>¿Cómo quieres verte viviendo los próximos meses si actúas con mayor intención?</p><textarea id="vision" placeholder="Escribe lo que observas en ti…"></textarea></section></details><details class="exercise-fold"><summary><span class="fold-icon">!</span><span>02 · Lo que merece mi acción</span></summary><section class="card"><div class="ey">2</div><h2>Lo que merece mi acción</h2><p class="small"><strong>Hazlo así:</strong> Después de recorrer los seis pasos anteriores, responde también: <strong>¿qué quiero conservar?, ¿qué quiero dejar atrás?, ¿qué quiero comenzar?</strong> Luego elige una decisión, conversación, límite, proyecto o cambio que ya no quieras seguir posponiendo.</p><p>¿Qué decisión, conversación o proyecto quieres dejar de posponer?</p><textarea id="direccion" placeholder="Hazlo concreto y personal…"></textarea></section></details><details class="exercise-fold"><summary><span class="fold-icon">→</span><span>03 · Mi primer paso</span></summary><section class="card"><div class="ey">3</div><h2>Mi primer paso</h2><p class="small"><strong>Hazlo así:</strong> Convierte esa dirección en una acción que dependa de ti: qué harás primero, cuándo y qué necesitas preparar. Úsala como inicio de tu <strong>Carta de poder</strong>: una declaración personal de cómo quieres ejercer lo aprendido. Tu visión a 12 meses, tu dirección y esta primera acción formarán el cierre de tu Ruta D.I.C.H.O.S.A.™.</p><p>Define una acción concreta que puedas iniciar desde tu realidad actual.</p><textarea id="primerpaso" placeholder="No busques perfección; busca una decisión posible…"></textarea></section></details><section class="card"><div class="ey">Resultado de este paso</div><h2>Hacia dónde quiero llevar mi siguiente etapa</h2><p>Resume en tus palabras lo más importante que quieres llevar contigo.</p><textarea id="final" placeholder="Lo que me llevo de este paso es…"></textarea><div class="actions" style="margin-top:18px"><button class="btn" id="save">Guardar avance</button><button class="btn secondary" id="complete">Completar este paso</button><span class="status" id="status">Tus respuestas quedan en tu Ruta.</span></div><div class="actions route-bottom-nav" style="margin-top:22px;justify-content:space-between"><a class="btn secondary" href="/mi-ruta/" style="text-decoration:none">← Volver a Mi Ruta</a><a class="btn" href="/mi-ruta/resultado/" style="text-decoration:none">Ver mi Ruta D.I.C.H.O.S.A.™ completa →</a></div></section></main><script type="module">import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}const uid=session.user.id,stage="A",keys=["vision","direccion","primerpaso","resultado_final"],ids=["vision","direccion","primerpaso","final"],$=x=>document.getElementById(x),st=$("status");/* data-stage-access-guard */const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw new Error("Etapa bloqueada")}function progress(){let n=ids.filter(x=>$(x).value.trim()).length/ids.length*100;n=Math.round(n);$("bar").style.width=n+"%";$("pct").textContent=n+"% de este paso";return n}async function load(){const{data}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);for(const x of data||[]){const i=keys.indexOf(x.exercise_key);if(i>-1)$(ids[i]).value=x.response?.text||""}progress();await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available")}async function save(show=true){if(show)st.textContent="Guardando…";for(let i=0;i<keys.length;i++){const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:$(ids[i]).value.trim()}},{onConflict:"user_id,stage,exercise_key"});if(error){st.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:progress(),updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)st.textContent="✓ Avance guardado";return true}$("save").onclick=()=>save();$("complete").onclick=async()=>{if(!$("final").value.trim()){st.textContent="Escribe primero tu resultado personal.";return}if(!await save(false))return;await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary:$("final").value.trim(),completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);st.textContent="✓ Has completado tu Ruta D.I.C.H.O.S.A.™. Ya puedes ver tu mapa completo.";progress();setTimeout(()=>location.href="/mi-ruta/resultado/",900)};document.addEventListener("input",progress);await load();</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paso A – Activa tu poder</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rust: #D85A30;
+    --rust-deep: #6B2208;
+    --rust-mid: #B04020;
+    --rust-soft: #FAECE7;
+    --rust-pale: #FDF6F4;
+    --gold: #C8962A;
+    --gold-soft: #FDF4E3;
+    --plum: #7F3F6B;
+    --plum-soft: #F5EBF2;
+    --ink: #1A0A06;
+    --ink-muted: #6B3A28;
+    --ink-faint: #C4A090;
+    --cream: #FAF6F4;
+    --white: #FFFFFF;
+    --border: rgba(216,90,48,0.15);
+    --radius: 16px;
+    --shadow: 0 4px 28px rgba(107,34,8,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; line-height: 1.65; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(155deg, #100400 0%, #3D1508 55%, #6B2810 100%);
+    color: var(--white); padding: 3.5rem 2rem 2.75rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: 'A'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 380px; font-weight: 600; color: rgba(216,90,48,0.08); top: 50%; left: 50%; transform: translate(-50%,-46%); pointer-events: none; line-height: 1; }
+  .hero-badge { display: inline-block; background: rgba(216,90,48,0.22); color: #F5B89A; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; padding: 5px 16px; border-radius: 100px; margin-bottom: 1.25rem; border: 1px solid rgba(216,90,48,0.3); position: relative; }
+  .hero-letter { font-family: 'Cormorant Garamond', serif; font-size: clamp(60px,13vw,96px); font-weight: 600; color: #F5B89A; line-height: 1; margin-bottom: 0.4rem; position: relative; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,5vw,32px); font-weight: 400; font-style: italic; color: var(--white); margin-bottom: 0.75rem; position: relative; }
+  .hero-subtitle { font-size: 14px; color: rgba(255,255,255,0.48); max-width: 480px; margin: 0 auto; position: relative; font-weight: 300; }
+
+  .promise { background: var(--rust); padding: 1.6rem 2rem; text-align: center; }
+  .promise-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px,3.8vw,21px); font-style: italic; color: var(--white); max-width: 640px; margin: 0 auto; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+  .section { margin-bottom: 2.75rem; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust-mid); margin-bottom: 0.5rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,4.5vw,30px); font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; line-height: 1.28; }
+  .section-body { font-size: 15px; color: var(--ink-muted); max-width: 660px; font-weight: 300; line-height: 1.78; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2.25rem 0; }
+
+  .callout { border-left: 3px solid var(--rust); background: var(--rust-soft); border-radius: 0 10px 10px 0; padding: 0.9rem 1.1rem; margin: 1.25rem 0; }
+  .callout-gold { border-left-color: var(--gold); background: var(--gold-soft); }
+  .callout-plum { border-left-color: var(--plum); background: var(--plum-soft); }
+  .callout-text { font-size: 13.5px; color: var(--rust-deep); line-height: 1.65; }
+  .callout-gold .callout-text { color: #6B3E08; }
+  .callout-plum .callout-text { color: #4A1A3A; }
+  .callout strong { font-weight: 600; }
+
+  .meta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; text-align: center; box-shadow: var(--shadow); }
+  .meta-icon { font-size: 22px; margin-bottom: 4px; }
+  .meta-label { font-size: 11.5px; color: var(--ink-muted); margin-bottom: 3px; font-weight: 300; }
+  .meta-val { font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  /* ── PODER CARDS ── */
+  .poder-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .poder-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem; position: relative; overflow: hidden; cursor: pointer; transition: all 0.2s; }
+  .poder-card:hover { border-color: var(--rust); box-shadow: var(--shadow); }
+  .poder-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: var(--rust); }
+  .poder-icon { font-size: 28px; margin-bottom: 8px; }
+  .poder-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+  .poder-desc { font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; font-weight: 300; }
+  .poder-expand { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.6; }
+  .poder-card.open .poder-expand { display: block; }
+  .poder-toggle { font-size: 12px; color: var(--rust-mid); font-weight: 600; margin-top: 8px; }
+
+  /* ── SEGURIDAD ── */
+  .security-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .security-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; cursor: pointer; user-select: none; transition: all 0.2s; }
+  .security-item:hover { border-color: var(--rust); }
+  .security-item.claimed { background: var(--rust-soft); border-color: var(--rust); }
+  .sec-check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--ink-faint); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 2px; transition: all 0.2s; }
+  .security-item.claimed .sec-check { background: var(--rust); border-color: var(--rust); color: white; }
+  .sec-title { font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .security-item.claimed .sec-title { color: var(--rust-deep); }
+  .sec-desc { font-size: 12px; color: var(--ink-muted); font-weight: 300; line-height: 1.5; }
+  .sec-counter { font-size: 12px; color: var(--ink-muted); margin-top: 10px; font-weight: 300; }
+  .sec-counter span { color: var(--rust); font-weight: 600; }
+
+  /* ── INFLUENCIA ── */
+  .influence-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .inf-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.3rem; }
+  .inf-icon { font-size: 24px; margin-bottom: 6px; }
+  .inf-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .inf-desc { font-size: 12.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.55; margin-bottom: 8px; }
+  .inf-accion { font-size: 12px; color: var(--rust-mid); font-weight: 600; }
+
+  /* ── EXPANSION QUIZ ── */
+  .expansion-quiz { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-top: 1.25rem; box-shadow: var(--shadow); }
+  .quiz-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 1.25rem; }
+  .quiz-q { margin-bottom: 1.25rem; }
+  .quiz-q-text { font-size: 13.5px; color: var(--ink-muted); font-weight: 400; margin-bottom: 0.6rem; }
+  .quiz-options { display: flex; flex-direction: column; gap: 6px; }
+  .quiz-opt { padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border); background: var(--cream); font-size: 13px; font-weight: 300; color: var(--ink-muted); cursor: pointer; transition: all 0.2s; text-align: left; font-family: 'Outfit', sans-serif; }
+  .quiz-opt:hover { border-color: var(--rust); color: var(--rust-mid); }
+  .quiz-opt.selected { background: var(--rust-soft); border-color: var(--rust); color: var(--rust-deep); font-weight: 500; }
+  .quiz-result { margin-top: 1rem; padding: 1rem 1.25rem; background: var(--rust-soft); border-radius: 12px; display: none; }
+  .quiz-result.visible { display: block; }
+  .qr-title { font-size: 13px; font-weight: 700; color: var(--rust-deep); margin-bottom: 5px; }
+  .qr-text { font-size: 13px; color: var(--rust-deep); font-weight: 300; line-height: 1.65; }
+
+  /* ── MANIFIESTO ── */
+  .manifesto-box {
+    background: linear-gradient(150deg, #100400 0%, #3D1508 60%, #6B2810 100%);
+    border-radius: var(--radius); padding: 2.5rem 2rem; color: var(--white);
+    margin-top: 1.25rem; position: relative; overflow: hidden; text-align: center;
+  }
+  .manifesto-box::before { content:''; position:absolute; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; background: rgba(216,90,48,0.1); }
+  .manifesto-box::after { content:''; position:absolute; bottom:-40px; left:-40px; width:150px; height:150px; border-radius:50%; background: rgba(200,150,42,0.08); }
+  .manifesto-label { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #F5B89A; margin-bottom: 1.5rem; position: relative; }
+  .manifesto-lines { display: flex; flex-direction: column; gap: 14px; position: relative; }
+  .manifesto-line { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px,3.5vw,20px); font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.5; border-bottom: 1px solid rgba(245,184,154,0.15); padding-bottom: 14px; }
+  .manifesto-line:last-child { border-bottom: none; padding-bottom: 0; }
+  .manifesto-line strong { color: #F5B89A; font-style: normal; font-weight: 600; }
+  .manifesto-cierre { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,4vw,24px); font-weight: 600; color: #F5B89A; margin-top: 2rem; position: relative; }
+
+  /* ── LEGADO ── */
+  .legado-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(210px,1fr)); gap: 12px; margin-top: 1.25rem; }
+  .legado-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.3rem; position: relative; overflow: hidden; }
+  .legado-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: var(--gold); }
+  .legado-icon { font-size: 24px; margin-bottom: 6px; }
+  .legado-name { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+  .legado-desc { font-size: 12.5px; color: var(--ink-muted); font-weight: 300; line-height: 1.55; }
+
+  /* ── EXERCISES ── */
+  .exercise { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; }
+  .exercise-header { display: flex; align-items: center; gap: 14px; padding: 1.1rem 1.5rem; cursor: pointer; transition: background 0.15s; }
+  .exercise-header:hover { background: var(--rust-pale); }
+  .ex-num { width: 32px; height: 32px; background: var(--rust-soft); color: var(--rust-deep); font-size: 13px; font-weight: 700; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ex-title { font-size: 14.5px; font-weight: 500; color: var(--ink); flex: 1; }
+  .ex-time { font-size: 12px; color: var(--ink-muted); font-weight: 300; }
+  .ex-toggle { font-size: 18px; color: var(--ink-faint); transition: transform 0.2s; }
+  .exercise.open .ex-toggle { transform: rotate(180deg); }
+  .exercise-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+  .exercise.open .exercise-body { display: block; }
+  .ex-inst { font-size: 14px; color: var(--ink-muted); margin: 1rem 0 1.25rem; line-height: 1.78; font-weight: 300; }
+  .eq-label { font-size: 11.5px; font-weight: 600; color: var(--rust-mid); margin-bottom: 5px; letter-spacing: 0.03em; }
+  .eq-textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 300; color: var(--ink); resize: vertical; min-height: 72px; outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+  .eq-textarea:focus { border-color: var(--rust); }
+  .eq-textarea::placeholder { color: var(--ink-faint); }
+
+  /* ── CIERRE EMOCIONAL ── */
+  .cierre-box { background: linear-gradient(150deg, #100400 0%, #3D1508 100%); border-radius: var(--radius); padding: 2.5rem 2rem; color: var(--white); margin-top: 2rem; text-align: center; }
+  .cierre-titulo { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,5vw,32px); font-weight: 400; font-style: italic; color: #F5B89A; margin-bottom: 1rem; }
+  .cierre-texto { font-size: 15px; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.8; max-width: 580px; margin: 0 auto 2rem; }
+  .cierre-frase { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,4vw,24px); font-style: italic; color: var(--white); border-top: 1px solid rgba(245,184,154,0.25); border-bottom: 1px solid rgba(245,184,154,0.25); padding: 1.5rem 0; margin-bottom: 2rem; }
+  .cierre-frase strong { color: #F5B89A; font-style: normal; }
+  .cierre-reflection-label { font-size: 12px; font-weight: 600; color: #F5B89A; margin-bottom: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .cierre-box textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 12px 16px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 300; color: var(--white); resize: vertical; min-height: 90px; outline: none; }
+  .cierre-box textarea::placeholder { color: rgba(255,255,255,0.22); }
+
+  /* ── COMPLETION ── */
+  .completion {
+    background: linear-gradient(135deg, var(--rust) 0%, #B04020 50%, #6B2208 100%);
+    border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; margin-top: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .completion::before { content:'✦'; position:absolute; font-size:180px; color:rgba(255,255,255,0.04); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .completion-badge { display: inline-block; background: rgba(255,255,255,0.15); color: white; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 18px; border-radius: 100px; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.25); }
+  .completion-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,6vw,40px); font-weight: 600; color: white; margin-bottom: 0.5rem; line-height: 1.2; }
+  .completion-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px,3.5vw,20px); font-style: italic; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .completion-frase { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 300; max-width: 500px; margin: 0 auto 2rem; line-height: 1.75; }
+  .dichosa-letters { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 1.5rem; }
+  .dl { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: white; transition: all 0.3s; }
+  .dl.lit { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); transform: scale(1.08); }
+
+  /* ── RESULT ── */
+  .result-banner { display: flex; align-items: center; gap: 16px; background: var(--white); border: 1.5px solid var(--rust); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 2rem; }
+  .result-icon { width: 48px; height: 48px; background: var(--rust-soft); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .result-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust-mid); margin-bottom: 3px; }
+  .result-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--ink); }
+.routebar{max-width:900px;margin:18px auto 0;padding:0 18px;display:flex;justify-content:space-between;gap:16px;font:600 13px Arial,sans-serif}.routebar a{text-decoration:none;color:inherit}.route-save{max-width:900px;margin:24px auto;padding:18px;border:1px solid rgba(120,100,100,.18);border-radius:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.route-save button{border:0;border-radius:999px;padding:11px 17px;font-weight:700;cursor:pointer}.route-save .primary{background:#28233a;color:#fff}.route-save .secondary{background:#fff;border:1px solid #ddd}.route-save span{font:12px Arial,sans-serif;opacity:.65}.next-module{cursor:pointer}
+</style>
+</head>
+<body><div class="routebar"><a href="/mi-ruta/">← Mi Ruta</a><span>A · Activa tu poder</span></div>
+
+<div class="hero">
+  <div class="hero-badge">Método D.I.C.H.O.S.A.™ · Paso 7 de 7 · El cierre</div>
+  <div class="hero-letter">A</div>
+  <div class="hero-title">Activa tu poder</div>
+  <div class="hero-subtitle">Seguridad, influencia y expansión personal — el cierre más poderoso del proceso</div>
+</div>
+
+<div class="promise">
+  <div class="promise-text">"No es una etapa que se sufre… es una versión que se activa."</div>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="section">
+    <div class="section-label">Bienvenida al paso final</div>
+    <div class="section-title">Has llegado. Y nada volverá a ser igual.</div>
+    <div class="section-body">
+      Has despertado tu conciencia, integrado hábitos, conectado con tu identidad, hackeado tu energía, optimizado tu biología y construido el sistema de sostenimiento. Ahora viene el paso que lo corona todo: activar conscientemente el poder que siempre estuvo en ti — y que esta etapa, lejos de arrebatarte, ha venido a revelar.
+    </div>
+    <div class="callout" style="margin-top:1.25rem;">
+      <div class="callout-text"><strong>Lo que trabajarás aquí:</strong> los tres pilares del poder femenino en esta etapa, tu zona de expansión personal, tu influencia en el mundo, el manifiesto D.I.C.H.O.S.A., tu legado y el cierre emocional del proceso.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="meta-card">
+      <div><div class="meta-icon">⏱</div><div class="meta-label">Duración</div><div class="meta-val">60–75 min</div></div>
+      <div><div class="meta-icon">👑</div><div class="meta-label">Ejercicios</div><div class="meta-val">4 actividades</div></div>
+      <div><div class="meta-icon">🔥</div><div class="meta-label">Te llevas</div><div class="meta-val">Tu declaración final</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LOS 3 PILARES DEL PODER -->
+  <div class="section">
+    <div class="section-label">Parte 1 · Los tres pilares</div>
+    <div class="section-title">Seguridad, influencia y expansión — el poder femenino redefinido</div>
+    <div class="section-body">El poder no es lo que nos enseñaron. No es control, ni autoridad, ni volumen. Es algo mucho más profundo — y mucho más tuyo. Toca cada pilar para explorarlo.</div>
+
+    <div class="poder-grid">
+
+      <div class="poder-card" onclick="this.classList.toggle('open')">
+        <div class="poder-icon">🛡️</div>
+        <div class="poder-name">Seguridad interior</div>
+        <div class="poder-desc">La seguridad que no depende de que todo esté bien afuera. La que permanece cuando el cuerpo cambia, los roles se transforman y el mundo opina.</div>
+        <div class="poder-toggle">▾ Explorar</div>
+        <div class="poder-expand">
+          <strong style="color:var(--ink);display:block;margin-bottom:6px;">La seguridad real no es ausencia de duda.</strong>
+          Es la capacidad de actuar a pesar de ella. En esta etapa, la seguridad se construye con cada decisión que tomas desde tus valores, con cada vez que te escuchas antes de escuchar lo que el mundo espera de ti, con cada mañana que eliges cuidarte aunque nadie lo vea.<br><br>
+          <strong style="color:var(--rust-mid);">Tu próximo acto de seguridad:</strong> ¿Qué decisión llevas tiempo posponiendo porque esperas sentirte "lista"? La seguridad no llega antes de actuar — llega mientras actúas.
+        </div>
+      </div>
+
+      <div class="poder-card" onclick="this.classList.toggle('open')">
+        <div class="poder-icon">✨</div>
+        <div class="poder-name">Influencia auténtica</div>
+        <div class="poder-desc">No la influencia que se performa. La que emerge cuando eres tan coherente contigo misma que los demás se mueven sin que tengas que convencer a nadie.</div>
+        <div class="poder-toggle">▾ Explorar</div>
+        <div class="poder-expand">
+          <strong style="color:var(--ink);display:block;margin-bottom:6px;">La influencia más poderosa es la que no intenta influir.</strong>
+          Cuando una mujer cambia — de verdad — su familia lo nota. Sus amigas lo preguntan. Su entorno se reorganiza. No porque lo predique sino porque lo encarna. Tú, en esta etapa, tienes la posibilidad de ser una referencia para otras mujeres que aún no saben que esto es posible.<br><br>
+          <strong style="color:var(--rust-mid);">Tu influencia más cercana:</strong> ¿Hay una mujer en tu vida que está exactamente donde tú estabas al principio de este proceso? ¿Qué podrías decirle?
+        </div>
+      </div>
+
+      <div class="poder-card" onclick="this.classList.toggle('open')">
+        <div class="poder-icon">🚀</div>
+        <div class="poder-name">Expansión personal</div>
+        <div class="poder-desc">La decisión de no quedarte en el tamaño que te asignaron. De ocupar más espacio, de querer más, de crecer aunque ya hayas "llegado".</div>
+        <div class="poder-toggle">▾ Explorar</div>
+        <div class="poder-expand">
+          <strong style="color:var(--ink);display:block;margin-bottom:6px;">La expansión no tiene edad ni techo.</strong>
+          Las mujeres que más admiras no pararon de crecer cuando "ya tenían suficiente". Expandirse significa seguir aprendiendo, seguir soñando, seguir eligiendo versiones más amplias de ti misma. Esta etapa, con la claridad que trae, es el mejor punto de partida que has tenido jamás.<br><br>
+          <strong style="color:var(--rust-mid);">Tu próxima expansión:</strong> ¿Qué querías hacer antes de que la vida cotidiana lo fuera aplazando? ¿Qué no has hecho porque pensabas que "ya era tarde"?
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEGURIDAD INTERIOR -->
+  <div class="section">
+    <div class="section-label">Parte 2 · Reclama tu seguridad</div>
+    <div class="section-title">La seguridad no se espera — se declara</div>
+    <div class="section-body">Estas son las formas en que el poder femenino se manifiesta en lo cotidiano. Marca las que ya sientes como tuyas — y las que estás lista para reclamar.</div>
+
+    <div class="security-list" id="security-list">
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">Digo lo que pienso sin pedir disculpas por ello</div><div class="sec-desc">No de forma agresiva — de forma clara. Mi perspectiva tiene valor y no necesita estar envuelta en "bueno, quizás me equivoco, pero…"</div></div>
+      </div>
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">Digo no sin dar diez explicaciones</div><div class="sec-desc">"No puedo" es una frase completa. No necesita justificación, excusa ni negociación. Mi tiempo y mi energía son recursos limitados y los gestiono yo.</div></div>
+      </div>
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">Me cuido en público sin avergonzarme</div><div class="sec-desc">Tomo mis suplementos en la mesa, pido lo que necesito en un restaurante, descanso cuando mi cuerpo lo pide — aunque los demás no paren.</div></div>
+      </div>
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">No me comparo — ni con mi versión más joven ni con otras mujeres</div><div class="sec-desc">Estoy en mi propio proceso, en mi propio tiempo. La comparación es la herramienta más eficaz para robarme el poder que acabo de construir.</div></div>
+      </div>
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">Pido lo que necesito — en la consulta médica, en casa, en el trabajo</div><div class="sec-desc">Mis necesidades no son caprichos. Son datos. Y comunicarlas no es egoísmo — es inteligencia relacional y emocional.</div></div>
+      </div>
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">Me miro al espejo sin crítica automática</div><div class="sec-desc">Puedo mirarme y ver a una mujer en proceso — no una lista de defectos. Mi cuerpo no es un problema. Es mi hogar.</div></div>
+      </div>
+      <div class="security-item" onclick="toggleSec(this)">
+        <div class="sec-check"></div>
+        <div><div class="sec-title">Elijo con quién paso mi tiempo y energía</div><div class="sec-desc">Tengo autoridad sobre mi entorno. No por arrogancia — por conciencia. El tiempo es el único recurso que no se recupera y lo invierto donde hay reciprocidad.</div></div>
+      </div>
+    </div>
+    <div class="sec-counter">Actos de poder reclamados: <span id="sec-count">0</span> de 7</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- INFLUENCIA -->
+  <div class="section">
+    <div class="section-label">Parte 3 · Tu influencia en el mundo</div>
+    <div class="section-title">El poder que ya estás ejerciendo — aunque no lo veas</div>
+    <div class="section-body">La influencia no empieza cuando "estés lista" o cuando "hayas terminado el proceso". Empieza ahora. Con las personas más cercanas. Con lo que decides mostrar y compartir.</div>
+
+    <div class="influence-grid">
+      <div class="inf-card">
+        <div class="inf-icon">🏠</div>
+        <div class="inf-name">En tu hogar</div>
+        <div class="inf-desc">Cuando una mujer cambia en casa, el sistema familiar se reorganiza. Tus hijos aprenden lo que es el autocuidado. Tu pareja ve un modelo de límites. Tu entorno absorbe lo que encarnas.</div>
+        <div class="inf-accion">→ ¿Qué está aprendiendo tu familia al verte en este proceso?</div>
+      </div>
+      <div class="inf-card">
+        <div class="inf-icon">👭</div>
+        <div class="inf-name">En tus relaciones</div>
+        <div class="inf-desc">Tus amigas notan cuando cambias. Algunas se acercan — quieren saber qué estás haciendo. Otras se alejan — el cambio en ti les incomoda. Ambas reacciones son información, no problemas.</div>
+        <div class="inf-accion">→ ¿Hay alguien en tu círculo que necesita escuchar lo que tú has aprendido?</div>
+      </div>
+      <div class="inf-card">
+        <div class="inf-icon">💼</div>
+        <div class="inf-name">En tu trabajo o negocio</div>
+        <div class="inf-desc">Una mujer que se conoce, que gestiona su energía y que actúa desde la seguridad interior — cambia la dinámica de cualquier espacio profesional. La sabiduría de esta etapa es un activo, no un handicap.</div>
+        <div class="inf-accion">→ ¿Cómo puedes usar lo que aprendiste aquí para liderar diferente?</div>
+      </div>
+      <div class="inf-card">
+        <div class="inf-icon">🌍</div>
+        <div class="inf-name">En tu comunidad</div>
+        <div class="inf-desc">Hay mujeres a tu alrededor que están donde tú estabas. Perdidas, agotadas, sin saber que esto tiene nombre y tiene solución. Tu historia —contada en el momento correcto— puede cambiar la de otra.</div>
+        <div class="inf-accion">→ ¿Estás dispuesta a ser referente para otras mujeres en esta etapa?</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ZONA DE EXPANSIÓN -->
+  <div class="section">
+    <div class="section-label">Parte 4 · Tu próxima versión</div>
+    <div class="section-title">¿Hacia dónde se expande esta nueva versión de ti?</div>
+    <div class="section-body">Este proceso no termina en el Paso A — termina nunca. La expansión es continua. Este quiz te ayuda a identificar tu zona de expansión más urgente ahora mismo.</div>
+
+    <div class="expansion-quiz">
+      <div class="quiz-title">¿Cuál es tu mayor zona de expansión?</div>
+
+      <div class="quiz-q">
+        <div class="quiz-q-text">Cuando imaginas la mejor versión de ti misma en 2 años, ¿qué es lo primero que ves diferente?</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="selectQuiz(this,'a')">Me veo con mucha más energía y vitalidad física</button>
+          <button class="quiz-opt" onclick="selectQuiz(this,'b')">Me veo con más paz interior y menos ansiedad</button>
+          <button class="quiz-opt" onclick="selectQuiz(this,'c')">Me veo haciendo algo que siempre pospuse — un proyecto, un viaje, una carrera</button>
+          <button class="quiz-opt" onclick="selectQuiz(this,'d')">Me veo rodeada de personas diferentes — más alineadas con quien soy ahora</button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quiz-result"></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MANIFIESTO DICHOSA -->
+  <div class="section">
+    <div class="section-label">Parte 5 · Tu manifiesto</div>
+    <div class="section-title">El Manifiesto D.I.C.H.O.S.A.</div>
+    <div class="section-body">Esto no es un texto de motivación. Es una declaración de lo que has construido — y de lo que ya nunca podrás des-saber.</div>
+
+    <div class="manifesto-box">
+      <div class="manifesto-label">Manifiesto D.I.C.H.O.S.A.®</div>
+      <div class="manifesto-lines">
+        <div class="manifesto-line">Yo soy una mujer que <strong>Despertó</strong> — que entendió lo que le pasaba y dejó de llamarlo "estar loca".</div>
+        <div class="manifesto-line">Yo soy una mujer que <strong>Integró</strong> — que eligió cuidarse no como castigo sino como acto de amor propio.</div>
+        <div class="manifesto-line">Yo soy una mujer que se <strong>Conectó</strong> — que dejó de resistirse a la etapa y empezó a habitarla con intención.</div>
+        <div class="manifesto-line">Yo soy una mujer que <strong>Hackeó</strong> — que aprendió a gestionar su energía y a protegerla como el recurso que es.</div>
+        <div class="manifesto-line">Yo soy una mujer que <strong>Optimizó</strong> — que conoce su biología y trabaja con ella, no contra ella.</div>
+        <div class="manifesto-line">Yo soy una mujer que <strong>Sostiene</strong> — que no depende de la motivación porque tiene un sistema.</div>
+        <div class="manifesto-line">Yo soy una mujer que se <strong>Activó</strong> — que eligió liderar su vida en lugar de sobrevivirla.</div>
+      </div>
+      <div class="manifesto-cierre">Yo soy D.I.C.H.O.S.A.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LEGADO -->
+  <div class="section">
+    <div class="section-label">Parte 6 · Tu legado</div>
+    <div class="section-title">Lo que dejas — sin proponértelo</div>
+    <div class="section-body">El poder femenino no se queda contigo. Se irradia. Esto es lo que tu transformación deja en quienes te rodean — aunque nunca lo veas directamente.</div>
+
+    <div class="legado-grid">
+      <div class="legado-card">
+        <div class="legado-icon">🌱</div>
+        <div class="legado-name">A tus hijas o mujeres jóvenes cercanas</div>
+        <div class="legado-desc">Aprenden que una mujer madura no se apaga — se profundiza. Que esta etapa no es el final de algo sino el inicio de otra cosa.</div>
+      </div>
+      <div class="legado-card">
+        <div class="legado-icon">💫</div>
+        <div class="legado-name">A tus amigas y pares</div>
+        <div class="legado-desc">Ven que es posible. Que no tienen que resignarse. Que hay herramientas, que hay comunidad, que hay camino.</div>
+      </div>
+      <div class="legado-card">
+        <div class="legado-icon">🔥</div>
+        <div class="legado-name">A ti misma — versión futura</div>
+        <div class="legado-desc">Dentro de 10 años, mirarás atrás y verás este momento como el punto de inflexión. El momento en que elegiste diferente.</div>
+      </div>
+      <div class="legado-card">
+        <div class="legado-icon">🌍</div>
+        <div class="legado-name">A la narrativa colectiva</div>
+        <div class="legado-desc">Cada mujer que transita esta etapa con consciencia y poder cambia lo que significa "ser mujer de más de 45". Tú eres parte de ese cambio cultural.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EJERCICIOS -->
+  <div class="section">
+    <div class="section-label">Parte 7 · Ejercicios del paso final</div>
+    <div class="section-title">Los últimos — y los más importantes</div>
+
+    <!-- EJ 1 -->
+    <div class="exercise open" id="exA1">
+      <div class="exercise-header" onclick="toggleEx('exA1')">
+        <div class="ex-num">1</div>
+        <div class="ex-title">Tu carta de poder</div>
+        <div class="ex-time">25 min · El más transformador del método</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Esta es la carta más importante que escribirás en este proceso. No es para nadie más. Es tu declaración a ti misma de lo que has vivido, lo que has aprendido y lo que eliges desde aquí. Escríbela despacio. Sin prisa.</div>
+        <div class="eq-label">¿Quién eras cuando llegaste al Paso D? (sé honesta — sin juzgarte)</div>
+        <textarea id="route_a_1" class="eq-textarea" placeholder="Ej: Era una mujer agotada que creía que esto era 'lo normal de la edad'. Que se había resignado a sentirse así para siempre. Que no se reconocía en el espejo y lo llamaba envejecer."></textarea>
+        <div class="eq-label">¿Qué fue lo más importante que aprendiste en cada paso? (una frase por paso)</div>
+        <textarea id="route_a_2" class="eq-textarea" style="min-height:160px;" placeholder="D — Que mis síntomas tienen nombre y tienen solución.&#10;I — Que cuidarme no es un lujo, es una base.&#10;C — Que no me estaba perdiendo — me estaba encontrando.&#10;H — Que mi energía es un sistema que puedo diseñar.&#10;O — Que mi biología puede trabajar conmigo.&#10;S — Que sostener no es fuerza de voluntad — es sistema.&#10;A — Que el poder no era algo que me faltaba. Siempre estuvo aquí."></textarea>
+        <div class="eq-label">¿Quién eres ahora? (en presente, sin condiciones)</div>
+        <textarea id="route_a_3" class="eq-textarea" style="min-height:100px;" placeholder="Ej: Soy una mujer que se conoce. Que ya no le tiene miedo a esta etapa. Que cuida su cuerpo con consciencia y su mente con intención. Que sabe que puede caer y levantarse. Que ya no está sobreviviendo."></textarea>
+        <div class="eq-label">¿Qué le dices a la versión de ti que entró al Paso D?</div>
+        <textarea id="route_a_4" class="eq-textarea" placeholder="Ej: 'Valió la pena. Todo lo que hiciste fue correcto. Y lo mejor está por venir.'"></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 2 -->
+    <div class="exercise" id="exA2">
+      <div class="exercise-header" onclick="toggleEx('exA2')">
+        <div class="ex-num">2</div>
+        <div class="ex-title">Tu visión de expansión a 12 meses</div>
+        <div class="ex-time">20 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Escribe en presente, como si ya fuera dentro de 12 meses y ya ocurrió. El cerebro no distingue entre una imagen vívida imaginada y una real — usa eso a tu favor.</div>
+        <div class="eq-label">Es [mes actual del año que viene]. ¿Cómo es tu vida ahora?</div>
+        <textarea id="route_a_5" class="eq-textarea" style="min-height:130px;" placeholder="Ej: Me levanto cada mañana con energía real. Mi cuerpo ya no es un campo de batalla. Duermo bien la mayoría de las noches. He empezado ese proyecto que llevaba años diciéndome que 'algún día'. Me reconozco en el espejo — no como la de antes, sino como una versión que me gusta más."></textarea>
+        <div class="eq-label">¿Qué hiciste este año que marca la diferencia?</div>
+        <textarea id="route_a_6" class="eq-textarea" placeholder="Ej: Sostuve el proceso aunque hubo semanas difíciles. Me uní a la comunidad de verdad. Empecé a compartir mi historia con otras mujeres."></textarea>
+        <div class="eq-label">¿Qué ha cambiado en tus relaciones, en tu trabajo, en tu relación con tu cuerpo?</div>
+        <textarea id="route_a_7" class="eq-textarea" placeholder="Ej: Mi pareja dice que soy diferente — más presente, más segura, más yo. En el trabajo me siento con más autoridad. Con mi cuerpo... por primera vez en mucho tiempo, hay paz."></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 3 -->
+    <div class="exercise" id="exA3">
+      <div class="exercise-header" onclick="toggleEx('exA3')">
+        <div class="ex-num">3</div>
+        <div class="ex-title">Tu misión de influencia</div>
+        <div class="ex-time">15 min</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">El poder que no se comparte se queda a medias. Este ejercicio define cómo vas a usar lo que aprendiste para impactar a otras mujeres — de la forma que te sea natural.</div>
+        <div class="eq-label">¿Hay una mujer en tu vida que necesita escuchar sobre este proceso? ¿Qué le dirías?</div>
+        <textarea id="route_a_8" class="eq-textarea" placeholder="Ej: Mi hermana. Le diría que lo que siente tiene nombre, que no está loca y que hay herramientas reales que funcionan. Que no tiene que resignarse."></textarea>
+        <div class="eq-label">¿Cómo vas a compartir tu experiencia? (redes, conversaciones, testimonio en la comunidad…)</div>
+        <textarea id="route_a_9" class="eq-textarea" placeholder="Ej: Voy a escribir un post honesto en Instagram. Y voy a compartir mi testimonio en la comunidad del programa esta semana."></textarea>
+        <div class="eq-label">¿Qué parte de tu historia puede ser la llave que abra la puerta a otra mujer?</div>
+        <textarea id="route_a_10" class="eq-textarea" placeholder="Ej: El momento en que me di cuenta de que no era debilidad — era biología. Eso es lo que más impacta cuando lo cuento."></textarea>
+      </div>
+    </div>
+
+    <!-- EJ 4 -->
+    <div class="exercise" id="exA4">
+      <div class="exercise-header" onclick="toggleEx('exA4')">
+        <div class="ex-num">4</div>
+        <div class="ex-title">Tu declaración de poder final</div>
+        <div class="ex-time">10 min · El cierre definitivo</div>
+        <div class="ex-toggle">↓</div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-inst">Una sola frase. La más poderosa que hayas escrito en todo el proceso. La que resume quién eres ahora y hacia dónde vas. No es la declaración de identidad del Paso C — es más grande. Es tu declaración de poder.</div>
+        <div class="eq-label">Mi declaración de poder (una frase, en presente, desde el fuego)</div>
+        <textarea id="route_a_11" class="eq-textarea" style="min-height:90px;" placeholder="Ej: 'Soy una mujer que eligió despertarse cuando todo le decía que se resignara — y esa elección lo cambió todo.'"></textarea>
+        <div class="eq-label">¿Dónde la pondrás para que te acompañe siempre?</div>
+        <textarea id="route_a_12" class="eq-textarea" style="min-height:54px;" placeholder="Ej: En el espejo del baño, en mi diario y como fondo de pantalla del móvil."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CIERRE EMOCIONAL -->
+  <div class="cierre-box">
+    <div class="cierre-titulo">El cierre emocional del método</div>
+    <div class="cierre-texto">
+      Has recorrido los 7 pasos. Has trabajado tu cuerpo, tu mente, tu identidad, tu energía, tu biología, tu sistema de sostenimiento y tu poder. Eso no es un programa — es una transformación. Y las transformaciones reales no terminan cuando termina el método. Terminan cuando decides que terminaron. Y tú no has decidido eso.
+    </div>
+    <div class="cierre-frase">
+      "No es una etapa que se sufre.<br>Es una versión que se <strong>activa</strong>."
+    </div>
+    <div class="cierre-reflection-label">Tu palabra para este momento</div>
+    <textarea id="route_a_13" placeholder="¿Cómo te sientes al llegar aquí? ¿Qué palabra define lo que sientes ahora mismo?"></textarea>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-banner">
+    <div class="result-icon">💥</div>
+    <div>
+      <div class="result-label">Resultado de este paso</div>
+      <div class="result-text">Deja de sobrevivir — empieza a liderar</div>
+    </div>
+  </div>
+
+  <!-- COMPLETION -->
+  <div class="completion" id="completion">
+    <div class="completion-badge">Método D.I.C.H.O.S.A.™ · Completado</div>
+    <div class="completion-title">Lo lograste.</div>
+    <div class="completion-subtitle">Los 7 pasos. Las 7 versiones de ti.</div>
+    <div class="completion-frase">
+      Cada letra de este método es un paso que diste. Cada ejercicio, una decisión que tomaste. Cada reflexión, una verdad que te permitiste ver. Eso no se borra — eso se convierte en quien eres.
+    </div>
+    <div class="dichosa-letters" id="dichosa-letters">
+      <div class="dl" data-l="D">D</div>
+      <div class="dl" data-l="I">I</div>
+      <div class="dl" data-l="C">C</div>
+      <div class="dl" data-l="H">H</div>
+      <div class="dl" data-l="O">O</div>
+      <div class="dl" data-l="S">S</div>
+      <div class="dl lit" data-l="A">A</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem; padding-bottom:2rem;">
+    <div style="font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--rust-mid); margin-bottom:8px;">"Eres D.I.C.H.O.S.A."</div>
+    <div style="font-size:12px; color:var(--ink-faint);">Método D.I.C.H.O.S.A.™ · Todos los derechos reservados</div>
+  </div>
+
+</div>
+
+<script type="module">
+import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+  function toggleEx(id) { document.getElementById(id).classList.toggle('open'); }
+
+  // Seguridad
+  function toggleSec(item) {
+    item.classList.toggle('claimed');
+    item.querySelector('.sec-check').textContent = item.classList.contains('claimed') ? '✓' : '';
+    const count = document.querySelectorAll('.security-item.claimed').length;
+    document.getElementById('sec-count').textContent = count;
+  }
+
+  // Quiz expansión
+  function selectQuiz(btn, type) {
+    btn.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const result = document.getElementById('quiz-result');
+    result.classList.add('visible');
+    const results = {
+      a: { title: 'Tu expansión está en el cuerpo y la vitalidad', text: 'Tu próxima frontera es física. Consolidar el protocolo de optimización biológica, profundizar en el movimiento que amas y construir la energía como tu nuevo estado base. Tu cuerpo tiene más potencial del que crees — y todavía no has visto su techo.' },
+      b: { title: 'Tu expansión está en la paz interior', text: 'Tu próxima frontera es emocional y mental. Profundizar en las prácticas de gestión emocional, posiblemente explorar el trabajo terapéutico o contemplativo. La paz no es ausencia de ruido — es una capacidad que se entrena. Tienes las bases.' },
+      c: { title: 'Tu expansión está en el proyecto de vida', text: 'Tu próxima frontera es el hacer. Hay algo que has postergado — un proyecto, una formación, un sueño con nombre propio. El momento no va a llegar solo. La energía que construiste en este proceso es el combustible para ese lanzamiento.' },
+      d: { title: 'Tu expansión está en las relaciones y la comunidad', text: 'Tu próxima frontera es el entorno. Revisar quién ocupa espacio en tu vida, construir relaciones más recíprocas, soltar las que drenan. Y posiblemente expandir tu comunidad hacia mujeres que están donde tú estabas — para ser el espejo que a ti te habría cambiado todo.' }
+    };
+    result.innerHTML = `<div class="qr-title">${results[type].title}</div><div class="qr-text">${results[type].text}</div>`;
+  }
+
+  // Animar letras DICHOSA al cargar
+  window.addEventListener('load', () => {
+    const letters = document.querySelectorAll('.dl');
+    letters.forEach((l, i) => {
+      setTimeout(() => { l.classList.add('lit'); }, i * 200);
+    });
+  });
+
+const sb=createClient("https://rexqlajlgaeleapiqawv.supabase.co","sb_publishable_XpK-kFMWhgViT0Hy7qqeZw_dp8U_fH3");
+const{data:{session}}=await sb.auth.getSession();if(!session){location.replace("/mi-ruta/acceso/");throw 0}
+const uid=session.user.id,stage="A",ids=["route_a_1","route_a_2","route_a_3","route_a_4","route_a_5","route_a_6","route_a_7","route_a_8","route_a_9","route_a_10","route_a_11","route_a_12","route_a_13"],keys=["a_1","a_2","a_3","a_4","a_5","a_6","a_7","a_8","a_9","a_10","a_11","a_12","a_13"],statusEl=document.getElementById("routeStatus");
+const{data:access}=await sb.from("stage_progress").select("status").eq("user_id",uid).eq("stage",stage).maybeSingle();if(!access||access.status==="locked"){location.replace("/mi-ruta/");throw new Error("Paso bloqueado")}
+const{data:saved}=await sb.from("exercise_responses").select("exercise_key,response").eq("user_id",uid).eq("stage",stage);
+for(const x of saved||[]){const i=keys.indexOf(x.exercise_key);if(i>-1&&document.getElementById(ids[i]))document.getElementById(ids[i]).value=x.response?.text||""}
+await sb.from("stage_progress").update({status:"in_progress"}).eq("user_id",uid).eq("stage",stage).eq("status","available");
+async function routeSave(show=true){if(show)statusEl.textContent="Guardando…";let filled=0;for(let i=0;i<ids.length;i++){const el=document.getElementById(ids[i]),value=el?.value.trim()||"";if(value)filled++;const{error}=await sb.from("exercise_responses").upsert({user_id:uid,stage,exercise_key:keys[i],response:{text:value}},{onConflict:"user_id,stage,exercise_key"});if(error){statusEl.textContent="No se pudo guardar.";return false}}await sb.from("stage_progress").update({status:"in_progress",progress_percent:ids.length?Math.round(filled/ids.length*100):0,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);if(show)statusEl.textContent="✓ Avance guardado";return true}
+document.getElementById("routeSave").onclick=()=>routeSave();
+document.getElementById("routeComplete").onclick=async()=>{if(!await routeSave(false))return;const summary=ids.map(id=>document.getElementById(id)?.value.trim()).filter(Boolean).slice(-1)[0]||"Activa tu poder completada";await sb.from("stage_results").upsert({user_id:uid,stage,result:{summary,completed_at:new Date().toISOString()}},{onConflict:"user_id,stage"});await sb.from("stage_progress").update({status:"completed",progress_percent:100,updated_at:new Date().toISOString()}).eq("user_id",uid).eq("stage",stage);statusEl.textContent="✓ Has completado tu Ruta D.I.C.H.O.S.A.™.";setTimeout(()=>location.href="/mi-ruta/resultado/",900);};
+</script>
+</body>
+</html>
