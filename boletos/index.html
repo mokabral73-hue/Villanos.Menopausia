@@ -55,7 +55,7 @@
     });
   }
   function ticketAppearance(ticket) {
-    if(ticket.paymentStatus==='pay_on_arrival')return {kind:'arrival',color:'#1557b0',label:'Reservado · Pago al llegar'};
+    if(ticket.paymentStatus==='pay_on_arrival')return {kind:'arrival',color:'#1557b0',label:'RESERVA SIN PAGAR · PAGO AL LLEGAR'};
     if(Number(ticket.priceCents)>0&&ticket.paymentStatus==='confirmed')return {kind:'paid',color:'#166534',label:'Pago confirmado'};
     if(Number(ticket.priceCents)===0)return {kind:'free',color:'#171717',label:'Sin costo · Acceso confirmado'};
     return {kind:'pending',color:'#171717',label:'Esperando confirmación de pago'};
