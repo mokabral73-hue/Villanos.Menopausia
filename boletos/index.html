@@ -95,36 +95,3 @@
   addEventListener('popstate',load);load();
 })();
 </script></body></html>
-+(ticket.priceCents/100).toFixed(2)+' MXN</strong><p>Tu lugar está reservado. Este boleto no es un comprobante de pago; paga el acceso en recepción.</p></div>':'')+'<div class="ticket-code">'+escape(ticket.code)+'</div><div id="ticket-qr" class="ticket-qr" aria-label="Código QR de acceso"></div><p class="hint">'+(ticket.address==='Evento en línea'?'Tu código confirma tu acceso al evento':'Presenta este código al llegar')+'</p><dl><div><dt>Sesión</dt><dd>'+escape(ticket.title)+'</dd></div><div><dt>Fecha y hora</dt><dd>'+escape(fullDate(ticket.date))+' · '+escape(ticket.time)+' h</dd></div><div><dt>'+(ticket.address==='Evento en línea'?'Acceso en línea':'Lugar')+'</dt><dd>'+escape(ticket.place)+(ticket.address==='Evento en línea'?'':'<br>'+escape(ticket.address))+(ticket.locationUrl?'<br><a href="'+escape(ticket.locationUrl)+'" target="_blank" rel="noopener noreferrer">'+(ticket.address==='Evento en línea'?'Entrar al evento':'Abrir ubicación')+'</a>':'')+'</dd></div></dl><div class="ticket-calendar"><strong>Agenda esta sesión</strong><div class="calendar-links"><a id="google-calendar" target="_blank" rel="noopener noreferrer">Google Calendar</a><button type="button" id="download-calendar">Apple / Outlook · aviso 2 h antes (.ics)</button></div><p class="calendar-note">El archivo incluye un aviso 2 horas antes. En Google Calendar, elige “2 horas antes” en Notificaciones antes de guardar.</p></div><p class="site-link">Conoce más en <a href="https://menopausiadichosa.com/">menopausiadichosa.com</a></p>'+(ticket.checkedInAt?'<div class="arrived">✓ Asistencia registrada</div>':'')+'</div></article><div class="actions"><button id="print">Guardar como PDF</button><button id="share">Compartir boleto</button></div><a class="back" href="/boletos/">← Volver a las sesiones</a></main>';
-      if(window.QRCode)new QRCode(root.querySelector('#ticket-qr'),{text:ticket.code,width:160,height:160,correctLevel:QRCode.CorrectLevel.M});
-      const [year,month,day]=ticket.date.split('-').map(Number);
-      const [hour,minute]=ticket.time.split(':').map(Number);
-      const start=new Date(year,month-1,day,hour,minute);
-      const end=new Date(start.getTime()+60*60*1000);
-      const stamp=value=>[value.getFullYear(),String(value.getMonth()+1).padStart(2,'0'),String(value.getDate()).padStart(2,'0')].join('')+'T'+[value.getHours(),value.getMinutes(),value.getSeconds()].map(part=>String(part).padStart(2,'0')).join('');
-      const online=ticket.address==='Evento en línea';const location=online?(ticket.locationUrl||ticket.place):[ticket.place,ticket.address].filter(Boolean).join(', ');
-      const details='Presenta tu código '+ticket.code+' al llegar. Más información: https://menopausiadichosa.com/'+(ticket.locationUrl?(online?' Enlace de acceso: ':' Ubicación: ')+ticket.locationUrl:'');
-      const google=new URL('https://calendar.google.com/calendar/render');
-      google.search=new URLSearchParams({action:'TEMPLATE',text:ticket.title,dates:stamp(start)+'/'+stamp(end),details,location}).toString();
-      root.querySelector('#google-calendar').href=google.href;
-      root.querySelector('#download-calendar').onclick=()=>{
-        const icsEscape=value=>String(value).replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
-        const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Menopausia Dichosa//Boletos//ES','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT','UID:'+ticket.code+'@menopausiadichosa.com','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,''),
-          'DTSTART:'+stamp(start),'DTEND:'+stamp(end),'SUMMARY:'+icsEscape(ticket.title),'LOCATION:'+icsEscape(location),'DESCRIPTION:'+icsEscape(details),'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEscape(online?'Tu evento en línea comienza en 2 horas. Prepara tu acceso.':'Tu sesión comienza en 2 horas. Organiza tu traslado para llegar a tiempo.'),'TRIGGER:-PT2H','END:VALARM','END:VEVENT','END:VCALENDAR'];
-        const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'});
-        const href=URL.createObjectURL(blob),link=document.createElement('a');link.href=href;link.download='Menopausia-Dichosa-'+ticket.code+'.ics';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(href),30000);
-      };
-      root.querySelector('#print').onclick=()=>window.print();
-      root.querySelector('#share').onclick=async()=>{try{if(navigator.share)await navigator.share({title:'Mi boleto Menopausia Dichosa',url:location.href});else{await navigator.clipboard.writeText(location.href);alert('Enlace copiado')}}catch{}};
-    } catch(error) {root.innerHTML='<main class="ticket-page"><p class="error">'+escape(error.message)+'</p><a href="/boletos/">← Volver a las sesiones</a></main>'}
-  }
-  async function load() {
-    const code=new URLSearchParams(location.search).get('boleto');
-    if(code){await renderTicket(code);return}
-    root.innerHTML='<main class="shell">'+brand('Villanos en la Menopausia')+'<p>Cargando sesiones…</p></main>';
-    try {events=await request('/api/events');const requested=new URLSearchParams(location.search).get('evento');selected=events.find(item=>item.id===requested)?.id||events.find(item=>item.active&&item.available>0)?.id||events[0]?.id||'';renderHome()}
-    catch(error){root.innerHTML='<main class="shell">'+brand('Villanos en la Menopausia')+'<p class="error">'+escape(error.message)+'</p></main>'}
-  }
-  addEventListener('popstate',load);load();
-})();
-</script></body></html>
