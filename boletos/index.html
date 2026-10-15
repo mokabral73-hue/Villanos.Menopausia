@@ -90,7 +90,7 @@
         const href=URL.createObjectURL(blob),link=document.createElement('a');link.href=href;link.download='Menopausia-Dichosa-'+ticket.code+'.ics';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(href),30000);
       };
       root.querySelector('#print').onclick=()=>window.print();
-      root.querySelector('#share').onclick=async()=>{try{if(navigator.share)await navigator.share({title:'Mi boleto Menopausia Dichosa',url:location.href});else{await navigator.clipboard.writeText(location.href);alert('Enlace copiado')}}catch{}};
+      root.querySelector('#share').onclick=async()=>{const shareUrl=api+'/api/ticket/'+encodeURIComponent(ticket.code)+'/share';try{if(navigator.share)await navigator.share({title:'Mi boleto · '+ticket.title,url:shareUrl});else{await navigator.clipboard.writeText(shareUrl);alert('Enlace del boleto copiado')}}catch{}};
     } catch(error) {root.innerHTML='<main class="ticket-page"><p class="error">'+escape(error.message)+'</p><a href="/boletos/">← Volver a las sesiones</a></main>'}
   }
   async function load() {
