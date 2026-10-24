@@ -457,8 +457,18 @@ section{padding:64px 0}
   fetch(api+'/api/events').then(r=>{if(!r.ok)throw Error();return r.json()}).then(events=>{
     if(!Array.isArray(events))throw Error();
     grid.replaceChildren();
-    if(!events.length){add(grid,'p','Estamos preparando los próximos encuentros. Vuelve pronto para conocer las fechas.','upcomingEmpty');return}
-    for(const event of events){
+    const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/Cancun'});
+    const upcoming=events.filter(event=>event && event.active && typeof event.date==='string' && event.date>=today);
+    if(!upcoming.length){
+      const card=document.createElement('div');card.className='upcomingEmpty';grid.appendChild(card);
+      add(card,'h3','🌷 Estamos preparando nuestros próximos encuentros');
+      add(card,'p','Pronto anunciaremos nuevas sesiones en Cancún y en línea. Mientras tanto, conoce el Método D.I.C.H.O.S.A.™ o escríbenos por WhatsApp para pedir información sobre las próximas fechas.');
+      const whatsapp=document.createElement('a');whatsapp.className='btn primary';whatsapp.href='https://wa.me/529982990230?text='+encodeURIComponent('Hola, quiero recibir información sobre los próximos eventos de Menopausia Dichosa en Cancún y en línea.');whatsapp.target='_blank';whatsapp.rel='noopener';whatsapp.textContent='Preguntar por próximos eventos';card.appendChild(whatsapp);
+      const method=document.createElement('p');card.appendChild(method);
+      const methodLink=document.createElement('a');methodLink.href='/metodo/';methodLink.textContent='Conoce el Método D.I.C.H.O.S.A. →';method.appendChild(methodLink);
+      return;
+    }
+    for(const event of upcoming){
       const card=document.createElement('article');card.className='upcomingCard';
       if(event.image_key){const img=document.createElement('img');img.src=api+'/api/events/'+encodeURIComponent(event.id)+'/image';img.alt='Promocional de '+event.title;img.loading='lazy';card.appendChild(img)}
       const body=document.createElement('div');body.className='upcomingBody';card.appendChild(body);
