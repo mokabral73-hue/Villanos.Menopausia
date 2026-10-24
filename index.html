@@ -460,7 +460,7 @@ section{padding:64px 0}
     if(!events.length){add(grid,'p','Estamos preparando los próximos encuentros. Vuelve pronto para conocer las fechas.','upcomingEmpty');return}
     // Datos estructurados para los eventos visibles, sin alterar reservas.
     // Se actualizan a partir de la misma respuesta del calendario.
-    const validEvents=events.filter(event=>event && event.active && event.available>0 && event.id && event.title && /^\\d{4}-\\d{2}-\\d{2}$/.test(event.date||'') && /^\\d{1,2}:\\d{2}$/.test(event.time||'') && (event.online || event.place));
+    const validEvents=events.filter(event=>event && event.active && event.available>0 && event.id && event.title && /^\d{4}-\d{2}-\d{2}$/.test(event.date||'') && /^\d{1,2}:\d{2}$/.test(event.time||'') && (event.online || event.place));
     const structured=validEvents.map(event=>{
       const start=event.date+'T'+event.time.padStart(5,'0')+':00-05:00';
       const entry={
