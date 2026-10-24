@@ -457,21 +457,6 @@ section{padding:64px 0}
   fetch(api+'/api/events').then(r=>{if(!r.ok)throw Error();return r.json()}).then(events=>{
     if(!Array.isArray(events))throw Error();
     grid.replaceChildren();
-    // SEO: datos estructurados del calendario real; no modifica reservas.
-    document.getElementById('md-event-schema')?.remove();
-    const structured=events.filter(e=>e.active && /^\d{4}-\d{2}-\d{2}$/.test(String(e.date)) && /^\d{1,2}:\d{2}$/.test(String(e.time)) && e.title && e.id && (e.online || e.place) && e.date>=new Date().toLocaleDateString('en-CA',{timeZone:'America/Cancun'})).map(e=>{
-      const start=e.date+'T'+String(e.time).padStart(5,'0')+':00-05:00';
-      const url='https://menopausiadichosa.com/boletos/?evento='+encodeURIComponent(e.id);
-      const item={'@type':'Event',name:e.title,startDate:start,eventStatus:'https://schema.org/EventScheduled',
-        eventAttendanceMode:e.online?'https://schema.org/OnlineEventAttendanceMode':'https://schema.org/OfflineEventAttendanceMode',
-        location:e.online?{'@type':'VirtualLocation',url}:{'@type':'Place',name:e.place,address:{'@type':'PostalAddress',addressLocality:'Cancún',addressRegion:'Quintana Roo',addressCountry:'MX'}},
-        organizer:{'@type':'Organization',name:'Menopausia Dichosa™',url:'https://menopausiadichosa.com/'},url};
-      if(e.description)item.description=e.description;
-      if(e.image_key)item.image=api+'/api/events/'+encodeURIComponent(e.id)+'/image';
-      if(typeof e.price_cents==='number' && e.price_cents>=0)item.offers={'@type':'Offer',url,price:(e.price_cents/100).toFixed(2),priceCurrency:'MXN',availability:e.available>0?'https://schema.org/InStock':'https://schema.org/SoldOut'};
-      return item;
-    });
-    if(structured.length){const ld=document.createElement('script');ld.id='md-event-schema';ld.type='application/ld+json';ld.textContent=JSON.stringify({'@context':'https://schema.org','@graph':structured});document.head.appendChild(ld)}
     if(!events.length){add(grid,'p','Estamos preparando los próximos encuentros. Vuelve pronto para conocer las fechas.','upcomingEmpty');return}
     for(const event of events){
       const card=document.createElement('article');card.className='upcomingCard';
