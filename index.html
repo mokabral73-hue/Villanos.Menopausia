@@ -473,35 +473,6 @@ section{padding:64px 0}
     });
     if(structured.length){const ld=document.createElement('script');ld.id='md-event-schema';ld.type='application/ld+json';ld.textContent=JSON.stringify({'@context':'https://schema.org','@graph':structured});document.head.appendChild(ld)}
     if(!events.length){add(grid,'p','Estamos preparando los próximos encuentros. Vuelve pronto para conocer las fechas.','upcomingEmpty');return}
-    // Datos estructurados para los eventos visibles, sin alterar reservas.
-    // Se actualizan a partir de la misma respuesta del calendario.
-    const validEvents=events.filter(event=>event && event.active && event.available>0 && event.id && event.title && /^\d{4}-\d{2}-\d{2}$/.test(event.date||'') && /^\d{1,2}:\d{2}$/.test(event.time||'') && (event.online || event.place));
-    const structured=validEvents.map(event=>{
-      const start=event.date+'T'+event.time.padStart(5,'0')+':00-05:00';
-      const entry={
-        '@type':'Event',
-        name:event.title,
-        startDate:start,
-        eventStatus:'https://schema.org/EventScheduled',
-        eventAttendanceMode:event.online?'https://schema.org/OnlineEventAttendanceMode':'https://schema.org/OfflineEventAttendanceMode',
-        description:event.description||'Sesión educativa de Menopausia Dichosa™.',
-        organizer:{'@type':'Organization',name:'Menopausia Dichosa™',url:'https://menopausiadichosa.com/'},
-        url:'https://menopausiadichosa.com/boletos/?evento='+encodeURIComponent(event.id)
-      };
-      if(event.online)entry.location={'@type':'VirtualLocation',url:entry.url};
-      else entry.location={'@type':'Place',name:event.place,address:{'@type':'PostalAddress',addressLocality:'Cancún',addressRegion:'Quintana Roo',addressCountry:'MX'}};
-      if(event.image_key)entry.image=[api+'/api/events/'+encodeURIComponent(event.id)+'/image'];
-      if(event.price_cents>0)entry.offers={'@type':'Offer',url:entry.url,price:(event.price_cents/100).toFixed(2),priceCurrency:'MXN',availability:'https://schema.org/InStock'};
-      return entry;
-    });
-    document.getElementById('md-event-schema')?.remove();
-    if(structured.length){
-      const script=document.createElement('script');
-      script.type='application/ld+json';
-      script.id='md-event-schema';
-      script.textContent=JSON.stringify({'@context':'https://schema.org','@graph':structured}).replace(/</g,'\\u003c');
-      document.head.appendChild(script);
-    }
     for(const event of events){
       const card=document.createElement('article');card.className='upcomingCard';
       if(event.image_key){const img=document.createElement('img');img.src=api+'/api/events/'+encodeURIComponent(event.id)+'/image';img.alt='Promocional de '+event.title;img.loading='lazy';card.appendChild(img)}
