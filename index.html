@@ -482,7 +482,9 @@ section{padding:64px 0}
       const link=document.createElement('a');link.className='btn primary';link.href='/boletos/?evento='+encodeURIComponent(event.id);
       link.textContent=event.available<=0?'Lugares agotados':event.active?'Ver detalles y reservar':'Reservas cerradas';
       if(event.available<=0||!event.active){link.removeAttribute('href');link.setAttribute('aria-disabled','true')}
-      body.appendChild(link);grid.appendChild(card)
+      body.appendChild(link);
+      if(event.id && /^[a-zA-Z0-9-]+$/.test(String(event.id))){const info=document.createElement('a');info.href='/eventos/'+encodeURIComponent(event.id)+'/';info.textContent='Conoce esta sesión →';info.style.display='inline-block';info.style.marginTop='12px';body.appendChild(info)}
+      grid.appendChild(card)
     }
   }).catch(()=>{grid.replaceChildren();const p=add(grid,'p','No pudimos cargar los eventos en este momento.','upcomingEmpty');const a=add(p,'a','Ver agenda de eventos →');a.href='/boletos/'});
 })();
