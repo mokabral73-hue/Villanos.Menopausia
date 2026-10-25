@@ -19,7 +19,7 @@ jobs:
         run: |
           git config user.name "Menopausia Dichosa Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add eventos/
+          git add eventos/ sitemap.xml
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar páginas públicas de eventos"
             git push
