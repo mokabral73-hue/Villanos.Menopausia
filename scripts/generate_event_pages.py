@@ -60,6 +60,22 @@ def main():
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(body, encoding="utf-8")
         count += 1
-    print(f"Generated {count} event pages")
+    # Publish a sitemap for search engines, including every currently upcoming event.
+    import xml.etree.ElementTree as ET
+    urls = [ROOT + "/", ROOT + "/metodo/", ROOT + "/guia/", ROOT + "/test/"]
+    for page in sorted(OUT.glob("*/index.html")):
+        slug = page.parent.name
+        if slug == "aun-es-tiempo-cancun":
+            continue
+        if slug == "villanos-menopausia-27-octubre-2026":
+            continue
+        if slug == "2105f0c1-1bfa-43ef-8bae-e370020e9e14":
+            continue
+        urls.append(ROOT + "/eventos/" + slug + "/")
+    root = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    for url in urls:
+        ET.SubElement(ET.SubElement(root, "url"), "loc").text = url
+    ET.ElementTree(root).write("sitemap.xml", encoding="utf-8", xml_declaration=True)
+    print(f"Generated {count} event pages and sitemap with {len(urls)} URLs")
 if __name__ == "__main__":
     main()
