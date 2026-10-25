@@ -62,7 +62,7 @@ def main():
         count += 1
     # Publish a sitemap for search engines, including every currently upcoming event.
     import xml.etree.ElementTree as ET
-    urls = [ROOT + "/", ROOT + "/metodo/", ROOT + "/guia/", ROOT + "/test/"]
+    urls = [ROOT + "/", ROOT + "/metodo/", ROOT + "/menopausia-en-cancun/", ROOT + "/guia/", ROOT + "/test/"]
     for page in sorted(OUT.glob("*/index.html")):
         slug = page.parent.name
         if slug == "aun-es-tiempo-cancun":
