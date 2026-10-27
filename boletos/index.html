@@ -64,7 +64,7 @@
     return {kind:'pending',color:'#171717',label:'Esperando confirmación de pago'};
   }
   function contactCardHtml(){return '<section class="save-contact"><strong>🌷 Sigamos en contacto</strong><p>Guarda nuestro WhatsApp para conocer próximos eventos y consejos en nuestros Estados.</p><button type="button" class="save-contact-button">Guardar Menopausia Dichosa™ en mis contactos</button><p class="save-contact-note">Tu teléfono te pedirá confirmar que deseas guardar el contacto. Para ver nuestros Estados, revisa tus ajustes de privacidad de WhatsApp.</p></section>'}
-  function enableSaveContact(){const button=root.querySelector('.save-contact-button');if(!button)return;button.onclick=()=>{const lines=['BEGIN:VCARD','VERSION:3.0','FN:Menopausia Dichosa™','ORG:Menopausia Dichosa™','TEL;TYPE=CELL,VOICE:+529982990230','URL:https://menopausiadichosa.com/','END:VCARD'];const url=URL.createObjectURL(new Blob([lines.join('\\r\\n')+'\\r\\n'],{type:'text/vcard;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='Menopausia-Dichosa.vcf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}}
+  function enableSaveContact(){const button=root.querySelector('.save-contact-button');if(!button)return;button.onclick=()=>{window.location.href='/boletos/contacto.vcf'}}
   async function renderTicket(code) {
     root.innerHTML='<main class="ticket-page"><p>Cargando boleto…</p></main>';
     try {
