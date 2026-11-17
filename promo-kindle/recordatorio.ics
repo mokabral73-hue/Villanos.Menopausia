@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Menopausia Dichosa//Promocion Kindle//ES
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:kindle-20261125@menopausiadichosa.com
+DTSTAMP:20261117T170000Z
+DTSTART:20261125T140000Z
+DTEND:20261125T141500Z
+SUMMARY:Descargar Menopausia Dichosa™ gratis en Kindle 
+ DESCRIPTION:Promoción Kindle el 25 y 26 de noviembre. Descarga en Amazon:
+ https://www.amazon.com/dp/B0HQ59WJ2V
+URL:https://www.amazon.com/dp/B0HQ59WJ2V
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Descarga tu edición Kindle gratis en Amazon
+END:VALARM
+END:VEVENT
+END:VCALENDAR
