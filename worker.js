@@ -1,3 +1,4 @@
+// Rebuild isolated Worker Preview with its runtime configuration.
 const json = (data, status=200) => Response.json(data,{status,headers:{"Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
 export default {
  async fetch(request, env) {
