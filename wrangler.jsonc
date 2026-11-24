@@ -1,11 +1,16 @@
 {
+  "previews": {},
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "menopausia-dichosa",
   "compatibility_date": "2026-08-30",
   "assets": {
     "directory": "./",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/instagram"
+    ]
+  },
+  "main": "worker.js"
 }
-
