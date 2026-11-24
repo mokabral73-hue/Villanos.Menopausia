@@ -525,8 +525,41 @@ section{padding:64px 0}
 <script>
 (()=>{const button=document.querySelector('.md-menu-toggle');const nav=document.querySelector('.md-navigation');button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));nav.classList.toggle('md-open',!open)});nav.addEventListener('click',e=>{if(e.target.closest('a')){button.setAttribute('aria-expanded','false');nav.classList.remove('md-open')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&button.getAttribute('aria-expanded')==='true'){button.setAttribute('aria-expanded','false');nav.classList.remove('md-open');button.focus()}})})();
 </script>
+<style>
+.ig-card video{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#fff5f8}
+.ig-card .ig-external{display:block;padding:0 14px 14px;color:#a41449;font-size:13px;font-weight:600}
+.ig-card .ig-video-error{padding:10px 14px;font-size:13px}
+</style>
 <script>
-(async()=>{const grid=document.getElementById('instagram-feed');try{const response=await fetch('/api/instagram');if(!response.ok)throw Error();const result=await response.json();if(!Array.isArray(result.data)||!result.data.length)throw Error();const cards=[];for(const post of result.data.slice(0,6)){const link=new URL(post.permalink);if(link.protocol!=='https:'||!['www.instagram.com','instagram.com'].includes(link.hostname))continue;const a=document.createElement('a');a.className='ig-card';a.href=link.href;a.target='_blank';a.rel='noopener noreferrer';const source=post.media_type==='VIDEO'?post.thumbnail_url:post.media_url;if(source){const img=document.createElement('img');img.src=source;img.alt='Publicación de Menopausia Dichosa';img.loading='lazy';img.addEventListener('error',()=>img.remove());a.append(img);if(post.media_type==='VIDEO'){const play=document.createElement('span');play.className='ig-play';play.textContent='▶';play.setAttribute('aria-hidden','true');a.append(play)}}const kind=document.createElement('span');kind.className='ig-kind';kind.textContent=post.media_type==='VIDEO'?'▶ Reel · Instagram':post.media_type==='CAROUSEL_ALBUM'?'▧ Carrusel · Instagram':'Instagram';a.append(kind);const p=document.createElement('p');p.textContent=post.caption||'Ver publicación en Instagram';a.append(p);cards.push(a)}if(!cards.length)throw Error();grid.replaceChildren(...cards)}catch{grid.textContent='Consulta nuestras publicaciones directamente en Instagram.'}})();
+(async()=>{
+ const grid=document.getElementById('instagram-feed');
+ try{
+  const response=await fetch('/api/instagram');if(!response.ok)throw Error();
+  const result=await response.json();if(!Array.isArray(result.data)||!result.data.length)throw Error();
+  const cards=[];
+  for(const post of result.data.slice(0,6)){
+   const link=new URL(post.permalink);if(link.protocol!=='https:'||!['www.instagram.com','instagram.com'].includes(link.hostname))continue;
+   const isVideo=post.media_type==='VIDEO'&&post.media_url;
+   const card=document.createElement(isVideo?'article':'a');card.className='ig-card';
+   if(isVideo){
+    const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='none';video.src=post.media_url;if(post.thumbnail_url)video.poster=post.thumbnail_url;
+    video.setAttribute('aria-label','Reproducir reel de Menopausia Dichosa');
+    video.addEventListener('play',()=>grid.querySelectorAll('video').forEach(other=>{if(other!==video)other.pause()}));
+    video.addEventListener('error',()=>{const note=document.createElement('div');note.className='ig-video-error';note.textContent='No se pudo reproducir el video. Puedes verlo en Instagram.';video.replaceWith(note)});
+    card.append(video);
+   }else{
+    card.href=link.href;card.target='_blank';card.rel='noopener noreferrer';
+    const source=post.media_type==='VIDEO'?post.thumbnail_url:post.media_url;
+    if(source){const img=document.createElement('img');img.src=source;img.alt='Publicación de Menopausia Dichosa';img.loading='lazy';img.addEventListener('error',()=>img.remove());card.append(img)}
+   }
+   const kind=document.createElement('span');kind.className='ig-kind';kind.textContent=post.media_type==='VIDEO'?'▶ Reel · Instagram':post.media_type==='CAROUSEL_ALBUM'?'▧ Carrusel · Instagram':'Instagram';card.append(kind);
+   const p=document.createElement('p');p.textContent=post.caption||'Ver publicación en Instagram';card.append(p);
+   if(isVideo){const a=document.createElement('a');a.className='ig-external';a.href=link.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Ver en Instagram ↗';card.append(a)}
+   cards.push(card);
+  }
+  if(!cards.length)throw Error();grid.replaceChildren(...cards);
+ }catch{grid.textContent='Consulta nuestras publicaciones directamente en Instagram.'}
+})();
 </script>
 </body>
 </html>
